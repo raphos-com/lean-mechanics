@@ -9,11 +9,11 @@ status=0
 
 # 1. Source scan (comments are not stripped: a `sorry` in a comment is also rejected,
 #    which keeps the check simple; write "s0rry" in prose if ever needed).
-if grep -rnwE 'sorry|admit' --include='*.lean' ContinuumMechanics ContinuumMechanics.lean Nexorade Nexorade.lean; then
+if grep -rnwE 'sorry|admit' --include='*.lean' ContinuumMechanics ContinuumMechanics.lean papers; then
   echo "error: found sorry/admit (listed above)" >&2
   status=1
 fi
-if grep -rnE '^\s*(private\s+|protected\s+)?axiom\s' --include='*.lean' ContinuumMechanics ContinuumMechanics.lean Nexorade Nexorade.lean; then
+if grep -rnE '^\s*(private\s+|protected\s+)?axiom\s' --include='*.lean' ContinuumMechanics ContinuumMechanics.lean papers; then
   echo "error: found axiom declarations (listed above)" >&2
   status=1
 fi

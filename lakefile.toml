@@ -20,3 +20,4 @@ name = "ContinuumMechanics"
 
 [[lean_lib]]
 name = "Nexorade"
+srcDir = "papers"

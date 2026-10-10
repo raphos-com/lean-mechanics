@@ -2,7 +2,7 @@
 
 ## Unreleased
 
-### Phase 8 — homogenization of the square nexorade (separate library `Nexorade/`)
+### Phase 8 — homogenization of the square nexorade (separate library `papers/Nexorade/`)
 - `Nexorade/Optimum`: final-version formulas in `a/l` (31)–(33); Euler–Bernoulli stiffness optimal
   at `a/l = 1/2`; soft-member optimum at the root `≈ 0.3966` of `2x³ − 2x² + 3x − 1`; trade-off
   factors `5√2 − 6` (deflection) and `(√2 + 1)/2` (stresses).

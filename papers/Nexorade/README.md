@@ -10,7 +10,7 @@ Machine-checked formalization (Lean 4 + Mathlib, no axioms, no `sorry`) of
 The paper homogenizes the square nexorade (reciprocal frame with spherical joints) as a
 Kirchhoff–Love plate and finds a **degenerate** plate: only bi-axial bending stores energy. This
 folder proves the paper's closed-form results from the statics of the two-beam unit cell. It builds
-on the [`ContinuumMechanics`](../ContinuumMechanics) library (Kirchhoff–Love plates and their Navier
+on the [`ContinuumMechanics`](../../ContinuumMechanics) library (Kirchhoff–Love plates and their Navier
 solutions).
 
 Source used: the final version (Drive, 2013-09-18). The in-plane analysis comes from the authors'
@@ -37,7 +37,7 @@ earlier draft (`5.1`, May 2013); the final paper leaves membrane behaviour to fu
 | §4.2 Trade-off: +7% deflection (`5√2 − 6`) vs +20% stresses (`(√2 + 1)/2`) | `deflection_ratio`, `moment_ratio` | ✅ |
 | §5.1 Navier solution (34)–(36) | `DegeneratePlate.navier`, `navier_kirchhoffLove` | ✅ |
 | §5.2 Finite element comparison (ABAQUS) | — | out of scope (numerical) |
-| Scale separation / convergence of the frame to the plate | — | assumed (see [`GAPS.md`](../GAPS.md)) |
+| Scale separation / convergence of the frame to the plate | — | assumed (see [`GAPS.md`](../../GAPS.md)) |
 | (draft) In-plane cell problem, `A₂₂₁₁ = 0`, `N₁₂ ≡ 0` | `InPlane.lean`, `Cell.isLeast_inPlane` | ✅ (beyond the final paper) |
 
 ## Points where the formalization differs from the text
