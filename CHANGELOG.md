@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+### Phase 7 — plates (in progress)
+- `Plates/KirchhoffLove`: rectangular plate, partial derivatives, biharmonic operator, plate
+  equation `DΔ²w = q`, bending moments, simply supported edges.
+- `Plates/Navier`: `Δ²(sin αx sin βy) = (α² + β²)² sin αx sin βy`; **Navier's single-mode solution**
+  of the simply supported plate; central deflection `q₀a⁴/(4π⁴D)` of a square plate.
+
 ### Phase 5 — linear elastostatics
 - `Elastostatics/Weak`: abstract weak formulation `⟪ℂε(u), ε(v)⟫ = ℓ(v)` under the `KornSetting`
   hypothesis structure (Korn's inequality); **Lax–Milgram well-posedness**; the weak solution is the

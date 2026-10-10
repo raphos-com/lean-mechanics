@@ -48,6 +48,8 @@ import ContinuumMechanics.Beams.Rayleigh
 import ContinuumMechanics.Sobolev1D.Primitive
 import ContinuumMechanics.Sobolev1D.BarWeak
 import ContinuumMechanics.Sobolev1D.BeamWeak
+import ContinuumMechanics.Plates.KirchhoffLove
+import ContinuumMechanics.Plates.Navier
 
 /-!
 # ContinuumMechanics

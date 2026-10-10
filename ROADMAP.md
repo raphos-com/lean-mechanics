@@ -2,7 +2,7 @@
 
 Status: **reviewed**. Progress: Phase 0 ✅; Phase 1 ✅ (1.1–1.12, plus Jacobi's formula);
 Phase 2: 2.1–2.5 ✅, 2.6 necessity ✅ (sufficiency open); Phase 3 ✅; Phase 4 ✅; Phase 5 ✅ (5.5 via the `KornSetting` hypothesis structure);
-Phase 6: 6.1–6.9, 6.13 ✅; 6.10–6.12 for the bar and the EB cantilever ✅ (other beam BCs, Timoshenko weak forms open). Milestones are roughly one file each and map to
+Phase 6: 6.1–6.9, 6.13 ✅; 6.10–6.12 for the bar and the EB cantilever ✅ (other beam BCs, Timoshenko weak forms open). Phase 7: 7.2 ✅. Milestones are roughly one file each and map to
 `ARCHITECTURE.md` §2. Each milestone ends with: definitions → API lemmas →
 main theorems → `example` blocks → commit. Each phase ends with a
 `CHANGELOG.md` entry and updates to `GAPS.md`, `TODO.md`, `UPSTREAM.md`.
@@ -117,7 +117,7 @@ evaluated with `norm_num`.
 | # | File | Content | Risk |
 |---|---|---|---|
 | 7.1 | `KirchhoffLove.lean` | `D Δ²w = q`; energy; strong ⇔ stationary on a rectangle (boxes allow Mathlib's divergence theorem) | 🟡 |
-| 7.2 | `Navier.lean` | simply supported rectangle: single-mode Navier solutions verified | 🟢 |
+| 7.2 | `Navier.lean` | simply supported rectangle: single-mode Navier solutions verified | ✅ |
 | 7.3 | `MindlinReissner.lean` | equations and energy; the analogue of the Timoshenko → EB limit for single-mode solutions | 🟡 |
 
 ---
