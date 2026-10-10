@@ -7,6 +7,8 @@
   equation `DΔ²w = q`, bending moments, simply supported edges.
 - `Plates/Navier`: `Δ²(sin αx sin βy) = (α² + β²)² sin αx sin βy`; **Navier's single-mode solution**
   of the simply supported plate; central deflection `q₀a⁴/(4π⁴D)` of a square plate.
+- `Plates/MindlinReissner`: Mindlin–Reissner equations and hard simple supports; single-mode Navier
+  solution `W = W_K(1 + Dk²/S)`, `φ = −∇w_K`; **Kirchhoff limit** `W − W_K = q₀/(Sk²) → 0`.
 
 ### Phase 5 — linear elastostatics
 - `Elastostatics/Weak`: abstract weak formulation `⟪ℂε(u), ε(v)⟫ = ℓ(v)` under the `KornSetting`
