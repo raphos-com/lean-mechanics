@@ -20,8 +20,8 @@ exists; the column **buckles** when a nontrivial solution exists.
 The proof reduces the equation to `w'' + k² w = 0` (`k² = P/EI`) by integrating twice with the
 boundary conditions, and identifies the solution through the conserved energy `w'² + k² w²`.
 
-The Rayleigh-quotient characterisation of `P_cr` (needing Wirtinger's inequality) is a separate
-milestone.
+The Rayleigh-quotient characterisation of `P_cr` (via Wirtinger's inequality) is in
+`Beams/Rayleigh.lean`.
 
 ## References
 

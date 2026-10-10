@@ -56,6 +56,11 @@
   connected open set ⇒ infinitesimal rigid displacement `u = a + Wx`.
 
 ### Phase 6 — 1D structural theories (in progress)
+- `Beams/Wirtinger`: **Wirtinger's inequality** `(π/L)² ∫u² ≤ ∫u'²` (`u(0) = u(L) = 0`), proved
+  with Picone's identity against `sin(k(x + δ))` and `δ → 0⁺` (no Fourier series);
+  `(π/L)² ∫w'² ≤ ∫w''²`.
+- `Beams/Rayleigh`: Rayleigh quotient of a pinned column; **`P_cr = π²EI/L²` is its minimum**,
+  attained by `sin(πx/L)`.
 - `Beams/Interval`: vanishing `(n+1)`-th derivative on `[a, b]` ⇒ Taylor polynomial.
 - `Beams/Bar`: axial bar equilibrium; closed-form fixed–free (uniform + end load, linear
   load) and fixed–fixed (uniform) solutions; uniqueness for both boundary conditions.

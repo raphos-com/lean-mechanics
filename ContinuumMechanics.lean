@@ -39,6 +39,8 @@ import ContinuumMechanics.Beams.EulerBernoulli.Energy
 import ContinuumMechanics.Beams.Timoshenko.Basic
 import ContinuumMechanics.Beams.Timoshenko.Limit
 import ContinuumMechanics.Beams.Buckling
+import ContinuumMechanics.Beams.Wirtinger
+import ContinuumMechanics.Beams.Rayleigh
 
 /-!
 # ContinuumMechanics

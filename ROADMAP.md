@@ -3,7 +3,7 @@
 Status: **reviewed**. Progress: Phase 0 ✅; Phase 1 ✅ (1.1–1.12, plus Jacobi's formula);
 Phase 2: 2.1–2.5 ✅ (2.6 open); Phase 3 ✅; Phase 4: 4.1–4.5 ✅
 (4.6–4.7 open); Phase 5: 5.1–5.4 ✅ (5.1–5.3 in `Elastostatics/Basic.lean`; 5.5 open);
-Phase 6: 6.1–6.9 ✅ (6.10–6.13 open). Milestones are roughly one file each and map to
+Phase 6: 6.1–6.9, 6.13 ✅ (6.10–6.12 open). Milestones are roughly one file each and map to
 `ARCHITECTURE.md` §2. Each milestone ends with: definitions → API lemmas →
 main theorems → `example` blocks → commit. Each phase ends with a
 `CHANGELOG.md` entry and updates to `GAPS.md`, `TODO.md`, `UPSTREAM.md`.
@@ -108,7 +108,7 @@ No hypothesis structures allowed in this phase.
 | 6.10 | `Sobolev1D/H1.lean` | `H¹(0,L) := WithLp 2 (ℝ × L²)` with realisation map; continuity of point evaluation; norm equivalence; `H¹₀` | 🔴 (new infrastructure, upstream candidate) |
 | 6.11 | `Sobolev1D/H2.lean`, `Inequalities.lean` | `H²(0,L)`; Poincaré inequalities on an interval; boundary-condition subspaces | 🔴 |
 | 6.12 | `EulerBernoulli/Weak.lean`, `Timoshenko/Weak.lean`, bar | weak forms; coercivity; well-posedness via Lax–Milgram; weak solution = classical solution when the latter exists | 🟡 |
-| 6.13 | `Buckling.lean` | pinned–pinned: `EI w'''' + P w'' = 0`; nontrivial solutions iff `P = n²π²EI/L²`; `P_cr = π²EI/L²` is the smallest; Rayleigh quotient `P_cr = inf ∫EI w''² / ∫ w'²`, via Wirtinger's inequality (odd extension + Parseval, `tsum_sq_fourierCoeff`) | 🔴 (Wirtinger) |
+| 6.13 | `Buckling.lean` | pinned–pinned: `EI w'''' + P w'' = 0`; nontrivial solutions iff `P = n²π²EI/L²`; `P_cr = π²EI/L²` is the smallest; Rayleigh quotient `P_cr = inf ∫EI w''² / ∫ w'²`, via Wirtinger's inequality (proved with Picone's identity, `Wirtinger.lean`, `Rayleigh.lean`) | ✅ |
 
 Phase-6 examples: a concrete steel I-beam, all canonical deflections
 evaluated with `norm_num`.
