@@ -50,6 +50,19 @@ lemma), the trace theorem `H¹(Ω) → L²(∂Ω)` (continuity of the surface-lo
 *Non-vacuity witness.* `KornSetting.ofIdentity` (`ε = id`, `ℂ = k I`, `K = 1`), the abstract form
 of the 1D bar of `Sobolev1D/BarWeak`, whose `H¹` model is constructed without hypotheses.
 
+### Modelling assumption: homogenization of periodic frames as plates (Phase 8)
+
+*Statement.* For a periodic beam frame of cell size `ε → 0` under slowly varying loads, the frame
+response converges to that of the Kirchhoff–Love plate whose compliance is given by the static
+(Hill–Mandel) cell problem.
+
+*Used by.* Nothing in Lean: Phase 8 *defines* the equivalent plate by the cell problem and proves
+the cell results; the convergence statement is the modelling hypothesis that gives them physical
+meaning, as in [Greco2013], which recalls it from [Caillerie1984] and [LebeeSab2013].
+
+*Mathlib would need.* Two-scale convergence / Γ-convergence for discrete lattices, Korn-type
+inequalities for frames.
+
 ## Planned
 
 | Structure | Needed for | Mathlib would need | Witness plan |

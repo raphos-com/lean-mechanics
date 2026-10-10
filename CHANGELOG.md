@@ -2,6 +2,13 @@
 
 ## Unreleased
 
+### Phase 8 — homogenization of the square nexorade (in progress)
+- `Nexorade/OutOfPlane`: unit-cell statics of the square nexorade; admissible out-of-plane fields
+  are four-point bending (1 dof); **degeneracy `M₁₁ = M₂₂`**; localization; Hill–Mandel energy
+  gives the compliance `d = 2A(2a+3b)/(3EI(a+b)²) + 4A/(GSₛ a(a+b)²)` (Greco 2013, (8.10)).
+- `Nexorade/Parametric`: `(L, φ)` parametrization; stiffness (5.3) with `η = 4EI/(GSₛL²)`; shear
+  `2M/sin 2φ`; moment `LM/cos φ`; normalized moment optimal at `φ = π/8`; `D → 0` as `φ → 0⁺`.
+
 ### Phase 7 — plates (in progress)
 - `Plates/KirchhoffLove`: rectangular plate, partial derivatives, biharmonic operator, plate
   equation `DΔ²w = q`, bending moments, simply supported edges.

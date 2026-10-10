@@ -2,7 +2,7 @@
 
 Status: **reviewed**. Progress: Phase 0 ✅; Phase 1 ✅ (1.1–1.12, plus Jacobi's formula);
 Phase 2: 2.1–2.5 ✅, 2.6 necessity ✅ (sufficiency open); Phase 3 ✅; Phase 4 ✅; Phase 5 ✅ (5.5 via the `KornSetting` hypothesis structure);
-Phase 6: 6.1–6.9, 6.13 ✅; 6.10–6.12 for the bar and the EB cantilever ✅ (other beam BCs, Timoshenko weak forms open). Phase 7: 7.2, 7.3 ✅ (7.1 energy open). Milestones are roughly one file each and map to
+Phase 6: 6.1–6.9, 6.13 ✅; 6.10–6.12 for the bar and the EB cantilever ✅ (other beam BCs, Timoshenko weak forms open). Phase 7: 7.2, 7.3 ✅. Phase 8 (target, nexorade): 8.1, 8.2 ✅. Milestones are roughly one file each and map to
 `ARCHITECTURE.md` §2. Each milestone ends with: definitions → API lemmas →
 main theorems → `example` blocks → commit. Each phase ends with a
 `CHANGELOG.md` entry and updates to `GAPS.md`, `TODO.md`, `UPSTREAM.md`.
@@ -121,6 +121,23 @@ evaluated with `norm_num`.
 | 7.3 | `MindlinReissner.lean` | equations and energy; the analogue of the Timoshenko → EB limit for single-mode solutions | ✅ (equations, Navier solution, limit; energy open) |
 
 ---
+
+## Phase 8 — Homogenization of the square nexorade (`Nexorade/`) — **target**
+
+Formalization of [Greco2013] (L. Greco, *Nexorade*, homogenization of reciprocal systems as
+Kirchhoff–Love plates). Items marked *deprioritised* elsewhere in this roadmap are not on its path.
+
+| # | File | Content | Status |
+|---|---|---|---|
+| 8.1 | `OutOfPlane.lean` | unit cell statics (spherical joints, action–reaction through the lattice); admissible fields = four-point bending (1 dof); **degeneracy `M₁₁ = M₂₂`, `M₁₂ = 0`**; localization (8.8); Hill–Mandel energy ⇒ compliance `d` (8.10) | ✅ |
+| 8.2 | `Parametric.lean` | `a = L sin φ`, `b = L(cos φ − sin φ)`; `D(φ)` (5.3); shear `2M/sin 2φ` (5.5); moment `LM/cos φ` (5.6); optimum of the normalized moment at `φ = π/8` (−17%); `D → 0` as `φ → 0⁺` | ✅ |
+| 8.3 | `InPlane.lean` | membrane problem: 4 in-plane unknowns, complementary-energy minimisation, compliance `a`, `A₂₂₁₁ = 0` (no Poisson effect) | open |
+| 8.4 | `Plate.lean` | the degenerate equivalent plate (energy carried by `tr χ` only; `χ` deviatoric and twist modes energy-free); plate equation and Navier solution (5.7)–(5.8) | open |
+| 8.5 | `Static.lean` | the general static homogenization scheme for periodic frames: compliance as minimum of the cell complementary energy over admissible fields with prescribed averages | open |
+| 8.6 | — | convergence of the homogenized plate to the frame (Caillerie; Lebée–Sab): **assumed** (modelling hypothesis, `GAPS.md`); the ABAQUS comparison (§6) is numerical and out of scope | assumed |
+
+*Deprioritised* (not needed for Phase 8): 2.6 sufficiency, remaining 1D weak forms (6.12 beyond
+the bar and the cantilever), 7.1 plate energy/stationarity, 7.3 plate energy.
 
 ## Ordering and review points
 
