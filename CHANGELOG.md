@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+### Phase 5 — linear elastostatics (in progress)
+- `Elastostatics/Basic`: strain and stress fields `ε(u) = sym ∇u`, `σ = ℂε`; the **work
+  identity** `∫_P σ : ε = ∫_∂P u·σn + ∫_P b·u`; **Clapeyron** `2U = ∫ b·u + ∫ u·σn`; **Betti
+  reciprocity**; **Kirchhoff uniqueness** (solutions whose difference does no boundary work
+  differ by an infinitesimal rigid displacement).
+
 ### Phase 4 — constitutive theory (in progress)
 - `Tensor/DetDeriv`: `det` is smooth; **Jacobi's formula** `D det(F)[H] = det F · tr(F⁻¹H)`,
   i.e. `∂J/∂F = J F⁻ᵀ`.
