@@ -41,7 +41,7 @@ the corrected one.
 | (22) Shear `r = M / (cos φ sin φ)` | `shear_cellOf` (`= 2M / sin 2φ`) | ✅ |
 | (23) Moment `m = M L / cos φ` | `moment_cellOf` | ✅ |
 | (24)–(27) Degenerate plate: `ΔM + p = 0`, energy only in the mean curvature, `K = d M` | `Plate.lean`: `legendre_le`, `legendre_eq`, `DegeneratePlate` | ✅ |
-| (28)–(29) Compliance `d` and stiffness `D` | `Cell.compliance`, `Cell.energy_eq`, `compliance_cellOf`, `stiffness_cellOf` | ✅; in the `(L, φ)` form `D = EI cos φ / (2L ((1 − tan φ/3) + η/sin 2φ))` with `η = 4EI/(GSₛL²)` |
+| (28)–(30) Compliance `d`, stiffness `D` with `η = GSₛa²/EI` | `Cell.compliance`, `Cell.energy_eq`, `Cell.stiffness_eq_eta`; in `(L, φ)`: `compliance_cellOf`, `stiffness_cellOf` | ✅ |
 | (31) Euler–Bernoulli members (`GSₛ → ∞`) | `Optimum.lean`: `Cell.complianceEuler_inv`, `Cell.tendsto_compliance_shear_rigid` | ✅ |
 | §4.1 `D → 0` as `a/l → 0` | `tendsto_stiffness_zero` | ✅ |
 | (32) Shear and moment in terms of `a/l` | `Cell.shear_eq`, `Cell.moment_eq` | ✅ |

@@ -16,6 +16,7 @@ engagement length `x = a/l ∈ (0, 1/2]` ([GrecoLebeeDouthe2013], §§3–4). Wi
   `x = 1/2` (§4.2);
 * very soft members (`G Sₛ → 0`): `D / (G Sₛ) → (l/4) x (1 - x)² / q(x)`, maximal at the root
   `x₀ ≈ 0.3966` of `2x³ - 2x² + 3x - 1` (§4.2);
+* stiffness in terms of the paper's shear parameter `η = G Sₛ a² / EI` (29)–(30);
 * trade-off (§4.2): choosing the stress optimum `x = 1 - √2/2` instead of the stiffness optimum
   `x = 1/2` increases the deflection by the factor `5√2 - 6 ≈ 1.071` (≈ 7%); conversely the
   stiffness optimum increases the bending stresses by `(√2 + 1)/2 ≈ 1.207` (≈ 20%).
@@ -155,6 +156,27 @@ theorem tendsto_stiffness_soft :
   refine (hlim.mono_left nhdsWithin_le_nhds).congr' ?_
   filter_upwards [self_mem_nhdsWithin] with GS hGS
   exact (e GS (ne_of_gt hGS)).symm
+
+/-- The paper's shear parameter `η = G Sₛ a² / EI` (30), with reference length the engagement
+length `a`. -/
+def eta : ℝ := c.GS * c.a ^ 2 / c.EI
+
+/-- (29)–(30) **Stiffness in terms of `η`**:
+`D = (EI / 2) ((l - a)² / ((l - a)² + a²)) (3η / (6a + (3l - 4a) η))`. As `η → ∞` this gives the
+Euler–Bernoulli stiffness (31). -/
+theorem stiffness_eq_eta :
+    c.stiffness = c.EI / 2 * ((c.len - c.a) ^ 2 / ((c.len - c.a) ^ 2 + c.a ^ 2)) *
+      (3 * c.eta / (6 * c.a + (3 * c.len - 4 * c.a) * c.eta)) := by
+  have ha := c.a_pos
+  have hb := c.b_nonneg
+  have hE := c.EI_pos
+  have hG := c.GS_pos
+  have hl : c.len - c.a = c.a + c.b := by simp only [len]; ring
+  have h3 : 3 * c.len - 4 * c.a = 2 * c.a + 3 * c.b := by simp only [len]; ring
+  rw [hl, h3, stiffness, compliance, eta, area]
+  have : 0 < c.a + c.b := by positivity
+  field_simp
+  ring
 
 end Cell
 

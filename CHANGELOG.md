@@ -6,6 +6,8 @@
 - `Nexorade/Optimum`: formulas in `a/l` (31)–(33); Euler–Bernoulli stiffness optimal
   at `a/l = 1/2`; soft-member optimum at the root `≈ 0.3966` of `2x³ − 2x² + 3x − 1`; trade-off
   factors `5√2 − 6` (deflection) and `(√2 + 1)/2` (stresses).
+- `Nexorade/Optimum`: stiffness (29) in terms of the paper's `η = GSₛa²/EI` (30)
+  (`Cell.stiffness_eq_eta`).
 - `Nexorade/OutOfPlane`: unit-cell statics of the square nexorade; admissible out-of-plane fields
   are four-point bending (1 dof); **degeneracy `M₁₁ = M₂₂`**; localization; Hill–Mandel energy
   gives the compliance `d = 2A(2a+3b)/(3EI(a+b)²) + 4A/(GSₛ a(a+b)²)` (Greco–Lebée–Douthe 2013, (28)).
