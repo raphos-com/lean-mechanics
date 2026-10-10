@@ -12,6 +12,12 @@
 - `Beams/EulerBernoulli/Solutions`: simply supported and cantilever beams under uniform load,
   cantilever with tip load, simply supported beam with a point load anywhere (piecewise, with
   continuity and shear-jump conditions); `5qL⁴/384EI`, `qL⁴/8EI`, `PL³/3EI`, `PL³/48EI`.
+- `Beams/Timoshenko/Basic`: Timoshenko equations; simply supported and cantilever boundary
+  conditions; explicit homogeneous solutions; uniqueness of `C²` solutions.
+- `Beams/Timoshenko/Limit`: Timoshenko solution built from any `C⁴` Euler–Bernoulli solution
+  (`θ = w'`, `w_T = w − EI(w'' − c)/κGA`); **uniform convergence `w_T → w_EB` as `κGA → ∞` for
+  general loads** (simply supported and cantilever), with rate `2EI‖w''‖∞/κGA`; non-vacuity of
+  the hypotheses; canonical shear corrections `qL²/8κGA` and `PL/κGA`.
 
 ### Phase 1 — tensor algebra (in progress)
 - `Tensor/Second`: `Lin E`, transpose, trace, determinant (`det Aᵀ = det A`), dyads.

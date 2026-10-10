@@ -14,6 +14,8 @@ import ContinuumMechanics.Beams.Bar
 import ContinuumMechanics.Beams.Poly
 import ContinuumMechanics.Beams.EulerBernoulli.Basic
 import ContinuumMechanics.Beams.EulerBernoulli.Solutions
+import ContinuumMechanics.Beams.Timoshenko.Basic
+import ContinuumMechanics.Beams.Timoshenko.Limit
 
 /-!
 # ContinuumMechanics
