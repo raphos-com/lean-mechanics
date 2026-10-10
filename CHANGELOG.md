@@ -11,6 +11,10 @@
 - `Nexorade/InPlane`: membrane cell problem; `N₁₂ ≡ 0`; optimal field and **minimum complementary
   energy**; compliance diagonal with `A₁₁₁₁ = A₂₂₂₂`, `A₂₂₁₁ = 0`; the bending term of `A₁₁₁₁` is
   `a²b²(2a+b)/(12EI)` (the draft's `a²b²(16a+b)/(24EI)` does not match).
+- `Nexorade/Plate`: Legendre transform `½D(tr χ)²`; degenerate plate `M = −DΔw`, `ΔM + p = 0`;
+  Navier solution (5.7)–(5.8); end-to-end nexor moment at the plate centre.
+- `Nexorade/Homogenized`: the homogenized energies as minima of the cell complementary energy
+  (`IsLeast`), out of plane `½dM²` and in plane `½A₁₁₁₁(N₁₁² + N₂₂²)`.
 
 ### Phase 7 — plates (in progress)
 - `Plates/KirchhoffLove`: rectangular plate, partial derivatives, biharmonic operator, plate

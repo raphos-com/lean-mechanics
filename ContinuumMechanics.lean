@@ -54,6 +54,8 @@ import ContinuumMechanics.Plates.MindlinReissner
 import ContinuumMechanics.Nexorade.OutOfPlane
 import ContinuumMechanics.Nexorade.Parametric
 import ContinuumMechanics.Nexorade.InPlane
+import ContinuumMechanics.Nexorade.Plate
+import ContinuumMechanics.Nexorade.Homogenized
 
 /-!
 # ContinuumMechanics
