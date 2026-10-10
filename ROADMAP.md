@@ -122,7 +122,7 @@ evaluated with `norm_num`.
 
 ---
 
-## Phase 8 — Homogenization of the square nexorade (`Nexorade/`) — **target**
+## Phase 8 — Homogenization of the square nexorade (separate library `Nexorade/`) — **target**
 
 Formalization of [Greco2013] (L. Greco, *Nexorade*, homogenization of reciprocal systems as
 Kirchhoff–Love plates). Items marked *deprioritised* elsewhere in this roadmap are not on its path.

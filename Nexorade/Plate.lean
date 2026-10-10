@@ -1,5 +1,5 @@
 import ContinuumMechanics.Plates.Navier
-import ContinuumMechanics.Nexorade.Parametric
+import Nexorade.Parametric
 
 /-!
 # The degenerate equivalent plate of the nexorade and its Navier solution
@@ -116,6 +116,28 @@ theorem navier (p₀ : ℝ) :
     ring
   · simp only [hM, w, mode_apply, sa]; simp
   · simp only [hM, w, mode_apply, sb]; simp
+
+/-- The degenerate plate is the Kirchhoff–Love plate (`Plates.Plate`) with **Poisson ratio
+`ν = 1`**: then `M_x = M_y = -D Δw` and the twisting moment `-D(1 - ν) w_xy` vanishes. -/
+def toPlate : Plates.Plate := ⟨P.L₁, P.L₂, P.D, 1, P.L₁_pos, P.L₂_pos, P.D_pos⟩
+
+theorem moment_eq_momentX (w : ℝ → ℝ → ℝ) (x y : ℝ) :
+    P.moment w x y = P.toPlate.momentX w x y := by
+  simp [moment, Plates.Plate.momentX, toPlate]
+
+theorem moment_eq_momentY (w : ℝ → ℝ → ℝ) (x y : ℝ) :
+    P.moment w x y = P.toPlate.momentY w x y := by
+  simp only [moment, Plates.Plate.momentY, toPlate, one_mul]; ring
+
+/-- The Navier solution of the degenerate plate solves the Kirchhoff–Love problem
+`D Δ²w = p` with simply supported edges (`Plates.Plate.navier` with `ν = 1`). -/
+theorem navier_kirchhoffLove (p₀ : ℝ) :
+    let α := π / P.L₁
+    let β := π / P.L₂
+    let w := mode (p₀ / (P.D * (α ^ 2 + β ^ 2) ^ 2)) α β
+    P.toPlate.Equation (mode p₀ α β) w ∧ P.toPlate.SimplySupported w := by
+  have := P.toPlate.navier 1 1 one_pos p₀
+  simpa [toPlate] using this
 
 end DegeneratePlate
 

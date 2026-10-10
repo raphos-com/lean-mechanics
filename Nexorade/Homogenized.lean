@@ -1,5 +1,5 @@
-import ContinuumMechanics.Nexorade.InPlane
-import ContinuumMechanics.Nexorade.Plate
+import Nexorade.InPlane
+import Nexorade.Plate
 
 /-!
 # The homogenized nexorade plate (static approach)

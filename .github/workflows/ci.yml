@@ -52,7 +52,7 @@ jobs:
         run: |
           lake update ContinuumMechanics
           lake exe cache get
-          lake build ContinuumMechanics:docs
+          lake build ContinuumMechanics:docs Nexorade:docs
 
       - uses: actions/upload-pages-artifact@v3
         with:

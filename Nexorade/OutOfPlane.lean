@@ -144,6 +144,38 @@ def beamEnergy (f : Forces) : ℝ :=
       c.a * (c.m₂ f ^ 2 + c.m₂ f * c.m₃ f + c.m₃ f ^ 2) / 3) / (2 * c.EI) +
     (c.a * f.f₀ ^ 2 + c.b * (f.f₀ + f.f₁) ^ 2 + c.a * (f.f₀ + f.f₁ + f.f₂) ^ 2) / (2 * c.GS)
 
+/-- The segment formulas are the integrals of the piecewise-linear moment and the
+piecewise-constant shear: `beamEnergy = ∫ m² / (2EI) + ∫ r² / (2GSₛ)`. -/
+theorem beamEnergy_eq_integral (f : Forces) :
+    c.beamEnergy f =
+      ((∫ x in (0 : ℝ)..c.a, (0 + (c.m₁ f - 0) * x / c.a) ^ 2) +
+          (∫ x in (0 : ℝ)..c.b, (c.m₁ f + (c.m₂ f - c.m₁ f) * x / c.b) ^ 2) +
+          (∫ x in (0 : ℝ)..c.a, (c.m₂ f + (c.m₃ f - c.m₂ f) * x / c.a) ^ 2)) / (2 * c.EI) +
+        ((∫ _x in (0 : ℝ)..c.a, f.f₀ ^ 2) + (∫ _x in (0 : ℝ)..c.b, (f.f₀ + f.f₁) ^ 2) +
+          (∫ _x in (0 : ℝ)..c.a, (f.f₀ + f.f₁ + f.f₂) ^ 2)) / (2 * c.GS) := by
+  have ha := c.a_pos.ne'
+  have hmid : (∫ x in (0 : ℝ)..c.b, (c.m₁ f + (c.m₂ f - c.m₁ f) * x / c.b) ^ 2) =
+      c.b * (c.m₁ f ^ 2 + c.m₁ f * c.m₂ f + c.m₂ f ^ 2) / 3 := by
+    rcases eq_or_ne c.b 0 with hb | hb
+    · rw [hb]; simp
+    · exact integral_linear_sq _ _ _ hb
+  rw [integral_linear_sq _ _ _ ha, integral_linear_sq _ _ _ ha, hmid]
+  simp [beamEnergy]
+
+/-- `intMoment` is the integral of the piecewise-linear moment. -/
+theorem intMoment_eq_integral (f : Forces) :
+    c.intMoment f =
+      (∫ x in (0 : ℝ)..c.a, (0 + (c.m₁ f - 0) * x / c.a)) +
+        (∫ x in (0 : ℝ)..c.b, (c.m₁ f + (c.m₂ f - c.m₁ f) * x / c.b)) +
+        (∫ x in (0 : ℝ)..c.a, (c.m₂ f + (c.m₃ f - c.m₂ f) * x / c.a)) := by
+  have ha := c.a_pos.ne'
+  have hmid : (∫ x in (0 : ℝ)..c.b, (c.m₁ f + (c.m₂ f - c.m₁ f) * x / c.b)) =
+      c.b * (c.m₁ f + c.m₂ f) / 2 := by
+    rcases eq_or_ne c.b 0 with hb | hb
+    · rw [hb]; simp
+    · exact integral_linear _ _ _ hb
+  rw [integral_linear _ _ _ ha, integral_linear _ _ _ ha, hmid, intMoment]
+
 /-- Complementary energy of the unit cell. -/
 def energy (f : Forces) : ℝ := c.beamEnergy f + c.beamEnergy (partner f)
 

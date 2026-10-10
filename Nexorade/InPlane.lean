@@ -1,4 +1,4 @@
-import ContinuumMechanics.Nexorade.OutOfPlane
+import Nexorade.OutOfPlane
 
 /-!
 # The nexorade unit cell: in-plane (membrane) auxiliary problem

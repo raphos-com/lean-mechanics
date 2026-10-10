@@ -1,6 +1,6 @@
 name = "ContinuumMechanics"
 version = "0.1.0"
-defaultTargets = ["ContinuumMechanics"]
+defaultTargets = ["ContinuumMechanics", "Nexorade"]
 
 [leanOptions]
 pp.unicode.fun = true
@@ -17,3 +17,6 @@ rev = "v4.34.1"
 
 [[lean_lib]]
 name = "ContinuumMechanics"
+
+[[lean_lib]]
+name = "Nexorade"

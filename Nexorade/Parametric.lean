@@ -1,6 +1,6 @@
 import Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic
 import Mathlib.Analysis.SpecialFunctions.Sqrt
-import ContinuumMechanics.Nexorade.OutOfPlane
+import Nexorade.OutOfPlane
 
 /-!
 # Parametric study of the square nexorade
