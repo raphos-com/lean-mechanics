@@ -7,6 +7,8 @@ pp.unicode.fun = true
 autoImplicit = false
 relaxedAutoImplicit = false
 weak.linter.mathlibStandardSet = true
+# Mathlib's copyright-header convention does not apply (no license chosen yet).
+weak.linter.style.header = false
 
 [[require]]
 name = "mathlib"

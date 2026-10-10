@@ -36,7 +36,7 @@ open Lean in
     IO.println "axiom check: ok"
   else
     for (n, ax) in bad do IO.eprintln s!"{n} depends on {ax}"
-    throw <| .userError "non-standard axioms found"
+    throwError "non-standard axioms found"
 LEAN
 if ! lake env lean "$tmp"; then
   status=1
