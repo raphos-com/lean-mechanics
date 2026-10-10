@@ -31,6 +31,7 @@ import ContinuumMechanics.Constitutive.Hyperelastic.NeoHookean
 import ContinuumMechanics.Constitutive.Hyperelastic.MooneyRivlin
 import ContinuumMechanics.Elastostatics.Basic
 import ContinuumMechanics.Elastostatics.MinimumEnergy
+import ContinuumMechanics.Elastostatics.Weak
 import ContinuumMechanics.Beams.Interval
 import ContinuumMechanics.Beams.Bar
 import ContinuumMechanics.Beams.Poly

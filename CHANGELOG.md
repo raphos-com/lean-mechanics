@@ -2,7 +2,10 @@
 
 ## Unreleased
 
-### Phase 5 — linear elastostatics (in progress)
+### Phase 5 — linear elastostatics
+- `Elastostatics/Weak`: abstract weak formulation `⟪ℂε(u), ε(v)⟫ = ℓ(v)` under the `KornSetting`
+  hypothesis structure (Korn's inequality); **Lax–Milgram well-posedness**; the weak solution is the
+  unique minimiser of `½a(v,v) − ℓ(v)`; non-vacuity witness.
 - `Elastostatics/Basic`: strain and stress fields `ε(u) = sym ∇u`, `σ = ℂε`; the **work
   identity** `∫_P σ : ε = ∫_∂P u·σn + ∫_P b·u`; **Clapeyron** `2U = ∫ b·u + ∫ u·σn`; **Betti
   reciprocity**; **Kirchhoff uniqueness** (solutions whose difference does no boundary work

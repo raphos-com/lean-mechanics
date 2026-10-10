@@ -33,10 +33,25 @@ region, and `smallBoxes`/`exists_smallBox` (`Stress/Regions.lean`) supply the fa
 required by the localisation theorems, so `local_equilibrium_of_boxes` and
 `symmetric_of_moment_balance_of_boxes` hold with no hypothesis structure at all.
 
+### `KornSetting` (`ContinuumMechanics/Elastostatics/Weak.lean`)
+
+*Statement.* Hilbert spaces `V` (admissible displacements) and `H` (strain fields), a continuous
+strain operator `ε : V → H`, a symmetric elasticity operator `ℂ` with `⟪ℂe, e⟫ ≥ c‖e‖²`, and
+**Korn's inequality** `‖v‖ ≤ K‖ε(v)‖`.
+
+*Used by.* `KornSetting.existsUnique_weak` (Lax–Milgram well-posedness of 3D linear
+elastostatics), `energy_eq_add`, `isMinOn_energy`, `eq_of_energy_eq` (minimum potential energy).
+
+*Source.* [Ciarlet1988], §6.3; [Brezis2011], §9.4.
+
+*Mathlib would need.* `H¹(Ω; ℝ³)` on Lipschitz domains, Korn's inequality (via Nečas / Lions
+lemma), the trace theorem `H¹(Ω) → L²(∂Ω)` (continuity of the surface-load functional).
+
+*Non-vacuity witness.* `KornSetting.ofIdentity` (`ε = id`, `ℂ = k I`, `K = 1`), the abstract form
+of the 1D bar of `Sobolev1D/BarWeak`, whose `H¹` model is constructed without hypotheses.
+
 ## Planned
 
 | Structure | Needed for | Mathlib would need | Witness plan |
 |---|---|---|---|
-| `KornInequality` | Phase 5 weak form | Sobolev spaces on bounded domains, Korn's inequality | — |
-| `HasTraceOperator` | Phase 5 weak form | trace theorem `H¹(Ω) → L²(∂Ω)` | — |
 | `SaintVenantCompatible` | Phase 2 stretch | Poincaré lemma on simply connected open sets | — |
