@@ -26,6 +26,9 @@
 ### Phase 3 — stress
 - `Stress/BoxRegion`: **non-vacuity of `DivergenceRegion`**: the unit box of any orthonormal basis,
   with face measures and normals `±eᵢ`, via Mathlib's divergence theorem on boxes.
+- `Stress/Regions`: homothetic images `c + rP` of divergence regions; small boxes around every
+  point; **balance of forces / moments on small boxes ⇒ `div σ + b = 0` and `σ = σᵀ`**,
+  hypothesis-free.
 - `Stress/Triangle`: surface integrals over flat triangles (affine parametrisation, Gram-determinant
   area); `h⁻² ∫_{x+hT} f dA → area(T) f(x)`.
 - `Stress/Cauchy`: **Cauchy's theorem by the tetrahedron argument**. From force balance on Cauchy

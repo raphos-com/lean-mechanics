@@ -21,6 +21,7 @@ import ContinuumMechanics.Stress.Piola
 import ContinuumMechanics.Stress.Criteria
 import ContinuumMechanics.Stress.Balance
 import ContinuumMechanics.Stress.BoxRegion
+import ContinuumMechanics.Stress.Regions
 import ContinuumMechanics.Stress.Triangle
 import ContinuumMechanics.Stress.Cauchy
 import ContinuumMechanics.Constitutive.LinearIsotropic

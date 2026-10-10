@@ -28,8 +28,10 @@ rectangular boxes (`MeasureTheory.integral_divergence_of_hasFDerivAt_off_countab
 *Non-vacuity witness.* `ContinuumMechanics.boxRegion` (`Stress/BoxRegion.lean`): in any
 finite-dimensional `E` and for any orthonormal basis `e`, the unit box `{x | 0 < x · eᵢ < 1}` with
 `dA` = the sum of the Lebesgue measures of the open faces and `n = ±eᵢ`, transporting Mathlib's box
-theorem along the (volume-preserving) coordinate map. Still to do: the family of small boxes
-`x₀ + r·box` needed to instantiate the localisation theorems.
+theorem along the (volume-preserving) coordinate map. `DivergenceRegion.homothety` rescales any
+region, and `smallBoxes`/`exists_smallBox` (`Stress/Regions.lean`) supply the family of small parts
+required by the localisation theorems, so `local_equilibrium_of_boxes` and
+`symmetric_of_moment_balance_of_boxes` hold with no hypothesis structure at all.
 
 ## Planned
 
