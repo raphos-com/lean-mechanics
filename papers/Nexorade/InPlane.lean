@@ -14,7 +14,8 @@ forces on `v` (along `e₂`) are `partner X` along `e₁` and `partner Y` along 
 Equilibrium of both beams (forces and in-plane moments, hinged ends) leaves **four** free
 unknowns; prescribing the macroscopic membrane forces `N₁₁ = (1/A)∫_h N`, `N₂₂ = (1/A)∫_v N`
 removes two, and the remaining two are fixed by **minimising the complementary energy**
-([Greco2013], App. 8).
+(the membrane problem of the static approach of [GrecoLebeeDouthe2013],
+§2.2, which the paper leaves to future work).
 
 ## Main results
 
@@ -30,12 +31,11 @@ removes two, and the remaining two are fixed by **minimising the complementary e
   `A₁₁₁₁ = (1/A) (a b (2a + b) / (2 G Sₛ) + (4a³ + 6a²b + 5ab² + 2b³) / (2 E S)
                 + a² b² (2a + b) / (12 E I))`.
 
-  The shear and axial terms agree with [Greco2013], App. 8; the bending term there reads
-  `a²b²(16a + b)/(24EI)`, which does not match the cell problem (here `a²b²(4a + 2b)/(24EI)`).
 
 ## References
 
-* [Greco2013] L. Greco, *Nexorade* (homogenization of reciprocal systems), draft 2013, App. 8.
+* [GrecoLebeeDouthe2013] L. Greco, A. Lebée, C. Douthe, *Investigation of the elastic behavior of
+  reciprocal systems using homogenization techniques* (2013).
 -/
 
 noncomputable section
@@ -139,7 +139,7 @@ theorem kernel {D : Forces} (h1 : Forces.sum D = 0) (h2 : c.m₃ D = 0) (h3 : c.
   linarith
 
 /-- **Minimum complementary energy**: among admissible in-plane fields with prescribed `N₁₁, N₂₂`,
-the optimal field has the least energy. [Greco2013], App. 8. -/
+the optimal field has the least energy. [GrecoLebeeDouthe2013], §2.2. -/
 theorem energy_opt_le {ES EI GS : ℝ} (hES : 0 < ES) (hEI : 0 < EI) (hGS : 0 < GS) {F : InPlane}
     (hF : Admissible c F) :
     energy c ES EI GS (opt c (N11 c F) (N22 c F)) ≤ energy c ES EI GS F := by

@@ -6,7 +6,7 @@ import Nexorade.OutOfPlane
 # Parametric study of the square nexorade
 
 The square nexorade cell is described by the scale `L > 0` and the angle `φ ∈ (0, π/4]` between
-the nexors and the Cartesian axes ([Greco2013], (4.1)):
+the nexors and the Cartesian axes ([GrecoLebeeDouthe2013], (19)):
 
 `a = L sin φ`,  `b = L (cos φ - sin φ)`,  so `a + b = L cos φ`, `A = L²`,
 nexor length `l = 2a + b = L (cos φ + sin φ)`.
@@ -17,9 +17,10 @@ nexor length `l = 2a + b = L (cos φ + sin φ)`.
 * `area_cellOf`: `A = L²`.
 * `compliance_cellOf`: `d = (2L / (EI cos φ)) ((1 - tan φ / 3) + η / sin 2φ)`,
   `η = 4 EI / (G Sₛ L²)`; hence the stiffness `D = EI cos φ / (2L ((1 - tan φ / 3) + η / sin 2φ))`
-  ([Greco2013], (5.3)).
-* `shear_cellOf`: the nexor shear is `r = 2M / sin 2φ`, independent of `L` ([Greco2013], (5.5)).
-* `moment_cellOf`: the maximal nexor moment is `m = L M / cos φ` ([Greco2013], (5.6)).
+  ([GrecoLebeeDouthe2013], (28)–(29)).
+* `shear_cellOf`: the nexor shear is `r = 2M / sin 2φ`, independent of `L`
+  ([GrecoLebeeDouthe2013], (22)).
+* `moment_cellOf`: the maximal nexor moment is `m = L M / cos φ` ([GrecoLebeeDouthe2013], (23)).
 * `two_mul_cos_mul_le`, `normalized_moment_optimal`: the moment per unit nexor length,
   `m / (2l) = M / (2 cos φ (cos φ + sin φ))`, is smallest at **`φ = π/8`**, where it is
   `2(√2 - 1) ≈ 0.828` times its value at `φ = 0` or `π/4` (a 17% reduction).
@@ -27,7 +28,8 @@ nexor length `l = 2a + b = L (cos φ + sin φ)`.
 
 ## References
 
-* [Greco2013] L. Greco, *Nexorade* (homogenization of reciprocal systems), draft 2013, §§4–5.
+* [GrecoLebeeDouthe2013] L. Greco, A. Lebée, C. Douthe, *Investigation of the elastic behavior of
+  reciprocal systems using homogenization techniques* (2013).
 -/
 
 open Real Filter Topology
@@ -47,7 +49,7 @@ theorem cos_pos_of_le_pi_div_four {φ : ℝ} (h0 : 0 ≤ φ) (h : φ ≤ π / 4)
 theorem sin_pos_of_le_pi_div_four {φ : ℝ} (h0 : 0 < φ) (h : φ ≤ π / 4) : 0 < sin φ :=
   sin_pos_of_pos_of_lt_pi h0 (by linarith [pi_pos])
 
-/-- The nexorade cell of scale `L` and angle `φ ∈ (0, π/4]`. [Greco2013], (4.1). -/
+/-- The nexorade cell of scale `L` and angle `φ ∈ (0, π/4]`. [GrecoLebeeDouthe2013], (19). -/
 def cellOf (L EI GS φ : ℝ) (hL : 0 < L) (hEI : 0 < EI) (hGS : 0 < GS) (hφ₀ : 0 < φ)
     (hφ : φ ≤ π / 4) : Cell where
   a := L * sin φ
@@ -69,7 +71,7 @@ theorem area_cellOf : (cellOf L EI GS φ hL hEI hGS hφ₀ hφ).area = L ^ 2 := 
   linear_combination L ^ 2 * sin_sq_add_cos_sq φ
 
 /-- `d = (2L / (EI cos φ)) ((1 - tan φ / 3) + η / sin 2φ)` with `η = 4 EI / (G Sₛ L²)`.
-[Greco2013], (5.1)–(5.3). -/
+[GrecoLebeeDouthe2013], (28)–(29). -/
 theorem compliance_cellOf :
     (cellOf L EI GS φ hL hEI hGS hφ₀ hφ).compliance =
       2 * L / (EI * cos φ) * ((1 - tan φ / 3) + 4 * EI / (GS * L ^ 2) / sin (2 * φ)) := by
@@ -80,7 +82,8 @@ theorem compliance_cellOf :
   field_simp [hc.ne', hs.ne']
   ring
 
-/-- The stiffness `D = EI cos φ / (2L ((1 - tan φ / 3) + η / sin 2φ))`. [Greco2013], (5.3). -/
+/-- The stiffness `D = EI cos φ / (2L ((1 - tan φ / 3) + η / sin 2φ))`.
+[GrecoLebeeDouthe2013], (29). -/
 theorem stiffness_cellOf :
     (cellOf L EI GS φ hL hEI hGS hφ₀ hφ).stiffness =
       EI * cos φ / (2 * L * ((1 - tan φ / 3) + 4 * EI / (GS * L ^ 2) / sin (2 * φ))) := by
@@ -89,7 +92,7 @@ theorem stiffness_cellOf :
   field_simp
 
 /-- The nexor **shear** under the plate moment `M` is `2M / sin 2φ`, independent of the scale `L`.
-[Greco2013], (5.5). -/
+[GrecoLebeeDouthe2013], (22). -/
 theorem shear_cellOf (M : ℝ) :
     let c := cellOf L EI GS φ hL hEI hGS hφ₀ hφ
     M * c.area / (c.a * (c.a + c.b)) = 2 * M / sin (2 * φ) := by
@@ -102,7 +105,7 @@ theorem shear_cellOf (M : ℝ) :
   ring
 
 /-- The maximal nexor **moment** (`s a`, on the middle segment) is `L M / cos φ`.
-[Greco2013], (5.6). -/
+[GrecoLebeeDouthe2013], (23). -/
 theorem moment_cellOf (M : ℝ) :
     let c := cellOf L EI GS φ hL hEI hGS hφ₀ hφ
     M * c.area / (c.a * (c.a + c.b)) * c.a = L * M / cos φ := by
@@ -114,7 +117,7 @@ theorem moment_cellOf (M : ℝ) :
   field_simp [hc, hs]
   ring
 
-/-- The nexor length `l = 2a + b = L (cos φ + sin φ)`. [Greco2013], (4.2). -/
+/-- The nexor length `l = 2a + b = L (cos φ + sin φ)`. [GrecoLebeeDouthe2013], (19). -/
 theorem length_cellOf :
     let c := cellOf L EI GS φ hL hEI hGS hφ₀ hφ
     2 * c.a + c.b = L * (cos φ + sin φ) := by
@@ -143,7 +146,7 @@ theorem two_mul_cos_mul_pi_div_eight :
 /-- **Optimal angle for the normalized moment**: the moment per unit nexor length
 `m / (2l) = M / (2 cos φ (cos φ + sin φ))` is minimal at `φ = π/8`, where it equals
 `M / (1 + √2)`, i.e. `2(√2 - 1) ≈ 0.828` times its value `M / 2` at `φ = 0` and `φ = π/4`.
-[Greco2013], §5. -/
+[GrecoLebeeDouthe2013], §4.1. -/
 theorem normalized_moment_optimal {M : ℝ} (hM : 0 ≤ M) (φ : ℝ)
     (hφ : 0 < 2 * cos φ * (cos φ + sin φ)) :
     M / (2 * cos (π / 8) * (cos (π / 8) + sin (π / 8))) ≤
@@ -165,7 +168,8 @@ theorem two_mul_cos_mul_pi_div_four : 2 * cos (π / 4) * (cos (π / 4) + sin (π
 
 /-- **Shear-dominated limit**: with finite shear stiffness, the plate stiffness
 `D(φ) = EI cos φ / (2L ((1 - tan φ / 3) + η / sin 2φ))` (`η > 0`) tends to `0` as `φ → 0⁺`;
-for Euler–Bernoulli nexors (`η = 0`) it tends to `EI / (2L)` instead. [Greco2013], §5. -/
+for Euler–Bernoulli nexors (`η = 0`) it tends to `EI / (2L)` instead.
+[GrecoLebeeDouthe2013], §4.1. -/
 theorem tendsto_stiffness_zero {EI L η : ℝ} (hL : 0 < L) (hη : 0 < η) :
     Tendsto (fun φ => EI * cos φ / (2 * L * ((1 - tan φ / 3) + η / sin (2 * φ))))
       (𝓝[>] 0) (𝓝 0) := by

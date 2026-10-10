@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 300" width="560" height="300" role="img" aria-label="Shear and moment diagrams of a nexor"><title>Shear and moment diagrams of a nexor</title><style>
+  .bg{fill:#fcfcfb}.ink{fill:#0b0b0b}.ink2{fill:#52514e}.grid{stroke:#e4e3df}
+  .axis{stroke:#8a8984}.s1{stroke:#2a78d6;fill:none}.s2{stroke:#eb6834;fill:none}
+  .f1{fill:#2a78d6}.f2{fill:#eb6834}.node{fill:#fcfcfb;stroke:#0b0b0b}
+  .cell{fill:none;stroke:#8a8984;stroke-dasharray:4 3}
+  .fade{stroke:#b9b8b2}
+  @media (prefers-color-scheme: dark){
+    .bg{fill:#1a1a19}.ink{fill:#f0efec}.ink2{fill:#c3c2b7}.grid{stroke:#33322f}
+    .axis{stroke:#6f6e69}.s1{stroke:#3987e5}.s2{stroke:#d95926}
+    .f1{fill:#3987e5}.f2{fill:#d95926}.node{fill:#1a1a19;stroke:#f0efec}
+    .fade{stroke:#4a4945}
+  }
+  text{font-family:-apple-system,Segoe UI,Helvetica,Arial,sans-serif}
+</style><rect class="bg" width="560" height="300" rx="8"/><text class="ink" x="16" y="26" font-size="15" font-weight="600">Four-point bending of each nexor under the plate moment M</text><line class="axis" x1="60" y1="105" x2="520" y2="105" stroke-width="1"/><path class="s1" d="M60.0,73.0 L195.3,73.0 L195.3,105.0 L384.7,105.0 L384.7,137.0 L520.0,137.0" stroke-width="2"/><text class="ink2" x="60" y="63" font-size="13">shear r = M / (cos φ sin φ)</text><line class="axis" x1="60" y1="250" x2="520" y2="250" stroke-width="1"/><path class="s2" d="M60.0,250.0 L195.3,190.0 L384.7,190.0 L520.0,250.0" stroke-width="2"/><text class="ink2" x="201" y="182" font-size="13">moment m = M L / cos φ</text><text class="ink2" x="124" y="270" font-size="13">a</text><text class="ink2" x="286" y="270" font-size="13">b</text><text class="ink2" x="448" y="270" font-size="13">a</text><circle class="node" cx="60.0" cy="250" r="4" stroke-width="1.5"/><circle class="node" cx="195.3" cy="250" r="4" stroke-width="1.5"/><circle class="node" cx="384.7" cy="250" r="4" stroke-width="1.5"/><circle class="node" cx="520.0" cy="250" r="4" stroke-width="1.5"/></svg>

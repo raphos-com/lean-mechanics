@@ -124,17 +124,17 @@ evaluated with `norm_num`.
 
 ## Phase 8 — Homogenization of the square nexorade (separate library `papers/Nexorade/`) — **target**
 
-Formalization of [Greco2013] (L. Greco, *Nexorade*, homogenization of reciprocal systems as
-Kirchhoff–Love plates). Items marked *deprioritised* elsewhere in this roadmap are not on its path.
+Formalization of [GrecoLebeeDouthe2013] (L. Greco, A. Lebée, C. Douthe, *Investigation of the
+elastic behavior of reciprocal systems using homogenization techniques*, 2013). Items marked *deprioritised* elsewhere in this roadmap are not on its path.
 
 | # | File | Content | Status |
 |---|---|---|---|
-| 8.1 | `OutOfPlane.lean` | unit cell statics (spherical joints, action–reaction through the lattice); admissible fields = four-point bending (1 dof); **degeneracy `M₁₁ = M₂₂`, `M₁₂ = 0`**; localization (8.8); Hill–Mandel energy ⇒ compliance `d` (8.10) | ✅ |
-| 8.2 | `Parametric.lean` | `a = L sin φ`, `b = L(cos φ − sin φ)`; `D(φ)` (5.3); shear `2M/sin 2φ` (5.5); moment `LM/cos φ` (5.6); optimum of the normalized moment at `φ = π/8` (−17%); `D → 0` as `φ → 0⁺` | ✅ |
-| 8.3 | `InPlane.lean` | membrane problem: 4 in-plane unknowns, complementary-energy minimisation, compliance `a`, `A₂₂₁₁ = 0` (no Poisson effect), `N₁₂ ≡ 0`; bending term of `A₁₁₁₁` corrected | ✅ |
-| 8.4 | `Plate.lean` | the degenerate equivalent plate (energy carried by `tr χ` only; `χ` deviatoric and twist modes energy-free); plate equation and Navier solution (5.7)–(5.8); nexor moment at the centre | ✅ |
+| 8.1 | `OutOfPlane.lean` | unit cell statics (spherical joints, action–reaction through the lattice); admissible fields = four-point bending (1 dof); **degeneracy `M₁₁ = M₂₂`, `M₁₂ = 0`**; localization (22)–(23); Hill–Mandel energy ⇒ compliance `d` (28) | ✅ |
+| 8.2 | `Parametric.lean` | `a = L sin φ`, `b = L(cos φ − sin φ)`; `D(φ)` (29); shear `2M/sin 2φ` (22); moment `LM/cos φ` (23); optimum of the normalized moment at `φ = π/8` (−17%); `D → 0` as `φ → 0⁺` | ✅ |
+| 8.3 | `InPlane.lean` | membrane problem: 4 in-plane unknowns, complementary-energy minimisation, compliance `a`, `A₂₂₁₁ = 0` (no Poisson effect), `N₁₂ ≡ 0` | ✅ |
+| 8.4 | `Plate.lean` | the degenerate equivalent plate (energy carried by `tr χ` only; `χ` deviatoric and twist modes energy-free); plate equation and Navier solution (34)–(36); nexor moment at the centre | ✅ |
 | 8.5 | `Homogenized.lean` | the static scheme: plate compliance as the minimum of the cell complementary energy over admissible fields with prescribed averages — proved for the nexorade (`IsLeast`); a general-frame version is deprioritised | ✅ (instance) |
-| 8.6 | — | convergence of the homogenized plate to the frame (Caillerie; Lebée–Sab): **assumed** (modelling hypothesis, `GAPS.md`); the ABAQUS comparison (§6) is numerical and out of scope | assumed |
+| 8.6 | — | convergence of the homogenized plate to the frame (Caillerie; Lebée–Sab): **assumed** (modelling hypothesis, `GAPS.md`); the ABAQUS comparison (§5.2) is numerical and out of scope | assumed |
 
 *Deprioritised* (not needed for Phase 8): 2.6 sufficiency, remaining 1D weak forms (6.12 beyond
 the bar and the cantilever), 7.1 plate energy/stationarity, 7.3 plate energy.

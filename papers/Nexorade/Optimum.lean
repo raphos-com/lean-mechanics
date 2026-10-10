@@ -5,7 +5,7 @@ import Nexorade.OutOfPlane
 /-!
 # Design formulas and optima in terms of the relative engagement length `a/l`
 
-The final paper expresses the results through the member length `l = 2a + b` and the relative
+The paper expresses the results through the member length `l = 2a + b` and the relative
 engagement length `x = a/l ∈ (0, 1/2]` ([GrecoLebeeDouthe2013], §§3–4). With `q(x) = x² + (1-x)²`
 (so that the cell area is `A = l² q(x)`):
 

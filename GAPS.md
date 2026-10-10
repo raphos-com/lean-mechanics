@@ -58,7 +58,7 @@ response converges to that of the Kirchhoff–Love plate whose compliance is giv
 
 *Used by.* Nothing in Lean: Phase 8 *defines* the equivalent plate by the cell problem and proves
 the cell results; the convergence statement is the modelling hypothesis that gives them physical
-meaning, as in [Greco2013], which recalls it from [Caillerie1984] and [LebeeSab2013].
+meaning, as in [GrecoLebeeDouthe2013], which recalls it from [Caillerie1984] and [LebeeSab2013].
 
 *Mathlib would need.* Two-scale convergence / Γ-convergence for discrete lattices, Korn-type
 inequalities for frames.

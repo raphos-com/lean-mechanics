@@ -3,19 +3,19 @@
 ## Unreleased
 
 ### Phase 8 — homogenization of the square nexorade (separate library `papers/Nexorade/`)
-- `Nexorade/Optimum`: final-version formulas in `a/l` (31)–(33); Euler–Bernoulli stiffness optimal
+- `Nexorade/Optimum`: formulas in `a/l` (31)–(33); Euler–Bernoulli stiffness optimal
   at `a/l = 1/2`; soft-member optimum at the root `≈ 0.3966` of `2x³ − 2x² + 3x − 1`; trade-off
   factors `5√2 − 6` (deflection) and `(√2 + 1)/2` (stresses).
 - `Nexorade/OutOfPlane`: unit-cell statics of the square nexorade; admissible out-of-plane fields
   are four-point bending (1 dof); **degeneracy `M₁₁ = M₂₂`**; localization; Hill–Mandel energy
-  gives the compliance `d = 2A(2a+3b)/(3EI(a+b)²) + 4A/(GSₛ a(a+b)²)` (Greco 2013, (8.10)).
-- `Nexorade/Parametric`: `(L, φ)` parametrization; stiffness (5.3) with `η = 4EI/(GSₛL²)`; shear
+  gives the compliance `d = 2A(2a+3b)/(3EI(a+b)²) + 4A/(GSₛ a(a+b)²)` (Greco–Lebée–Douthe 2013, (28)).
+- `Nexorade/Parametric`: `(L, φ)` parametrization; stiffness (29) with `η = 4EI/(GSₛL²)`; shear
   `2M/sin 2φ`; moment `LM/cos φ`; normalized moment optimal at `φ = π/8`; `D → 0` as `φ → 0⁺`.
 - `Nexorade/InPlane`: membrane cell problem; `N₁₂ ≡ 0`; optimal field and **minimum complementary
   energy**; compliance diagonal with `A₁₁₁₁ = A₂₂₂₂`, `A₂₂₁₁ = 0`; the bending term of `A₁₁₁₁` is
-  `a²b²(2a+b)/(12EI)` (the draft's `a²b²(16a+b)/(24EI)` does not match).
+  `a²b²(2a+b)/(12EI)`.
 - `Nexorade/Plate`: Legendre transform `½D(tr χ)²`; degenerate plate `M = −DΔw`, `ΔM + p = 0`;
-  Navier solution (5.7)–(5.8); end-to-end nexor moment at the plate centre.
+  Navier solution (34)–(36); end-to-end nexor moment at the plate centre.
 - `Nexorade/Homogenized`: the homogenized energies as minima of the cell complementary energy
   (`IsLeast`), out of plane `½dM²` and in plane `½A₁₁₁₁(N₁₁² + N₂₂²)`.
 

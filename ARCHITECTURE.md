@@ -1,7 +1,5 @@
 # ContinuumMechanics — Architecture
 
-Status: **draft for review** (Process step 1). No Lean code exists yet.
-
 This document fixes the module layout, the core type choices, naming
 conventions, and the "hypotheses as structures" discipline. It also records
 the Mathlib survey this design rests on (§7), so that every choice below can be

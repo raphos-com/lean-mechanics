@@ -13,21 +13,32 @@ folder proves the paper's closed-form results from the statics of the two-beam u
 on the [`ContinuumMechanics`](../../ContinuumMechanics) library (Kirchhoff–Love plates and their Navier
 solutions).
 
-Source used: the final version (Drive, 2013-09-18). The in-plane analysis comes from the authors'
-earlier draft (`5.1`, May 2013); the final paper leaves membrane behaviour to future work.
+<p align="center">
+  <img src="figures/unit-cell.svg" alt="Square nexorade pattern with the two-beam unit cell highlighted" width="48%">
+  <img src="figures/four-point-bending.svg" alt="Four-point bending of a nexor: shear and moment diagrams" width="48%">
+</p>
+<p align="center">
+  <img src="figures/moment.svg" alt="Maximal nexor moment against a/l, minimal at 1 − √2/2" width="48%">
+  <img src="figures/stiffness.svg" alt="Plate stiffness against a/l for stiff and soft members" width="48%">
+</p>
+
+The figures are drawn by [`figures/generate.py`](figures/generate.py) from the formulas proved here:
+the unit cell (§3.1), the only admissible field, four-point bending (§3.2), the maximal moment
+(33), and the stiffness for shear-rigid and very soft members (§4.2).
 
 ## Correspondence with the paper
 
-| Paper (final version) | Lean | Status |
+| Paper | Lean | Status |
 |---|---|---|
 | §2.2 Static homogenization: the plate energy is the minimum of the cell complementary energy (Hill–Mandel) | `Homogenized.lean`: `Cell.isLeast_outOfPlane` | proved for the nexorade |
 | §3.1 Unit cell, `a = L sin φ`, `l = L (cos φ + sin φ)` (19) | `Parametric.lean`: `cellOf`, `area_cellOf`, `length_cellOf` | ✅ |
 | §3.2 Only one admissible stress field: four-point bending | `OutOfPlane.lean`: `Cell.admissible_iff` | ✅ |
 | (20) `M₁₂ = 0`, `M₁₁ = M₂₂` | `Cell.M11_eq_M22` (and `M₁₂ = 0` by construction) | ✅ |
+| §3.3 Equivalent isotropic plate | `DegeneratePlate.toPlate`, `moment_eq_momentX` | ✅ with `ν = +1`, not `ν = −1` as stated: with `M = D((1−ν)K + ν tr K I)` only `ν = 1` gives `M₁₁ = M₂₂`, `M₁₂ = 0` and the rank-1 energy `½ D (tr K)²` |
 | (22) Shear `r = M / (cos φ sin φ)` | `shear_cellOf` (`= 2M / sin 2φ`) | ✅ |
 | (23) Moment `m = M L / cos φ` | `moment_cellOf` | ✅ |
 | (24)–(27) Degenerate plate: `ΔM + p = 0`, energy only in the mean curvature, `K = d M` | `Plate.lean`: `legendre_le`, `legendre_eq`, `DegeneratePlate` | ✅ |
-| (28)–(29) Compliance `d` and stiffness `D` | `Cell.compliance`, `Cell.energy_eq`, `compliance_cellOf`, `stiffness_cellOf` | ✅ |
+| (28)–(29) Compliance `d` and stiffness `D` | `Cell.compliance`, `Cell.energy_eq`, `compliance_cellOf`, `stiffness_cellOf` | ✅; in the `(L, φ)` form `D = EI cos φ / (2L ((1 − tan φ/3) + η/sin 2φ))` with `η = 4EI/(GSₛL²)` |
 | (31) Euler–Bernoulli members (`GSₛ → ∞`) | `Optimum.lean`: `Cell.complianceEuler_inv`, `Cell.tendsto_compliance_shear_rigid` | ✅ |
 | §4.1 `D → 0` as `a/l → 0` | `tendsto_stiffness_zero` | ✅ |
 | (32) Shear and moment in terms of `a/l` | `Cell.shear_eq`, `Cell.moment_eq` | ✅ |
@@ -38,19 +49,7 @@ earlier draft (`5.1`, May 2013); the final paper leaves membrane behaviour to fu
 | §5.1 Navier solution (34)–(36) | `DegeneratePlate.navier`, `navier_kirchhoffLove` | ✅ |
 | §5.2 Finite element comparison (ABAQUS) | — | out of scope (numerical) |
 | Scale separation / convergence of the frame to the plate | — | assumed (see [`GAPS.md`](../../GAPS.md)) |
-| (draft) In-plane cell problem, `A₂₂₁₁ = 0`, `N₁₂ ≡ 0` | `InPlane.lean`, `Cell.isLeast_inPlane` | ✅ (beyond the final paper) |
-
-## Points where the formalization differs from the text
-
-* **Equivalent isotropic plate.** §3.3 says the static links (20) are those of an isotropic plate
-  with Poisson ratio `ν = −1`. The formal result is `ν = +1`: with `M = D((1−ν)K + ν tr K I)`,
-  only `ν = 1` gives `M₁₁ = M₂₂` and `M₁₂ = 0`, and an energy `½ D (tr K)²` of rank 1.
-  See `DegeneratePlate.toPlate` and `moment_eq_momentX`.
-* **Shear parameter.** In the `(L, φ)` form the stiffness is
-  `D = EI cos φ / (2L ((1 − tan φ/3) + η/sin 2φ))` with `η = 4EI/(GSₛL²)`. Check this `η` against
-  (28)–(30).
-* **(draft) In-plane compliance.** The bending term of `A₁₁₁₁` is `a²b²(2a+b)/(12EI)`, not the
-  draft's `a²b²(16a+b)/(24EI)`.
+| Membrane behaviour (left to future work in the paper): `N₁₂ ≡ 0`, `A₂₂₁₁ = 0`, `A₁₁₁₁ = (1/A)(ab(2a+b)/(2GSₛ) + (4a³+6a²b+5ab²+2b³)/(2ES) + a²b²(2a+b)/(12EI))` | `InPlane.lean`, `Cell.isLeast_inPlane` | ✅ (extension) |
 
 ## Building
 

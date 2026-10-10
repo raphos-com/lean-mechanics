@@ -5,7 +5,7 @@ import Mathlib.Analysis.SpecialFunctions.Integrals.Basic
 
 We follow the static (complementary-energy) homogenization of a periodic space frame as a
 Kirchhoff–Love plate ([LebeeSab2013]; [Caillerie1984]) for the **square nexorade** of
-[Greco2013], Appendix 8.
+[GrecoLebeeDouthe2013], §3.
 
 **Geometry.** The unit cell contains two straight beams, `h` along `e₁` and `v` along `e₂`. Each
 beam has four contact points at abscissae `0, a, a + b, 2a + b`: its two ends rest on interior
@@ -24,7 +24,7 @@ each of the three segments (lengths `a, b, a`); the moment vanishes at both (hin
 out-of-plane field is **statically admissible** if both beams are in equilibrium.
 
 **Homogenized quantities.** The macroscopic moment is the cell average of `(m × e₃) ⊗ˢ t`
-([Greco2013], (3.5b)); for beams along the axes this gives `M₁₁ = (1/A) ∫_h m`,
+([GrecoLebeeDouthe2013], §2.2); for beams along the axes this gives `M₁₁ = (1/A) ∫_h m`,
 `M₂₂ = (1/A) ∫_v m`, `M₁₂ = 0`. The complementary energy of the cell is
 `Π = Σ ∫ m² / (2 EI) + Σ ∫ r² / (2 G Sₛ)` (Timoshenko beams), computed exactly for piecewise linear
 moments.
@@ -32,17 +32,18 @@ moments.
 ## Main results
 
 * `OutOfPlane.admissible_iff`: admissible fields form a line: `f = s (1, -1, -1, 1)` (four-point
-  bending of both beams; 1 degree of freedom, [Greco2013], App. 8).
+  bending of both beams; 1 degree of freedom, [GrecoLebeeDouthe2013], §3.2).
 * `OutOfPlane.M11_eq_M22`: **degeneracy**: the cell can only carry hydrostatic moments
   `M₁₁ = M₂₂ = M`, `M₁₂ = 0`.
 * `OutOfPlane.energy_eq`: `Π / A = ½ d M²` with the **out-of-plane compliance**
-  `d = 2A(2a + 3b) / (3 EI (a + b)²) + 4A / (G Sₛ a (a + b)²)` ([Greco2013], (8.10)).
+  `d = 2A(2a + 3b) / (3 EI (a + b)²) + 4A / (G Sₛ a (a + b)²)` ([GrecoLebeeDouthe2013], (28)).
 * `OutOfPlane.localization`: the beam shear and moment fields in terms of `M`
-  ([Greco2013], (8.8)).
+  ([GrecoLebeeDouthe2013], (22)–(23)).
 
 ## References
 
-* [Greco2013] L. Greco, *Nexorade* (homogenization of reciprocal systems), draft 2013.
+* [GrecoLebeeDouthe2013] L. Greco, A. Lebée, C. Douthe, *Investigation of the elastic behavior of
+  reciprocal systems using homogenization techniques* (2013).
 * [LebeeSab2013] A. Lebée, K. Sab, *Homogenization of a space frame as a thick plate*,
   Computers and Structures (2013).
 * [Caillerie1984] D. Caillerie, *Thin elastic and periodic plates*, Math. Methods Appl. Sci. 6
@@ -183,7 +184,7 @@ def energy (f : Forces) : ℝ := c.beamEnergy f + c.beamEnergy (partner f)
 def fourPoint (s : ℝ) : Forces := ⟨s, -s, -s, s⟩
 
 /-- **Admissible out-of-plane fields** are exactly the four-point-bending fields: one degree of
-freedom. [Greco2013], App. 8. -/
+freedom. [GrecoLebeeDouthe2013], §3.2. -/
 theorem admissible_iff (f : Forces) : c.Admissible f ↔ ∃ s, f = fourPoint s := by
   have ha := c.a_pos
   constructor
@@ -208,7 +209,7 @@ theorem partner_fourPoint (s : ℝ) : partner (fourPoint s) = fourPoint s := by
   simp [partner, fourPoint]
 
 /-- **Degeneracy**: every admissible field carries a hydrostatic moment `M₁₁ = M₂₂`
-(and `M₁₂ = 0` since the beams are aligned with the axes). [Greco2013], App. 8. -/
+(and `M₁₂ = 0` since the beams are aligned with the axes). [GrecoLebeeDouthe2013], §3.2. -/
 theorem M11_eq_M22 {f : Forces} (hf : c.Admissible f) : c.M11 f = c.M22 f := by
   obtain ⟨s, rfl⟩ := (c.admissible_iff f).1 hf
   rw [M22, partner_fourPoint, M11]
@@ -219,7 +220,7 @@ theorem M11_fourPoint (s : ℝ) : c.M11 (fourPoint s) = s * c.a * (c.a + c.b) / 
 
 /-- **Localization**: the admissible field carrying the hydrostatic moment `M` has end shear
 `s = M A / (a (a + b))` (shear `s, 0, -s` and moment `0 ↗ s a → s a ↘ 0`: four-point bending).
-[Greco2013], (8.8). -/
+[GrecoLebeeDouthe2013], (22)–(23). -/
 theorem localization (M : ℝ) :
     c.Admissible (fourPoint (M * c.area / (c.a * (c.a + c.b)))) ∧
       c.M11 (fourPoint (M * c.area / (c.a * (c.a + c.b)))) = M := by
@@ -231,13 +232,13 @@ theorem localization (M : ℝ) :
   field_simp
 
 /-- The **out-of-plane compliance** `d = 2A(2a + 3b) / (3EI(a + b)²) + 4A / (GSₛ a (a + b)²)`.
-[Greco2013], (8.10). -/
+[GrecoLebeeDouthe2013], (28). -/
 def compliance : ℝ :=
   2 * c.area * (2 * c.a + 3 * c.b) / (3 * c.EI * (c.a + c.b) ^ 2) +
     4 * c.area / (c.GS * c.a * (c.a + c.b) ^ 2)
 
 /-- **Hill–Mandel**: the energy density of the cell carrying the hydrostatic moment `M` is
-`Π / A = ½ d M²`. [Greco2013], (3.3), (8.10). -/
+`Π / A = ½ d M²`. [GrecoLebeeDouthe2013], §2.2, (28). -/
 theorem energy_eq {f : Forces} (hf : c.Admissible f) :
     c.energy f / c.area = c.compliance * c.M11 f ^ 2 / 2 := by
   obtain ⟨s, rfl⟩ := (c.admissible_iff f).1 hf

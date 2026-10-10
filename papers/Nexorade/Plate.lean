@@ -11,12 +11,12 @@ The homogenized nexorade only carries **hydrostatic** bending moments `M = M I`
 `w(χ) = sup_M (M tr χ - ½ d M²) = ½ D (tr χ)²`,  `D = 1/d`,
 
 so only the **mean curvature** carries energy: the deviatoric curvatures `diag(χ, -χ)` and the twist
-are energy free ([Greco2013], App. 8). With `χ = -∇∇w`, the plate is governed by
+are energy free ([GrecoLebeeDouthe2013], (24)–(27)). With `χ = -∇∇w`, the plate is governed by
 
 `M = -D Δw`,  `ΔM + p = 0`,  hence `D Δ²w = p`,
 
 with simply supported edges `w = 0`, `M = 0`. For the load `p₀ sin(πx/L₁) sin(πy/L₂)` the Navier
-solution is ([Greco2013], (5.7)–(5.8))
+solution is ([GrecoLebeeDouthe2013], (34)–(36))
 
 `w = p₀ / (D (π²/L₁² + π²/L₂²)²) · sin sin`,  `M = p₀ / (π²/L₁² + π²/L₂²) · sin sin`,
 
@@ -30,7 +30,8 @@ and the localization gives the moment in the nexors, `m = (L / cos φ) M`.
 
 ## References
 
-* [Greco2013] L. Greco, *Nexorade* (homogenization of reciprocal systems), draft 2013, §5, App. 8.
+* [GrecoLebeeDouthe2013] L. Greco, A. Lebée, C. Douthe, *Investigation of the elastic behavior of
+  reciprocal systems using homogenization techniques* (2013).
 -/
 
 open Real Set
@@ -90,7 +91,7 @@ theorem moment_mode (A α β : ℝ) :
 
 /-- **Navier solution of the degenerate plate** under `p = p₀ sin(πx/L₁) sin(πy/L₂)`:
 `w = p₀ / (D k⁴) sin sin`, `M = p₀ / k² sin sin`, `k² = π²/L₁² + π²/L₂²`.
-[Greco2013], (5.7)–(5.8). -/
+[GrecoLebeeDouthe2013], (34)–(36). -/
 theorem navier (p₀ : ℝ) :
     let α := π / P.L₁
     let β := π / P.L₂

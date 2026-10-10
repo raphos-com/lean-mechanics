@@ -4,10 +4,10 @@ import Nexorade.Plate
 /-!
 # The homogenized nexorade plate (static approach)
 
-In the static approach ([Greco2013], §3; [LebeeSab2013]) the complementary energy density of the
-equivalent plate at macroscopic stresses `(N, M)` is the **minimum of the cell complementary
-energy per unit area over the statically admissible fields with these averages**. For the square
-nexorade this minimum is computed exactly:
+In the static approach ([GrecoLebeeDouthe2013], §2.2; [LebeeSab2013]) the complementary energy
+density of the equivalent plate at macroscopic stresses `(N, M)` is the **minimum of the cell
+complementary energy per unit area over the statically admissible fields with these averages**.
+For the square nexorade this minimum is computed exactly:
 
 * out of plane: admissible fields exist **only for hydrostatic moments** `M₁₁ = M₂₂`, `M₁₂ = 0`,
   and then `w*(M) = ½ d M²` (`d = Cell.compliance`);
@@ -24,7 +24,8 @@ in deviatoric bending and in membrane shear.
 
 ## References
 
-* [Greco2013] L. Greco, *Nexorade* (homogenization of reciprocal systems), draft 2013.
+* [GrecoLebeeDouthe2013] L. Greco, A. Lebée, C. Douthe, *Investigation of the elastic behavior of
+  reciprocal systems using homogenization techniques* (2013).
 * [LebeeSab2013] A. Lebée, K. Sab, *Homogenization of a space frame as a thick plate*,
   Computers and Structures (2013).
 -/

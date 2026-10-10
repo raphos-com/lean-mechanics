@@ -14,12 +14,12 @@ nexorade as a (degenerate) Kirchhoff–Love plate. Built on the `ContinuumMechan
 
 | Paper | File |
 |---|---|
-| §3, static homogenization (plate energy = minimum cell complementary energy) | `Homogenized` |
-| App. 8, out-of-plane cell problem, degeneracy, (8.8), (8.10) | `OutOfPlane` |
-| App. 8, in-plane cell problem, `A₂₂₁₁ = 0` | `InPlane` |
-| §§4–5, parametric study, (5.3), (5.5), (5.6), optimum `φ = π/8` | `Parametric` |
-| §5, degenerate plate, Navier solution (5.7)–(5.8) | `Plate` |
-| §§3–4 (final version), formulas in `a/l`, (31)–(33), stiffness optima, trade-off | `Optimum` |
+| §2.2, static homogenization (plate energy = minimum cell complementary energy) | `Homogenized` |
+| §3.2, out-of-plane cell problem, (20), localization (22)–(23), compliance (28) | `OutOfPlane` |
+| §2.2 applied to membrane forces (left to future work in the paper), `A₂₂₁₁ = 0` | `InPlane` |
+| §3.1 and §4, `(L, φ)` parametrization (19), (22), (23), (29), optimum `φ = π/8` | `Parametric` |
+| (24)–(27), degenerate plate; §5.1, Navier solution (34)–(36) | `Plate` |
+| §§3–4, formulas in `a/l`, (31)–(33), stiffness optima, trade-off | `Optimum` |
 
 Uses from `ContinuumMechanics`: the Kirchhoff–Love plate (`Plates.KirchhoffLove`; the
 equivalent plate is the case `ν = 1`) and its Navier solutions (`Plates.Navier`). The
