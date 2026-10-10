@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+### Phase 6 — 1D structural theories (in progress)
+- `Beams/Interval`: vanishing `(n+1)`-th derivative on `[a, b]` ⇒ Taylor polynomial.
+- `Beams/Bar`: axial bar equilibrium; closed-form fixed–free (uniform + end load, linear
+  load) and fixed–fixed (uniform) solutions; uniqueness for both boundary conditions.
+
 ### Phase 1 — tensor algebra (in progress)
 - `Tensor/Second`: `Lin E`, transpose, trace, determinant (`det Aᵀ = det A`), dyads.
 - `Tensor/SymSkew`: `Sym E`, `Skw E`, `sym`/`skw`, `Lin E = Sym ⊕ Skw` with uniqueness.
