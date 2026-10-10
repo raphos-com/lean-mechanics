@@ -64,6 +64,9 @@
   continuity, and a Fubini lemma `∫ f (P w) = ⟪∫_·ᴸ f, w⟫`.
 - `Sobolev1D/BarWeak`: Lax–Milgram for `EA⟪v,w⟫ = ℓ(w)`; **weak forms of the fixed–free and
   fixed–fixed bar are well posed**, and classical `C²` solutions are the weak solutions (`P u' = u`).
+- `Sobolev1D/BeamWeak`: `P` as a bounded operator on `L²`; bending moment of a cantilever
+  `EI w'' = P(L − t) + ∫∫q`; **weak form of the Euler–Bernoulli cantilever is well posed**, and
+  classical `C⁴` solutions are the weak solutions (`P² w'' = w`).
 - `Beams/Wirtinger`: **Wirtinger's inequality** `(π/L)² ∫u² ≤ ∫u'²` (`u(0) = u(L) = 0`), proved
   with Picone's identity against `sin(k(x + δ))` and `δ → 0⁺` (no Fourier series);
   `(π/L)² ∫w'² ≤ ∫w''²`.

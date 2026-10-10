@@ -196,4 +196,71 @@ theorem setIntegral_Ici_eq {f : ℝ → ℝ} {t : ℝ} (ht : t ∈ Icc 0 L) :
       · rintro ⟨h1, h2⟩; exact ⟨h1, h.trans_le h1, h2⟩]
     exact integral_Icc_eq_integral_Ioc
 
+variable (L) in
+/-- The resultant `t ↦ ∫_tᴸ f`. -/
+noncomputable def resultant (f : ℝ → ℝ) (t : ℝ) : ℝ := ∫ x in t..L, f x
+
+theorem continuous_resultant {f : ℝ → ℝ} (hf : Continuous f) : Continuous (resultant L f) := by
+  have : resultant L f = fun t => -∫ x in L..t, f x := funext fun t => integral_symm _ _
+  rw [this]
+  exact (continuous_primitive (fun _ _ => hf.intervalIntegrable _ _) _).neg
+
+/-- `∫₀ᴸ f (P w) = ⟪∫_·ᴸ f, w⟫`: a distributed load is represented by its resultant. -/
+theorem integral_mul_prim_eq {f : ℝ → ℝ} (hf : Continuous f) (w : L2 L) :
+    ∫ x, f x * prim w x ∂μ L = ⟪toL2 (continuous_resultant (L := L) hf), w⟫_ℝ := by
+  rw [integral_mul_prim hf, inner_toL2]
+  refine integral_congr_ae (ae_restrict_of_forall_mem measurableSet_Ioc fun t ht => ?_)
+  change (∫ x in Ici t, f x ∂μ L) * w t = resultant L f t * w t
+  rw [setIntegral_Ici_eq (Ioc_subset_Icc_self ht), resultant]
+
+/-- The primitive is continuous on all of `ℝ` (constant outside `[0, L]`). -/
+theorem continuous_prim (v : L2 L) : Continuous (prim v) := by
+  set g : ℝ → ℝ := (Ioc 0 L).indicator v
+  have hg : Integrable g volume := by
+    have := integrable v
+    exact (integrable_indicator_iff measurableSet_Ioc).2 this
+  have e : ∀ x, prim v x = (∫ t in Iic 0, g t) + ∫ t in (0 : ℝ)..x, g t := fun x => by
+    rw [← intervalIntegral.integral_Iic_sub_Iic hg.integrableOn hg.integrableOn, add_sub_cancel,
+      prim_eq_setIntegral_Iic, setIntegral_indicator measurableSet_Ioc,
+      Measure.restrict_restrict measurableSet_Iic]
+  rw [show prim v = fun x => (∫ t in Iic 0, g t) + ∫ t in (0 : ℝ)..x, g t from funext e]
+  exact continuous_const.add (continuous_primitive (fun _ _ => hg.intervalIntegrable) 0)
+
+theorem prim_add (v w : L2 L) : prim (v + w) = prim v + prim w :=
+  funext fun x => map_add (primCLM L x) v w
+
+theorem prim_smul (c : ℝ) (v : L2 L) : prim (c • v) = c • prim v :=
+  funext fun x => map_smul (primCLM L x) c v
+
+theorem toL2_congr {f g : ℝ → ℝ} (hf : Continuous f) (h : f = g) :
+    toL2 (L := L) hf = toL2 (h ▸ hf) := by
+  subst h; rfl
+
+theorem norm_toL2_prim_le (hL : 0 ≤ L) (v : L2 L) :
+    ‖toL2 (L := L) (continuous_prim v)‖ ≤ (measureUnivNNReal (μ L) : ℝ) ^ (2 : ℝ≥0∞).toReal⁻¹ *
+      (√L * ‖v‖) := by
+  refine Lp.norm_le_of_ae_bound (by positivity) ?_
+  filter_upwards [toL2_ae_eq (L := L) (continuous_prim v)] with x hx
+  rw [hx, Real.norm_eq_abs]
+  exact abs_prim_le hL v x
+
+/-- The primitive as a bounded operator `P : L² → L²`. -/
+noncomputable def primL2 (hL : 0 ≤ L) : L2 L →L[ℝ] L2 L :=
+  LinearMap.mkContinuous
+    { toFun := fun v => toL2 (continuous_prim v)
+      map_add' := fun v w => by
+        rw [toL2_congr (continuous_prim (v + w)) (prim_add v w), toL2_add]
+      map_smul' := fun c v => by
+        rw [toL2_congr (continuous_prim (c • v)) (prim_smul c v), toL2_smul]; rfl }
+    ((measureUnivNNReal (μ L) : ℝ) ^ (2 : ℝ≥0∞).toReal⁻¹ * √L)
+    fun v => by
+      simp only [LinearMap.coe_mk, AddHom.coe_mk]
+      rw [mul_assoc]
+      exact norm_toL2_prim_le hL v
+
+theorem primL2_apply (hL : 0 ≤ L) (v : L2 L) : primL2 hL v = toL2 (continuous_prim v) := rfl
+
+theorem primL2_ae_eq (hL : 0 ≤ L) (v : L2 L) : (primL2 hL v : ℝ → ℝ) =ᵐ[μ L] prim v :=
+  toL2_ae_eq (continuous_prim v)
+
 end ContinuumMechanics.Sobolev1D

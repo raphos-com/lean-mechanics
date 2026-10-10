@@ -65,30 +65,14 @@ variable (b : Bar)
 noncomputable def load (f : ℝ → ℝ) (P : ℝ) (w : L2 b.L) : ℝ :=
   (∫ x, f x * prim w x ∂μ b.L) + P * prim w b.L
 
-/-- The resultant `t ↦ ∫_tᴸ f`. -/
-noncomputable def resultant (f : ℝ → ℝ) (t : ℝ) : ℝ := ∫ x in t..b.L, f x
-
-theorem continuous_resultant {f : ℝ → ℝ} (hf : Continuous f) : Continuous (b.resultant f) := by
-  have : b.resultant f = fun t => -∫ x in b.L..t, f x := funext fun t => integral_symm _ _
-  rw [this]
-  exact (continuous_primitive (fun _ _ => hf.intervalIntegrable _ _) _).neg
-
-/-- `∫₀ᴸ f (P w) = ⟪∫_·ᴸ f, w⟫`: the distributed load is represented by its resultant. -/
-theorem integral_mul_prim_eq {f : ℝ → ℝ} (hf : Continuous f) (w : L2 b.L) :
-    ∫ x, f x * prim w x ∂μ b.L = ⟪toL2 (b.continuous_resultant hf), w⟫_ℝ := by
-  rw [integral_mul_prim hf, inner_toL2]
-  refine integral_congr_ae (ae_restrict_of_forall_mem measurableSet_Ioc fun t ht => ?_)
-  change (∫ x in Ici t, f x ∂μ b.L) * w t = b.resultant f t * w t
-  rw [setIntegral_Ici_eq (Ioc_subset_Icc_self ht), resultant]
-
 /-- The load functional is continuous and linear. -/
 noncomputable def loadCLM (f : ℝ → ℝ) (hf : Continuous f) (P : ℝ) : L2 b.L →L[ℝ] ℝ :=
-  innerSL ℝ (toL2 (b.continuous_resultant hf) + P • oneL2)
+  innerSL ℝ (toL2 (continuous_resultant (L := b.L) hf) + P • oneL2)
 
 theorem loadCLM_apply {f : ℝ → ℝ} (hf : Continuous f) (P : ℝ) (w : L2 b.L) :
     b.loadCLM f hf P w = b.load f P w := by
   simp only [loadCLM, innerSL_apply_apply, inner_add_left, real_inner_smul_left, load,
-    b.integral_mul_prim_eq hf, prim_end]
+    integral_mul_prim_eq hf, prim_end]
 
 /-- The **weak form** of the fixed–free bar with end load `P`. -/
 def WeakFixedFree (f : ℝ → ℝ) (P : ℝ) (v : L2 b.L) : Prop :=
@@ -104,7 +88,7 @@ theorem weakFixedFree_existsUnique {f : ℝ → ℝ} (hf : Continuous f) (P : �
 /-- `EA u'(t) = EA u'(L) + ∫_tᴸ f` for a classical solution. -/
 theorem axialForce_eq {f u : ℝ → ℝ} (hu : ContDiff ℝ 2 u)
     (heq : b.Equilibrium f u) {t : ℝ} (ht : t ∈ Icc 0 b.L) :
-    b.EA * deriv u t = b.EA * deriv u b.L + b.resultant f t := by
+    b.EA * deriv u t = b.EA * deriv u b.L + resultant b.L f t := by
   have hu1 : ContDiff ℝ 1 (deriv u) := hu.deriv'
   have hftc := integral_eq_sub_of_hasDerivAt (a := t) (b := b.L)
     (fun x _ => ((hu1.differentiable one_ne_zero) x).hasDerivAt)
@@ -127,15 +111,16 @@ theorem virtualWork {f u : ℝ → ℝ} (hf : Continuous f) (hu : ContDiff ℝ 2
     (heq : b.Equilibrium f u) (w : L2 b.L) :
     b.EA * ⟪toL2 (continuous_deriv_of_contDiff hu), w⟫_ℝ =
       b.EA * deriv u b.L * prim w b.L + ∫ x, f x * prim w x ∂μ b.L := by
-  rw [← real_inner_smul_left, b.integral_mul_prim_eq hf, prim_end, ← real_inner_smul_left,
+  rw [← real_inner_smul_left, integral_mul_prim_eq hf, prim_end, ← real_inner_smul_left,
     ← inner_add_left]
   congr 1
   refine Lp.ext ?_
   filter_upwards [Lp.coeFn_smul b.EA (toL2 (L := b.L) (continuous_deriv_of_contDiff hu)),
-    Lp.coeFn_add ((b.EA * deriv u b.L) • oneL2 (L := b.L)) (toL2 (b.continuous_resultant hf)),
+    Lp.coeFn_add ((b.EA * deriv u b.L) • oneL2 (L := b.L))
+      (toL2 (continuous_resultant (L := b.L) hf)),
     Lp.coeFn_smul (b.EA * deriv u b.L) (oneL2 (L := b.L)),
     toL2_ae_eq (L := b.L) (continuous_deriv_of_contDiff hu),
-    toL2_ae_eq (L := b.L) (b.continuous_resultant hf),
+    toL2_ae_eq (L := b.L) (continuous_resultant (L := b.L) hf),
     toL2_ae_eq (L := b.L) (f := fun _ => (1 : ℝ)) continuous_const,
     ae_restrict_mem measurableSet_Ioc] with t h1 h2 h3 h4 h5 h6 ht
   have h6' : (oneL2 (L := b.L) : ℝ → ℝ) t = 1 := h6
@@ -169,9 +154,10 @@ def WeakFixedFixed (f : ℝ → ℝ) (v : L2 b.L) : Prop :=
 /-- **Well-posedness** of the fixed–fixed bar (Lax–Milgram on `H¹₀`). -/
 theorem weakFixedFixed_existsUnique {f : ℝ → ℝ} (hf : Continuous f) :
     ∃! v, b.WeakFixedFixed f v := by
-  set ℓ : b.H10 →L[ℝ] ℝ := (innerSL ℝ (toL2 (b.continuous_resultant hf))).comp b.H10.subtypeL
+  set ℓ : b.H10 →L[ℝ] ℝ :=
+    (innerSL ℝ (toL2 (continuous_resultant (L := b.L) hf))).comp b.H10.subtypeL
   have hℓ : ∀ w : b.H10, ℓ w = ∫ x, f x * prim (w : L2 b.L) x ∂μ b.L := fun w => by
-    simp [ℓ, b.integral_mul_prim_eq hf]
+    simp [ℓ, integral_mul_prim_eq hf]
   obtain ⟨v, hv, huniq⟩ := existsUnique_weak b.EA_pos ℓ
   refine ⟨v, ⟨v.2, fun w hw => (hv ⟨w, hw⟩).trans (hℓ _)⟩, fun v' hv' => ?_⟩
   have := huniq ⟨v', hv'.1⟩ fun w => (hv'.2 w w.2).trans (hℓ w).symm
