@@ -13,6 +13,8 @@ source with `-- upstream candidate`.
 | `Matrix.charpoly_fin_three` | `Tensor/Invariants.lean` | explicit `3 × 3` characteristic polynomial |
 
 | `Lin.polarRotation` & co. | `Tensor/Polar.lean` | polar decomposition in finite-dim real inner product spaces |
+| `Lin.contDiff_det`, `Lin.hasFDerivAt_det` | `Tensor/DetDeriv.lean` | smoothness of `det` and Jacobi's formula on `E →L[ℝ] E` |
+| `Lin4.IsIsotropic.exists_lame` | `Tensor/Isotropic4.lean` | isotropic 4th-order tensors (reflection proof, any dim ≥ 2) |
 
-Still planned: Jacobi's formula for `det`, H¹/H² on an
+Still planned: H¹/H² on an
 interval, Wirtinger's inequality.

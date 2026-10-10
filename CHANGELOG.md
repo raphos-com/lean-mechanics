@@ -3,6 +3,8 @@
 ## Unreleased
 
 ### Phase 4 — constitutive theory (in progress)
+- `Tensor/DetDeriv`: `det` is smooth; **Jacobi's formula** `D det(F)[H] = det F · tr(F⁻¹H)`,
+  i.e. `∂J/∂F = J F⁻ᵀ`.
 - `Constitutive/LinearIsotropic`: Lamé, `(E, ν)`, `(K, G)` moduli with round trips;
   **`λI⊗I + 2μ𝕀ˢʸᵐ` positive definite on `Sym` ⇔ `μ > 0 ∧ dλ + 2μ > 0`** (any `d ≥ 2`),
   ⇔ `E > 0 ∧ −1 < ν < ½` ⇔ `K > 0 ∧ G > 0` in 3D; steel example.
