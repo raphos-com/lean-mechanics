@@ -48,6 +48,8 @@
   (`θ = w'`, `w_T = w − EI(w'' − c)/κGA`); **uniform convergence `w_T → w_EB` as `κGA → ∞` for
   general loads** (simply supported and cantilever), with rate `2EI‖w''‖∞/κGA`; non-vacuity of
   the hypotheses; canonical shear corrections `qL²/8κGA` and `PL/κGA`.
+- `Beams/Buckling`: pinned–pinned column `EI w'''' + P w'' = 0`: nontrivial solutions exist iff
+  `P = n²π²EI/L²` (modes `sin(nπx/L)`); **Euler load `π²EI/L²` is the least buckling load**.
 
 ### Phase 1 — tensor algebra (complete)
 - `Tensor/Second`: `Lin E`, transpose, trace, determinant (`det Aᵀ = det A`), dyads.
