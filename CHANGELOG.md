@@ -23,7 +23,13 @@
   **`λI⊗I + 2μ𝕀ˢʸᵐ` positive definite on `Sym` ⇔ `μ > 0 ∧ dλ + 2μ > 0`** (any `d ≥ 2`),
   ⇔ `E > 0 ∧ −1 < ν < ½` ⇔ `K > 0 ∧ G > 0` in 3D; steel example.
 
-### Phase 3 — stress (in progress)
+### Phase 3 — stress
+- `Stress/Triangle`: surface integrals over flat triangles (affine parametrisation, Gram-determinant
+  area); `h⁻² ∫_{x+hT} f dA → area(T) f(x)`.
+- `Stress/Cauchy`: **Cauchy's theorem by the tetrahedron argument**. From force balance on Cauchy
+  tetrahedra (`TetraBalance`, with genuine face integrals and `O(h³)` volume estimate) and
+  continuity of `t`: the tetrahedron identity, **Cauchy's reciprocal theorem** `t(x,-n) = -t(x,n)`,
+  and `t(x, n) = σ(x) n` with `σ` continuous. No hypothesis structure needed.
 - `Stress/Balance`: divergence of vector and tensor fields; `DivergenceRegion` hypothesis
   structure (first entry in `GAPS.md`); `∫_∂P σn = ∫_P div σ`; localisation; **integral force
   balance ⇒ `div σ + b = 0`**; **moment balance ⇒ `σ` symmetric** (coordinate-free, any
