@@ -9,6 +9,8 @@
   **frame indifference ⇔ `W(F) = Ŵ(FᵀF)`**; `P(QF) = Q P(F)` for frame-indifferent materials.
 - `Constitutive/Hyperelastic/SVK`: `D E(F)[H] = sym(FᵀH)`; SVK energy, `P = F ℂ E` derived from
   `DW`; linearisation `d/dt P(I + tH)|₀ = ℂH`.
+- `Constitutive/Hyperelastic/NeoHookean`: compressible neo-Hookean energy,
+  `P = μF + (λ ln J − μ)F⁻ᵀ` derived from `DW`; linearisation to `λ tr(H) I + 2μ sym H`.
 - `Constitutive/LinearIsotropic`: Lamé, `(E, ν)`, `(K, G)` moduli with round trips;
   **`λI⊗I + 2μ𝕀ˢʸᵐ` positive definite on `Sym` ⇔ `μ > 0 ∧ dλ + 2μ > 0`** (any `d ≥ 2`),
   ⇔ `E > 0 ∧ −1 < ν < ½` ⇔ `K > 0 ∧ G > 0` in 3D; steel example.

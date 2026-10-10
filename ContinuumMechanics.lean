@@ -22,6 +22,7 @@ import ContinuumMechanics.Stress.Criteria
 import ContinuumMechanics.Constitutive.LinearIsotropic
 import ContinuumMechanics.Constitutive.Hyperelastic
 import ContinuumMechanics.Constitutive.Hyperelastic.SVK
+import ContinuumMechanics.Constitutive.Hyperelastic.NeoHookean
 import ContinuumMechanics.Beams.Interval
 import ContinuumMechanics.Beams.Bar
 import ContinuumMechanics.Beams.Poly
