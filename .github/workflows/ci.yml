@@ -28,6 +28,11 @@ jobs:
     needs: build
     if: github.ref == 'refs/heads/main' && github.event_name == 'push'
     runs-on: ubuntu-latest
+    # doc-gen4 also documents imported Mathlib modules, which is slow; only the newest push matters.
+    concurrency:
+      group: docs-${{ github.ref }}
+      cancel-in-progress: true
+    timeout-minutes: 240
     permissions:
       contents: read
       pages: write
