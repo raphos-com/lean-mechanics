@@ -19,7 +19,7 @@
   general loads** (simply supported and cantilever), with rate `2EI‖w''‖∞/κGA`; non-vacuity of
   the hypotheses; canonical shear corrections `qL²/8κGA` and `PL/κGA`.
 
-### Phase 1 — tensor algebra (in progress)
+### Phase 1 — tensor algebra (complete)
 - `Tensor/Second`: `Lin E`, transpose, trace, determinant (`det Aᵀ = det A`), dyads.
 - `Tensor/SymSkew`: `Sym E`, `Skw E`, `sym`/`skw`, `Lin E = Sym ⊕ Skw` with uniqueness.
 - `Tensor/Contraction`: double contraction `A ⊡ B = tr(AᵀB)` as an inner product;
@@ -38,6 +38,8 @@
   `λ I⊗I + 2μ 𝕀ˢʸᵐ` and its symmetries.
 - `Tensor/Isotropic4`: reflections; **representation theorem** — every isotropic fourth-order
   tensor equals `λ I⊗I + 2μ 𝕀ˢʸᵐ` on symmetric tensors (any dimension `≥ 2`), and conversely.
+- `Tensor/Matrix`: `3 × 3` matrix bridge (`ofMatrix`) with trace/det/transpose/invariant
+  lemmas; worked examples (invariants of `diag(1,2,3)`, simple shear).
 
 ### Phase 0 — project setup
 - Design documents `ARCHITECTURE.md`, `ROADMAP.md` (reviewed).
