@@ -45,6 +45,9 @@ variable {E}
 
 namespace Lin
 
+/-- Application of a product of tensors: `(A B) v = A (B v)`. -/
+@[simp] theorem mul_apply (A B : Lin E) (v : E) : (A * B) v = A (B v) := rfl
+
 section Transpose
 
 variable [CompleteSpace E]

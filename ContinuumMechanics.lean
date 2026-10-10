@@ -9,6 +9,7 @@ import ContinuumMechanics.Tensor.Positive
 import ContinuumMechanics.Tensor.Polar
 import ContinuumMechanics.Tensor.Spectral
 import ContinuumMechanics.Tensor.Fourth
+import ContinuumMechanics.Tensor.Isotropic4
 import ContinuumMechanics.Beams.Interval
 import ContinuumMechanics.Beams.Bar
 import ContinuumMechanics.Beams.Poly

@@ -36,6 +36,8 @@
   `S ≥ 0 ↔ λᵢ ≥ 0`.
 - `Tensor/Fourth`: `Lin4 E`, minor/major symmetry, `𝕀ˢʸᵐ`, `I ⊗ I`, the isotropic tensor
   `λ I⊗I + 2μ 𝕀ˢʸᵐ` and its symmetries.
+- `Tensor/Isotropic4`: reflections; **representation theorem** — every isotropic fourth-order
+  tensor equals `λ I⊗I + 2μ 𝕀ˢʸᵐ` on symmetric tensors (any dimension `≥ 2`), and conversely.
 
 ### Phase 0 — project setup
 - Design documents `ARCHITECTURE.md`, `ROADMAP.md` (reviewed).
