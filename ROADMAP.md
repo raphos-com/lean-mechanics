@@ -1,7 +1,7 @@
 # ContinuumMechanics — Roadmap
 
 Status: **reviewed**. Progress: Phase 0 ✅; Phase 1 ✅ (1.1–1.12, plus Jacobi's formula);
-Phase 2: 2.1–2.5 ✅ (2.6 open); Phase 3 ✅; Phase 4: 4.1–4.6 ✅
+Phase 2: 2.1–2.5 ✅, 2.6 necessity ✅ (sufficiency open); Phase 3 ✅; Phase 4: 4.1–4.6 ✅
 (4.7 open); Phase 5 ✅ (5.5 via the `KornSetting` hypothesis structure);
 Phase 6: 6.1–6.9, 6.13 ✅; 6.10–6.12 for the bar and the EB cantilever ✅ (other beam BCs, Timoshenko weak forms open). Milestones are roughly one file each and map to
 `ARCHITECTURE.md` §2. Each milestone ends with: definitions → API lemmas →

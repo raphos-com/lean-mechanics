@@ -51,6 +51,8 @@
   `(√3/2) σ_T ≤ σ_vM ≤ σ_T`.
 
 ### Phase 2 — kinematics (in progress)
+- `Kinematics/Compatibility`: full symmetry of `D³u`; `D²ε = sym D³u`; **Saint-Venant compatibility
+  (necessity)** in coordinate-free form, any dimension.
 - `Kinematics/Strain`: `C`, `B`, Green–Lagrange, Almansi; `C = U²`, `B = V²`, `E = FᵀeF`,
   `C = I ⇔ F` orthogonal.
 - `Kinematics/Observer`: objectivity of `B`, `V`; invariance of `C`, `E`, `U`; `R* = QR`.
