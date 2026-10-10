@@ -16,6 +16,8 @@ import ContinuumMechanics.Kinematics.Observer
 import ContinuumMechanics.Kinematics.Infinitesimal
 import ContinuumMechanics.Kinematics.Body
 import ContinuumMechanics.Kinematics.Rigid
+import ContinuumMechanics.Stress.Piola
+import ContinuumMechanics.Stress.Criteria
 import ContinuumMechanics.Beams.Interval
 import ContinuumMechanics.Beams.Bar
 import ContinuumMechanics.Beams.Poly

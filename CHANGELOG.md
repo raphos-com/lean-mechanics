@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+### Phase 3 — stress (in progress)
+- `Stress/Piola`: first and second Piola–Kirchhoff stresses, conversions, and
+  `σ sym ⇔ S sym ⇔ PFᵀ sym`.
+- `Stress/Criteria`: `J₂`, von Mises; principal stresses in 3D; `J₂` principal formula;
+  `(√3/2) σ_T ≤ σ_vM ≤ σ_T`.
+
 ### Phase 2 — kinematics (in progress)
 - `Kinematics/Strain`: `C`, `B`, Green–Lagrange, Almansi; `C = U²`, `B = V²`, `E = FᵀeF`,
   `C = I ⇔ F` orthogonal.
