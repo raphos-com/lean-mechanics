@@ -42,6 +42,9 @@
 - `Beams/EulerBernoulli/Solutions`: simply supported and cantilever beams under uniform load,
   cantilever with tip load, simply supported beam with a point load anywhere (piecewise, with
   continuity and shear-jump conditions); `5qL⁴/384EI`, `qL⁴/8EI`, `PL³/3EI`, `PL³/48EI`.
+- `Beams/EulerBernoulli/Energy`: Green's formula; fundamental lemma of the calculus of
+  variations on an interval; **strong form + natural BCs ⇔ weak form** for simply supported
+  beams; exact expansion and Gateaux derivative of `Π`; **minimum potential energy**.
 - `Beams/Timoshenko/Basic`: Timoshenko equations; simply supported and cantilever boundary
   conditions; explicit homogeneous solutions; uniqueness of `C²` solutions.
 - `Beams/Timoshenko/Limit`: Timoshenko solution built from any `C⁴` Euler–Bernoulli solution

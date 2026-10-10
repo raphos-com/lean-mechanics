@@ -309,6 +309,8 @@ form on 3D domains).
 * "Stop and report" rule: if a proof takes far longer than expected, stop
   and report what was tried, the missing Mathlib lemma, and options (weaken,
   hypothesis structure, upstream).
+* Pitfall: in `∫ x in a..b, f x - g` the integrand extends over `- g` (Mathlib's notation takes
+  the integrand at precedence 60). Always parenthesise: `(∫ x in a..b, f x) - g`.
 * Lemmas general enough for Mathlib are tagged in a comment
   `-- upstream candidate` and collected in `UPSTREAM.md`.
 
