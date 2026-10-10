@@ -18,6 +18,7 @@ import ContinuumMechanics.Kinematics.Body
 import ContinuumMechanics.Kinematics.Rigid
 import ContinuumMechanics.Stress.Piola
 import ContinuumMechanics.Stress.Criteria
+import ContinuumMechanics.Constitutive.LinearIsotropic
 import ContinuumMechanics.Beams.Interval
 import ContinuumMechanics.Beams.Bar
 import ContinuumMechanics.Beams.Poly
