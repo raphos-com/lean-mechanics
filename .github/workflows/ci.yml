@@ -13,7 +13,7 @@ jobs:
     name: Build, no sorry/axiom
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - uses: leanprover/lean-action@v1
         with:
@@ -41,11 +41,28 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - uses: leanprover/lean-action@v1
         with:
           use-mathlib-cache: true
+
+      # doc-gen4 also documents every imported Lean/Lake/Mathlib module. Keep its build directory
+      # between runs so that only the modules whose `.olean` changed are documented again.
+      - name: Restore documentation cache
+        id: doc-cache
+        uses: actions/cache/restore@v5
+        with:
+          path: |
+            docbuild/.lake
+            .lake/packages/doc-gen4
+            .lake/packages/MD4Lean
+            .lake/packages/BibtexQuery
+            .lake/packages/UnicodeBasic
+            .lake/packages/leansqlite
+          key: docs-${{ hashFiles('lean-toolchain', 'lake-manifest.json', 'docbuild/lakefile.toml', 'docbuild/lake-manifest.json') }}-${{ github.sha }}
+          restore-keys: |
+            docs-${{ hashFiles('lean-toolchain', 'lake-manifest.json', 'docbuild/lakefile.toml', 'docbuild/lake-manifest.json') }}-
 
       - name: Build documentation
         working-directory: docbuild
@@ -54,9 +71,25 @@ jobs:
           lake exe cache get
           lake build ContinuumMechanics:docs Nexorade:docs
 
-      - uses: actions/upload-pages-artifact@v3
+      - name: Save documentation cache
+        uses: actions/cache/save@v5
+        with:
+          path: |
+            docbuild/.lake
+            .lake/packages/doc-gen4
+            .lake/packages/MD4Lean
+            .lake/packages/BibtexQuery
+            .lake/packages/UnicodeBasic
+            .lake/packages/leansqlite
+          key: ${{ steps.doc-cache.outputs.cache-primary-key }}
+
+      # One artifact per attempt, so that re-running the job does not find two `github-pages`.
+      - uses: actions/upload-pages-artifact@v5
         with:
           path: docbuild/.lake/build/doc
+          name: github-pages-${{ github.run_attempt }}
 
       - id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
+        with:
+          artifact_name: github-pages-${{ github.run_attempt }}

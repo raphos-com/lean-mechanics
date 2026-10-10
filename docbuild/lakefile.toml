@@ -9,6 +9,6 @@ name = "ContinuumMechanics"
 path = "../"
 
 [[require]]
-scope = "leanprover"
 name = "doc-gen4"
+git = "https://github.com/leanprover/doc-gen4"
 rev = "v4.34.1"
