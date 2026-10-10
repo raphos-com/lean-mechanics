@@ -8,6 +8,7 @@ import ContinuumMechanics.Tensor.Orthogonal
 import ContinuumMechanics.Tensor.Positive
 import ContinuumMechanics.Tensor.Polar
 import ContinuumMechanics.Tensor.Spectral
+import ContinuumMechanics.Tensor.Fourth
 
 /-!
 # ContinuumMechanics

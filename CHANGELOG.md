@@ -17,6 +17,8 @@
   `det R = 1 ↔ det F > 0`.
 - `Tensor/Spectral`: spectral decomposition `S = ∑ λᵢ eᵢ ⊗ eᵢ`; invariants via eigenvalues;
   `S ≥ 0 ↔ λᵢ ≥ 0`.
+- `Tensor/Fourth`: `Lin4 E`, minor/major symmetry, `𝕀ˢʸᵐ`, `I ⊗ I`, the isotropic tensor
+  `λ I⊗I + 2μ 𝕀ˢʸᵐ` and its symmetries.
 
 ### Phase 0 — project setup
 - Design documents `ARCHITECTURE.md`, `ROADMAP.md` (reviewed).
