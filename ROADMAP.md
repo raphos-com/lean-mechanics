@@ -129,21 +129,15 @@ evaluated with `norm_num`.
 4. Stretch items (2.6, 4.7, 7.x) are attempted only after their phase's core
    is on `main`.
 
-## Open questions for review
+## Review decisions
 
-1. **Square roots of tensors** (1.8): the square-root machinery for real
-   tensors is a piece of setup code that Lean finds automatically wherever it
-   is visible. Choice: make it visible library-wide (convenient; a later
-   Mathlib PR would replace it) or only inside files that opt in (more
-   verbose, no risk of clashing with a future Mathlib version). Proposal:
-   library-wide. Affects ergonomics only, not which theorems are true.
-2. **Beam ends** (§3.7 of ARCHITECTURE): a beam deflection only lives on
-   `[0, L]`, but Lean's ordinary derivative needs the function defined on
-   both sides of a point, so `w'(0)` and `w''(L)` are awkward for a function
-   defined only on the interval. Proposal: smooth-setting theorems take
-   `w : ℝ → ℝ` defined on all of ℝ (only its values on `[0, L]` matter).
-   Point loads are separate: there `w` is glued from smooth pieces, with
-   `w, w', w''` continuous and a jump of `P` in the shear force at the load.
-
-Resolved in review: Phase 6 runs in parallel; Cauchy's theorem is proved
-(not assumed) using flat tetrahedron faces.
+1. **Real CFC instance** (1.8): defined library-wide as a global instance
+   `ContinuousFunctionalCalculus ℝ (Lin E) IsSelfAdjoint` for finite-dimensional
+   `E`; to be replaced if Mathlib gains its own.
+2. **Beam ends** (§3.7 of ARCHITECTURE): smooth-setting theorems take
+   `w : ℝ → ℝ` defined on all of ℝ (only values on `[0, L]` matter). Point
+   loads use smooth pieces glued with `w, w', w''` continuous and a shear jump
+   of `P`.
+3. **Phase 6** runs in parallel with Phases 1–5.
+4. **Cauchy's theorem** is proved (not assumed), integrating over the flat
+   faces of a tetrahedron.

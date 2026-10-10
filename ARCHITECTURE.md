@@ -180,8 +180,8 @@ orthonormal basis and transfer the matrix CFC. Then `U := CFC.sqrt (Fᵀ F)`,
 `CFC.abs`, uniqueness of positive square roots, and the rest of the CFC API
 come for free. Proof obligations that the instance is basis-independent are
 avoided by `CFC`'s own uniqueness (`UniqueContinuousFunctionalCalculus`).
-This instance is a prime **upstream candidate**; if instance search proves
-fragile we fall back to a `local instance` per file.
+This instance is global (review decision) and a prime **upstream
+candidate**; if Mathlib gains its own instance, ours is deleted.
 
 Polar decomposition is then `R := F * U⁻¹`, with `R ∈ Orth`, `det R = 1` when
 `det F > 0`, `V := R U Rᵀ`, and uniqueness from uniqueness of positive square

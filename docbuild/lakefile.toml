@@ -1,0 +1,14 @@
+# Separate Lake project so that doc-gen4 is not a dependency of the library itself.
+name = "docbuild"
+reservoir = false
+version = "0.1.0"
+packagesDir = "../.lake/packages"
+
+[[require]]
+name = "ContinuumMechanics"
+path = "../"
+
+[[require]]
+scope = "leanprover"
+name = "doc-gen4"
+rev = "v4.34.1"
