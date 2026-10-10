@@ -6,7 +6,9 @@
 - `Elastostatics/Basic`: strain and stress fields `ε(u) = sym ∇u`, `σ = ℂε`; the **work
   identity** `∫_P σ : ε = ∫_∂P u·σn + ∫_P b·u`; **Clapeyron** `2U = ∫ b·u + ∫ u·σn`; **Betti
   reciprocity**; **Kirchhoff uniqueness** (solutions whose difference does no boundary work
-  differ by an infinitesimal rigid displacement).
+  differ by an infinitesimal rigid displacement); `U ≥ 0`, and `U(u) = 0 ⇒ u` rigid.
+- `Elastostatics/MinimumEnergy`: total potential energy `Φ`; `Φ(v) = Φ(u) + U(v − u)`;
+  **principle of minimum potential energy** with the rigid-displacement equality case.
 
 ### Phase 4 — constitutive theory (in progress)
 - `Tensor/DetDeriv`: `det` is smooth; **Jacobi's formula** `D det(F)[H] = det F · tr(F⁻¹H)`,

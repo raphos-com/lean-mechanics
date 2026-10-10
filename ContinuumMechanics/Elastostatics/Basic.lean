@@ -64,6 +64,22 @@ theorem contDiff_stressField (C : Lin4 E) {u : E → E} (hu : ContDiff ℝ 2 u) 
     ContDiff ℝ 1 (stressField C u) :=
   C.contDiff.comp (contDiff_strainField hu)
 
+theorem contDiff_strainField' {u : E → E} (hu : ContDiff ℝ 1 u) :
+    ContDiff ℝ 0 (strainField u) :=
+  (LinearMap.toContinuousLinearMap (Lin.sym : Lin E →ₗ[ℝ] Lin E)).contDiff.comp
+    (hu.fderiv_right le_rfl)
+
+/-- The double contraction of two continuous tensor fields is continuous. -/
+theorem _root_.Continuous.dcontr {X : Type*} [TopologicalSpace X] {f g : X → Lin E}
+    (hf : Continuous f) (hg : Continuous g) : Continuous fun x => f x ⊡ g x := by
+  let b := stdOrthonormalBasis ℝ E
+  have e : (fun x => f x ⊡ g x) = fun x => ∑ i, ⟪f x (b i), g x (b i)⟫_ℝ :=
+    funext fun x => Lin.dcontr_eq_sum b _ _
+  rw [e]
+  exact continuous_finsetSum _ fun i _ =>
+    ((ContinuousLinearMap.apply ℝ E (b i)).continuous.comp hf).inner
+      ((ContinuousLinearMap.apply ℝ E (b i)).continuous.comp hg)
+
 variable [MeasurableSpace E] [BorelSpace E]
 
 section Identities
@@ -94,21 +110,8 @@ theorem work_identity {σ : E → Lin E} (hσ : ContDiff ℝ 1 σ) (hsym : ∀ x
     simp only
     rw [h1, h2, h3, inner_neg_left, real_inner_comm (u x) (b x)]
     ring
-  have hc1 : Continuous fun x => σ x ⊡ strainField u x := by
-    have := (continuous_dcontr_right (E := E))
-    have hs : Continuous (strainField u) := by
-      unfold strainField
-      exact (LinearMap.toContinuousLinearMap (Lin.sym : Lin E →ₗ[ℝ] Lin E)).continuous.comp
-        (hu.continuous_fderiv one_ne_zero)
-    -- `(A, S) ↦ A : S` is continuous (bilinear in finite dimension)
-    let b := stdOrthonormalBasis ℝ E
-    have e : (fun x => σ x ⊡ strainField u x) =
-        fun x => ∑ i, ⟪σ x (b i), strainField u x (b i)⟫_ℝ :=
-      funext fun x => Lin.dcontr_eq_sum b _ _
-    rw [e]
-    exact continuous_finsetSum _ fun i _ =>
-      ((ContinuousLinearMap.apply ℝ E (b i)).continuous.comp hσ.continuous).inner
-        ((ContinuousLinearMap.apply ℝ E (b i)).continuous.comp hs)
+  have hc1 : Continuous fun x => σ x ⊡ strainField u x :=
+    hσ.continuous.dcontr (contDiff_strainField' hu).continuous
   have hc2 : Continuous fun x => ⟪u x, b x⟫_ℝ := hu.continuous.inner hb
   rw [hflux, setIntegral_congr_fun B.measurableSet hpt,
     integral_sub (B.integrableOn_real hc1) (B.integrableOn_real hc2)]
@@ -172,6 +175,44 @@ theorem tdiv_sub {σ₁ σ₂ : E → Lin E} {x : E} (h₁ : DifferentiableAt �
   rw [← fderiv_sub (d h₁) (d h₂)]
   congr 1; ext y; simp [star_sub]
 
+/-- The strain energy of a positive semidefinite material is nonnegative. -/
+theorem strainEnergy_nonneg (B : DivergenceRegion E) {C : Lin4 E} (hpos : C.PosDefOnSym)
+    (u : E → E) : 0 ≤ strainEnergy B C u := by
+  refine mul_nonneg (by norm_num) (setIntegral_nonneg B.measurableSet fun x _ => ?_)
+  by_cases h : strainField u x = 0
+  · simp [h]
+  · rw [Lin.dcontr_comm]; exact (hpos _ (Lin.sym_mem _) h).le
+
+/-- A `C²` displacement with zero strain energy, on a connected open body with positive definite
+`ℂ`, is an infinitesimal rigid displacement. [Gurtin1981], §33. -/
+theorem rigid_of_strainEnergy_eq_zero (B : DivergenceRegion E) {C : Lin4 E}
+    (hpos : C.PosDefOnSym) (hΩ : IsOpen B.carrier) (hconn : IsPreconnected B.carrier)
+    {u : E → E} (hu : ContDiff ℝ 2 u) (h0 : strainEnergy B C u = 0) :
+    ∃ (a : E) (W : Lin E), W ∈ Skw E ∧ ∀ x ∈ B.carrier, u x = a + W x := by
+  -- the energy density is a nonnegative continuous function with zero integral
+  let g := fun x => strainField u x ⊡ C (strainField u x)
+  have hε : Continuous (strainField u) := (contDiff_strainField hu).continuous
+  have hg : Continuous g := hε.dcontr (C.continuous.comp hε)
+  have hg0 : ∀ x, 0 ≤ g x := fun x => by
+    by_cases h : strainField u x = 0
+    · simp [g, h]
+    · simp only [g]; rw [Lin.dcontr_comm]; exact (hpos _ (Lin.sym_mem _) h).le
+  have hint : ∫ x in B.carrier, g x = 0 := by
+    have := h0; rw [strainEnergy] at this; simpa using this
+  have hae : g =ᵐ[volume.restrict B.carrier] 0 :=
+    (setIntegral_eq_zero_iff_of_nonneg_ae (Filter.Eventually.of_forall hg0)
+      (B.integrableOn_real hg)).mp hint
+  have hzero : EqOn g 0 B.carrier :=
+    Measure.eqOn_open_of_ae_eq hae hΩ hg.continuousOn continuousOn_const
+  -- hence the strain vanishes, and `u` is rigid
+  refine eq_rigid_of_sym_fderiv_eq_zero hΩ hconn hu.contDiffOn fun x hx => ?_
+  by_contra h
+  have := hpos _ (Lin.sym_mem _) h
+  have h0 := hzero hx
+  simp only [g, strainField, Pi.zero_apply] at h0
+  rw [Lin.dcontr_comm] at h0
+  linarith
+
 /-- **Kirchhoff's uniqueness theorem** (homogeneous form): if `ℂ` is positive definite on symmetric
 tensors, `u` is a `C²` equilibrium displacement without body force on a connected open body, and
 the boundary work density `u · σ(u) n` vanishes `dA`-a.e. (zero displacement or zero traction at
@@ -181,39 +222,12 @@ theorem rigid_of_zero_work (B : DivergenceRegion E) {C : Lin4 E} (hCm : C.HasMin
     {u : E → E} (hu : ContDiff ℝ 2 u) (heq : ∀ x ∈ B.carrier, tdiv (stressField C u) x = 0)
     (hbdry : ∀ᵐ x ∂B.surface, ⟪u x, stressField C u x (B.normal x)⟫_ℝ = 0) :
     ∃ (a : E) (W : Lin E), W ∈ Skw E ∧ ∀ x ∈ B.carrier, u x = a + W x := by
-  -- the strain energy vanishes
-  have hwork := work_identity B (contDiff_stressField C hu) (fun x => hCm.1 _) continuous_const
-    (fun x hx => by rw [heq x hx, add_zero]) (hu.of_le one_le_two) (b := fun _ => 0)
-  rw [integral_eq_zero_of_ae hbdry] at hwork
-  simp only [inner_zero_right, integral_zero, add_zero] at hwork
-  -- the energy density is a nonnegative continuous function with zero integral
-  let g := fun x => stressField C u x ⊡ strainField u x
-  have hε : Continuous (strainField u) := (contDiff_strainField hu).continuous
-  have hg : Continuous g := by
-    let b := stdOrthonormalBasis ℝ E
-    have e : g = fun x => ∑ i, ⟪stressField C u x (b i), strainField u x (b i)⟫_ℝ :=
-      funext fun x => Lin.dcontr_eq_sum b _ _
-    rw [e]
-    exact continuous_finsetSum _ fun i _ =>
-      ((ContinuousLinearMap.apply ℝ E (b i)).continuous.comp
-        (contDiff_stressField C hu).continuous).inner
-        ((ContinuousLinearMap.apply ℝ E (b i)).continuous.comp hε)
-  have hg0 : ∀ x, 0 ≤ g x := fun x => by
-    by_cases h : strainField u x = 0
-    · simp [g, stressField, h]
-    · exact (hpos _ (Lin.sym_mem _) h).le
-  have hae : g =ᵐ[volume.restrict B.carrier] 0 :=
-    (setIntegral_eq_zero_iff_of_nonneg_ae (Filter.Eventually.of_forall hg0)
-      (B.integrableOn_real hg)).mp hwork
-  have hzero : EqOn g 0 B.carrier :=
-    Measure.eqOn_open_of_ae_eq hae hΩ hg.continuousOn continuousOn_const
-  -- hence the strain vanishes, and `u` is rigid
-  refine eq_rigid_of_sym_fderiv_eq_zero hΩ hconn hu.contDiffOn fun x hx => ?_
-  by_contra h
-  have := hpos _ (Lin.sym_mem _) h
-  have h0 := hzero hx
-  simp only [g, stressField, strainField, Pi.zero_apply] at h0
-  linarith
+  have h := clapeyron B hCm hu continuous_const (b := fun _ => 0)
+    (fun x hx => by rw [heq x hx, add_zero])
+  rw [integral_eq_zero_of_ae hbdry] at h
+  simp only [inner_zero_right, integral_zero, add_zero, mul_eq_zero, two_ne_zero,
+    false_or] at h
+  exact rigid_of_strainEnergy_eq_zero B hpos hΩ hconn hu h
 
 /-- **Kirchhoff's uniqueness theorem**: two `C²` solutions of the mixed problem with the same body
 force, whose difference does no work on the boundary, differ by an infinitesimal rigid
