@@ -15,6 +15,8 @@
   matrices), `StarOrderedRing`, existence and uniqueness of positive square roots.
 - `Tensor/Polar`: polar decomposition `F = RU = VR`, `V = RURᵀ`, uniqueness,
   `det R = 1 ↔ det F > 0`.
+- `Tensor/Spectral`: spectral decomposition `S = ∑ λᵢ eᵢ ⊗ eᵢ`; invariants via eigenvalues;
+  `S ≥ 0 ↔ λᵢ ≥ 0`.
 
 ### Phase 0 — project setup
 - Design documents `ARCHITECTURE.md`, `ROADMAP.md` (reviewed).
