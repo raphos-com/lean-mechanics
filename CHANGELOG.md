@@ -13,7 +13,10 @@
 - `Elastostatics/MinimumEnergy`: total potential energy `Φ`; `Φ(v) = Φ(u) + U(v − u)`;
   **principle of minimum potential energy** with the rigid-displacement equality case.
 
-### Phase 4 — constitutive theory (in progress)
+### Phase 4 — constitutive theory
+- `Constitutive/RivlinEricksen`: **Rivlin–Ericksen representation theorem**: an isotropic tensor
+  function satisfies `G(A) = p(A)` for a polynomial `p` (any dimension, via reflections and
+  Lagrange interpolation), and `G(A) = φ₀I + φ₁A + φ₂A²` in 3D (Cayley–Hamilton).
 - `Constitutive/Hyperelastic/MooneyRivlin`: compressible Mooney–Rivlin energy; exact splitting
   `W_MR = W_neoHooke(λ, κ) + W_SVK(4c₂, −2c₂)`; `P = 2c₁F + 2c₂(I₁(C)F − FC) + (λ ln J − κ)F⁻ᵀ`;
   stress-free reference; linearisation with `μ' = 2c₁ + 2c₂(d − 2)`, `λ' = λ + 4c₂`.

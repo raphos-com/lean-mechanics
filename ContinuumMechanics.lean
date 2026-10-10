@@ -29,6 +29,7 @@ import ContinuumMechanics.Constitutive.Hyperelastic
 import ContinuumMechanics.Constitutive.Hyperelastic.SVK
 import ContinuumMechanics.Constitutive.Hyperelastic.NeoHookean
 import ContinuumMechanics.Constitutive.Hyperelastic.MooneyRivlin
+import ContinuumMechanics.Constitutive.RivlinEricksen
 import ContinuumMechanics.Elastostatics.Basic
 import ContinuumMechanics.Elastostatics.MinimumEnergy
 import ContinuumMechanics.Elastostatics.Weak

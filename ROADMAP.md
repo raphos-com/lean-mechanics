@@ -1,8 +1,7 @@
 # ContinuumMechanics — Roadmap
 
 Status: **reviewed**. Progress: Phase 0 ✅; Phase 1 ✅ (1.1–1.12, plus Jacobi's formula);
-Phase 2: 2.1–2.5 ✅, 2.6 necessity ✅ (sufficiency open); Phase 3 ✅; Phase 4: 4.1–4.6 ✅
-(4.7 open); Phase 5 ✅ (5.5 via the `KornSetting` hypothesis structure);
+Phase 2: 2.1–2.5 ✅, 2.6 necessity ✅ (sufficiency open); Phase 3 ✅; Phase 4 ✅; Phase 5 ✅ (5.5 via the `KornSetting` hypothesis structure);
 Phase 6: 6.1–6.9, 6.13 ✅; 6.10–6.12 for the bar and the EB cantilever ✅ (other beam BCs, Timoshenko weak forms open). Milestones are roughly one file each and map to
 `ARCHITECTURE.md` §2. Each milestone ends with: definitions → API lemmas →
 main theorems → `example` blocks → commit. Each phase ends with a
@@ -76,7 +75,7 @@ polar decomposition and the isotropic representation proved.
 | 4.4 | `Hyperelastic/SVK.lean` | `W = λ/2 (tr E)² + μ tr E²`, `S = λ tr(E) I + 2μE` derived from `DW` | 🟡 |
 | 4.5 | `Hyperelastic/NeoHookean.lean` | compressible neo-Hookean; stress formula derived; linearisation at `F = I` recovers `ℂ` | 🟡 |
 | 4.6 | `Hyperelastic/MooneyRivlin.lean` | same programme | ✅ |
-| 4.7 | `RivlinEricksen.lean` (stretch, d = 3) | isotropic `G : Sym → Sym` ⇒ `G(A) = φ₀I + φ₁A + φ₂A²` | 🔴 |
+| 4.7 | `RivlinEricksen.lean` (stretch, d = 3) | isotropic `G : Sym → Sym` ⇒ `G(A) = φ₀I + φ₁A + φ₂A²` (via `G(A) = p(A)` in any dimension) | ✅ |
 
 ## Phase 5 — Linear elastostatics (`Elastostatics/`)
 
