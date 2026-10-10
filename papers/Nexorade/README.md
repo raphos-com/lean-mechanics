@@ -28,13 +28,16 @@ the unit cell (§3.1), the only admissible field, four-point bending (§3.2), th
 
 ## Correspondence with the paper
 
+✅ proved as stated in the paper; ❌ the paper's statement is wrong, and the Lean result proves
+the corrected one.
+
 | Paper | Lean | Status |
 |---|---|---|
 | §2.2 Static homogenization: the plate energy is the minimum of the cell complementary energy (Hill–Mandel) | `Homogenized.lean`: `Cell.isLeast_outOfPlane` | proved for the nexorade |
 | §3.1 Unit cell, `a = L sin φ`, `l = L (cos φ + sin φ)` (19) | `Parametric.lean`: `cellOf`, `area_cellOf`, `length_cellOf` | ✅ |
 | §3.2 Only one admissible stress field: four-point bending | `OutOfPlane.lean`: `Cell.admissible_iff` | ✅ |
 | (20) `M₁₂ = 0`, `M₁₁ = M₂₂` | `Cell.M11_eq_M22` (and `M₁₂ = 0` by construction) | ✅ |
-| §3.3 Equivalent isotropic plate | `DegeneratePlate.toPlate`, `moment_eq_momentX` | ✅ with `ν = +1`, not `ν = −1` as stated: with `M = D((1−ν)K + ν tr K I)` only `ν = 1` gives `M₁₁ = M₂₂`, `M₁₂ = 0` and the rank-1 energy `½ D (tr K)²` |
+| §3.3 Equivalent isotropic plate | `DegeneratePlate.toPlate`, `moment_eq_momentX` | ❌ the paper states `ν = −1`; the proof gives `ν = +1`: with `M = D((1−ν)K + ν tr K I)` only `ν = 1` gives `M₁₁ = M₂₂`, `M₁₂ = 0` and the rank-1 energy `½ D (tr K)²` |
 | (22) Shear `r = M / (cos φ sin φ)` | `shear_cellOf` (`= 2M / sin 2φ`) | ✅ |
 | (23) Moment `m = M L / cos φ` | `moment_cellOf` | ✅ |
 | (24)–(27) Degenerate plate: `ΔM + p = 0`, energy only in the mean curvature, `K = d M` | `Plate.lean`: `legendre_le`, `legendre_eq`, `DegeneratePlate` | ✅ |
