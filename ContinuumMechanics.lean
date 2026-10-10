@@ -53,6 +53,7 @@ import ContinuumMechanics.Plates.Navier
 import ContinuumMechanics.Plates.MindlinReissner
 import ContinuumMechanics.Nexorade.OutOfPlane
 import ContinuumMechanics.Nexorade.Parametric
+import ContinuumMechanics.Nexorade.InPlane
 
 /-!
 # ContinuumMechanics

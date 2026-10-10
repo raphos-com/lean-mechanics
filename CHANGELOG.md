@@ -8,6 +8,9 @@
   gives the compliance `d = 2A(2a+3b)/(3EI(a+b)²) + 4A/(GSₛ a(a+b)²)` (Greco 2013, (8.10)).
 - `Nexorade/Parametric`: `(L, φ)` parametrization; stiffness (5.3) with `η = 4EI/(GSₛL²)`; shear
   `2M/sin 2φ`; moment `LM/cos φ`; normalized moment optimal at `φ = π/8`; `D → 0` as `φ → 0⁺`.
+- `Nexorade/InPlane`: membrane cell problem; `N₁₂ ≡ 0`; optimal field and **minimum complementary
+  energy**; compliance diagonal with `A₁₁₁₁ = A₂₂₂₂`, `A₂₂₁₁ = 0`; the bending term of `A₁₁₁₁` is
+  `a²b²(2a+b)/(12EI)` (the draft's `a²b²(16a+b)/(24EI)` does not match).
 
 ### Phase 7 — plates (in progress)
 - `Plates/KirchhoffLove`: rectangular plate, partial derivatives, biharmonic operator, plate
