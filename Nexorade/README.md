@@ -28,10 +28,13 @@ earlier draft (`5.1`, May 2013); the final paper leaves membrane behaviour to fu
 | (23) Moment `m = M L / cos φ` | `moment_cellOf` | ✅ |
 | (24)–(27) Degenerate plate: `ΔM + p = 0`, energy only in the mean curvature, `K = d M` | `Plate.lean`: `legendre_le`, `legendre_eq`, `DegeneratePlate` | ✅ |
 | (28)–(29) Compliance `d` and stiffness `D` | `Cell.compliance`, `Cell.energy_eq`, `compliance_cellOf`, `stiffness_cellOf` | ✅ |
-| (31) Euler–Bernoulli members (`GSₛ → ∞`) | — | not yet (it is the `η = 0` case of `stiffness_cellOf`) |
+| (31) Euler–Bernoulli members (`GSₛ → ∞`) | `Optimum.lean`: `Cell.complianceEuler_inv`, `Cell.tendsto_compliance_shear_rigid` | ✅ |
 | §4.1 `D → 0` as `a/l → 0` | `tendsto_stiffness_zero` | ✅ |
-| (32)–(33) Moment minimal at `a/l = 1 − √2/2` (`φ = π/8`), `m_min = (2√2 − 2) m_max ≈ 0.828 m_max` | `normalized_moment_optimal`, `two_mul_cos_mul_le` | ✅ |
-| §4.2 Stiffness optimum (`a/l → 0.5` for rigid shear, `→ 0.3966` for soft shear); 7% / 20% trade-off | — | not yet |
+| (32) Shear and moment in terms of `a/l` | `Cell.shear_eq`, `Cell.moment_eq` | ✅ |
+| (33) Moment minimal at `a/l = 1 − √2/2` (`φ = π/8`), `m_min = (2√2 − 2) m_max ≈ 0.828 m_max` | `momentShape_ge`, `momentShape_opt`, `momentShape_zero`, `momentShape_half` (also `normalized_moment_optimal` in `φ`) | ✅ |
+| §4.2 Stiffness optimum: `a/l = 1/2` for shear-rigid members | `eulerShape_le` | ✅ |
+| §4.2 Stiffness optimum for soft members: the root `x₀ ∈ (0.3966, 0.3967)` of `2x³ − 2x² + 3x − 1` | `Cell.tendsto_stiffness_soft`, `softShape_le`, `exists_unique_optPoly_root`, `optPoly_root_bounds` | ✅ |
+| §4.2 Trade-off: +7% deflection (`5√2 − 6`) vs +20% stresses (`(√2 + 1)/2`) | `deflection_ratio`, `moment_ratio` | ✅ |
 | §5.1 Navier solution (34)–(36) | `DegeneratePlate.navier`, `navier_kirchhoffLove` | ✅ |
 | §5.2 Finite element comparison (ABAQUS) | — | out of scope (numerical) |
 | Scale separation / convergence of the frame to the plate | — | assumed (see [`GAPS.md`](../GAPS.md)) |

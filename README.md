@@ -1,5 +1,7 @@
 # ContinuumMechanics
 
+[![CI](https://github.com/raphos-com/lean-mechanics/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/raphos-com/lean-mechanics/actions/workflows/ci.yml)
+
 A Lean 4 library of continuum mechanics and structural theories built on
 Mathlib: tensor algebra, kinematics, stress, constitutive theory, linear
 elastostatics, beams and plates. No axioms; `main` is `sorry`-free.
