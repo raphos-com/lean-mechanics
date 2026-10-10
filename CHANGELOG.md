@@ -11,6 +11,9 @@
   **principle of minimum potential energy** with the rigid-displacement equality case.
 
 ### Phase 4 — constitutive theory (in progress)
+- `Constitutive/Hyperelastic/MooneyRivlin`: compressible Mooney–Rivlin energy; exact splitting
+  `W_MR = W_neoHooke(λ, κ) + W_SVK(4c₂, −2c₂)`; `P = 2c₁F + 2c₂(I₁(C)F − FC) + (λ ln J − κ)F⁻ᵀ`;
+  stress-free reference; linearisation with `μ' = 2c₁ + 2c₂(d − 2)`, `λ' = λ + 4c₂`.
 - `Tensor/DetDeriv`: `det` is smooth; **Jacobi's formula** `D det(F)[H] = det F · tr(F⁻¹H)`,
   i.e. `∂J/∂F = J F⁻ᵀ`.
 - `Constitutive/Hyperelastic`: `P = ∂W/∂F` (`IsPiolaOf`), uniqueness of the stress;

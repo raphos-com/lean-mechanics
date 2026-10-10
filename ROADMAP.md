@@ -1,8 +1,8 @@
 # ContinuumMechanics — Roadmap
 
 Status: **reviewed**. Progress: Phase 0 ✅; Phase 1 ✅ (1.1–1.12, plus Jacobi's formula);
-Phase 2: 2.1–2.5 ✅ (2.6 open); Phase 3 ✅; Phase 4: 4.1–4.5 ✅
-(4.6–4.7 open); Phase 5: 5.1–5.4 ✅ (5.1–5.3 in `Elastostatics/Basic.lean`; 5.5 open);
+Phase 2: 2.1–2.5 ✅ (2.6 open); Phase 3 ✅; Phase 4: 4.1–4.6 ✅
+(4.7 open); Phase 5: 5.1–5.4 ✅ (5.1–5.3 in `Elastostatics/Basic.lean`; 5.5 open);
 Phase 6: 6.1–6.9, 6.13 ✅ (6.10–6.12 open). Milestones are roughly one file each and map to
 `ARCHITECTURE.md` §2. Each milestone ends with: definitions → API lemmas →
 main theorems → `example` blocks → commit. Each phase ends with a
@@ -75,7 +75,7 @@ polar decomposition and the isotropic representation proved.
 | 4.3 | `LinearIsotropic.lean` | `σ = λ tr(ε) I + 2μ ε`; conversions (λ,μ) ↔ (E,ν) ↔ (K,G) with round-trip lemmas; **`ℂ` positive definite on Sym ⇔ `μ > 0 ∧ 3λ + 2μ > 0`** ⇔ `G > 0 ∧ K > 0` ⇔ `E > 0 ∧ −1 < ν < ½` | 🟢 |
 | 4.4 | `Hyperelastic/SVK.lean` | `W = λ/2 (tr E)² + μ tr E²`, `S = λ tr(E) I + 2μE` derived from `DW` | 🟡 |
 | 4.5 | `Hyperelastic/NeoHookean.lean` | compressible neo-Hookean; stress formula derived; linearisation at `F = I` recovers `ℂ` | 🟡 |
-| 4.6 | `Hyperelastic/MooneyRivlin.lean` | same programme | 🟡 |
+| 4.6 | `Hyperelastic/MooneyRivlin.lean` | same programme | ✅ |
 | 4.7 | `RivlinEricksen.lean` (stretch, d = 3) | isotropic `G : Sym → Sym` ⇒ `G(A) = φ₀I + φ₁A + φ₂A²` | 🔴 |
 
 ## Phase 5 — Linear elastostatics (`Elastostatics/`)
