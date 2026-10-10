@@ -1,6 +1,7 @@
 # ContinuumMechanics — Roadmap
 
-Status: **draft for review**. Milestones are roughly one file each and map to
+Status: **reviewed**. Progress: Phase 0 ✅, Phase 1 ✅ (all of 1.1–1.12), Phase 6 in progress
+(6.1–6.3, 6.5–6.9 ✅). Milestones are roughly one file each and map to
 `ARCHITECTURE.md` §2. Each milestone ends with: definitions → API lemmas →
 main theorems → `example` blocks → commit. Each phase ends with a
 `CHANGELOG.md` entry and updates to `GAPS.md`, `TODO.md`, `UPSTREAM.md`.
