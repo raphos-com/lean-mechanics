@@ -59,6 +59,11 @@
   connected open set ⇒ infinitesimal rigid displacement `u = a + Wx`.
 
 ### Phase 6 — 1D structural theories (in progress)
+- `Sobolev1D/Primitive`: `H¹(0,L)` modelled by primitives `u = ∫₀ˣ v`, `v ∈ L²((0,L])`: point
+  evaluation `⟪χ_(0,x], v⟫`, Sobolev embedding `|u(x)| ≤ √L ‖u'‖`, Poincaré `∫u² ≤ L²‖u'‖²`,
+  continuity, and a Fubini lemma `∫ f (P w) = ⟪∫_·ᴸ f, w⟫`.
+- `Sobolev1D/BarWeak`: Lax–Milgram for `EA⟪v,w⟫ = ℓ(w)`; **weak forms of the fixed–free and
+  fixed–fixed bar are well posed**, and classical `C²` solutions are the weak solutions (`P u' = u`).
 - `Beams/Wirtinger`: **Wirtinger's inequality** `(π/L)² ∫u² ≤ ∫u'²` (`u(0) = u(L) = 0`), proved
   with Picone's identity against `sin(k(x + δ))` and `δ → 0⁺` (no Fourier series);
   `(π/L)² ∫w'² ≤ ∫w''²`.
