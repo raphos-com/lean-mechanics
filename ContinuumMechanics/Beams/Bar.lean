@@ -137,7 +137,8 @@ theorem fixedFree_linear (q₀ : ℝ) :
       b.FixedFree 0 (b.fixedFreeLinearSol q₀) := by
   have hEA := b.EA_pos.ne'
   have hL := b.L_pos.ne'
-  have h1 : deriv (b.fixedFreeLinearSol q₀) = fun x => q₀ * (b.L ^ 2 - x ^ 2) / (2 * b.L * b.EA) := by
+  have h1 : deriv (b.fixedFreeLinearSol q₀) =
+      fun x => q₀ * (b.L ^ 2 - x ^ 2) / (2 * b.L * b.EA) := by
     ext x
     have h := (((((hasDerivAt_id x).const_mul (b.L ^ 2)).sub
       ((hasDerivAt_pow 3 x).div_const 3)).const_mul q₀).div_const (2 * b.L * b.EA))
