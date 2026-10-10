@@ -6,6 +6,12 @@
 - `Beams/Interval`: vanishing `(n+1)`-th derivative on `[a, b]` ⇒ Taylor polynomial.
 - `Beams/Bar`: axial bar equilibrium; closed-form fixed–free (uniform + end load, linear
   load) and fixed–fixed (uniform) solutions; uniqueness for both boundary conditions.
+- `Beams/Poly`: derivatives of polynomial deflections; `beam_poly` tactic macro.
+- `Beams/EulerBernoulli/Basic`: `EI w'''' = q`; simply supported, cantilever, clamped–clamped,
+  clamped–pinned boundary conditions; uniqueness of `C⁴` solutions for all four.
+- `Beams/EulerBernoulli/Solutions`: simply supported and cantilever beams under uniform load,
+  cantilever with tip load, simply supported beam with a point load anywhere (piecewise, with
+  continuity and shear-jump conditions); `5qL⁴/384EI`, `qL⁴/8EI`, `PL³/3EI`, `PL³/48EI`.
 
 ### Phase 1 — tensor algebra (in progress)
 - `Tensor/Second`: `Lin E`, transpose, trace, determinant (`det Aᵀ = det A`), dyads.

@@ -11,6 +11,9 @@ import ContinuumMechanics.Tensor.Spectral
 import ContinuumMechanics.Tensor.Fourth
 import ContinuumMechanics.Beams.Interval
 import ContinuumMechanics.Beams.Bar
+import ContinuumMechanics.Beams.Poly
+import ContinuumMechanics.Beams.EulerBernoulli.Basic
+import ContinuumMechanics.Beams.EulerBernoulli.Solutions
 
 /-!
 # ContinuumMechanics
