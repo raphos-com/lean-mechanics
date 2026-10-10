@@ -294,8 +294,7 @@ Conventions:
    the full list of assumptions is greppable in one place.
 
 Planned hypothesis structures (initial list, see `ROADMAP.md`):
-`HasDivergenceTheorem`, `CauchyTractionHypotheses` (continuity of the
-traction field in `(x, n)`), `KornInequality`, `SaintVenantCompatible`
+`HasDivergenceTheorem`, `KornInequality`, `SaintVenantCompatible`
 (sufficiency on simply connected domains), `HasTraceOperator` (Phase 5 weak
 form on 3D domains).
 

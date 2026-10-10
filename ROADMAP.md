@@ -58,7 +58,7 @@ polar decomposition and the isotropic representation proved.
 | # | File | Content | Risk |
 |---|---|---|---|
 | 3.1 | `Balance.lean` part A | `div` of tensor fields; `HasDivergenceTheorem` structure; witness on boxes from Mathlib | 🟡 |
-| 3.2 | `Cauchy.lean` | traction `t(x, n)`; Cauchy's theorem (existence & linearity in `n`) under `CauchyTractionHypotheses` (the tetrahedron argument is stated as hypothesis-level, see GAPS) | 🔴 |
+| 3.2 | `Cauchy.lean` | traction `t(x, n)`; Cauchy's theorem (existence & linearity in `n`) by the tetrahedron argument, proved: each face of a tetrahedron is a flat triangle, so face integrals are ordinary 2D integrals via an affine parametrisation (no general surface measure needed). Physical hypothesis = force balance on every small tetrahedron + continuity of `t` | 🟡 |
 | 3.3 | `Balance.lean` part B | integral ⇒ local balance `div σ + b = ρa` (localisation via `IsOpen.ae_eq_zero_of_integral_contDiff_smul_eq_zero`); angular momentum ⇒ `σ` symmetric | 🟡 |
 | 3.4 | `Piola.lean` | `P = J σ F⁻ᵀ`, `S = F⁻¹P`; inverse conversions; `σ` sym ⇔ `S` sym ⇔ `PFᵀ` sym | 🟢 |
 | 3.5 | `Criteria.lean` | principal stresses (spectral), stress invariants, `J₂`, von Mises `σ_vM = √(3 J₂)`, Tresca; invariance and basic inequalities (e.g. Tresca ≤ von Mises ≤ (2/√3) Tresca) | 🟡 |
@@ -123,21 +123,27 @@ evaluated with `norm_num`.
 ## Ordering and review points
 
 1. Phase 0 + Phase 1 → **review** (the tensor API shapes everything else).
-2. Phase 6 depends on nothing beyond Phase 0, so it can run
-   in parallel after Phase 0 if you want early rigorous results.
+2. Phase 6 depends on nothing beyond Phase 0 and runs **in parallel** with
+   Phases 1–5 (decided in review).
 3. Phases 2 → 3 → 4 → 5 are sequential.
 4. Stretch items (2.6, 4.7, 7.x) are attempted only after their phase's core
    is on `main`.
 
 ## Open questions for review
 
-1. **Real CFC instance** (1.8): OK to define a global instance
-   `ContinuousFunctionalCalculus ℝ (Lin E) IsSelfAdjoint` for finite-dim `E`
-   in this library (with an upstream PR later), or keep it `local`?
-2. **Global smooth functions in 1D** (§3.7 of ARCHITECTURE): OK to state
-   smooth-setting beam theorems for `w : ℝ → ℝ` with `ContDiff ℝ k w`?
-3. **Phase 6 ordering**: run it right after Phase 1 (or even in parallel)?
-4. **Cauchy's theorem** (3.2): the tetrahedron argument needs surface
-   integrals over tetrahedron faces, which Mathlib lacks. Acceptable to take
-   the "balance on all small tetrahedra ⇒ linearity" step as a documented
-   hypothesis, while proving everything downstream?
+1. **Square roots of tensors** (1.8): the square-root machinery for real
+   tensors is a piece of setup code that Lean finds automatically wherever it
+   is visible. Choice: make it visible library-wide (convenient; a later
+   Mathlib PR would replace it) or only inside files that opt in (more
+   verbose, no risk of clashing with a future Mathlib version). Proposal:
+   library-wide. Affects ergonomics only, not which theorems are true.
+2. **Beam ends** (§3.7 of ARCHITECTURE): a beam deflection only lives on
+   `[0, L]`, but Lean's ordinary derivative needs the function defined on
+   both sides of a point, so `w'(0)` and `w''(L)` are awkward for a function
+   defined only on the interval. Proposal: smooth-setting theorems take
+   `w : ℝ → ℝ` defined on all of ℝ (only its values on `[0, L]` matter).
+   Point loads are separate: there `w` is glued from smooth pieces, with
+   `w, w', w''` continuous and a jump of `P` in the shear force at the load.
+
+Resolved in review: Phase 6 runs in parallel; Cauchy's theorem is proved
+(not assumed) using flat tetrahedron faces.
