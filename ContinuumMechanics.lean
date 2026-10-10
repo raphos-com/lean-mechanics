@@ -19,6 +19,7 @@ import ContinuumMechanics.Kinematics.Body
 import ContinuumMechanics.Kinematics.Rigid
 import ContinuumMechanics.Stress.Piola
 import ContinuumMechanics.Stress.Criteria
+import ContinuumMechanics.Stress.Balance
 import ContinuumMechanics.Constitutive.LinearIsotropic
 import ContinuumMechanics.Constitutive.Hyperelastic
 import ContinuumMechanics.Constitutive.Hyperelastic.SVK

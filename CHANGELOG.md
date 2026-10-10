@@ -16,6 +16,10 @@
   ⇔ `E > 0 ∧ −1 < ν < ½` ⇔ `K > 0 ∧ G > 0` in 3D; steel example.
 
 ### Phase 3 — stress (in progress)
+- `Stress/Balance`: divergence of vector and tensor fields; `DivergenceRegion` hypothesis
+  structure (first entry in `GAPS.md`); `∫_∂P σn = ∫_P div σ`; localisation; **integral force
+  balance ⇒ `div σ + b = 0`**; **moment balance ⇒ `σ` symmetric** (coordinate-free, any
+  dimension).
 - `Stress/Piola`: first and second Piola–Kirchhoff stresses, conversions, and
   `σ sym ⇔ S sym ⇔ PFᵀ sym`.
 - `Stress/Criteria`: `J₂`, von Mises; principal stresses in 3D; `J₂` principal formula;
