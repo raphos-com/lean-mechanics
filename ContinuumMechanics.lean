@@ -6,6 +6,7 @@ import ContinuumMechanics.Tensor.Spherical
 import ContinuumMechanics.Tensor.Invariants
 import ContinuumMechanics.Tensor.Orthogonal
 import ContinuumMechanics.Tensor.Positive
+import ContinuumMechanics.Tensor.Polar
 
 /-!
 # ContinuumMechanics

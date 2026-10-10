@@ -12,5 +12,7 @@ source with `-- upstream candidate`.
 | `Lin.dcontr`, `Frob` | `Tensor/Contraction.lean` | Hilbert–Schmidt inner product on operators |
 | `Matrix.charpoly_fin_three` | `Tensor/Invariants.lean` | explicit `3 × 3` characteristic polynomial |
 
-Still planned: polar decomposition, Jacobi's formula for `det`, H¹/H² on an
+| `Lin.polarRotation` & co. | `Tensor/Polar.lean` | polar decomposition in finite-dim real inner product spaces |
+
+Still planned: Jacobi's formula for `det`, H¹/H² on an
 interval, Wirtinger's inequality.

@@ -13,6 +13,8 @@
 - `Tensor/Orthogonal`: `Orth E = unitary (Lin E)`, `Rot E` (`det = 1`), `det Q = ±1`.
 - `Tensor/Positive`: continuous functional calculus on real `Lin E` (transferred from
   matrices), `StarOrderedRing`, existence and uniqueness of positive square roots.
+- `Tensor/Polar`: polar decomposition `F = RU = VR`, `V = RURᵀ`, uniqueness,
+  `det R = 1 ↔ det F > 0`.
 
 ### Phase 0 — project setup
 - Design documents `ARCHITECTURE.md`, `ROADMAP.md` (reviewed).
