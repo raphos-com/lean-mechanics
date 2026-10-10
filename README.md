@@ -13,7 +13,7 @@ elastostatics, beams and plates. No axioms; `main` is `sorry`-free.
 [`Nexorade/`](Nexorade) is a separate library (built on `ContinuumMechanics`) formalizing
 L. Greco, A. Lebée, C. Douthe, *Investigation of the elastic behavior of reciprocal systems using
 homogenization techniques* (2013): the square nexorade homogenized as a degenerate
-Kirchhoff–Love plate. See [`Nexorade.lean`](Nexorade.lean) for the section-by-section map.
+Kirchhoff–Love plate. See [`Nexorade/README.md`](Nexorade/README.md) for the section-by-section map.
 
 ## Building
 
