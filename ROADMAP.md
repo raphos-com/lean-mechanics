@@ -60,7 +60,7 @@ polar decomposition and the isotropic representation proved.
 
 | # | File | Content | Risk |
 |---|---|---|---|
-| 3.1 | `Balance.lean` part A | `div` of tensor fields; `HasDivergenceTheorem` structure; witness on boxes from Mathlib | 🟡 |
+| 3.1 | `Balance.lean` part A | `div` of tensor fields; `DivergenceRegion` structure; witness on boxes from Mathlib (`BoxRegion.lean`) | ✅ |
 | 3.2 | `Cauchy.lean` | traction `t(x, n)`; Cauchy's theorem (existence & linearity in `n`) by the tetrahedron argument, proved: each face of a tetrahedron is a flat triangle, so face integrals are ordinary 2D integrals via an affine parametrisation (no general surface measure needed). Physical hypothesis = force balance on every small tetrahedron + continuity of `t` | 🟡 |
 | 3.3 | `Balance.lean` part B | integral ⇒ local balance `div σ + b = ρa` (localisation via `IsOpen.ae_eq_zero_of_integral_contDiff_smul_eq_zero`); angular momentum ⇒ `σ` symmetric | 🟡 |
 | 3.4 | `Piola.lean` | `P = J σ F⁻ᵀ`, `S = F⁻¹P`; inverse conversions; `σ` sym ⇔ `S` sym ⇔ `PFᵀ` sym | 🟢 |

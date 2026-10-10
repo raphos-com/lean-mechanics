@@ -24,6 +24,8 @@
   ⇔ `E > 0 ∧ −1 < ν < ½` ⇔ `K > 0 ∧ G > 0` in 3D; steel example.
 
 ### Phase 3 — stress
+- `Stress/BoxRegion`: **non-vacuity of `DivergenceRegion`**: the unit box of any orthonormal basis,
+  with face measures and normals `±eᵢ`, via Mathlib's divergence theorem on boxes.
 - `Stress/Triangle`: surface integrals over flat triangles (affine parametrisation, Gram-determinant
   area); `h⁻² ∫_{x+hT} f dA → area(T) f(x)`.
 - `Stress/Cauchy`: **Cauchy's theorem by the tetrahedron argument**. From force balance on Cauchy

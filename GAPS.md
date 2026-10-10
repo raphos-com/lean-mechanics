@@ -25,9 +25,11 @@ domains, with the surface (Hausdorff) measure on the boundary. Mathlib currently
 rectangular boxes (`MeasureTheory.integral_divergence_of_hasFDerivAt_off_countable`), stated on
 `Fin (n+1) → ℝ` with face integrals rather than a surface measure.
 
-*Non-vacuity witness.* Planned: boxes in `EuclideanSpace ℝ (Fin 3)` with the sum of the face
-measures as `dA`, transporting Mathlib's box theorem along
-`EuclideanSpace.volume_preserving_measurableEquiv`. Not yet done.
+*Non-vacuity witness.* `ContinuumMechanics.boxRegion` (`Stress/BoxRegion.lean`): in any
+finite-dimensional `E` and for any orthonormal basis `e`, the unit box `{x | 0 < x · eᵢ < 1}` with
+`dA` = the sum of the Lebesgue measures of the open faces and `n = ±eᵢ`, transporting Mathlib's box
+theorem along the (volume-preserving) coordinate map. Still to do: the family of small boxes
+`x₀ + r·box` needed to instantiate the localisation theorems.
 
 ## Planned
 
