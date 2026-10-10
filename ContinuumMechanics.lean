@@ -11,6 +11,11 @@ import ContinuumMechanics.Tensor.Spectral
 import ContinuumMechanics.Tensor.Fourth
 import ContinuumMechanics.Tensor.Isotropic4
 import ContinuumMechanics.Tensor.Matrix
+import ContinuumMechanics.Kinematics.Strain
+import ContinuumMechanics.Kinematics.Observer
+import ContinuumMechanics.Kinematics.Infinitesimal
+import ContinuumMechanics.Kinematics.Body
+import ContinuumMechanics.Kinematics.Rigid
 import ContinuumMechanics.Beams.Interval
 import ContinuumMechanics.Beams.Bar
 import ContinuumMechanics.Beams.Poly

@@ -2,6 +2,17 @@
 
 ## Unreleased
 
+### Phase 2 — kinematics (in progress)
+- `Kinematics/Strain`: `C`, `B`, Green–Lagrange, Almansi; `C = U²`, `B = V²`, `E = FᵀeF`,
+  `C = I ⇔ F` orthogonal.
+- `Kinematics/Observer`: objectivity of `B`, `V`; invariance of `C`, `E`, `U`; `R* = QR`.
+- `Kinematics/Infinitesimal`: `E(I+H) = sym H + ½HᵀH`, `‖E − ε‖ ≤ ½‖H‖²`, `ε` as derivative of
+  `E`; `ε = 0 ⇔ H` skew.
+- `Kinematics/Body`: deformations of an open body, gradient, Jacobian, displacement,
+  change of observer; `IsUnit F ↔ det F ≠ 0`.
+- `Kinematics/Rigid`: skew displacement gradient (equivalently zero infinitesimal strain) on a
+  connected open set ⇒ infinitesimal rigid displacement `u = a + Wx`.
+
 ### Phase 6 — 1D structural theories (in progress)
 - `Beams/Interval`: vanishing `(n+1)`-th derivative on `[a, b]` ⇒ Taylor polynomial.
 - `Beams/Bar`: axial bar equilibrium; closed-form fixed–free (uniform + end load, linear
