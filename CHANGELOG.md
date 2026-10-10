@@ -6,6 +6,11 @@
 - `Nexorade/Optimum`: formulas in `a/l` (31)–(33); Euler–Bernoulli stiffness optimal
   at `a/l = 1/2`; soft-member optimum at the root `≈ 0.3966` of `2x³ − 2x² + 3x − 1`; trade-off
   factors `5√2 − 6` (deflection) and `(√2 + 1)/2` (stresses).
+- `Nexorade/Frame`: **convergence of the frame to the plate** for the infinite square nexorade
+  under loads `p₀ e^{ik·x}`: Bloch reduction to the cell, explicit adjugates with
+  `det = −4a(a+b) ω₁ω₂ (2cos θ₁ + 2cos θ₂ − 4)` (discrete Laplacian), existence and uniqueness of
+  the Bloch solution, and as `k → 0`: joint deflection / plate deflection `→ 1`, `|k|²` × member
+  forces → four-point bending with `s = −p₀A/(a(a+b))`.
 - `Nexorade/Optimum`: stiffness (29) in terms of the paper's `η = GSₛa²/EI` (30)
   (`Cell.stiffness_eq_eta`).
 - `Nexorade/OutOfPlane`: unit-cell statics of the square nexorade; admissible out-of-plane fields

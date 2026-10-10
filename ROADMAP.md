@@ -134,7 +134,7 @@ elastic behavior of reciprocal systems using homogenization techniques*, 2013). 
 | 8.3 | `InPlane.lean` | membrane problem: 4 in-plane unknowns, complementary-energy minimisation, compliance `a`, `A₂₂₁₁ = 0` (no Poisson effect), `N₁₂ ≡ 0` | ✅ |
 | 8.4 | `Plate.lean` | the degenerate equivalent plate (energy carried by `tr χ` only; `χ` deviatoric and twist modes energy-free); plate equation and Navier solution (34)–(36); nexor moment at the centre | ✅ |
 | 8.5 | `Homogenized.lean` | the static scheme: plate compliance as the minimum of the cell complementary energy over admissible fields with prescribed averages — proved for the nexorade (`IsLeast`); a general-frame version is deprioritised | ✅ (instance) |
-| 8.6 | — | convergence of the homogenized plate to the frame (Caillerie; Lebée–Sab): **assumed** (modelling hypothesis, `GAPS.md`); the ABAQUS comparison (§5.2) is numerical and out of scope | assumed |
+| 8.6 | `Frame.lean` | convergence of the frame to the homogenized plate: infinite nexorade frame, Bloch reduction (`det` = discrete Laplacian symbol), unique Bloch solution, long-wave limit `w / w_plate → 1` and member forces → localization (22); general frames (Caillerie; Lebée–Sab) **assumed** (`GAPS.md`); the ABAQUS comparison (§5.2) is numerical and out of scope | ✅ (nexorade, single-mode loads) |
 
 *Deprioritised* (not needed for Phase 8): 2.6 sufficiency, remaining 1D weak forms (6.12 beyond
 the bar and the cantilever), 7.1 plate energy/stationarity, 7.3 plate energy.

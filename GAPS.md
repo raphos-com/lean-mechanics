@@ -60,6 +60,11 @@ response converges to that of the Kirchhoff–Love plate whose compliance is giv
 the cell results; the convergence statement is the modelling hypothesis that gives them physical
 meaning, as in [GrecoLebeeDouthe2013], which recalls it from [Caillerie1984] and [LebeeSab2013].
 
+*Proved special case.* `papers/Nexorade/Frame.lean` proves it for the square nexorade under
+single-mode loads `p₀ e^{ik·x}`: the infinite frame has a unique Bloch solution, and as `k → 0` its
+joint deflections divided by the plate deflection `p₀ d e^{ik·x}/|k|⁴` tend to `1`
+(`Cell.tendsto_frame`). General frames, general loads and bounded domains remain assumed.
+
 *Mathlib would need.* Two-scale convergence / Γ-convergence for discrete lattices, Korn-type
 inequalities for frames.
 
