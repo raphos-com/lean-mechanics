@@ -18,6 +18,9 @@
 - `Periodic`: periodic frames; Bloch compatibility matrix `C(θ)`, Bloch reduction of the infinite
   frame, Maxwell–Calladine at every wave vector (complex index with `C(θ)ᴴ`), Maxwell lattices
   have as many zero modes as self-stresses at every `θ` and at least `d` self-stresses at `θ = 0`.
+- `Winding`: winding number `(2πi)⁻¹∮ p'/p` of a polynomial around the unit circle; **argument
+  principle**: it equals the number of roots in the open unit disk (with multiplicity), and is
+  additive under products.
 
 ### Elastostatics
 - `Elastostatics/Korn`: **Korn's first inequality** `∫|∇u|² ≤ 2∫|ε(u)|²` for compactly supported
@@ -26,6 +29,8 @@
 
 ### Papers (`papers/`, see each README)
 - `Nexorade`, `Miura`, `KaneLubensky`, `Gridshells`, `BendingGradient`.
+- `Gridshells/Sphere`: a Chebyshev net on the unit sphere satisfies the sine-Gordon equation
+  `ω_uv = −sin ω`; its quadrilaterals have area `< 2π`.
 
 ### Phase 7 — plates (in progress)
 - `Plates/KirchhoffLove`: rectangular plate, partial derivatives, biharmonic operator, plate

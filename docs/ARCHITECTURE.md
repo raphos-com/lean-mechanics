@@ -99,6 +99,7 @@ DiscreteMechanics/
   LongWave.lean                           -- Long-wave limits of Bloch problems
   Periodic.lean                           -- Periodic pin-jointed frames and their Bloch matrices
   Truss.lean                              -- Pin-jointed frames: compatibility, equilibrium and Maxwell–Calladine counting
+  Winding.lean                            -- Winding numbers, argument principle for polynomials
 
 papers/                                   -- separate Lake project: paper formalizations
 ```

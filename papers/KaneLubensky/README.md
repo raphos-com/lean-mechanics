@@ -19,7 +19,8 @@ built on the frame theory of [`DiscreteMechanics`](../../DiscreteMechanics).
 | 1D bulk–edge correspondence: the winding number decides the edge carrying the zero mode | `Chain.winding_eq_one_iff_left` | ✅ |
 | Square lattice: no zero modes off the lines `kᵢ = 0`; floppy modes on them | `square_zeroModes_eq_bot`, `square_selfStresses_eq_bot`, `square_floppy_line` | ✅ |
 | Kagome lattice is a Maxwell lattice with self-stresses at `k = 0` | `kagome_zeroModes_eq_selfStresses`, `kagome_selfStresses_zero` | ✅ |
-| Topological polarization `R_T` of deformed kagome lattices and the boundary-mode count `ν = ...` | — | not formalized |
+| Argument principle: the winding number of a polynomial Bloch determinant around the unit circle is its number of roots in the unit disk; it is additive under products | `DiscreteMechanics.winding_eq_card_roots`, `DiscreteMechanics.winding_mul` | ✅ |
+| Topological polarization `R_T` of deformed kagome lattices and the boundary-mode count `ν = ...` | — | not formalized: needs the explicit deformed-kagome Bloch matrices of the paper |
 
 ## Building
 
