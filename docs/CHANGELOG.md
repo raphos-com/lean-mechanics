@@ -44,6 +44,9 @@
   Poincaré lemma (rotation field `W` with `∂ₖWᵢⱼ = ∂ⱼεᵢₖ − ∂ᵢεⱼₖ`, then `∇u = ε + W`).
 
 ### Plates
+- `Plates/Grillage`: orthotropic Kirchhoff–Love plates and their Navier solution; the square beam
+  grillage homogenizes to `D₁₁ = D₂₂ = EI/ℓ`, `D₁₂ = 0`, `D₆₆ = GJ/2ℓ` (Timoshenko–Woinowsky §86),
+  is isotropic iff `GJ = EI`, central deflection `q₀ℓa⁴/(2π⁴(EI + GJ))`.
 - `Plates/Energy`: Kirchhoff–Love bending form `a(w,v) = D∫ν ΔwΔv + (1−ν)∇²w:∇²v` in `ℝⁿ`, the
   classical 2D density, **null Lagrangian** `∫∇²w:∇²v = ∫ΔwΔv`, `a(w,v) = D∫Δ²w v`,
   **strong ⇔ stationary** (`DΔ²w = q` in an open `U` iff `a(w,v) = ∫qv` for all test functions

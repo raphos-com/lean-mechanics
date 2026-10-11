@@ -19,6 +19,16 @@ map `Q ↦ i · Q` is the matrix `embed`, and `i ∴ R` is `embedᵀ R`.
 | (64)–(67), §6.2: `f_RM = (2/3) i ∴ f ∴ (2/3) i` is the orthogonal projection on Reissner–Mindlin compliances | `rmProj_orthogonal`, `rmProj_rm`, `rmProj_homogeneous` | ✅ |
 | 3D localization, Reissner's shear fields (Section 4), boundary conditions (App. A.5) | — | not formalized |
 
+## Space frames (Lebée–Sab 2013)
+
+> A. Lebée, K. Sab, **Homogenization of a space frame as a thick plate: Application of the
+> Bending-Gradient theory to a beam lattice**, Computers & Structures 127, 88–101 (2013).
+
+| Claim | Lean | Status |
+|---|---|---|
+| First-order (Kirchhoff–Love) model of a square beam lattice: `D₁₁ = D₂₂ = EI/ℓ`, `D₁₂ = 0`, `D₆₆ = GJ/2ℓ` | `Plates.Grillage.grillage_energy` (library) | ✅ |
+| Bending-Gradient compliance of the square lattice, failure of the Reissner–Mindlin projection, cylindrical bending solution | — | not formalized: the paper's text is needed |
+
 ## Building
 
 ```sh

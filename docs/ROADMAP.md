@@ -97,6 +97,7 @@ Status: ✅ done; 🟡 partly done (what is open is stated); ⬜ planned.
 | `KirchhoffLove.lean` | plate equation, moments, simply supported edges | ✅ |
 | `Energy.lean` | Kirchhoff–Love bending energy; null Lagrangian `∫∇²w:∇²v = ∫ΔwΔv`; strong ⇔ stationary on open sets; minimum potential energy for clamped plates | ✅ |
 | `Navier.lean` | single-mode Navier solutions | ✅ |
+| `Grillage.lean` | orthotropic plates, Navier solution; square beam grillage as an orthotropic plate, isotropic iff `GJ = EI` | ✅ |
 | `MindlinReissner.lean` | equations, Navier solution, Kirchhoff limit | ✅ |
 | `MindlinEnergy.lean` | Mindlin–Reissner energy form, integration by parts, strong ⇔ stationary, nonnegativity | ✅ |
 
