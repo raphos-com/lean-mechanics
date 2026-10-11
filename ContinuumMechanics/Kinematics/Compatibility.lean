@@ -17,8 +17,8 @@ We state and prove necessity coordinate-free and in any dimension: for `u ∈ C�
 The proof only uses the full symmetry of `D³u`, obtained from the symmetry of second derivatives
 (`ContDiffAt.isSymmSndFDerivAt`) applied to `u` and to `∇u`.
 
-Sufficiency (on simply connected bodies) needs a Poincaré lemma that Mathlib does not yet have; it
-is recorded in `docs/GAPS.md`.
+Sufficiency on convex domains is `saintVenant_sufficient` (`Kinematics/SaintVenant`); on general
+simply connected bodies it needs a Poincaré lemma that Mathlib does not yet have (`docs/GAPS.md`).
 
 ## Main results
 

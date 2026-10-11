@@ -59,4 +59,4 @@ of the 1D bar of `Sobolev1D/BarWeak`, whose `H¹` model is constructed without h
 
 | Structure | Needed for | Mathlib would need | Witness plan |
 |---|---|---|---|
-| `SaintVenantCompatible` | Saint-Venant sufficiency (`Kinematics/Compatibility.lean`) | Poincaré lemma on simply connected open sets | — |
+| — | Saint-Venant sufficiency on simply connected, non-convex domains (proved on convex ones in `Kinematics/SaintVenant.lean`) | Poincaré lemma on simply connected open sets | — |

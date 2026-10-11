@@ -27,6 +27,11 @@
   `C²` fields in `ℝⁿ`, via `∫|∇u|² + ∫(div u)² = 2∫|ε(u)|²` (integration by parts twice and
   symmetry of second derivatives).
 
+### Kinematics
+- `Kinematics/SaintVenant`: **Saint-Venant sufficiency** on open convex domains: a symmetric `C²`
+  strain satisfying the compatibility conditions is `sym ∇u`, by two applications of Mathlib's
+  Poincaré lemma (rotation field `W` with `∂ₖWᵢⱼ = ∂ⱼεᵢₖ − ∂ᵢεⱼₖ`, then `∇u = ε + W`).
+
 ### Plates
 - `Plates/Energy`: Kirchhoff–Love bending form `a(w,v) = D∫ν ΔwΔv + (1−ν)∇²w:∇²v` in `ℝⁿ`, the
   classical 2D density, **null Lagrangian** `∫∇²w:∇²v = ∫ΔwΔv`, `a(w,v) = D∫Δ²w v`,

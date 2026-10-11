@@ -46,7 +46,7 @@ Status: ✅ done; 🟡 partly done (what is open is stated); ⬜ planned.
 | `Infinitesimal.lean` | `ε = sym ∇u`, linearisation estimate | ✅ |
 | `Rigid.lean` | skew gradient ⇒ infinitesimal rigid displacement | ✅ |
 | `Observer.lean` | change of observer, objectivity | ✅ |
-| `Compatibility.lean` | Saint-Venant compatibility | 🟡 necessity only; sufficiency needs a Poincaré lemma (`GAPS.md`) |
+| `Compatibility.lean`, `SaintVenant.lean` | Saint-Venant compatibility: necessity; sufficiency on open convex domains (Poincaré lemma) | 🟡 sufficiency on simply connected (non-convex) domains open |
 
 ### Stress and balance laws (`Stress/`)
 
@@ -101,7 +101,7 @@ Status: ✅ done; 🟡 partly done (what is open is stated); ⬜ planned.
 |---|---|---|
 | Mindlin–Reissner energy | energy, strong ⇔ stationary | ⬜ |
 | `H¹₀(Ω; ℝⁿ)` | Sobolev space on open sets; Korn's inequality by density | ⬜ |
-| Saint-Venant sufficiency | compatible strains are symmetric gradients on simply connected domains | ⬜ |
+| Saint-Venant on simply connected domains | needs Mathlib's Poincaré lemma beyond convex sets | ⬜ |
 
 ## DiscreteMechanics
 

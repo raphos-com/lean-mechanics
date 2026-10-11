@@ -35,6 +35,7 @@ import ContinuumMechanics.Elastostatics.MinimumEnergy
 import ContinuumMechanics.Elastostatics.Weak
 import ContinuumMechanics.Elastostatics.Korn
 import ContinuumMechanics.Kinematics.Compatibility
+import ContinuumMechanics.Kinematics.SaintVenant
 import ContinuumMechanics.Beams.Interval
 import ContinuumMechanics.Beams.Bar
 import ContinuumMechanics.Beams.Poly

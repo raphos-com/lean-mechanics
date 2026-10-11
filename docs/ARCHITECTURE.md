@@ -62,6 +62,7 @@ ContinuumMechanics/
     Infinitesimal.lean                    -- Infinitesimal strain
     Observer.lean                         -- Change of observer and objectivity
     Rigid.lean                            -- Infinitesimal rigid displacements
+    SaintVenant.lean                      -- Saint-Venant compatibility (sufficiency, convex domains)
     Strain.lean                           -- Finite strain measures
   Plates/
     Energy.lean                           -- Kirchhoff–Love plate energy: strong ⇔ stationary
