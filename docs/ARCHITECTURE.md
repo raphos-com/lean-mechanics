@@ -109,14 +109,17 @@ ClassicalMechanics/
   Kepler.lean                             -- The Kepler problem
   Lagrangian.lean                         -- Lagrangian mechanics with one degree of freedom
   LinearHamiltonian.lean                  -- Linear Hamiltonian systems: symplectic flows, Liouville
-  NormalModes.lean                        -- Complete sets of normal modes
   Noether.lean                            -- Lagrangians on ℝⁿ and Noether's theorem
+  NormalModes.lean                        -- Complete sets of normal modes
   Oscillator.lean                         -- Harmonic and damped oscillators
   Particles.lean                          -- Systems of particles: the general theorems of dynamics
   RigidBody.lean                          -- Rigid bodies: inertia tensor, Euler's equations
+  RotatingFrame.lean                      -- Rotating frames: Coriolis and centrifugal forces
   Rotation.lean                           -- Kinematics of rigid bodies: rotations, Poisson's formula
   SmallOscillations.lean                  -- Small oscillations and normal modes
+  TwoBody.lean                            -- The two-body problem: reduced mass
   Vector.lean                             -- Vectors in ℝ³ and their time derivatives
+  Virial.lean                             -- The virial theorem
 
 DiscreteMechanics.lean                    -- root: imports every module of DiscreteMechanics
 DiscreteMechanics/

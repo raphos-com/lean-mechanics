@@ -32,6 +32,12 @@
 - `LinearHamiltonian`: quadratic Hamiltonians `½ zᵀ S z`: the matrix `A = -J S` is Hamiltonian,
   the fundamental matrix of `ż = A z` is **symplectic** for all times and has **determinant 1**
   (Liouville's theorem for linear systems).
+- `Virial`: `Ġ = 2T + Σ xᵢ · Fᵢ` for the virial `G = Σ mᵢ xᵢ · vᵢ`; **virial theorem** (bounded
+  virial ⇒ `⟨2T + Σ xᵢ · Fᵢ⟩ → 0`) and `⟨2T⟩ = k⟨U⟩` for homogeneous potentials.
+- `TwoBody`: reduction of an isolated pair to one body of reduced mass, `μ r̈ = F`, and the
+  kinetic energy split `T = ½ M |v_G|² + ½ μ |ṙ|²`.
+- `RotatingFrame`: velocity and acceleration relative to a rotating frame; Newton's law in the
+  moving frame with **Coriolis**, **centrifugal** and **Euler** forces.
 - `Rotation`: rigid motions `x = c + R X`: spatial and body angular velocities are skew,
   `Ω = R W Rᵀ`, skew matrices act as cross products with their axial vector, **Poisson's formula**
   `ė = ω × e`, rigid velocity field `ẋ = ċ + ω × (x - c)`, distances preserved.

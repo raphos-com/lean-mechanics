@@ -126,11 +126,14 @@ Status: ✅ done; 🟡 partly done (what is open is stated); ⬜ planned.
 |---|---|---|
 | `Vector.lean` | product rules for dot and cross products of trajectories in `ℝ³` | ✅ |
 | `Particles.lean` | systems of particles: momentum, centre of mass, angular momentum (central forces), kinetic energy theorem, energy conservation | ✅ |
+| `Virial.lean` | virial `G = Σ mᵢ xᵢ·vᵢ`, `Ġ = 2T + Σ xᵢ·Fᵢ`; **virial theorem** for bounded motions, homogeneous potentials `⟨2T⟩ = k⟨U⟩` | ✅ |
+| `TwoBody.lean` | reduction of the two-body problem: `μ r̈ = F` with the reduced mass, `T = ½M|v_G|² + ½μ|ṙ|²` | ✅ |
 | `Kepler.lean` | Kepler problem: conservation of `L`, `E` and the Laplace–Runge–Lenz vector, Kepler's first and second laws, eccentricity–energy relation | ✅ |
 | `RigidBody.lean` | inertia tensor (symmetric, positive semidefinite), Steiner, König, Euler's equations and their invariants | ✅ |
 | `Oscillator.lean` | harmonic oscillator (solution, uniqueness, periodicity), damped oscillator (dissipation, underdamped solution) | ✅ |
 | `Lagrangian.lean` | Lagrangian mechanics with one degree of freedom: Beltrami energy, cyclic coordinates, Hamilton's principle ⇔ Euler–Lagrange, natural systems | ✅ |
 | `Rotation.lean` | rigid-body kinematics: `Ω = ṘRᵀ`, `W = RᵀṘ` skew, `Ω = RWRᵀ`, axial vector, Poisson's formula, rigid velocity field, isometry | ✅ |
+| `RotatingFrame.lean` | motion relative to a rotating frame: `ẍ = R(a + 2w×v + w×(w×y) + ẇ×y)`; Coriolis, centrifugal and Euler forces | ✅ |
 | `Hamiltonian.lean` | Hamilton's equations, Poisson brackets, evolution `Ḟ = {F, H}`, energy conservation, Liouville (divergence-free Hamiltonian field), natural systems, Legendre transform (Euler–Lagrange solutions are Hamiltonian flows) | ✅ |
 | `Jacobi.lean` | Poisson bracket of `C²` functions: antisymmetry, **Jacobi identity** | ✅ |
 | `LinearHamiltonian.lean` | linear Hamiltonian systems `ż = -J S z`: Hamiltonian matrices, the flow is symplectic and `det Φ(t) = 1` (Liouville) | ✅ |
