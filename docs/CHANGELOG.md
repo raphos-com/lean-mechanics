@@ -34,6 +34,8 @@
   (Liouville's theorem for linear systems).
 - `KeplerThird`: semi-major axis `a = -k/(2E)`, `b² = a p`, periapsis and apoapsis bounds on `r`,
   **Kepler's third law** `T² = 4π² m a³ / k` from the swept-area hypothesis.
+- `KeplerPeriod`: eccentric anomaly, Kepler's equation `E - e sin E = n t + const`, the bound
+  orbit is periodic with least period `2π/n`, so **Kepler's third law** holds unconditionally.
 - `EffectivePotential`: general central forces: conservation laws, radial energy
   `E = ½ m ṙ² + U_eff(r)`, allowed region and turning points.
 - `Galilean`: boosts, rotations and time shifts of particle systems, transformation laws for

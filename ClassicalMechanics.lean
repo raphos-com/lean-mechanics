@@ -5,6 +5,7 @@ import ClassicalMechanics.Virial
 import ClassicalMechanics.TwoBody
 import ClassicalMechanics.Kepler
 import ClassicalMechanics.KeplerThird
+import ClassicalMechanics.KeplerPeriod
 import ClassicalMechanics.EffectivePotential
 import ClassicalMechanics.Rutherford
 import ClassicalMechanics.Constraints

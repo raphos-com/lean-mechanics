@@ -122,6 +122,7 @@ ClassicalMechanics/
   HeavyTop.lean                           -- Lagrange's heavy symmetric top
   Jacobi.lean                             -- The Jacobi identity for Poisson brackets
   Kepler.lean                             -- The Kepler problem
+  KeplerPeriod.lean                       -- Kepler's equation and the period of bound orbits
   KeplerThird.lean                        -- Kepler's third law, peri- and apoapsis
   Lagrangian.lean                         -- Lagrangian mechanics with one degree of freedom
   LinearHamiltonian.lean                  -- Linear Hamiltonian systems: symplectic flows, Liouville
