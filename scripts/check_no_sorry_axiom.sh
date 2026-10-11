@@ -25,6 +25,7 @@ cat > "$tmp" <<'LEAN'
 import ContinuumMechanics
 import Nexorade
 import Miura
+import KaneLubensky
 open Lean in
 #eval show CoreM Unit from do
   let env ← getEnv

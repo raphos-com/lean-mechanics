@@ -3,6 +3,10 @@
 ## Unreleased
 
 ### Phase 9 — frames and lattices (`Frames/`)
+- `papers/KaneLubensky`: 1D Maxwell chain (unique zero mode `(−c₁/c₂)ⁿ`, no self-stress, winding
+  number of `c₁ + c₂e^{iq}` by Cauchy's theorem, bulk–edge correspondence); square lattice (no
+  zero modes off the lines `kᵢ = 0`, floppy lines); kagome lattice (Maxwell, ≥ 2 self-stresses at
+  `k = 0`); `PeriodicTruss.le_finrank_selfStresses_zero`.
 - `papers/Miura`: Miura-ori rigid folding (`facet_isometry`), in-plane Poisson's ratio
   `ν_SL = −cos²θ tan²α` (Schenk–Guest), finite patterns: positive iff
   `b cos α > 2na(1 − sin²θ sin²α)` (Lv et al.), and convergence to `ν_SL`.

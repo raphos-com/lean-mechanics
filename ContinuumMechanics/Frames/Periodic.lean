@@ -162,6 +162,27 @@ theorem translation_mem_zeroModes [Fintype N] (a : Fin d → ℂ) :
     Finset.sum_comm (f := fun x y => if x = T.src b then (T.bar b y : ℂ) * a y else 0)]
   simp [Finset.sum_ite_eq']
 
+/-- At `θ = 0` the zero modes contain the `d`-dimensional space of translations. -/
+theorem le_finrank_zeroModes_zero [Fintype N] [Nonempty N] :
+    d ≤ Module.finrank ℂ (T.zeroModes 0) := by
+  let f : (Fin d → ℂ) →ₗ[ℂ] T.zeroModes 0 :=
+    { toFun := fun a => ⟨fun p => a p.2, T.translation_mem_zeroModes a⟩
+      map_add' := fun _ _ => rfl
+      map_smul' := fun _ _ => rfl }
+  have hf : Function.Injective f := fun a a' h => by
+    funext i
+    have := congrFun (congrArg Subtype.val h) (Classical.arbitrary N, i)
+    simpa [f] using this
+  simpa using LinearMap.finrank_le_finrank_of_injective hf
+
+/-- **A Maxwell lattice has at least `d` states of self-stress at `θ = 0`** (periodic boundary
+conditions), [KaneLubensky2014]. -/
+theorem le_finrank_selfStresses_zero [Fintype N] [Fintype B] [Nonempty N]
+    (hM : d * Fintype.card N = Fintype.card B) :
+    d ≤ Module.finrank ℂ (T.selfStresses 0) := by
+  rw [← T.finrank_zeroModes_eq_selfStresses hM]
+  exact T.le_finrank_zeroModes_zero
+
 end PeriodicTruss
 
 end ContinuumMechanics
