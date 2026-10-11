@@ -27,6 +27,8 @@
   constants of the motion, energy conservation, **Liouville's theorem** (the Hamiltonian vector
   field of a `C²` Hamiltonian is divergence-free), natural systems give Newton's law; Legendre
   transform: under the Legendre relations, Euler–Lagrange solutions are Hamiltonian flows.
+- `Jacobi`: Poisson brackets of `C²` functions on phase space are antisymmetric and satisfy the
+  **Jacobi identity** (differentiation of the bracket and symmetry of second derivatives).
 - `Rotation`: rigid motions `x = c + R X`: spatial and body angular velocities are skew,
   `Ω = R W Rᵀ`, skew matrices act as cross products with their axial vector, **Poisson's formula**
   `ė = ω × e`, rigid velocity field `ẋ = ċ + ω × (x - c)`, distances preserved.
