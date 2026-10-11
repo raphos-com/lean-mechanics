@@ -96,6 +96,8 @@
   additive under products.
 
 ### Elastostatics
+- `Airy`: Airy stress function: equilibrium, compatibility ⇔ `Δ²φ = 0` for plane stress and
+  plane strain, polynomial solutions (tension, bending, cantilever, simply supported beam).
 - `Castigliano`: Castigliano's theorems (`∂U/∂u = f`, `∂U*/∂f = u`), Clapeyron, Maxwell–Betti,
   unit-load method; truss deflections `Σ N n L/(EA)` and the cantilever tip deflection.
 - `H10`: `H¹₀(Ω; ℝⁿ)` as the closure of the graphs of smooth compactly supported fields in

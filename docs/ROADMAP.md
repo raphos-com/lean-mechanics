@@ -108,6 +108,7 @@ Status: ✅ done; 🟡 partly done (what is open is stated); ⬜ planned.
 
 | Item | Content | Status |
 |---|---|---|
+| `Airy.lean` | plane elasticity: Airy stresses satisfy equilibrium, compatibility ⇔ biharmonic (plane stress and strain), uniaxial tension, pure bending, end-loaded cantilever, simply supported beam under uniform load | ✅ |
 | `Castigliano.lean` | Castigliano's first and second theorems, Clapeyron, Maxwell–Betti, unit-load method; determinate trusses `δ = Σ N n L/(EA)`; cantilever `U* = P²L³/(6EI)`, tip deflection `PL³/(3EI)` | ✅ |
 | `H10.lean` | `H¹₀(Ω; ℝⁿ)` as the closure of smooth compactly supported fields in `L² × L²`; **Korn's identity and inequality by density**, coercivity of the isotropic energy | ✅ |
 | Saint-Venant on simply connected domains | needs Mathlib's Poincaré lemma beyond convex sets | ⬜ |

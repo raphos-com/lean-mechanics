@@ -54,6 +54,7 @@ ContinuumMechanics/
     RivlinEricksen.lean                   -- The Rivlin–Ericksen representation theorem
     Viscoelastic.lean                     -- Kelvin–Voigt, Maxwell and Zener viscoelastic models
   Elastostatics/
+    Airy.lean                             -- Plane elasticity and the Airy stress function
     Basic.lean                            -- Linear elastostatics: work, Clapeyron, Betti, Kirchhoff
     Castigliano.lean                      -- Castigliano's theorems and the unit-load method
     H10.lean                              -- H¹₀(Ω; ℝⁿ) and Korn's inequality by density

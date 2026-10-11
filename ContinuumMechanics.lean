@@ -41,6 +41,7 @@ import ContinuumMechanics.Elastostatics.NavierLame
 import ContinuumMechanics.Elastostatics.PlaneWave
 import ContinuumMechanics.Elastostatics.H10
 import ContinuumMechanics.Elastostatics.Castigliano
+import ContinuumMechanics.Elastostatics.Airy
 import ContinuumMechanics.Kinematics.Compatibility
 import ContinuumMechanics.Kinematics.SaintVenant
 import ContinuumMechanics.Kinematics.PoincareStar
