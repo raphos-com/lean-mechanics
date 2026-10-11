@@ -1,5 +1,4 @@
-import ContinuumMechanics.Elastostatics.Korn
-import Mathlib.Analysis.Distribution.AEEqOfIntegralContDiff
+import ContinuumMechanics.Elastostatics.Variational
 
 /-!
 # Kirchhoff–Love plate energy: strong ⇔ stationary, minimum energy
@@ -45,58 +44,9 @@ variable {n : ℕ}
 
 variable {f g w v : (Fin n → ℝ) → ℝ}
 
-theorem pd_add (hf : Differentiable ℝ f) (hg : Differentiable ℝ g) (j : Fin n) :
-    pd (f + g) j = pd f j + pd g j := by
-  funext x
-  simp [pd, fderiv_add (hf x) (hg x)]
-
-theorem contDiff_pd_of_le {k m : WithTop ℕ∞} (hf : ContDiff ℝ m f) (hk : k + 1 ≤ m) (j : Fin n) :
-    ContDiff ℝ k (pd f j) :=
-  (hf.fderiv_right hk).clm_apply contDiff_const
-
-/-- **Integration by parts** with the compact support on the differentiated factor:
-`∫ f ∂ⱼg = -∫ ∂ⱼf g`. -/
-theorem integral_mul_pd' (hf : ContDiff ℝ 1 f) (hg : ContDiff ℝ 1 g) (hgc : HasCompactSupport g)
-    (j : Fin n) : ∫ x, f x * pd g j x = -∫ x, pd f j x * g x := by
-  have cf := hf.continuous; have cg := hg.continuous
-  exact integral_mul_fderiv_eq_neg_fderiv_mul_of_integrable
-    (((continuous_pd hf j).mul cg).integrable_of_hasCompactSupport hgc.mul_left)
-    ((cf.mul (continuous_pd hg j)).integrable_of_hasCompactSupport
-      (hasCompactSupport_pd hgc j).mul_left)
-    ((cf.mul cg).integrable_of_hasCompactSupport hgc.mul_left)
-    (fun x _ => hf.differentiable one_ne_zero x) (fun x _ => hg.differentiable one_ne_zero x)
-
-/-- The Laplacian `Δf = Σᵢ ∂ᵢ∂ᵢf`. -/
-def lap (f : (Fin n → ℝ) → ℝ) (x : Fin n → ℝ) : ℝ := ∑ i, pd (pd f i) i x
-
 /-- The Hessian contraction `∇²w : ∇²v = Σᵢⱼ ∂ᵢ∂ⱼw ∂ᵢ∂ⱼv`. -/
 def hessDot (w v : (Fin n → ℝ) → ℝ) (x : Fin n → ℝ) : ℝ :=
   ∑ i, ∑ j, pd (pd w i) j x * pd (pd v i) j x
-
-theorem continuous_pd_pd (hf : ContDiff ℝ 2 f) (i j : Fin n) : Continuous (pd (pd f i) j) :=
-  continuous_pd (contDiff_pd hf i) j
-
-theorem continuous_lap (hf : ContDiff ℝ 2 f) : Continuous (lap f) :=
-  continuous_finsetSum _ fun i _ => continuous_pd_pd hf i i
-
-theorem hasCompactSupport_pd_pd (hf : HasCompactSupport f) (i j : Fin n) :
-    HasCompactSupport (pd (pd f i) j) :=
-  hasCompactSupport_pd (hasCompactSupport_pd hf i) j
-
-theorem hasCompactSupport_sum {ι : Type*} (s : Finset ι) (F : ι → (Fin n → ℝ) → ℝ)
-    (h : ∀ i ∈ s, HasCompactSupport (F i)) : HasCompactSupport (fun x => ∑ i ∈ s, F i x) := by
-  classical
-  induction s using Finset.induction_on with
-  | empty =>
-    simp only [Finset.sum_empty]
-    exact HasCompactSupport.zero
-  | insert a s ha ih =>
-    simp only [Finset.sum_insert ha]
-    exact (h a (Finset.mem_insert_self a s)).add
-      (ih fun i hi => h i (Finset.mem_insert_of_mem hi))
-
-theorem hasCompactSupport_lap (hf : HasCompactSupport f) : HasCompactSupport (lap f) :=
-  hasCompactSupport_sum _ _ fun i _ => hasCompactSupport_pd_pd hf i i
 
 /-- The bilaplacian `Δ²w = Σᵢⱼ ∂ⱼ∂ⱼ∂ᵢ∂ᵢw`. -/
 def bilap (w : (Fin n → ℝ) → ℝ) (x : Fin n → ℝ) : ℝ := ∑ i, ∑ j, pd (pd (pd (pd w i) i) j) j x
@@ -226,37 +176,6 @@ theorem bending_eq (D ν : ℝ) : bending D ν w v = D * ∫ x, bilap w x * v x 
 end Bilinear
 
 variable {D ν : ℝ} {q : (Fin n → ℝ) → ℝ} {U : Set (Fin n → ℝ)}
-
-/-- **Fundamental lemma of the calculus of variations**: a continuous `F` with `∫ g F = 0` for
-every smooth `g` compactly supported in the open set `U` vanishes on `U`. -/
-theorem eq_zero_on_of_integral {F : (Fin n → ℝ) → ℝ} (hF : Continuous F) (hU : IsOpen U)
-    (h : ∀ g : (Fin n → ℝ) → ℝ, ContDiff ℝ ∞ g → HasCompactSupport g → tsupport g ⊆ U →
-      ∫ x, g x * F x = 0) :
-    ∀ x ∈ U, F x = 0 := by
-  have hae := hU.ae_eq_zero_of_integral_contDiff_smul_eq_zero (f := F) (μ := volume)
-    (hF.locallyIntegrable.locallyIntegrableOn U) fun g hg hgc hgU => by
-      simpa only [smul_eq_mul] using h g hg hgc hgU
-  have hS : IsOpen (U ∩ {x | F x ≠ 0}) := hU.inter (isOpen_ne_fun hF continuous_const)
-  have h0 : volume (U ∩ {x | F x ≠ 0}) = 0 := by
-    rw [ae_iff] at hae
-    convert hae using 2
-    ext x
-    simp
-  have he := (hS.measure_eq_zero_iff volume).mp h0
-  intro x hx
-  by_contra hne
-  have : x ∈ U ∩ {x | F x ≠ 0} := ⟨hx, hne⟩
-  rw [he] at this
-  exact this
-
-/-- `∫ F g = ∫ G g` when `F = G` on `U ⊇ tsupport g`. -/
-theorem integral_mul_congr_on {F G g : (Fin n → ℝ) → ℝ} (hg : tsupport g ⊆ U)
-    (h : ∀ x ∈ U, F x = G x) : ∫ x, F x * g x = ∫ x, G x * g x := by
-  refine integral_congr_ae (Filter.Eventually.of_forall fun x => ?_)
-  by_cases hx : x ∈ U
-  · simp only [h x hx]
-  · have : g x = 0 := image_eq_zero_of_notMem_tsupport fun h' => hx (hg h')
-    simp [this]
 
 /-- **Strong ⇔ stationary**: `w` is stationary in the open set `U` iff it solves the plate
 equation `D Δ²w = q` there. -/

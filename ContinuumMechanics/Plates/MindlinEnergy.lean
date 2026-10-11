@@ -36,28 +36,11 @@ noncomputable section
 
 namespace ContinuumMechanics.Plates.MindlinEnergy
 
-open Korn Energy
+open Korn
 
 variable {n : ℕ}
 
-theorem pd_sum {ι : Type*} (s : Finset ι) {f : ι → (Fin n → ℝ) → ℝ}
-    (hf : ∀ i, Differentiable ℝ (f i)) (j : Fin n) :
-    pd (fun x => ∑ i ∈ s, f i x) j = fun x => ∑ i ∈ s, pd (f i) j x := by
-  funext x
-  simp only [pd]
-  rw [fderiv_fun_sum fun i _ => (hf i).differentiableAt, sum_apply]
-
-theorem integrable_mul {F G : (Fin n → ℝ) → ℝ} (hF : Continuous F) (hG : Continuous G)
-    (hGc : HasCompactSupport G) : Integrable fun x => F x * G x :=
-  (hF.mul hG).integrable_of_hasCompactSupport hGc.mul_left
-
 variable (D ν S : ℝ) (w v : (Fin n → ℝ) → ℝ) (φ ψ : Fin n → (Fin n → ℝ) → ℝ)
-
-/-- `div φ = Σᵢ ∂ᵢφᵢ`. -/
-def div (x : Fin n → ℝ) : ℝ := ∑ i, pd (φ i) i x
-
-/-- `εᵢⱼ(φ) = (∂ⱼφᵢ + ∂ᵢφⱼ)/2`. -/
-def strain (i j : Fin n) (x : Fin n → ℝ) : ℝ := (pd (φ i) j x + pd (φ j) i x) / 2
 
 /-- The transverse shear strain `γᵢ = ∂ᵢw + φᵢ`. -/
 def shear (i : Fin n) (x : Fin n → ℝ) : ℝ := pd w i x + φ i x
@@ -99,14 +82,6 @@ section Regularity
 variable (hw : ContDiff ℝ 2 w) (hφ : ∀ i, ContDiff ℝ 2 (φ i))
 include hw hφ
 
-omit hw in
-theorem contDiff_div : ContDiff ℝ 1 (div φ) :=
-  ContDiff.sum fun i _ => contDiff_pd (hφ i) i
-
-omit hw in
-theorem contDiff_strain (i j : Fin n) : ContDiff ℝ 1 (strain φ i j) :=
-  ((contDiff_pd (hφ i) j).add (contDiff_pd (hφ j) i)).div_const 2
-
 theorem contDiff_shear (i : Fin n) : ContDiff ℝ 1 (shear w φ i) :=
   (contDiff_pd hw i).add ((hφ i).of_le (by norm_num))
 
@@ -135,64 +110,20 @@ theorem resW_eq : resW S w φ = fun x => -S * (lap w x + div φ x) := by
 
 end Regularity
 
-/-- `Σᵢⱼ εᵢⱼ(φ) εᵢⱼ(ψ) = Σᵢⱼ εᵢⱼ(φ) ∂ⱼψᵢ`, by symmetry of `ε(φ)`. -/
-theorem strain_contract (x : Fin n → ℝ) :
-    ∑ i, ∑ j, strain φ i j x * strain ψ i j x = ∑ i, ∑ j, strain φ i j x * pd (ψ i) j x := by
-  have hs : ∀ i j, strain φ i j x = strain φ j i x := fun i j => by
-    simp only [strain]; ring
-  have h2 : ∑ i, ∑ j, strain φ i j x * pd (ψ j) i x = ∑ i, ∑ j, strain φ i j x * pd (ψ i) j x := by
-    rw [Finset.sum_comm]
-    exact Finset.sum_congr rfl fun i _ => Finset.sum_congr rfl fun j _ => by rw [hs]
-  have h : ∀ i j, strain φ i j x * strain ψ i j x =
-      (strain φ i j x * pd (ψ i) j x + strain φ i j x * pd (ψ j) i x) / 2 := fun i j => by
-    simp only [strain]; ring
-  simp only [h, ← Finset.sum_div, Finset.sum_add_distrib, h2]
-  ring
-
 section Identity
 
 variable (hw : ContDiff ℝ 2 w) (hφ : ∀ i, ContDiff ℝ 2 (φ i)) (hv : ContDiff ℝ 1 v)
   (hvc : HasCompactSupport v) (hψ : ∀ i, ContDiff ℝ 1 (ψ i)) (hψc : ∀ i, HasCompactSupport (ψ i))
 include hw hφ hv hvc hψ hψc
 
-omit hw hv hvc in
-theorem integral_div_mul_div :
-    ∫ x, div φ x * div ψ x = -∑ i, ∫ x, pd (div φ) i x * ψ i x := by
-  have cd := (contDiff_div hφ).continuous
-  have e : ∀ x, div φ x * div ψ x = ∑ i, div φ x * pd (ψ i) i x := fun x => by
-    change div φ x * ∑ i, pd (ψ i) i x = _
-    rw [Finset.mul_sum]
-  simp_rw [e]
-  rw [integral_finsetSum _ fun i _ => integrable_mul cd (continuous_pd (hψ i) i)
-    (hasCompactSupport_pd (hψc i) i), ← Finset.sum_neg_distrib]
-  exact Finset.sum_congr rfl fun i _ => integral_mul_pd' (contDiff_div hφ) (hψ i) (hψc i) i
-
-omit hw hv hvc in
-theorem integral_strain_mul_strain :
-    ∫ x, ∑ i, ∑ j, strain φ i j x * strain ψ i j x =
-      -∑ i, ∫ x, (∑ j, pd (strain φ i j) j x) * ψ i x := by
-  have cs := fun i j => (contDiff_strain hφ i j).continuous
-  simp_rw [strain_contract]
-  rw [integral_finsetSum _ fun i _ => integrable_finsetSum _ fun j _ =>
-    integrable_mul (cs i j) (continuous_pd (hψ i) j) (hasCompactSupport_pd (hψc i) j),
-    ← Finset.sum_neg_distrib]
-  refine Finset.sum_congr rfl fun i _ => ?_
-  rw [integral_finsetSum _ fun j _ =>
-    integrable_mul (cs i j) (continuous_pd (hψ i) j) (hasCompactSupport_pd (hψc i) j)]
-  simp_rw [Finset.sum_mul]
-  rw [integral_finsetSum _ fun j _ => integrable_mul
-    (continuous_pd (contDiff_strain hφ i j) j) (hψ i).continuous (hψc i),
-    ← Finset.sum_neg_distrib]
-  exact Finset.sum_congr rfl fun j _ => integral_mul_pd' (contDiff_strain hφ i j) (hψ i) (hψc i) j
-
 theorem integral_shear_mul_shear :
     ∫ x, ∑ i, shear w φ i x * shear v ψ i x =
       -(∫ x, (∑ i, pd (shear w φ i) i x) * v x) + ∑ i, ∫ x, shear w φ i x * ψ i x := by
   have cg := fun i => (contDiff_shear hw hφ i).continuous
   have I1 : ∀ i, Integrable fun x => shear w φ i x * pd v i x := fun i =>
-    integrable_mul (cg i) (continuous_pd hv i) (hasCompactSupport_pd hvc i)
+    integrable_mul_cs (cg i) (continuous_pd hv i) (hasCompactSupport_pd hvc i)
   have I2 : ∀ i, Integrable fun x => shear w φ i x * ψ i x := fun i =>
-    integrable_mul (cg i) (hψ i).continuous (hψc i)
+    integrable_mul_cs (cg i) (hψ i).continuous (hψc i)
   have e : ∀ x, ∑ i, shear w φ i x * shear v ψ i x =
       ∑ i, shear w φ i x * pd v i x + ∑ i, shear w φ i x * ψ i x := fun x => by
     rw [← Finset.sum_add_distrib]
@@ -203,7 +134,7 @@ theorem integral_shear_mul_shear :
     integral_finsetSum _ fun i _ => I1 i, integral_finsetSum _ fun i _ => I2 i]
   congr 1
   simp_rw [Finset.sum_mul]
-  rw [integral_finsetSum _ fun i _ => integrable_mul (continuous_pd (contDiff_shear hw hφ i) i)
+  rw [integral_finsetSum _ fun i _ => integrable_mul_cs (continuous_pd (contDiff_shear hw hφ i) i)
     hv.continuous hvc, ← Finset.sum_neg_distrib]
   exact Finset.sum_congr rfl fun i _ => integral_mul_pd' (contDiff_shear hw hφ i) hv hvc i
 
@@ -212,15 +143,8 @@ theorem integral_shear_mul_shear :
 theorem form_eq :
     form D ν S w v φ ψ =
       (∫ x, resW S w φ x * v x) + ∑ i, ∫ x, resPhi D ν S w φ i x * ψ i x := by
-  have cd := (contDiff_div hφ).continuous
-  have iA : Integrable fun x => div φ x * div ψ x :=
-    integrable_mul cd (continuous_finsetSum _ fun i _ => continuous_pd (hψ i) i)
-      (hasCompactSupport_sum _ _ fun i _ => hasCompactSupport_pd (hψc i) i)
-  have cs := fun i j => (contDiff_strain hφ i j).continuous
-  have iB : Integrable fun x => ∑ i, ∑ j, strain φ i j x * strain ψ i j x := by
-    simp_rw [strain_contract]
-    exact integrable_finsetSum _ fun i _ => integrable_finsetSum _ fun j _ =>
-      integrable_mul (cs i j) (continuous_pd (hψ i) j) (hasCompactSupport_pd (hψc i) j)
+  have iA := integrable_div_mul_div hφ hψ hψc
+  have iB := integrable_strain_mul_strain hφ hψ hψc
   have cv := hv.continuous
   have cψ := fun i => (hψ i).continuous
   have hRW : ∫ x, resW S w φ x * v x = -S * ∫ x, (∑ i, pd (shear w φ i) i x) * v x := by
@@ -231,12 +155,12 @@ theorem form_eq :
         -D * (1 - ν) * (∫ x, (∑ j, pd (strain φ i j) j x) * ψ i x) +
           S * ∫ x, shear w φ i x * ψ i x := fun i => by
     have iP : Integrable fun x => pd (div φ) i x * ψ i x :=
-      integrable_mul (continuous_pd (contDiff_div hφ) i) (cψ i) (hψc i)
+      integrable_mul_cs (continuous_pd (contDiff_div hφ) i) (cψ i) (hψc i)
     have iQ : Integrable fun x => (∑ j, pd (strain φ i j) j x) * ψ i x :=
-      integrable_mul (continuous_finsetSum _ fun j _ => continuous_pd (contDiff_strain hφ i j) j)
+      integrable_mul_cs (continuous_finsetSum _ fun j _ => continuous_pd (contDiff_strain hφ i j) j)
         (cψ i) (hψc i)
     have iR : Integrable fun x => shear w φ i x * ψ i x :=
-      integrable_mul (contDiff_shear hw hφ i).continuous (cψ i) (hψc i)
+      integrable_mul_cs (contDiff_shear hw hφ i).continuous (cψ i) (hψc i)
     rw [← integral_const_mul, ← integral_const_mul, ← integral_const_mul,
       ← integral_add (iP.const_mul _) (iQ.const_mul _), ← integral_add _ (iR.const_mul _)]
     · exact integral_congr_ae (Filter.Eventually.of_forall fun x => by simp only [resPhi]; ring)
@@ -269,8 +193,8 @@ theorem isStationary_iff {q : (Fin n → ℝ) → ℝ} {U : Set (Fin n → ℝ)}
       rw [form_eq (ψ := 0) hw hφ (h1 hg) hgc (fun _ => contDiff_zero_fun)
         (fun _ => HasCompactSupport.zero)] at e
       simp only [Pi.zero_apply, mul_zero, integral_zero, Finset.sum_const_zero, add_zero] at e
-      have i1 := integrable_mul (continuous_resW (S := S) hw hφ) (h1 hg).continuous hgc
-      have i2 := integrable_mul hq (h1 hg).continuous hgc
+      have i1 := integrable_mul_cs (continuous_resW (S := S) hw hφ) (h1 hg).continuous hgc
+      have i2 := integrable_mul_cs hq (h1 hg).continuous hgc
       calc ∫ x, g x * (resW S w φ - q) x = ∫ x, (resW S w φ x * g x - q x * g x) :=
             integral_congr_ae (Filter.Eventually.of_forall fun x => by
               simp only [Pi.sub_apply]; ring)

@@ -74,6 +74,8 @@ Status: ✅ done; 🟡 partly done (what is open is stated); ⬜ planned.
 | `MinimumEnergy.lean` | minimum potential energy | ✅ |
 | `Weak.lean` | Lax–Milgram well-posedness | 🟡 under the `KornSetting` hypothesis (`GAPS.md`) |
 | `Korn.lean` | Korn's first inequality for compactly supported `C²` fields | ✅ |
+| `Variational.lean` | integration by parts for compactly supported fields, fundamental lemma of the calculus of variations on open sets | ✅ |
+| `NavierLame.lean` | isotropic strain energy, Navier–Lamé equations ⇔ stationary energy | ✅ |
 
 ### Beams and 1D Sobolev spaces (`Beams/`, `Sobolev1D/`)
 
