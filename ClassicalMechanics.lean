@@ -6,6 +6,7 @@ import ClassicalMechanics.Rotation
 import ClassicalMechanics.Oscillator
 import ClassicalMechanics.Lagrangian
 import ClassicalMechanics.Noether
+import ClassicalMechanics.Hamiltonian
 import ClassicalMechanics.SmallOscillations
 import ClassicalMechanics.NormalModes
 

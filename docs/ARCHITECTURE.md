@@ -104,6 +104,7 @@ ContinuumMechanics/
 
 ClassicalMechanics.lean                   -- root: imports every module of ClassicalMechanics
 ClassicalMechanics/
+  Hamiltonian.lean                        -- Hamiltonian mechanics: Poisson brackets, Liouville
   Kepler.lean                             -- The Kepler problem
   Lagrangian.lean                         -- Lagrangian mechanics with one degree of freedom
   NormalModes.lean                        -- Complete sets of normal modes
