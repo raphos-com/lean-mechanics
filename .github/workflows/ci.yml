@@ -69,7 +69,7 @@ jobs:
         run: |
           lake update ContinuumMechanics
           lake exe cache get
-          lake build ContinuumMechanics:docs Nexorade:docs Miura:docs KaneLubensky:docs
+          lake build ContinuumMechanics:docs Nexorade:docs Miura:docs KaneLubensky:docs Gridshells:docs
 
       - name: Save documentation cache
         uses: actions/cache/save@v5

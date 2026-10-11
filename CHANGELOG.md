@@ -3,6 +3,8 @@
 ## Unreleased
 
 ### Phase 9 — frames and lattices (`Frames/`)
+- `papers/Gridshells`: Chebyshev nets; Hazzidakis formula from `ω_uv = −K sin ω`; on the unit
+  sphere a net quadrilateral has area `2π − Σ angles < 2π`.
 - `papers/KaneLubensky`: 1D Maxwell chain (unique zero mode `(−c₁/c₂)ⁿ`, no self-stress, winding
   number of `c₁ + c₂e^{iq}` by Cauchy's theorem, bulk–edge correspondence); square lattice (no
   zero modes off the lines `kᵢ = 0`, floppy lines); kagome lattice (Maxwell, ≥ 2 self-stresses at

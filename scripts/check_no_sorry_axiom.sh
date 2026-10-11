@@ -26,6 +26,7 @@ import ContinuumMechanics
 import Nexorade
 import Miura
 import KaneLubensky
+import Gridshells
 open Lean in
 #eval show CoreM Unit from do
   let env ← getEnv
