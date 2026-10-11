@@ -1,5 +1,6 @@
 import Mathlib.Analysis.Complex.CauchyIntegral
 import Mathlib.Analysis.SpecificLimits.Basic
+import DiscreteMechanics.Winding
 
 /-!
 # The one-dimensional Maxwell chain: edge modes and winding number
@@ -216,6 +217,16 @@ theorem winding_eq_one_iff_left (h : |K.c₁| ≠ |K.c₂|) :
     rw [K.winding_eq_zero this] at hw
     exact zero_ne_one hw
   · exact K.winding_eq_one
+
+/-- The Bloch compatibility of the chain as a polynomial in `z = e^{iq}`: `c₁ + c₂ z`. -/
+noncomputable def blochPoly : Polynomial ℂ :=
+  Polynomial.C (K.c₁ : ℂ) + Polynomial.C (K.c₂ : ℂ) * Polynomial.X
+
+/-- The chain's winding number is the general winding number
+(`DiscreteMechanics.winding`) of its Bloch polynomial, which counts its roots in the unit disk
+(`DiscreteMechanics.winding_eq_card_roots`). -/
+theorem winding_eq_blochPoly : K.winding = DiscreteMechanics.winding K.blochPoly := by
+  simp [winding, DiscreteMechanics.winding, blochPoly]
 
 end Chain
 

@@ -54,8 +54,8 @@ ContinuumMechanics/
   Elastostatics/
     Basic.lean                            -- Linear elastostatics: work, Clapeyron, Betti, Kirchhoff
     Korn.lean                             -- Korn's first inequality for compactly supported fields
-    NavierLame.lean                       -- Navier–Lamé equations ⇔ stationary strain energy
     MinimumEnergy.lean                    -- The principle of minimum potential energy
+    NavierLame.lean                       -- Navier–Lamé equations ⇔ stationary strain energy
     Variational.lean                      -- Integration by parts, fundamental lemma
     Weak.lean                             -- Abstract weak formulation of linear elastostatics
   Kinematics/

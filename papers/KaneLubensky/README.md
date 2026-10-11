@@ -16,6 +16,7 @@ built on the frame theory of [`DiscreteMechanics`](../../DiscreteMechanics).
 | A periodic Maxwell lattice has at least `d` self-stresses at `k = 0` | `PeriodicTruss.le_finrank_selfStresses_zero` | ✅ |
 | 1D Maxwell chain: one zero mode, no self-stress | `Chain.eq_smul_mode`, `Chain.compat_mode`, `Chain.selfStress_eq_zero` | ✅ |
 | 1D: winding number of `C(q)` is 1 or 0 | `Chain.winding_eq_one`, `Chain.winding_eq_zero` | ✅ |
+| 1D: the chain's winding number is the general winding number of its Bloch polynomial `c₁ + c₂ z` | `Chain.winding_eq_blochPoly` | ✅ |
 | 1D bulk–edge correspondence: the winding number decides the edge carrying the zero mode | `Chain.winding_eq_one_iff_left` | ✅ |
 | Square lattice: no zero modes off the lines `kᵢ = 0`; floppy modes on them | `square_zeroModes_eq_bot`, `square_selfStresses_eq_bot`, `square_floppy_line` | ✅ |
 | Kagome lattice is a Maxwell lattice with self-stresses at `k = 0` | `kagome_zeroModes_eq_selfStresses`, `kagome_selfStresses_zero` | ✅ |
