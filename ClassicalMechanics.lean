@@ -4,6 +4,8 @@ import ClassicalMechanics.Kepler
 import ClassicalMechanics.RigidBody
 import ClassicalMechanics.Oscillator
 import ClassicalMechanics.Lagrangian
+import ClassicalMechanics.Noether
+import ClassicalMechanics.SmallOscillations
 
 /-!
 # ClassicalMechanics

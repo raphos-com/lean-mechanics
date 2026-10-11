@@ -18,6 +18,10 @@
 - `Lagrangian`: chain rule, Beltrami energy conservation, cyclic coordinates, Hamilton's principle
   (stationary action for smooth variations in `(a, b)` ⇔ Euler–Lagrange), natural Lagrangians
   `½mv² - U(q)` give Newton's law.
+- `Noether`: Lagrangians on `ℝⁿ`, energy conservation, **Noether's theorem** (conserved charge
+  `L_v · ξ(q)` of an infinitesimal symmetry), translation and linear symmetries.
+- `SmallOscillations`: `M q̈ + K q = 0`: energy, normal modes `cos(ωt) φ` with `Kφ = ω²Mφ`,
+  superposition, Rayleigh quotient, stability for positive definite `K`, orthogonality of modes.
 
 ### Restructuring
 - `Frames/` moved to the new library **`DiscreteMechanics`** (namespace `DiscreteMechanics`).

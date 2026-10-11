@@ -132,8 +132,9 @@ Status: ✅ done; 🟡 partly done (what is open is stated); ⬜ planned.
 | `Lagrangian.lean` | Lagrangian mechanics with one degree of freedom: Beltrami energy, cyclic coordinates, Hamilton's principle ⇔ Euler–Lagrange, natural systems | ✅ |
 | Rigid-body kinematics | rotations `R(t) ∈ SO(3)`, `Ṙ = Ω R`, Poisson's formula | ⬜ |
 | Hamiltonian mechanics | Legendre transform, Hamilton's equations, Poisson brackets, Liouville | ⬜ |
-| Several degrees of freedom | Euler–Lagrange in `ℝⁿ`, Noether's theorem for one-parameter symmetries | ⬜ |
-| Small oscillations | normal modes of `M q̈ + K q = 0` (simultaneous diagonalization) | ⬜ |
+| `Noether.lean` | Lagrangians on `ℝⁿ`: energy conservation, Noether's theorem, translation and linear (rotation) symmetries | ✅ |
+| `SmallOscillations.lean` | `M q̈ + K q = 0`: energy, normal modes, superposition, Rayleigh quotient, stability, modal orthogonality | ✅ |
+| Modal basis | existence of a complete `M`-orthonormal basis of modes (simultaneous diagonalization) | ⬜ |
 
 ## Review decisions
 

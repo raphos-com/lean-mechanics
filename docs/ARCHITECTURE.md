@@ -106,9 +106,11 @@ ClassicalMechanics.lean                   -- root: imports every module of Class
 ClassicalMechanics/
   Kepler.lean                             -- The Kepler problem
   Lagrangian.lean                         -- Lagrangian mechanics with one degree of freedom
+  Noether.lean                            -- Lagrangians on ℝⁿ and Noether's theorem
   Oscillator.lean                         -- Harmonic and damped oscillators
   Particles.lean                          -- Systems of particles: the general theorems of dynamics
   RigidBody.lean                          -- Rigid bodies: inertia tensor, Euler's equations
+  SmallOscillations.lean                  -- Small oscillations and normal modes
   Vector.lean                             -- Vectors in ℝ³ and their time derivatives
 
 DiscreteMechanics.lean                    -- root: imports every module of DiscreteMechanics
