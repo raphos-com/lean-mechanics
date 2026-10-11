@@ -83,6 +83,12 @@ Status: ✅ done; 🟡 partly done (what is open is stated); ⬜ planned.
 | `NavierLame.lean` | isotropic strain energy, Navier–Lamé equations ⇔ stationary energy | ✅ |
 | `PlaneWave.lean` | residual of plane waves; travelling waves solve the equations of motion under the propagation condition | ✅ |
 
+### Fluids (`Fluids/`)
+
+| File | Content | Status |
+|---|---|---|
+| `Ideal.lean` | material derivative and chain rule, incompressible Euler equations, Lamb identity, **Bernoulli's theorem** (streamlines; everywhere for irrotational flow), potential flow with the unsteady Bernoulli pressure, **Kelvin's circulation theorem** | ✅ |
+
 ### Beams and 1D Sobolev spaces (`Beams/`, `Sobolev1D/`)
 
 | File | Content | Status |

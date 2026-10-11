@@ -127,6 +127,10 @@
   iff `μ > 0 ∧ λ + 2μ > 0`** (dimension ≥ 2); plane waves are longitudinal with `ρc² = λ + 2μ` or
   transverse with `ρc² = μ`.
 
+### Fluids
+- `Fluids/Ideal`: material derivative, incompressible Euler equations, Lamb identity, Bernoulli's
+  theorem, potential flow, Kelvin's circulation theorem.
+
 ### Kinematics
 - `PoincareStar`: Poincaré lemma for closed 1-forms on open **star-shaped** sets (segment
   integrals from the centre, via convex cones over balls); `SaintVenantStar`: Saint-Venant

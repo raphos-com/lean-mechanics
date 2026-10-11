@@ -66,6 +66,8 @@ ContinuumMechanics/
     Torsion.lean                          -- Saint-Venant torsion of prismatic bars
     Variational.lean                      -- Integration by parts, fundamental lemma
     Weak.lean                             -- Abstract weak formulation of linear elastostatics
+  Fluids/
+    Ideal.lean                            -- Ideal fluids: Euler, Bernoulli, potential flow, Kelvin
   Kinematics/
     Body.lean                             -- Bodies and deformations
     Compatibility.lean                    -- Saint-Venant compatibility (necessity)
