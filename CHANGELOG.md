@@ -2,6 +2,14 @@
 
 ## Unreleased
 
+### Phase 9 — frames and lattices (`Frames/`)
+- `Frames/Truss`: pin-jointed frames; compatibility matrix `C`, equilibrium matrix `Cᵀ`, virtual
+  work; **Maxwell–Calladine** `N₀ − N_ss = d|N| − |B|` (index of a matrix by rank–nullity); rigid
+  motions are zero modes; the triangle is rigid (`N₀ = 3`, `N_ss = 0`).
+- `Frames/Periodic`: periodic frames; Bloch compatibility matrix `C(θ)`, Bloch reduction of the
+  infinite frame, Maxwell–Calladine at every wave vector (complex index with `C(θ)ᴴ`), Maxwell
+  lattices have as many zero modes as self-stresses at every `θ`; translations at `θ = 0`.
+
 ### Phase 8 — homogenization of the square nexorade (separate library `papers/Nexorade/`)
 - `Nexorade/Optimum`: formulas in `a/l` (31)–(33); Euler–Bernoulli stiffness optimal
   at `a/l = 1/2`; soft-member optimum at the root `≈ 0.3966` of `2x³ − 2x² + 3x − 1`; trade-off

@@ -51,6 +51,8 @@ import ContinuumMechanics.Sobolev1D.BeamWeak
 import ContinuumMechanics.Plates.KirchhoffLove
 import ContinuumMechanics.Plates.Navier
 import ContinuumMechanics.Plates.MindlinReissner
+import ContinuumMechanics.Frames.Truss
+import ContinuumMechanics.Frames.Periodic
 
 /-!
 # ContinuumMechanics

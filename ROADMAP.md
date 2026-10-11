@@ -160,3 +160,16 @@ the bar and the cantilever), 7.1 plate energy/stationarity, 7.3 plate energy.
 3. **Phase 6** runs in parallel with Phases 1–5.
 4. **Cauchy's theorem** is proved (not assumed), integrating over the flat
    faces of a tetrahedron.
+
+---
+
+## Phase 9 — Frames and lattices (`Frames/`)
+
+| # | File | Content | Status |
+|---|---|---|---|
+| 9.1 | `Truss.lean` | pin-jointed frames, compatibility/equilibrium matrices, virtual work, Maxwell–Calladine index theorem, rigid motions, rigid triangle | ✅ |
+| 9.2 | `Periodic.lean` | periodic frames, Bloch compatibility matrix, Bloch reduction, Maxwell–Calladine per wave vector, Maxwell lattices | ✅ |
+| 9.3 | `papers/KaneLubensky` | square and kagome lattices, topological polarization (Kane–Lubensky 2014) | planned |
+| 9.4 | `papers/Miura` | Miura-ori kinematics and Poisson's ratios (Schenk–Guest 2013, Wei et al. 2013) | planned |
+| 9.5 | `papers/Gridshells` | Chebyshev nets (Baek et al. 2018) | planned |
+
