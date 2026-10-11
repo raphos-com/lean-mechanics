@@ -10,11 +10,11 @@ status=0
 
 # 1. Source scan (comments are not stripped: a `sorry` in a comment is also rejected,
 #    which keeps the check simple; write "s0rry" in prose if ever needed).
-if grep -rnwE 'sorry|admit' --include='*.lean' ContinuumMechanics ContinuumMechanics.lean DiscreteMechanics DiscreteMechanics.lean papers; then
+if grep -rnwE 'sorry|admit' --include='*.lean' ClassicalMechanics ClassicalMechanics.lean ContinuumMechanics ContinuumMechanics.lean DiscreteMechanics DiscreteMechanics.lean papers; then
   echo "error: found sorry/admit (listed above)" >&2
   status=1
 fi
-if grep -rnE '^\s*(private\s+|protected\s+)?axiom\s' --include='*.lean' ContinuumMechanics ContinuumMechanics.lean DiscreteMechanics DiscreteMechanics.lean papers; then
+if grep -rnE '^\s*(private\s+|protected\s+)?axiom\s' --include='*.lean' ClassicalMechanics ClassicalMechanics.lean ContinuumMechanics ContinuumMechanics.lean DiscreteMechanics DiscreteMechanics.lean papers; then
   echo "error: found axiom declarations (listed above)" >&2
   status=1
 fi
@@ -23,6 +23,7 @@ fi
 tmp=$(mktemp --suffix=.lean)
 trap 'rm -f "$tmp"' EXIT
 {
+  echo "import ClassicalMechanics"
   echo "import ContinuumMechanics"
   echo "import DiscreteMechanics"
   for f in papers/*.lean; do echo "import $(basename "$f" .lean)"; done
@@ -33,7 +34,8 @@ open Lean in
   let allowed := [``propext, ``Classical.choice, ``Quot.sound]
   let mut bad : Array (Name × Name) := #[]
   for (n, _) in env.constants.toList do
-    if (`ContinuumMechanics).isPrefixOf n || (`DiscreteMechanics).isPrefixOf n then
+    if (`ClassicalMechanics).isPrefixOf n || (`ContinuumMechanics).isPrefixOf n ||
+        (`DiscreteMechanics).isPrefixOf n then
       for ax in (← Lean.collectAxioms n) do
         unless allowed.contains ax do bad := bad.push (n, ax)
   if bad.isEmpty then

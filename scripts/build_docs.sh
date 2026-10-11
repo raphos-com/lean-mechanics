@@ -26,19 +26,19 @@ upstream="https://leanprover-community.github.io/mathlib4_docs"
 rm -rf "$build/doc" "$build/api-docs.db"
 mkdir -p "$build"
 
-# Library roots: ContinuumMechanics, DiscreteMechanics (in ./) and the paper libraries (in ./papers).
-roots=(ContinuumMechanics DiscreteMechanics)
+# Library roots: ClassicalMechanics, ContinuumMechanics, DiscreteMechanics (in ./) and the paper libraries (in ./papers).
+roots=(ClassicalMechanics ContinuumMechanics DiscreteMechanics)
 for f in papers/*.lean; do roots+=("$(basename "$f" .lean)"); done
 
 # Paper libraries used to be built by the root package; stale outputs of theirs in the root build
 # directory (e.g. restored from a CI cache) would shadow the current ones in `papers/.lake`.
-for r in "${roots[@]:2}"; do
+for r in "${roots[@]:3}"; do
   rm -rf ".lake/build/lib/lean/$r" .lake/build/lib/lean/"$r".* ".lake/build/ir/$r" .lake/build/ir/"$r".*
 done
 
 # Every module of the repository, with its source path.
-mapfile -t files < <( { find ContinuumMechanics DiscreteMechanics -name '*.lean';
-  echo ContinuumMechanics.lean; echo DiscreteMechanics.lean;
+mapfile -t files < <( { find ClassicalMechanics ContinuumMechanics DiscreteMechanics -name '*.lean';
+  echo ClassicalMechanics.lean; echo ContinuumMechanics.lean; echo DiscreteMechanics.lean;
   find papers -name '*.lean' -not -path '*/.lake/*'; } | sort )
 
 for f in "${files[@]}"; do

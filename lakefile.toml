@@ -1,6 +1,6 @@
 name = "ContinuumMechanics"
 version = "0.1.0"
-defaultTargets = ["ContinuumMechanics", "DiscreteMechanics"]
+defaultTargets = ["ClassicalMechanics", "ContinuumMechanics", "DiscreteMechanics"]
 
 [leanOptions]
 pp.unicode.fun = true
@@ -20,3 +20,6 @@ name = "ContinuumMechanics"
 
 [[lean_lib]]
 name = "DiscreteMechanics"
+
+[[lean_lib]]
+name = "ClassicalMechanics"
