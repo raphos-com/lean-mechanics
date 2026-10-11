@@ -63,6 +63,7 @@ Status: ✅ done; 🟡 partly done (what is open is stated); ⬜ planned.
 
 | File | Content | Status |
 |---|---|---|
+| `Hyperelastic/Linearization.lean` | frame indifference and isotropy of SVK, neo-Hookean and Mooney–Rivlin; Fréchet derivative of the stress at `I` is the isotropic elasticity tensor; second-order energy expansion; uniaxial tension `σ = μ(λ² - 1/λ)` | ✅ |
 | `Viscoelastic.lean` | 1D viscoelasticity: Kelvin–Voigt creep, Maxwell relaxation and creep, Zener solid (existence, uniqueness, limits), energy dissipation, complex modulus and loss per cycle `π η ω ε₀²` | ✅ |
 | `Hyperelastic.lean` | hyperelasticity, frame indifference | ✅ |
 | `Hyperelastic/SVK.lean`, `NeoHookean.lean`, `MooneyRivlin.lean` | classical hyperelastic materials | ✅ |

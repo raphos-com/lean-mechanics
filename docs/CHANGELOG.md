@@ -118,6 +118,9 @@
   symmetry of second derivatives).
 
 ### Constitutive
+- `Hyperelastic/Linearization`: frame indifference and isotropy of the SVK, neo-Hookean and
+  Mooney–Rivlin energies; `DP(I)` is the isotropic elasticity tensor (Lamé moduli identified);
+  second-order energy expansions; neo-Hookean uniaxial tension.
 - `Viscoelastic`: Kelvin–Voigt, Maxwell and Zener models: creep and relaxation solutions,
   uniqueness, long-time limits, energy dissipation, harmonic response and loss per cycle.
 - `Constitutive/Ellipticity`: isotropic acoustic tensor `μ|n|²I + (λ+μ)n⊗n`; **strong ellipticity

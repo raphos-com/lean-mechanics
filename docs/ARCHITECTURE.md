@@ -45,6 +45,7 @@ ContinuumMechanics/
     Wirtinger.lean                        -- Wirtinger's inequality on an interval
   Constitutive/
     Hyperelastic/
+      Linearization.lean                  -- Linearization, frame indifference and isotropy
       MooneyRivlin.lean                   -- The compressible Mooney–Rivlin material
       NeoHookean.lean                     -- The compressible neo-Hookean material
       SVK.lean                            -- The Saint Venant–Kirchhoff material
