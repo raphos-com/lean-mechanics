@@ -3,6 +3,7 @@ import ClassicalMechanics.Particles
 import ClassicalMechanics.Kepler
 import ClassicalMechanics.RigidBody
 import ClassicalMechanics.Oscillator
+import ClassicalMechanics.Lagrangian
 
 /-!
 # ClassicalMechanics

@@ -1,7 +1,7 @@
 # Architecture
 
-This document fixes the module layout of the `ContinuumMechanics` and `DiscreteMechanics`
-libraries, the core type choices, naming conventions, and the "hypotheses as structures"
+This document fixes the module layout of the `ClassicalMechanics`, `ContinuumMechanics` and
+`DiscreteMechanics` libraries, the core type choices, naming conventions, and the "hypotheses as structures"
 discipline. It also records
 the Mathlib survey this design rests on (§7), so that every choice below can be
 traced to what Mathlib does or does not provide.
@@ -101,6 +101,15 @@ ContinuumMechanics/
     Spectral.lean                         -- Spectral decomposition of symmetric tensors
     Spherical.lean                        -- Spherical and deviatoric parts
     SymSkew.lean                          -- Symmetric and skew tensors
+
+ClassicalMechanics.lean                   -- root: imports every module of ClassicalMechanics
+ClassicalMechanics/
+  Kepler.lean                             -- The Kepler problem
+  Lagrangian.lean                         -- Lagrangian mechanics with one degree of freedom
+  Oscillator.lean                         -- Harmonic and damped oscillators
+  Particles.lean                          -- Systems of particles: the general theorems of dynamics
+  RigidBody.lean                          -- Rigid bodies: inertia tensor, Euler's equations
+  Vector.lean                             -- Vectors in ℝ³ and their time derivatives
 
 DiscreteMechanics.lean                    -- root: imports every module of DiscreteMechanics
 DiscreteMechanics/
@@ -384,11 +393,12 @@ Conventions:
 
 GitHub Actions (`.github/workflows/ci.yml`) on every push and pull request:
 
-1. **Build**: `lake build --wfail` of both libraries (Mathlib from its cache), then
+1. **Build**: `lake build --wfail` of the three libraries (Mathlib from its cache), then
    `(cd papers && lake build --wfail)`.
 2. **Guard**: `scripts/check_no_sorry_axiom.sh` fails if any `.lean` file contains `sorry`,
    `admit` or an `axiom` declaration, and checks that every declaration under
-   `ContinuumMechanics` and `DiscreteMechanics` (paper formalizations included) depends only on
+   `ClassicalMechanics`, `ContinuumMechanics` and `DiscreteMechanics` (paper formalizations
+   included) depends only on
    `propext`, `Classical.choice` and `Quot.sound`.
 3. **Documentation** (pushes to `main`): `scripts/build_docs.sh` runs the doc-gen4 executable on
    this repository's modules only (links to Mathlib point to the official Mathlib documentation)

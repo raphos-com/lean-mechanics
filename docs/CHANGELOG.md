@@ -2,6 +2,23 @@
 
 ## Unreleased
 
+### ClassicalMechanics (new library)
+- `Particles`: systems of particles with action and reaction: momentum theorem and conservation,
+  centre of mass theorem, angular momentum theorem for central internal forces, kinetic energy
+  theorem, conservation of energy.
+- `Kepler`: inverse-square central force: conservation of angular momentum (planar motion,
+  Kepler's second law), energy and the Laplace–Runge–Lenz vector; orbit equation
+  `A · x + m k r = |L|²` (conic with a focus at the origin); `|A|² = m²k² + 2mE|L|²`; ellipse iff
+  `E < 0`.
+- `RigidBody`: inertia tensor symmetric and positive semidefinite, Huygens–Steiner, angular
+  momentum `Jω` and König's theorem for rigid velocity fields, torque-free Euler equations conserve
+  energy and `|L|²`, steady rotations about principal axes.
+- `Oscillator`: harmonic oscillator solution, uniqueness (energy argument) and periodicity; energy
+  dissipation `Ė = -c ẋ²` and the underdamped solution of the damped oscillator.
+- `Lagrangian`: chain rule, Beltrami energy conservation, cyclic coordinates, Hamilton's principle
+  (stationary action for smooth variations in `(a, b)` ⇔ Euler–Lagrange), natural Lagrangians
+  `½mv² - U(q)` give Newton's law.
+
 ### Restructuring
 - `Frames/` moved to the new library **`DiscreteMechanics`** (namespace `DiscreteMechanics`).
 - `papers/` is a separate Lake project depending on both libraries; the root package and

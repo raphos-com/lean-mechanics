@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 message: "If you use this software, please cite it as below."
-title: "lean-mechanics: continuum and discrete mechanics in Lean 4"
+title: "lean-mechanics: classical, continuum and discrete mechanics in Lean 4"
 type: software
 repository-code: "https://github.com/raphos-com/lean-mechanics"
 url: "https://raphos-com.github.io/lean-mechanics/"
@@ -8,6 +8,7 @@ keywords:
   - Lean 4
   - Mathlib
   - formal verification
+  - classical mechanics
   - continuum mechanics
   - structural mechanics
   - frames

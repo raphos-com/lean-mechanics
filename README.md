@@ -2,8 +2,10 @@
 
 [![CI](https://github.com/raphos-com/lean-mechanics/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/raphos-com/lean-mechanics/actions/workflows/ci.yml)
 
-Lean 4 libraries of structural mechanics built on Mathlib. No axioms; `main` is `sorry`-free.
+Lean 4 libraries of mechanics built on Mathlib. No axioms; `main` is `sorry`-free.
 
+* **`ClassicalMechanics`**: systems of particles and their conservation laws, the Kepler
+  problem, rigid bodies, oscillators and Lagrangian mechanics.
 * **`ContinuumMechanics`**: tensor algebra, kinematics, stress, constitutive theory, linear
   elastostatics, beams and plates.
 * **`DiscreteMechanics`**: pin-jointed and periodic frames, Maxwell–Calladine counting, Bloch
@@ -26,7 +28,7 @@ Documentation:
 
 ```sh
 lake exe cache get              # download prebuilt Mathlib
-lake build                      # ContinuumMechanics and DiscreteMechanics
+lake build                      # ClassicalMechanics, ContinuumMechanics, DiscreteMechanics
 (cd papers && lake build)       # paper formalizations
 scripts/check_no_sorry_axiom.sh
 ```

@@ -1,7 +1,9 @@
 # Roadmap
 
-The repository contains two libraries built on Mathlib (Lean `v4.34.1`):
+The repository contains three libraries built on Mathlib (Lean `v4.34.1`):
 
+* **`ClassicalMechanics`**: systems of particles and their conservation laws, the Kepler
+  problem, rigid bodies, oscillators and Lagrangian mechanics;
 * **`ContinuumMechanics`**: tensor algebra, kinematics, stress, constitutive theory, linear
   elastostatics, beams and plates;
 * **`DiscreteMechanics`**: pin-jointed and periodic frames, Maxwell–Calladine counting, Bloch
@@ -117,6 +119,21 @@ Status: ✅ done; 🟡 partly done (what is open is stated); ⬜ planned.
 | `LongWave.lean` | long-wave expansion of the discrete Laplacian; long-wave limit of Bloch solutions through an adjugate | ✅ |
 | `Winding.lean` | winding numbers of polynomial Bloch determinants; argument principle (roots in the unit disk), additivity | ✅ |
 | periodic beam frames | beam frames with rigid or pinned joints, their Bloch problem, convergence to an equivalent plate | ⬜ |
+
+## ClassicalMechanics
+
+| File | Content | Status |
+|---|---|---|
+| `Vector.lean` | product rules for dot and cross products of trajectories in `ℝ³` | ✅ |
+| `Particles.lean` | systems of particles: momentum, centre of mass, angular momentum (central forces), kinetic energy theorem, energy conservation | ✅ |
+| `Kepler.lean` | Kepler problem: conservation of `L`, `E` and the Laplace–Runge–Lenz vector, Kepler's first and second laws, eccentricity–energy relation | ✅ |
+| `RigidBody.lean` | inertia tensor (symmetric, positive semidefinite), Steiner, König, Euler's equations and their invariants | ✅ |
+| `Oscillator.lean` | harmonic oscillator (solution, uniqueness, periodicity), damped oscillator (dissipation, underdamped solution) | ✅ |
+| `Lagrangian.lean` | Lagrangian mechanics with one degree of freedom: Beltrami energy, cyclic coordinates, Hamilton's principle ⇔ Euler–Lagrange, natural systems | ✅ |
+| Rigid-body kinematics | rotations `R(t) ∈ SO(3)`, `Ṙ = Ω R`, Poisson's formula | ⬜ |
+| Hamiltonian mechanics | Legendre transform, Hamilton's equations, Poisson brackets, Liouville | ⬜ |
+| Several degrees of freedom | Euler–Lagrange in `ℝⁿ`, Noether's theorem for one-parameter symmetries | ⬜ |
+| Small oscillations | normal modes of `M q̈ + K q = 0` (simultaneous diagonalization) | ⬜ |
 
 ## Review decisions
 
