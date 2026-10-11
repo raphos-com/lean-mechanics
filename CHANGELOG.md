@@ -3,6 +3,9 @@
 ## Unreleased
 
 ### Phase 9 — frames and lattices (`Frames/`)
+- `papers/BendingGradient`: Lebée–Sab 2011 — `Q = i ∴ R`, self-equilibrated `R₁₁₂`, `R₂₂₁`,
+  `(i·)ᵀ(i·) = (3/2)I`, homogeneous plates reduce to Reissner–Mindlin (`5/6`), and
+  `f_RM = (2/3) i ∴ f ∴ (2/3) i` is the orthogonal projection on Reissner–Mindlin compliances.
 - `papers/Gridshells`: Chebyshev nets; Hazzidakis formula from `ω_uv = −K sin ω`; on the unit
   sphere a net quadrilateral has area `2π − Σ angles < 2π`.
 - `papers/KaneLubensky`: 1D Maxwell chain (unique zero mode `(−c₁/c₂)ⁿ`, no self-stress, winding

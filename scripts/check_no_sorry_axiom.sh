@@ -27,6 +27,7 @@ import Nexorade
 import Miura
 import KaneLubensky
 import Gridshells
+import BendingGradient
 open Lean in
 #eval show CoreM Unit from do
   let env ← getEnv

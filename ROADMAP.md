@@ -171,5 +171,6 @@ the bar and the cantilever), 7.1 plate energy/stationarity, 7.3 plate energy.
 | 9.2 | `Periodic.lean` | periodic frames, Bloch compatibility matrix, Bloch reduction, Maxwell–Calladine per wave vector, Maxwell lattices | ✅ |
 | 9.3 | `papers/KaneLubensky` | 1D Maxwell chain: zero mode, winding number, bulk–edge correspondence; square lattice floppy lines; kagome Maxwell counting; ≥ d self-stresses at `k = 0`. 2D topological polarization not formalized | ✅ (partial) |
 | 9.4 | `papers/Miura` | Miura-ori rigid folding, in-plane Poisson's ratio `−cos²θ tan²α` (Schenk–Guest 2013), exact sign criterion for finite patterns (Lv et al. 2014); bending Poisson's ratio not formalized | ✅ |
+| 9.6 | `papers/BendingGradient` | Lebée–Sab 2011: shear force `Q = i ∴ R`, self-equilibrated components, homogeneous plates = Reissner–Mindlin (5/6), orthogonal projection on Reissner–Mindlin compliances | ✅ |
 | 9.5 | `papers/Gridshells` | Chebyshev nets: Hazzidakis formula, area of a spherical net quadrilateral `= 2π − Σ angles < 2π` (from the net's angle equation; its derivation from surface geometry is not formalized) | ✅ (from hypothesis) |
 
