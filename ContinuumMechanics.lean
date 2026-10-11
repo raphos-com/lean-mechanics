@@ -54,6 +54,7 @@ import ContinuumMechanics.Plates.Navier
 import ContinuumMechanics.Plates.MindlinReissner
 import ContinuumMechanics.Frames.Truss
 import ContinuumMechanics.Frames.Periodic
+import ContinuumMechanics.Frames.LongWave
 
 /-!
 # ContinuumMechanics

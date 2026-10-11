@@ -3,6 +3,9 @@
 ## Unreleased
 
 ### Phase 9 — frames and lattices (`Frames/`)
+- `Frames/LongWave`: `(Σⱼ(2cos⟪k,tⱼ⟫ − 2) + Σⱼ⟪k,tⱼ⟫²)/‖k‖² → 0` for any lattice vectors, the
+  isotropic limit `−c`, and the long-wave limit `s z → δ₀⁻¹ N₀ y₀` of Bloch solutions computed
+  through an adjugate (`N M = δ I`).
 - `Elastostatics/Korn`: **Korn's first inequality** `∫|∇u|² ≤ 2∫|ε(u)|²` for compactly supported
   `C²` fields in `ℝⁿ`, via `∫|∇u|² + ∫(div u)² = 2∫|ε(u)|²` (integration by parts twice and
   symmetry of second derivatives).
