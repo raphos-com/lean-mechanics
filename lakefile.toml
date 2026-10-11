@@ -1,6 +1,6 @@
 name = "ContinuumMechanics"
 version = "0.1.0"
-defaultTargets = ["ContinuumMechanics", "Nexorade"]
+defaultTargets = ["ContinuumMechanics", "Nexorade", "Miura"]
 
 [leanOptions]
 pp.unicode.fun = true
@@ -20,4 +20,8 @@ name = "ContinuumMechanics"
 
 [[lean_lib]]
 name = "Nexorade"
+srcDir = "papers"
+
+[[lean_lib]]
+name = "Miura"
 srcDir = "papers"

@@ -170,6 +170,6 @@ the bar and the cantilever), 7.1 plate energy/stationarity, 7.3 plate energy.
 | 9.1 | `Truss.lean` | pin-jointed frames, compatibility/equilibrium matrices, virtual work, Maxwell–Calladine index theorem, rigid motions, rigid triangle | ✅ |
 | 9.2 | `Periodic.lean` | periodic frames, Bloch compatibility matrix, Bloch reduction, Maxwell–Calladine per wave vector, Maxwell lattices | ✅ |
 | 9.3 | `papers/KaneLubensky` | square and kagome lattices, topological polarization (Kane–Lubensky 2014) | planned |
-| 9.4 | `papers/Miura` | Miura-ori kinematics and Poisson's ratios (Schenk–Guest 2013, Wei et al. 2013) | planned |
+| 9.4 | `papers/Miura` | Miura-ori rigid folding, in-plane Poisson's ratio `−cos²θ tan²α` (Schenk–Guest 2013), exact sign criterion for finite patterns (Lv et al. 2014); bending Poisson's ratio not formalized | ✅ |
 | 9.5 | `papers/Gridshells` | Chebyshev nets (Baek et al. 2018) | planned |
 

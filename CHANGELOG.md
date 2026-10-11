@@ -3,6 +3,9 @@
 ## Unreleased
 
 ### Phase 9 — frames and lattices (`Frames/`)
+- `papers/Miura`: Miura-ori rigid folding (`facet_isometry`), in-plane Poisson's ratio
+  `ν_SL = −cos²θ tan²α` (Schenk–Guest), finite patterns: positive iff
+  `b cos α > 2na(1 − sin²θ sin²α)` (Lv et al.), and convergence to `ν_SL`.
 - `Frames/Truss`: pin-jointed frames; compatibility matrix `C`, equilibrium matrix `Cᵀ`, virtual
   work; **Maxwell–Calladine** `N₀ − N_ss = d|N| − |B|` (index of a matrix by rank–nullity); rigid
   motions are zero modes; the triangle is rigid (`N₀ = 3`, `N_ss = 0`).
