@@ -3,7 +3,11 @@ import ClassicalMechanics.Particles
 import ClassicalMechanics.Virial
 import ClassicalMechanics.TwoBody
 import ClassicalMechanics.Kepler
+import ClassicalMechanics.KeplerThird
+import ClassicalMechanics.EffectivePotential
+import ClassicalMechanics.Constraints
 import ClassicalMechanics.RigidBody
+import ClassicalMechanics.EulerStability
 import ClassicalMechanics.Rotation
 import ClassicalMechanics.RotatingFrame
 import ClassicalMechanics.Oscillator
@@ -12,6 +16,8 @@ import ClassicalMechanics.Noether
 import ClassicalMechanics.Hamiltonian
 import ClassicalMechanics.Jacobi
 import ClassicalMechanics.LinearHamiltonian
+import ClassicalMechanics.Canonical
+import ClassicalMechanics.LiouvilleFlow
 import ClassicalMechanics.SmallOscillations
 import ClassicalMechanics.NormalModes
 

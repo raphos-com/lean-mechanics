@@ -38,8 +38,11 @@ import ContinuumMechanics.Elastostatics.Korn
 import ContinuumMechanics.Elastostatics.Variational
 import ContinuumMechanics.Elastostatics.NavierLame
 import ContinuumMechanics.Elastostatics.PlaneWave
+import ContinuumMechanics.Elastostatics.H10
 import ContinuumMechanics.Kinematics.Compatibility
 import ContinuumMechanics.Kinematics.SaintVenant
+import ContinuumMechanics.Kinematics.PoincareStar
+import ContinuumMechanics.Kinematics.SaintVenantStar
 import ContinuumMechanics.Beams.Interval
 import ContinuumMechanics.Beams.Bar
 import ContinuumMechanics.Beams.Poly
@@ -54,6 +57,8 @@ import ContinuumMechanics.Beams.Rayleigh
 import ContinuumMechanics.Sobolev1D.Primitive
 import ContinuumMechanics.Sobolev1D.BarWeak
 import ContinuumMechanics.Sobolev1D.BeamWeak
+import ContinuumMechanics.Sobolev1D.BeamWeakBC
+import ContinuumMechanics.Sobolev1D.TimoshenkoWeak
 import ContinuumMechanics.Plates.KirchhoffLove
 import ContinuumMechanics.Plates.Energy
 import ContinuumMechanics.Plates.Grillage

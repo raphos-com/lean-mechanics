@@ -54,6 +54,7 @@ ContinuumMechanics/
     RivlinEricksen.lean                   -- The Rivlin–Ericksen representation theorem
   Elastostatics/
     Basic.lean                            -- Linear elastostatics: work, Clapeyron, Betti, Kirchhoff
+    H10.lean                              -- H¹₀(Ω; ℝⁿ) and Korn's inequality by density
     Korn.lean                             -- Korn's first inequality for compactly supported fields
     MinimumEnergy.lean                    -- The principle of minimum potential energy
     NavierLame.lean                       -- Navier–Lamé equations ⇔ stationary strain energy
@@ -66,7 +67,9 @@ ContinuumMechanics/
     Infinitesimal.lean                    -- Infinitesimal strain
     Observer.lean                         -- Change of observer and objectivity
     Rigid.lean                            -- Infinitesimal rigid displacements
+    PoincareStar.lean                     -- Poincaré lemma on star-shaped open sets
     SaintVenant.lean                      -- Saint-Venant compatibility (sufficiency, convex domains)
+    SaintVenantStar.lean                  -- Saint-Venant sufficiency on star-shaped domains
     Strain.lean                           -- Finite strain measures
   Plates/
     Energy.lean                           -- Kirchhoff–Love plate energy: strong ⇔ stationary
@@ -78,6 +81,8 @@ ContinuumMechanics/
   Sobolev1D/
     BarWeak.lean                          -- Weak formulation of the axial bar
     BeamWeak.lean                         -- Weak formulation of the Euler–Bernoulli cantilever
+    BeamWeakBC.lean                       -- Weak clamped–clamped and propped-cantilever beams
+    TimoshenkoWeak.lean                   -- Weak formulation of the Timoshenko cantilever
     Primitive.lean                        -- Primitives of `L²` functions on an interval
   Stress/
     Balance.lean                          -- Divergence, the divergence theorem as a hypothesis, and local equilibrium
@@ -104,11 +109,17 @@ ContinuumMechanics/
 
 ClassicalMechanics.lean                   -- root: imports every module of ClassicalMechanics
 ClassicalMechanics/
+  Canonical.lean                          -- Linear canonical (symplectic) transformations
+  Constraints.lean                        -- Constrained motion: d'Alembert, spherical pendulum
+  EffectivePotential.lean                 -- Central forces: effective potential, turning points
+  EulerStability.lean                     -- Stability of rotations of a free rigid body
   Hamiltonian.lean                        -- Hamiltonian mechanics: Poisson brackets, Liouville
   Jacobi.lean                             -- The Jacobi identity for Poisson brackets
   Kepler.lean                             -- The Kepler problem
+  KeplerThird.lean                        -- Kepler's third law, peri- and apoapsis
   Lagrangian.lean                         -- Lagrangian mechanics with one degree of freedom
   LinearHamiltonian.lean                  -- Linear Hamiltonian systems: symplectic flows, Liouville
+  LiouvilleFlow.lean                      -- Liouville's theorem: volume preservation by flows
   Noether.lean                            -- Lagrangians on ℝⁿ and Noether's theorem
   NormalModes.lean                        -- Complete sets of normal modes
   Oscillator.lean                         -- Harmonic and damped oscillators
@@ -397,7 +408,7 @@ Conventions:
 | Divergence theorem only for boxes | `DivergenceRegion` hypothesis, witnessed on boxes. |
 | No Sobolev spaces on bounded domains / intervals | 1D: build `H¹`, `H²` on an interval (§3.7). 3D: hypothesis structure `KornSetting` (Korn's first inequality proved for compactly supported fields). |
 | No Korn, Poincaré, Wirtinger inequalities | Korn: `KornSetting` hypothesis (first inequality proved for compactly supported fields, `Elastostatics/Korn.lean`). Poincaré on an interval and Wirtinger (for buckling): proved (`Sobolev1D/`, `Beams/Wirtinger.lean`). |
-| Poincaré lemma only on convex sets | Saint-Venant sufficiency proved on open convex domains (`Kinematics/SaintVenant.lean`); simply connected domains open. |
+| Poincaré lemma only on convex sets | Extended to open star-shaped sets (`Kinematics/PoincareStar.lean`); Saint-Venant sufficiency proved on open star-shaped domains (`Kinematics/SaintVenantStar.lean`); general simply connected domains open. |
 
 ## 8. CI
 

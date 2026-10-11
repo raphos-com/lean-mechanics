@@ -48,7 +48,7 @@ Status: ✅ done; 🟡 partly done (what is open is stated); ⬜ planned.
 | `Infinitesimal.lean` | `ε = sym ∇u`, linearisation estimate | ✅ |
 | `Rigid.lean` | skew gradient ⇒ infinitesimal rigid displacement | ✅ |
 | `Observer.lean` | change of observer, objectivity | ✅ |
-| `Compatibility.lean`, `SaintVenant.lean` | Saint-Venant compatibility: necessity; sufficiency on open convex domains (Poincaré lemma) | 🟡 sufficiency on simply connected (non-convex) domains open |
+| `Compatibility.lean`, `SaintVenant.lean`, `PoincareStar.lean`, `SaintVenantStar.lean` | Saint-Venant compatibility: necessity; sufficiency on open convex and **star-shaped** domains (Poincaré lemma for star-shaped sets) | 🟡 general simply connected domains open |
 
 ### Stress and balance laws (`Stress/`)
 
@@ -90,7 +90,7 @@ Status: ✅ done; 🟡 partly done (what is open is stated); ⬜ planned.
 | `EulerBernoulli/` | equation, boundary conditions, uniqueness, energy, closed-form solutions | ✅ |
 | `Timoshenko/` | equations, uniqueness, Euler–Bernoulli limit | ✅ |
 | `Buckling.lean`, `Wirtinger.lean`, `Rayleigh.lean` | Euler buckling, Wirtinger's inequality, Rayleigh quotient | ✅ |
-| `Sobolev1D/` | `L²` primitives, weak bar, weak Euler–Bernoulli cantilever | 🟡 other beam boundary conditions and Timoshenko weak forms open |
+| `Sobolev1D/` | `L²` primitives, weak bar, weak Euler–Bernoulli beams (cantilever, clamped–clamped, propped cantilever), weak Timoshenko cantilever: well-posedness and classical ⇒ weak | ✅ |
 
 ### Plates (`Plates/`)
 
@@ -107,7 +107,7 @@ Status: ✅ done; 🟡 partly done (what is open is stated); ⬜ planned.
 
 | Item | Content | Status |
 |---|---|---|
-| `H¹₀(Ω; ℝⁿ)` | Sobolev space on open sets; Korn's inequality by density | ⬜ |
+| `H10.lean` | `H¹₀(Ω; ℝⁿ)` as the closure of smooth compactly supported fields in `L² × L²`; **Korn's identity and inequality by density**, coercivity of the isotropic energy | ✅ |
 | Saint-Venant on simply connected domains | needs Mathlib's Poincaré lemma beyond convex sets | ⬜ |
 
 ## DiscreteMechanics
@@ -129,15 +129,20 @@ Status: ✅ done; 🟡 partly done (what is open is stated); ⬜ planned.
 | `Virial.lean` | virial `G = Σ mᵢ xᵢ·vᵢ`, `Ġ = 2T + Σ xᵢ·Fᵢ`; **virial theorem** for bounded motions, homogeneous potentials `⟨2T⟩ = k⟨U⟩` | ✅ |
 | `TwoBody.lean` | reduction of the two-body problem: `μ r̈ = F` with the reduced mass, `T = ½M|v_G|² + ½μ|ṙ|²` | ✅ |
 | `Kepler.lean` | Kepler problem: conservation of `L`, `E` and the Laplace–Runge–Lenz vector, Kepler's first and second laws, eccentricity–energy relation | ✅ |
+| `KeplerThird.lean` | semi-axes from `E` and `L`, `a = -k/(2E)`, `b² = a p`, peri/apoapsis bounds; **Kepler's third law** `T² = 4π² m a³ / k` (given that one period sweeps the area `π a b`) | ✅ |
+| `EffectivePotential.lean` | general central potentials: energy and angular momentum, `E = ½mṙ² + U_eff(r)`, allowed region `U_eff(r) ≤ E`, turning points | ✅ |
+| `Constraints.lean` | d'Alembert's principle ⇔ Lagrange multiplier, ideal constraints do no work, energy conservation; spherical pendulum (vertical angular momentum, energy, tension), simple pendulum | ✅ |
 | `RigidBody.lean` | inertia tensor (symmetric, positive semidefinite), Steiner, König, Euler's equations and their invariants | ✅ |
 | `Oscillator.lean` | harmonic oscillator (solution, uniqueness, periodicity), damped oscillator (dissipation, underdamped solution) | ✅ |
 | `Lagrangian.lean` | Lagrangian mechanics with one degree of freedom: Beltrami energy, cyclic coordinates, Hamilton's principle ⇔ Euler–Lagrange, natural systems | ✅ |
+| `EulerStability.lean` | stability of steady rotations: linearized Euler equations, `λ < 0` iff largest/smallest axis, explicit exponentially growing solution about the intermediate axis; nonlinear stability bounds from the conserved `|L|² - 2I₁T` | ✅ |
 | `Rotation.lean` | rigid-body kinematics: `Ω = ṘRᵀ`, `W = RᵀṘ` skew, `Ω = RWRᵀ`, axial vector, Poisson's formula, rigid velocity field, isometry | ✅ |
 | `RotatingFrame.lean` | motion relative to a rotating frame: `ẍ = R(a + 2w×v + w×(w×y) + ẇ×y)`; Coriolis, centrifugal and Euler forces | ✅ |
 | `Hamiltonian.lean` | Hamilton's equations, Poisson brackets, evolution `Ḟ = {F, H}`, energy conservation, Liouville (divergence-free Hamiltonian field), natural systems, Legendre transform (Euler–Lagrange solutions are Hamiltonian flows) | ✅ |
 | `Jacobi.lean` | Poisson bracket of `C²` functions: antisymmetry, **Jacobi identity** | ✅ |
 | `LinearHamiltonian.lean` | linear Hamiltonian systems `ż = -J S z`: Hamiltonian matrices, the flow is symplectic and `det Φ(t) = 1` (Liouville) | ✅ |
-| Liouville, nonlinear integral form | volume preservation by nonlinear Hamiltonian flows (needs ODE flows and change of variables) | ⬜ |
+| `Canonical.lean` | linear canonical transformations: Poisson brackets and Hamiltonian flows are preserved by symplectic matrices, symplectic group, linear Hamiltonian flows are canonical | ✅ |
+| `LiouvilleFlow.lean` | for a `C²` flow of a vector field: variational equation, **Liouville formula** `∂ₜ det DΦ = (div X) det DΦ`, `det DΦ = 1` and **volume preservation** for divergence-free fields, applied to Hamiltonian flows (flow taken as data: Mathlib has no smooth dependence on initial conditions) | ✅ |
 | `Noether.lean` | Lagrangians on `ℝⁿ`: energy conservation, Noether's theorem, translation and linear (rotation) symmetries | ✅ |
 | `SmallOscillations.lean` | `M q̈ + K q = 0`: energy, normal modes, superposition, Rayleigh quotient, stability, modal orthogonality | ✅ |
 | `NormalModes.lean` | complete set of `M`-orthonormal normal modes for positive definite `M` and positive semidefinite `K` (simultaneous diagonalization) | ✅ |

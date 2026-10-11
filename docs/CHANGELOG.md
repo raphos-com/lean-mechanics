@@ -32,12 +32,28 @@
 - `LinearHamiltonian`: quadratic Hamiltonians `½ zᵀ S z`: the matrix `A = -J S` is Hamiltonian,
   the fundamental matrix of `ż = A z` is **symplectic** for all times and has **determinant 1**
   (Liouville's theorem for linear systems).
+- `KeplerThird`: semi-major axis `a = -k/(2E)`, `b² = a p`, periapsis and apoapsis bounds on `r`,
+  **Kepler's third law** `T² = 4π² m a³ / k` from the swept-area hypothesis.
+- `EffectivePotential`: general central forces: conservation laws, radial energy
+  `E = ½ m ṙ² + U_eff(r)`, allowed region and turning points.
+- `Constraints`: d'Alembert's principle (no virtual work ⇔ Lagrange multiplier), ideal
+  constraints do no work; spherical pendulum: conserved vertical angular momentum and energy,
+  explicit tension; simple pendulum energy integral.
+- `Canonical`: symplectic matrices preserve the symplectic form and Poisson brackets and map
+  Hamiltonian flows to Hamiltonian flows; the flow of a linear Hamiltonian system is canonical.
+- `EulerStability`: linearized Euler equations about a steady rotation, `δω̈₂ = λ δω₂` with
+  `λ < 0` iff the axis is the largest or smallest (**tennis-racket theorem**), explicit growing
+  solution otherwise; nonlinear stability bounds via the conserved `|L|² - 2 I₁ T`.
 - `Virial`: `Ġ = 2T + Σ xᵢ · Fᵢ` for the virial `G = Σ mᵢ xᵢ · vᵢ`; **virial theorem** (bounded
   virial ⇒ `⟨2T + Σ xᵢ · Fᵢ⟩ → 0`) and `⟨2T⟩ = k⟨U⟩` for homogeneous potentials.
 - `TwoBody`: reduction of an isolated pair to one body of reduced mass, `μ r̈ = F`, and the
   kinetic energy split `T = ½ M |v_G|² + ½ μ |ṙ|²`.
 - `RotatingFrame`: velocity and acceleration relative to a rotating frame; Newton's law in the
   moving frame with **Coriolis**, **centrifugal** and **Euler** forces.
+- `LiouvilleFlow`: for a `C²` flow `Φ` of a vector field `X`, the variational equation (from the
+  symmetry of second derivatives), the **Liouville formula** `∂ₜ det DΦ = (div X)(Φ) det DΦ`,
+  `det DΦ = 1` for divergence-free fields and **volume preservation** `μ(Φₜ(A)) = μ(A)`; applied
+  to Hamiltonian vector fields.
 - `Rotation`: rigid motions `x = c + R X`: spatial and body angular velocities are skew,
   `Ω = R W Rᵀ`, skew matrices act as cross products with their axial vector, **Poisson's formula**
   `ė = ω × e`, rigid velocity field `ẋ = ċ + ω × (x - c)`, distances preserved.
@@ -65,6 +81,9 @@
   additive under products.
 
 ### Elastostatics
+- `H10`: `H¹₀(Ω; ℝⁿ)` as the closure of the graphs of smooth compactly supported fields in
+  `L² × L²`; Korn's identity `‖∇U‖² + ‖div U‖² = 2‖ε(U)‖²` and inequality by density;
+  coercivity `μ‖∇U‖² ≤ 2μ‖ε(U)‖² + λ‖div U‖²`.
 - `Elastostatics/Variational`: shared integration-by-parts toolkit (`∫ div φ div ψ`,
   `∫ ε(φ):ε(ψ)`), fundamental lemma of the calculus of variations on open sets.
 - `Elastostatics/NavierLame`: strain energy `∫ λ div u div v + 2μ ε(u):ε(v)`, residual
@@ -81,9 +100,18 @@
   transverse with `ρc² = μ`.
 
 ### Kinematics
+- `PoincareStar`: Poincaré lemma for closed 1-forms on open **star-shaped** sets (segment
+  integrals from the centre, via convex cones over balls); `SaintVenantStar`: Saint-Venant
+  sufficiency on open star-shaped domains.
 - `Kinematics/SaintVenant`: **Saint-Venant sufficiency** on open convex domains: a symmetric `C²`
   strain satisfying the compatibility conditions is `sym ∇u`, by two applications of Mathlib's
   Poincaré lemma (rotation field `W` with `∂ₖWᵢⱼ = ∂ⱼεᵢₖ − ∂ᵢεⱼₖ`, then `∇u = ε + W`).
+
+### Beams (weak forms)
+- `Sobolev1D/BeamWeakBC`: Lax–Milgram on closed subspaces; weak **clamped–clamped** and
+  **propped-cantilever** Euler–Bernoulli beams: existence, uniqueness, classical ⇒ weak.
+- `Sobolev1D/TimoshenkoWeak`: weak Timoshenko cantilever in (bending strain, shear strain):
+  existence, uniqueness, classical ⇒ weak.
 
 ### Plates
 - `Plates/Grillage`: orthotropic Kirchhoff–Love plates and their Navier solution; the square beam
