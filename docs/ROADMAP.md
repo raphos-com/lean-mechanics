@@ -134,7 +134,7 @@ Status: ✅ done; 🟡 partly done (what is open is stated); ⬜ planned.
 | Hamiltonian mechanics | Legendre transform, Hamilton's equations, Poisson brackets, Liouville | ⬜ |
 | `Noether.lean` | Lagrangians on `ℝⁿ`: energy conservation, Noether's theorem, translation and linear (rotation) symmetries | ✅ |
 | `SmallOscillations.lean` | `M q̈ + K q = 0`: energy, normal modes, superposition, Rayleigh quotient, stability, modal orthogonality | ✅ |
-| Modal basis | existence of a complete `M`-orthonormal basis of modes (simultaneous diagonalization) | ⬜ |
+| Modal basis | complete orthonormal set of modes: ✅ for `M = I` (`exists_modes`, spectral theorem); general `M` (simultaneous diagonalization) open | 🟡 |
 
 ## Review decisions
 

@@ -1,5 +1,6 @@
 import ClassicalMechanics.Noether
 import Mathlib.LinearAlgebra.Matrix.PosDef
+import Mathlib.Analysis.Matrix.PosDef
 import Mathlib.Analysis.SpecialFunctions.Trigonometric.Deriv
 
 /-!
@@ -148,6 +149,19 @@ theorem modes_orthogonal {ω₁ ω₂ : ℝ} {φ₁ φ₂ : Fin n → ℝ} (h₁
     have : (ω₁ ^ 2 - ω₂ ^ 2) * (φ₁ ⬝ᵥ S.M *ᵥ φ₂) = 0 := by linarith
     exact (mul_eq_zero.mp this).resolve_left (sub_ne_zero.mpr hω)
   exact ⟨hM, by rw [e1, hM, mul_zero]⟩
+
+/-- **Existence of a complete set of normal modes** (unit mass matrix): if `M = I` and `K` is
+positive semidefinite, there are `n` orthonormal modes `K φⱼ = ωⱼ² φⱼ` (spectral theorem). -/
+theorem exists_modes (hM : S.M = 1) (hK : S.K.PosSemidef) :
+    ∃ (φ : Fin n → Fin n → ℝ) (ω : Fin n → ℝ),
+      (∀ i j, φ i ⬝ᵥ φ j = if i = j then 1 else 0) ∧ ∀ j, S.IsMode (ω j) (φ j) := by
+  let b := hK.1.eigenvectorBasis
+  refine ⟨fun j => ⇑(b j), fun j => √(hK.1.eigenvalues j), fun i j => ?_, fun j => ?_⟩
+  · have h := b.inner_eq_ite i j
+    rw [EuclideanSpace.inner_eq_star_dotProduct] at h
+    simpa [dotProduct_comm] using h
+  · change S.K *ᵥ ⇑(b j) = _ • S.M *ᵥ ⇑(b j)
+    rw [hK.1.mulVec_eigenvectorBasis j, hM, one_mulVec, Real.sq_sqrt (hK.eigenvalues_nonneg j)]
 
 end SmallOscillations
 
