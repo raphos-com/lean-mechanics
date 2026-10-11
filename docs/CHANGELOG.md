@@ -36,6 +36,13 @@
   **Kepler's third law** `T² = 4π² m a³ / k` from the swept-area hypothesis.
 - `EffectivePotential`: general central forces: conservation laws, radial energy
   `E = ½ m ṙ² + U_eff(r)`, allowed region and turning points.
+- `Stability`: equilibria of natural systems, **Lagrange–Dirichlet theorem** (Lyapunov stability
+  of strict minima of the potential), linearization `M ξ̈ + K ξ = 0`, positive definite Hessian ⇒
+  quadratic growth ⇒ stability.
+- `HeavyTop`: Lagrange's top: conservation of energy, vertical angular momentum and spin,
+  reduction of the nutation to `u̇² = f(u)` with Lagrange's cubic, the fast sleeping top.
+- `Rutherford`: hyperbolic Kepler orbits, cone inequality, deflection angle
+  `tan(Θ/2) = |k|/(2Eb)` and the **Rutherford cross section** `(k/(4E))² / sin⁴(Θ/2)`.
 - `Constraints`: d'Alembert's principle (no virtual work ⇔ Lagrange multiplier), ideal
   constraints do no work; spherical pendulum: conserved vertical angular momentum and energy,
   explicit tension; simple pendulum energy integral.
@@ -67,6 +74,9 @@
 - Design and tracking documents moved to `docs/`.
 
 ### DiscreteMechanics
+- `Stiffness`: direct stiffness method for trusses: symmetry, positive semidefiniteness and kernel
+  of `K = Cᵀ diag(k) C`, assembly, supported structures have positive definite reduced stiffness
+  and unique displacements, minimum potential energy, Maxwell–Betti, a worked two-bar truss.
 - `LongWave`: `(Σⱼ(2cos⟪k,tⱼ⟫ − 2) + Σⱼ⟪k,tⱼ⟫²)/‖k‖² → 0` for any lattice vectors, the
   isotropic limit `−c`, and the long-wave limit `s z → δ₀⁻¹ N₀ y₀` of Bloch solutions computed
   through an adjugate (`N M = δ I`).
@@ -81,6 +91,8 @@
   additive under products.
 
 ### Elastostatics
+- `Castigliano`: Castigliano's theorems (`∂U/∂u = f`, `∂U*/∂f = u`), Clapeyron, Maxwell–Betti,
+  unit-load method; truss deflections `Σ N n L/(EA)` and the cantilever tip deflection.
 - `H10`: `H¹₀(Ω; ℝⁿ)` as the closure of the graphs of smooth compactly supported fields in
   `L² × L²`; Korn's identity `‖∇U‖² + ‖div U‖² = 2‖ε(U)‖²` and inequality by density;
   coercivity `μ‖∇U‖² ≤ 2μ‖ε(U)‖² + λ‖div U‖²`.

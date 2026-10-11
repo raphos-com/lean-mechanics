@@ -54,6 +54,7 @@ ContinuumMechanics/
     RivlinEricksen.lean                   -- The Rivlin–Ericksen representation theorem
   Elastostatics/
     Basic.lean                            -- Linear elastostatics: work, Clapeyron, Betti, Kirchhoff
+    Castigliano.lean                      -- Castigliano's theorems and the unit-load method
     H10.lean                              -- H¹₀(Ω; ℝⁿ) and Korn's inequality by density
     Korn.lean                             -- Korn's first inequality for compactly supported fields
     MinimumEnergy.lean                    -- The principle of minimum potential energy
@@ -114,6 +115,7 @@ ClassicalMechanics/
   EffectivePotential.lean                 -- Central forces: effective potential, turning points
   EulerStability.lean                     -- Stability of rotations of a free rigid body
   Hamiltonian.lean                        -- Hamiltonian mechanics: Poisson brackets, Liouville
+  HeavyTop.lean                           -- Lagrange's heavy symmetric top
   Jacobi.lean                             -- The Jacobi identity for Poisson brackets
   Kepler.lean                             -- The Kepler problem
   KeplerThird.lean                        -- Kepler's third law, peri- and apoapsis
@@ -127,7 +129,9 @@ ClassicalMechanics/
   RigidBody.lean                          -- Rigid bodies: inertia tensor, Euler's equations
   RotatingFrame.lean                      -- Rotating frames: Coriolis and centrifugal forces
   Rotation.lean                           -- Kinematics of rigid bodies: rotations, Poisson's formula
+  Rutherford.lean                         -- Rutherford scattering: deflection angle, cross section
   SmallOscillations.lean                  -- Small oscillations and normal modes
+  Stability.lean                          -- Lagrange–Dirichlet stability and linearization
   TwoBody.lean                            -- The two-body problem: reduced mass
   Vector.lean                             -- Vectors in ℝ³ and their time derivatives
   Virial.lean                             -- The virial theorem
@@ -136,6 +140,7 @@ DiscreteMechanics.lean                    -- root: imports every module of Discr
 DiscreteMechanics/
   LongWave.lean                           -- Long-wave limits of Bloch problems
   Periodic.lean                           -- Periodic pin-jointed frames and their Bloch matrices
+  Stiffness.lean                          -- The direct stiffness method for trusses
   Truss.lean                              -- Pin-jointed frames: compatibility, equilibrium and Maxwell–Calladine counting
   Winding.lean                            -- Winding numbers, argument principle for polynomials
 

@@ -107,6 +107,7 @@ Status: ✅ done; 🟡 partly done (what is open is stated); ⬜ planned.
 
 | Item | Content | Status |
 |---|---|---|
+| `Castigliano.lean` | Castigliano's first and second theorems, Clapeyron, Maxwell–Betti, unit-load method; determinate trusses `δ = Σ N n L/(EA)`; cantilever `U* = P²L³/(6EI)`, tip deflection `PL³/(3EI)` | ✅ |
 | `H10.lean` | `H¹₀(Ω; ℝⁿ)` as the closure of smooth compactly supported fields in `L² × L²`; **Korn's identity and inequality by density**, coercivity of the isotropic energy | ✅ |
 | Saint-Venant on simply connected domains | needs Mathlib's Poincaré lemma beyond convex sets | ⬜ |
 
@@ -115,6 +116,7 @@ Status: ✅ done; 🟡 partly done (what is open is stated); ⬜ planned.
 | File | Content | Status |
 |---|---|---|
 | `Truss.lean` | pin-jointed frames, compatibility/equilibrium matrices, virtual work, Maxwell–Calladine index theorem, rigid motions | ✅ |
+| `Stiffness.lean` | direct stiffness method: `K = Cᵀ diag(k) C` symmetric, positive semidefinite, `ker K = ker C`, assembly from element matrices, supports ⇒ positive definite reduced stiffness, unique displacements, minimum potential energy, Maxwell–Betti, two-bar example | ✅ |
 | `Periodic.lean` | periodic frames, Bloch compatibility matrix, Bloch reduction, Maxwell–Calladine per wave vector, Maxwell lattices | ✅ |
 | `LongWave.lean` | long-wave expansion of the discrete Laplacian; long-wave limit of Bloch solutions through an adjugate | ✅ |
 | `Winding.lean` | winding numbers of polynomial Bloch determinants; argument principle (roots in the unit disk), additivity | ✅ |
@@ -131,11 +133,13 @@ Status: ✅ done; 🟡 partly done (what is open is stated); ⬜ planned.
 | `Kepler.lean` | Kepler problem: conservation of `L`, `E` and the Laplace–Runge–Lenz vector, Kepler's first and second laws, eccentricity–energy relation | ✅ |
 | `KeplerThird.lean` | semi-axes from `E` and `L`, `a = -k/(2E)`, `b² = a p`, peri/apoapsis bounds; **Kepler's third law** `T² = 4π² m a³ / k` (given that one period sweeps the area `π a b`) | ✅ |
 | `EffectivePotential.lean` | general central potentials: energy and angular momentum, `E = ½mṙ² + U_eff(r)`, allowed region `U_eff(r) ≤ E`, turning points | ✅ |
+| `Rutherford.lean` | hyperbolic orbits (`e > 1` iff `E > 0`), the orbit stays in a cone about the LRL vector, deflection angle `tan(Θ/2) = |k|/(2Eb)`, **Rutherford cross section** `(k/4E)²/sin⁴(Θ/2)` | ✅ |
 | `Constraints.lean` | d'Alembert's principle ⇔ Lagrange multiplier, ideal constraints do no work, energy conservation; spherical pendulum (vertical angular momentum, energy, tension), simple pendulum | ✅ |
 | `RigidBody.lean` | inertia tensor (symmetric, positive semidefinite), Steiner, König, Euler's equations and their invariants | ✅ |
 | `Oscillator.lean` | harmonic oscillator (solution, uniqueness, periodicity), damped oscillator (dissipation, underdamped solution) | ✅ |
 | `Lagrangian.lean` | Lagrangian mechanics with one degree of freedom: Beltrami energy, cyclic coordinates, Hamilton's principle ⇔ Euler–Lagrange, natural systems | ✅ |
 | `EulerStability.lean` | stability of steady rotations: linearized Euler equations, `λ < 0` iff largest/smallest axis, explicit exponentially growing solution about the intermediate axis; nonlinear stability bounds from the conserved `|L|² - 2I₁T` | ✅ |
+| `HeavyTop.lean` | Lagrange's heavy symmetric top (Euler–Poisson equations): energy, vertical angular momentum, spin; reduction to `I₁²u̇² = I₁(2E' - 2Mgℓu)(1 - u²) - (b - au)²`; sleeping top under `(I₃ω₃)² > 4I₁Mgℓ` | ✅ |
 | `Rotation.lean` | rigid-body kinematics: `Ω = ṘRᵀ`, `W = RᵀṘ` skew, `Ω = RWRᵀ`, axial vector, Poisson's formula, rigid velocity field, isometry | ✅ |
 | `RotatingFrame.lean` | motion relative to a rotating frame: `ẍ = R(a + 2w×v + w×(w×y) + ẇ×y)`; Coriolis, centrifugal and Euler forces | ✅ |
 | `Hamiltonian.lean` | Hamilton's equations, Poisson brackets, evolution `Ḟ = {F, H}`, energy conservation, Liouville (divergence-free Hamiltonian field), natural systems, Legendre transform (Euler–Lagrange solutions are Hamiltonian flows) | ✅ |
@@ -145,6 +149,7 @@ Status: ✅ done; 🟡 partly done (what is open is stated); ⬜ planned.
 | `LiouvilleFlow.lean` | for a `C²` flow of a vector field: variational equation, **Liouville formula** `∂ₜ det DΦ = (div X) det DΦ`, `det DΦ = 1` and **volume preservation** for divergence-free fields, applied to Hamiltonian flows (flow taken as data: Mathlib has no smooth dependence on initial conditions) | ✅ |
 | `Noether.lean` | Lagrangians on `ℝⁿ`: energy conservation, Noether's theorem, translation and linear (rotation) symmetries | ✅ |
 | `SmallOscillations.lean` | `M q̈ + K q = 0`: energy, normal modes, superposition, Rayleigh quotient, stability, modal orthogonality | ✅ |
+| `Stability.lean` | natural systems `M q̈ = -∇U`: equilibria, energy, **Lagrange–Dirichlet theorem** (strict minimum ⇒ Lyapunov stable in phase space), linearization, positive definite Hessian ⇒ strict minimum ⇒ stable | ✅ |
 | `NormalModes.lean` | complete set of `M`-orthonormal normal modes for positive definite `M` and positive semidefinite `K` (simultaneous diagonalization) | ✅ |
 
 ## Review decisions
