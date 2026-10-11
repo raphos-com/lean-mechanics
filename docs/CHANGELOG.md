@@ -23,6 +23,8 @@
 - `SmallOscillations`: `M q̈ + K q = 0`: energy, normal modes `cos(ωt) φ` with `Kφ = ω²Mφ`,
   superposition, Rayleigh quotient, stability for positive definite `K`, orthogonality of modes,
   existence of `n` orthonormal modes for `M = I` and positive semidefinite `K`.
+- `NormalModes`: **simultaneous diagonalization**: `n` `M`-orthonormal modes for any positive
+  definite `M` and positive semidefinite `K`.
 
 ### Restructuring
 - `Frames/` moved to the new library **`DiscreteMechanics`** (namespace `DiscreteMechanics`).

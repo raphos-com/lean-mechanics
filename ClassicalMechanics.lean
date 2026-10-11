@@ -6,6 +6,7 @@ import ClassicalMechanics.Oscillator
 import ClassicalMechanics.Lagrangian
 import ClassicalMechanics.Noether
 import ClassicalMechanics.SmallOscillations
+import ClassicalMechanics.NormalModes
 
 /-!
 # ClassicalMechanics
