@@ -1,5 +1,6 @@
 import ClassicalMechanics.Vector
 import ClassicalMechanics.Particles
+import ClassicalMechanics.Galilean
 import ClassicalMechanics.Virial
 import ClassicalMechanics.TwoBody
 import ClassicalMechanics.Kepler
@@ -15,11 +16,13 @@ import ClassicalMechanics.RotatingFrame
 import ClassicalMechanics.Oscillator
 import ClassicalMechanics.Lagrangian
 import ClassicalMechanics.Noether
+import ClassicalMechanics.Routh
 import ClassicalMechanics.Hamiltonian
 import ClassicalMechanics.Jacobi
 import ClassicalMechanics.LinearHamiltonian
 import ClassicalMechanics.Canonical
 import ClassicalMechanics.LiouvilleFlow
+import ClassicalMechanics.HamiltonJacobi
 import ClassicalMechanics.SmallOscillations
 import ClassicalMechanics.NormalModes
 import ClassicalMechanics.Stability

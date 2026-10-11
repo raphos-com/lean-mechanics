@@ -63,6 +63,7 @@ Status: ✅ done; 🟡 partly done (what is open is stated); ⬜ planned.
 
 | File | Content | Status |
 |---|---|---|
+| `Viscoelastic.lean` | 1D viscoelasticity: Kelvin–Voigt creep, Maxwell relaxation and creep, Zener solid (existence, uniqueness, limits), energy dissipation, complex modulus and loss per cycle `π η ω ε₀²` | ✅ |
 | `Hyperelastic.lean` | hyperelasticity, frame indifference | ✅ |
 | `Hyperelastic/SVK.lean`, `NeoHookean.lean`, `MooneyRivlin.lean` | classical hyperelastic materials | ✅ |
 | `LinearIsotropic.lean` | Lamé/Young/bulk conversions, positivity | ✅ |
@@ -128,6 +129,7 @@ Status: ✅ done; 🟡 partly done (what is open is stated); ⬜ planned.
 |---|---|---|
 | `Vector.lean` | product rules for dot and cross products of trajectories in `ℝ³` | ✅ |
 | `Particles.lean` | systems of particles: momentum, centre of mass, angular momentum (central forces), kinetic energy theorem, energy conservation | ✅ |
+| `Galilean.lean` | Galilean boosts, rotations and time shifts of particle systems; transformation of `P` and `T`; conserved boost charge `M x_G - t P`, uniform motion of the centre of mass | ✅ |
 | `Virial.lean` | virial `G = Σ mᵢ xᵢ·vᵢ`, `Ġ = 2T + Σ xᵢ·Fᵢ`; **virial theorem** for bounded motions, homogeneous potentials `⟨2T⟩ = k⟨U⟩` | ✅ |
 | `TwoBody.lean` | reduction of the two-body problem: `μ r̈ = F` with the reduced mass, `T = ½M|v_G|² + ½μ|ṙ|²` | ✅ |
 | `Kepler.lean` | Kepler problem: conservation of `L`, `E` and the Laplace–Runge–Lenz vector, Kepler's first and second laws, eccentricity–energy relation | ✅ |
@@ -145,9 +147,11 @@ Status: ✅ done; 🟡 partly done (what is open is stated); ⬜ planned.
 | `Hamiltonian.lean` | Hamilton's equations, Poisson brackets, evolution `Ḟ = {F, H}`, energy conservation, Liouville (divergence-free Hamiltonian field), natural systems, Legendre transform (Euler–Lagrange solutions are Hamiltonian flows) | ✅ |
 | `Jacobi.lean` | Poisson bracket of `C²` functions: antisymmetry, **Jacobi identity** | ✅ |
 | `LinearHamiltonian.lean` | linear Hamiltonian systems `ż = -J S z`: Hamiltonian matrices, the flow is symplectic and `det Φ(t) = 1` (Liouville) | ✅ |
+| `HamiltonJacobi.lean` | **Jacobi's theorem** (1 DOF, time-dependent, mixed partials as hypotheses); harmonic oscillator in action–angle variables: `H = ωI`, Jacobian `1`, flow, action = phase-space area / 2π | ✅ |
 | `Canonical.lean` | linear canonical transformations: Poisson brackets and Hamiltonian flows are preserved by symplectic matrices, symplectic group, linear Hamiltonian flows are canonical | ✅ |
 | `LiouvilleFlow.lean` | for a `C²` flow of a vector field: variational equation, **Liouville formula** `∂ₜ det DΦ = (div X) det DΦ`, `det DΦ = 1` and **volume preservation** for divergence-free fields, applied to Hamiltonian flows (flow taken as data: Mathlib has no smooth dependence on initial conditions) | ✅ |
 | `Noether.lean` | Lagrangians on `ℝⁿ`: energy conservation, Noether's theorem, translation and linear (rotation) symmetries | ✅ |
+| `Routh.lean` | cyclic coordinates: conserved momenta; **Routh reduction** (two coordinates, local inversion), the Routhian obeys Euler–Lagrange; planar central motion reduces to `m r̈ = -V_eff'(r)` | ✅ |
 | `SmallOscillations.lean` | `M q̈ + K q = 0`: energy, normal modes, superposition, Rayleigh quotient, stability, modal orthogonality | ✅ |
 | `Stability.lean` | natural systems `M q̈ = -∇U`: equilibria, energy, **Lagrange–Dirichlet theorem** (strict minimum ⇒ Lyapunov stable in phase space), linearization, positive definite Hessian ⇒ strict minimum ⇒ stable | ✅ |
 | `NormalModes.lean` | complete set of `M`-orthonormal normal modes for positive definite `M` and positive semidefinite `K` (simultaneous diagonalization) | ✅ |

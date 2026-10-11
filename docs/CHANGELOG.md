@@ -36,6 +36,11 @@
   **Kepler's third law** `T² = 4π² m a³ / k` from the swept-area hypothesis.
 - `EffectivePotential`: general central forces: conservation laws, radial energy
   `E = ½ m ṙ² + U_eff(r)`, allowed region and turning points.
+- `Galilean`: boosts, rotations and time shifts of particle systems, transformation laws for
+  momentum and kinetic energy, conserved boost charge, uniform motion of the centre of mass.
+- `Routh`: conserved momenta of cyclic coordinates, Routh reduction, planar central motion.
+- `HamiltonJacobi`: Jacobi's theorem for complete integrals of the Hamilton–Jacobi equation;
+  action–angle variables of the harmonic oscillator.
 - `Stability`: equilibria of natural systems, **Lagrange–Dirichlet theorem** (Lyapunov stability
   of strict minima of the potential), linearization `M ξ̈ + K ξ = 0`, positive definite Hessian ⇒
   quadratic growth ⇒ stability.
@@ -107,6 +112,8 @@
   symmetry of second derivatives).
 
 ### Constitutive
+- `Viscoelastic`: Kelvin–Voigt, Maxwell and Zener models: creep and relaxation solutions,
+  uniqueness, long-time limits, energy dissipation, harmonic response and loss per cycle.
 - `Constitutive/Ellipticity`: isotropic acoustic tensor `μ|n|²I + (λ+μ)n⊗n`; **strong ellipticity
   iff `μ > 0 ∧ λ + 2μ > 0`** (dimension ≥ 2); plane waves are longitudinal with `ρc² = λ + 2μ` or
   transverse with `ρc² = μ`.

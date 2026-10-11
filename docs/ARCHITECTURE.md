@@ -52,6 +52,7 @@ ContinuumMechanics/
     Hyperelastic.lean                     -- Hyperelastic materials and frame indifference
     LinearIsotropic.lean                  -- Linear isotropic elasticity
     RivlinEricksen.lean                   -- The Rivlin–Ericksen representation theorem
+    Viscoelastic.lean                     -- Kelvin–Voigt, Maxwell and Zener viscoelastic models
   Elastostatics/
     Basic.lean                            -- Linear elastostatics: work, Clapeyron, Betti, Kirchhoff
     Castigliano.lean                      -- Castigliano's theorems and the unit-load method
@@ -114,7 +115,9 @@ ClassicalMechanics/
   Constraints.lean                        -- Constrained motion: d'Alembert, spherical pendulum
   EffectivePotential.lean                 -- Central forces: effective potential, turning points
   EulerStability.lean                     -- Stability of rotations of a free rigid body
+  Galilean.lean                           -- Galilean invariance and the boost charge
   Hamiltonian.lean                        -- Hamiltonian mechanics: Poisson brackets, Liouville
+  HamiltonJacobi.lean                     -- Hamilton–Jacobi theory, action–angle variables
   HeavyTop.lean                           -- Lagrange's heavy symmetric top
   Jacobi.lean                             -- The Jacobi identity for Poisson brackets
   Kepler.lean                             -- The Kepler problem
@@ -129,6 +132,7 @@ ClassicalMechanics/
   RigidBody.lean                          -- Rigid bodies: inertia tensor, Euler's equations
   RotatingFrame.lean                      -- Rotating frames: Coriolis and centrifugal forces
   Rotation.lean                           -- Kinematics of rigid bodies: rotations, Poisson's formula
+  Routh.lean                              -- Cyclic coordinates and Routh reduction
   Rutherford.lean                         -- Rutherford scattering: deflection angle, cross section
   SmallOscillations.lean                  -- Small oscillations and normal modes
   Stability.lean                          -- Lagrange–Dirichlet stability and linearization

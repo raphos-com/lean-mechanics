@@ -26,6 +26,7 @@ import ContinuumMechanics.Stress.Triangle
 import ContinuumMechanics.Stress.Cauchy
 import ContinuumMechanics.Constitutive.Ellipticity
 import ContinuumMechanics.Constitutive.LinearIsotropic
+import ContinuumMechanics.Constitutive.Viscoelastic
 import ContinuumMechanics.Constitutive.Hyperelastic
 import ContinuumMechanics.Constitutive.Hyperelastic.SVK
 import ContinuumMechanics.Constitutive.Hyperelastic.NeoHookean
