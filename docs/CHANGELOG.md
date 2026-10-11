@@ -98,6 +98,8 @@
   additive under products.
 
 ### Elastostatics
+- `Torsion`: Saint-Venant torsion: equilibrium ⇔ harmonic warping, Prandtl stress function,
+  torsional rigidity of circular (`T = μJα`) and elliptic sections.
 - `Airy`: Airy stress function: equilibrium, compatibility ⇔ `Δ²φ = 0` for plane stress and
   plane strain, polynomial solutions (tension, bending, cantilever, simply supported beam).
 - `Castigliano`: Castigliano's theorems (`∂U/∂u = f`, `∂U*/∂f = u`), Clapeyron, Maxwell–Betti,

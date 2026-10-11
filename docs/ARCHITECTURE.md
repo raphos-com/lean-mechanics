@@ -62,6 +62,7 @@ ContinuumMechanics/
     MinimumEnergy.lean                    -- The principle of minimum potential energy
     NavierLame.lean                       -- Navier–Lamé equations ⇔ stationary strain energy
     PlaneWave.lean                        -- Plane waves solve the Navier–Lamé equations of motion
+    Torsion.lean                          -- Saint-Venant torsion of prismatic bars
     Variational.lean                      -- Integration by parts, fundamental lemma
     Weak.lean                             -- Abstract weak formulation of linear elastostatics
   Kinematics/
