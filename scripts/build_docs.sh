@@ -30,6 +30,12 @@ mkdir -p "$build"
 roots=(ContinuumMechanics DiscreteMechanics)
 for f in papers/*.lean; do roots+=("$(basename "$f" .lean)"); done
 
+# Paper libraries used to be built by the root package; stale outputs of theirs in the root build
+# directory (e.g. restored from a CI cache) would shadow the current ones in `papers/.lake`.
+for r in "${roots[@]:2}"; do
+  rm -rf ".lake/build/lib/lean/$r" .lake/build/lib/lean/"$r".* ".lake/build/ir/$r" .lake/build/ir/"$r".*
+done
+
 # Every module of the repository, with its source path.
 mapfile -t files < <( { find ContinuumMechanics DiscreteMechanics -name '*.lean';
   echo ContinuumMechanics.lean; echo DiscreteMechanics.lean;
