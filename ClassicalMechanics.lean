@@ -2,6 +2,7 @@ import ClassicalMechanics.Vector
 import ClassicalMechanics.Particles
 import ClassicalMechanics.Kepler
 import ClassicalMechanics.RigidBody
+import ClassicalMechanics.Rotation
 import ClassicalMechanics.Oscillator
 import ClassicalMechanics.Lagrangian
 import ClassicalMechanics.Noether

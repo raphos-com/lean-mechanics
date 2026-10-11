@@ -111,6 +111,7 @@ ClassicalMechanics/
   Oscillator.lean                         -- Harmonic and damped oscillators
   Particles.lean                          -- Systems of particles: the general theorems of dynamics
   RigidBody.lean                          -- Rigid bodies: inertia tensor, Euler's equations
+  Rotation.lean                           -- Kinematics of rigid bodies: rotations, Poisson's formula
   SmallOscillations.lean                  -- Small oscillations and normal modes
   Vector.lean                             -- Vectors in ℝ³ and their time derivatives
 

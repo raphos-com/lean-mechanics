@@ -23,6 +23,9 @@
 - `SmallOscillations`: `M q̈ + K q = 0`: energy, normal modes `cos(ωt) φ` with `Kφ = ω²Mφ`,
   superposition, Rayleigh quotient, stability for positive definite `K`, orthogonality of modes,
   existence of `n` orthonormal modes for `M = I` and positive semidefinite `K`.
+- `Rotation`: rigid motions `x = c + R X`: spatial and body angular velocities are skew,
+  `Ω = R W Rᵀ`, skew matrices act as cross products with their axial vector, **Poisson's formula**
+  `ė = ω × e`, rigid velocity field `ẋ = ċ + ω × (x - c)`, distances preserved.
 - `NormalModes`: **simultaneous diagonalization**: `n` `M`-orthonormal modes for any positive
   definite `M` and positive semidefinite `K`.
 
