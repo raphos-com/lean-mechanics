@@ -98,6 +98,9 @@
   additive under products.
 
 ### Elastostatics
+- `Existence`: Poincaré inequality `‖u‖² ≤ 4R²‖∇u‖²` on slabs and bounded sets, coercivity of the
+  Lamé energy on `H¹₀`, existence and uniqueness of weak solutions of clamped isotropic
+  elastostatics by Lax–Milgram, and the principle of minimum potential energy.
 - `Torsion`: Saint-Venant torsion: equilibrium ⇔ harmonic warping, Prandtl stress function,
   torsional rigidity of circular (`T = μJα`) and elliptic sections.
 - `Airy`: Airy stress function: equilibrium, compatibility ⇔ `Δ²φ = 0` for plane stress and

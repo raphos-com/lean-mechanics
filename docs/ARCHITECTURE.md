@@ -58,6 +58,7 @@ ContinuumMechanics/
     Airy.lean                             -- Plane elasticity and the Airy stress function
     Basic.lean                            -- Linear elastostatics: work, Clapeyron, Betti, Kirchhoff
     Castigliano.lean                      -- Castigliano's theorems and the unit-load method
+    Existence.lean                        -- Poincaré; existence for clamped elastostatics in H¹₀
     H10.lean                              -- H¹₀(Ω; ℝⁿ) and Korn's inequality by density
     Korn.lean                             -- Korn's first inequality for compactly supported fields
     MinimumEnergy.lean                    -- The principle of minimum potential energy
