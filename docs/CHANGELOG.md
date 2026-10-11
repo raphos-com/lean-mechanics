@@ -25,7 +25,8 @@
   existence of `n` orthonormal modes for `M = I` and positive semidefinite `K`.
 - `Hamiltonian`: Hamilton's equations, Poisson brackets (antisymmetry), evolution `Ḟ = {F, H}`,
   constants of the motion, energy conservation, **Liouville's theorem** (the Hamiltonian vector
-  field of a `C²` Hamiltonian is divergence-free), natural systems give Newton's law.
+  field of a `C²` Hamiltonian is divergence-free), natural systems give Newton's law; Legendre
+  transform: under the Legendre relations, Euler–Lagrange solutions are Hamiltonian flows.
 - `Rotation`: rigid motions `x = c + R X`: spatial and body angular velocities are skew,
   `Ω = R W Rᵀ`, skew matrices act as cross products with their axial vector, **Poisson's formula**
   `ė = ω × e`, rigid velocity field `ẋ = ċ + ω × (x - c)`, distances preserved.

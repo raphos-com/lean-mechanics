@@ -18,6 +18,9 @@ Phase space is `ℝⁿ × ℝⁿ ∋ (q, p)`. An **observable** `F(q, p)` has gr
 * **Liouville's theorem** (infinitesimal form, `liouville`): for `H` of class `C²`, the Hamiltonian
   vector field `X_H = (H_p, -H_q)` is **divergence-free**, by symmetry of second derivatives; its
   flow therefore preserves phase-space volume.
+* **Legendre transform** (`LagrangianN.toHamiltonianFlow`): under the Legendre relations between
+  `L` and `H`, solutions of the Euler–Lagrange equations are Hamiltonian flows with momentum
+  `p = L_v(q, q̇)`.
 * **Natural systems** (`natural_newton`): for `H = |p|²/(2m) + U(q)`, Hamilton's equations
   are `q̇ = p/m`, `ṗ = -∇U`, i.e. Newton's law `m q̈ = -∇U(q)`.
 
@@ -145,5 +148,26 @@ theorem natural_newton {H : Observable n} (γ : HamiltonianFlow H) {m : ℝ} (hm
   have h := γ.hasDerivAt_p t
   rw [hq] at h
   simpa [smul_smul, mul_inv_cancel₀ hm] using h
+
+/-! ### Legendre transform -/
+
+/-- **From Lagrange to Hamilton**: let `H` be related to the Lagrangian `L` by the **Legendre
+relations** `H_p(q, L_v(q, v)) = v` and `H_q(q, L_v(q, v)) = -L_q(q, v)` (as for
+`H(q, p) = p · v - L(q, v)` with `p = L_v(q, v)`). Then every solution of the Euler–Lagrange
+equations gives a solution `(q, p = L_v(q, q̇))` of Hamilton's equations. -/
+def LagrangianN.toHamiltonianFlow (𝓛 : LagrangianN n) (γ : MotionN n) (hEL : 𝓛.EulerLagrange γ)
+    (H : Observable n) (hp : ∀ q v, H.Fp q (𝓛.Lv q v) = v)
+    (hq : ∀ q v, H.Fq q (𝓛.Lv q v) = -𝓛.Lq q v) : HamiltonianFlow H where
+  q := γ.q
+  p t := 𝓛.Lv (γ.q t) (γ.v t)
+  hasDerivAt_q t := by rw [hp]; exact γ.hasDerivAt_q t
+  hasDerivAt_p t := by rw [hq, neg_neg]; exact hEL t
+
+/-- The Legendre relations hold for the natural Lagrangian `½ m |v|² - U(q)` (`L_v = m v`,
+`L_q = -∇U`) and the natural Hamiltonian (`H_p = p/m`, `H_q = ∇U`). -/
+theorem legendre_natural {m : ℝ} (hm : m ≠ 0) (gradU : (Fin n → ℝ) → Fin n → ℝ)
+    (q v : Fin n → ℝ) :
+    m⁻¹ • (m • v) = v ∧ gradU q = -(-gradU q) :=
+  ⟨by rw [smul_smul, inv_mul_cancel₀ hm, one_smul], (neg_neg _).symm⟩
 
 end ClassicalMechanics
