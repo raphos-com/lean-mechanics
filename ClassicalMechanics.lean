@@ -2,6 +2,7 @@ import ClassicalMechanics.Vector
 import ClassicalMechanics.Particles
 import ClassicalMechanics.Kepler
 import ClassicalMechanics.RigidBody
+import ClassicalMechanics.Oscillator
 
 /-!
 # ClassicalMechanics
