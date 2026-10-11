@@ -27,6 +27,8 @@
   `∫ ε(φ):ε(ψ)`), fundamental lemma of the calculus of variations on open sets.
 - `Elastostatics/NavierLame`: strain energy `∫ λ div u div v + 2μ ε(u):ε(v)`, residual
   `−(μΔu + (λ+μ)∇div u)`, **Navier–Lamé equations ⇔ stationary energy** on open sets.
+- `Elastostatics/PlaneWave`: the residual of `a g(k·x)` is `−A(k)a g''`; travelling waves
+  `a g(k·x − ct)` solve `div σ = ρü` under the propagation condition `A(k)a = ρc²a`.
 - `Elastostatics/Korn`: **Korn's first inequality** `∫|∇u|² ≤ 2∫|ε(u)|²` for compactly supported
   `C²` fields in `ℝⁿ`, via `∫|∇u|² + ∫(div u)² = 2∫|ε(u)|²` (integration by parts twice and
   symmetry of second derivatives).

@@ -37,6 +37,7 @@ import ContinuumMechanics.Elastostatics.Weak
 import ContinuumMechanics.Elastostatics.Korn
 import ContinuumMechanics.Elastostatics.Variational
 import ContinuumMechanics.Elastostatics.NavierLame
+import ContinuumMechanics.Elastostatics.PlaneWave
 import ContinuumMechanics.Kinematics.Compatibility
 import ContinuumMechanics.Kinematics.SaintVenant
 import ContinuumMechanics.Beams.Interval

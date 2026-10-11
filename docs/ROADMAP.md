@@ -77,6 +77,7 @@ Status: ✅ done; 🟡 partly done (what is open is stated); ⬜ planned.
 | `Korn.lean` | Korn's first inequality for compactly supported `C²` fields | ✅ |
 | `Variational.lean` | integration by parts for compactly supported fields, fundamental lemma of the calculus of variations on open sets | ✅ |
 | `NavierLame.lean` | isotropic strain energy, Navier–Lamé equations ⇔ stationary energy | ✅ |
+| `PlaneWave.lean` | residual of plane waves; travelling waves solve the equations of motion under the propagation condition | ✅ |
 
 ### Beams and 1D Sobolev spaces (`Beams/`, `Sobolev1D/`)
 
