@@ -54,6 +54,7 @@ import ContinuumMechanics.Plates.KirchhoffLove
 import ContinuumMechanics.Plates.Energy
 import ContinuumMechanics.Plates.Navier
 import ContinuumMechanics.Plates.MindlinReissner
+import ContinuumMechanics.Plates.MindlinEnergy
 
 /-!
 # ContinuumMechanics

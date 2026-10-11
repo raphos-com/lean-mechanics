@@ -67,6 +67,7 @@ ContinuumMechanics/
   Plates/
     Energy.lean                           -- Kirchhoff–Love plate energy: strong ⇔ stationary
     KirchhoffLove.lean                    -- Kirchhoff–Love plates on a rectangle
+    MindlinEnergy.lean                    -- Mindlin–Reissner plate energy: strong ⇔ stationary
     MindlinReissner.lean                  -- Mindlin–Reissner plates and the Kirchhoff limit
     Navier.lean                           -- Navier solutions for simply supported rectangular plates
   Sobolev1D/

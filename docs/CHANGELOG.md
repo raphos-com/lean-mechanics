@@ -36,7 +36,11 @@
 - `Plates/Energy`: Kirchhoff–Love bending form `a(w,v) = D∫ν ΔwΔv + (1−ν)∇²w:∇²v` in `ℝⁿ`, the
   classical 2D density, **null Lagrangian** `∫∇²w:∇²v = ∫ΔwΔv`, `a(w,v) = D∫Δ²w v`,
   **strong ⇔ stationary** (`DΔ²w = q` in an open `U` iff `a(w,v) = ∫qv` for all test functions
-  in `U`), and **minimum potential energy** for compactly supported solutions.
+  in `U`), and **minimum potential energy** for compactly supported solutions; the fundamental
+  lemma of the calculus of variations on open sets (`eq_zero_on_of_integral`).
+- `Plates/MindlinEnergy`: Mindlin–Reissner bilinear form
+  `D∫ν divφ divψ + (1−ν)ε(φ):ε(ψ) + S∫γ·γ`, integration by parts to the residuals
+  `−S(Δw + div φ)` and `−D(ν∇div φ + (1−ν)div ε(φ)) + Sγ`, **strong ⇔ stationary**, nonnegativity.
 
 ### Papers (`papers/`, see each README)
 - `Nexorade`, `Miura`, `KaneLubensky`, `Gridshells`, `BendingGradient`.

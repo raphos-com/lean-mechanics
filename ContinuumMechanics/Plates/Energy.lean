@@ -227,51 +227,62 @@ end Bilinear
 
 variable {D ν : ℝ} {q : (Fin n → ℝ) → ℝ} {U : Set (Fin n → ℝ)}
 
+/-- **Fundamental lemma of the calculus of variations**: a continuous `F` with `∫ g F = 0` for
+every smooth `g` compactly supported in the open set `U` vanishes on `U`. -/
+theorem eq_zero_on_of_integral {F : (Fin n → ℝ) → ℝ} (hF : Continuous F) (hU : IsOpen U)
+    (h : ∀ g : (Fin n → ℝ) → ℝ, ContDiff ℝ ∞ g → HasCompactSupport g → tsupport g ⊆ U →
+      ∫ x, g x * F x = 0) :
+    ∀ x ∈ U, F x = 0 := by
+  have hae := hU.ae_eq_zero_of_integral_contDiff_smul_eq_zero (f := F) (μ := volume)
+    (hF.locallyIntegrable.locallyIntegrableOn U) fun g hg hgc hgU => by
+      simpa only [smul_eq_mul] using h g hg hgc hgU
+  have hS : IsOpen (U ∩ {x | F x ≠ 0}) := hU.inter (isOpen_ne_fun hF continuous_const)
+  have h0 : volume (U ∩ {x | F x ≠ 0}) = 0 := by
+    rw [ae_iff] at hae
+    convert hae using 2
+    ext x
+    simp
+  have he := (hS.measure_eq_zero_iff volume).mp h0
+  intro x hx
+  by_contra hne
+  have : x ∈ U ∩ {x | F x ≠ 0} := ⟨hx, hne⟩
+  rw [he] at this
+  exact this
+
+/-- `∫ F g = ∫ G g` when `F = G` on `U ⊇ tsupport g`. -/
+theorem integral_mul_congr_on {F G g : (Fin n → ℝ) → ℝ} (hg : tsupport g ⊆ U)
+    (h : ∀ x ∈ U, F x = G x) : ∫ x, F x * g x = ∫ x, G x * g x := by
+  refine integral_congr_ae (Filter.Eventually.of_forall fun x => ?_)
+  by_cases hx : x ∈ U
+  · simp only [h x hx]
+  · have : g x = 0 := image_eq_zero_of_notMem_tsupport fun h' => hx (hg h')
+    simp [this]
+
 /-- **Strong ⇔ stationary**: `w` is stationary in the open set `U` iff it solves the plate
 equation `D Δ²w = q` there. -/
 theorem isStationary_iff (hw : ContDiff ℝ 4 w) (hq : Continuous q) (hU : IsOpen U) :
     IsStationary D ν q w U ↔ ∀ x ∈ U, D * bilap w x = q x := by
-  have hc : Continuous fun x => D * bilap w x - q x :=
-    (continuous_const.mul (continuous_bilap hw)).sub hq
   constructor
-  · intro h
-    have hae := hU.ae_eq_zero_of_integral_contDiff_smul_eq_zero
-      (f := fun x => D * bilap w x - q x) (μ := volume)
-      (hc.locallyIntegrable.locallyIntegrableOn U) fun g hg hgc hgU => by
-        have hg2 : ContDiff ℝ 2 g := hg.of_le (by simp)
-        have i1 : Integrable fun x => g x * (D * bilap w x) :=
-          (hg2.continuous.mul (continuous_const.mul (continuous_bilap hw)))
-            |>.integrable_of_hasCompactSupport
-            hgc.mul_right
-        have i2 : Integrable fun x => g x * q x :=
-          (hg2.continuous.mul hq).integrable_of_hasCompactSupport hgc.mul_right
-        simp only [smul_eq_mul, mul_sub]
-        rw [integral_sub i1 i2, ← sub_eq_zero.mpr (h g hg hgc hgU), bending_eq hw hg2 hgc,
-          ← integral_const_mul]
-        congr 1
-        · exact integral_congr_ae (Filter.Eventually.of_forall fun x => by simp only; ring)
-        · exact integral_congr_ae (Filter.Eventually.of_forall fun x => mul_comm _ _)
-    have hS : IsOpen (U ∩ {x | D * bilap w x - q x ≠ 0}) :=
-      hU.inter (isOpen_ne_fun hc continuous_const)
-    have h0 : volume (U ∩ {x | D * bilap w x - q x ≠ 0}) = 0 := by
-      rw [ae_iff] at hae
-      convert hae using 2
-      ext x
-      simp
-    have he := (hS.measure_eq_zero_iff volume).mp h0
-    intro x hx
-    by_contra hne
-    have : x ∈ U ∩ {x | D * bilap w x - q x ≠ 0} := ⟨hx, sub_ne_zero.mpr hne⟩
-    rw [he] at this
-    exact this
+  · intro h x hx
+    refine sub_eq_zero.mp (eq_zero_on_of_integral (F := fun x => D * bilap w x - q x)
+      ((continuous_const.mul (continuous_bilap hw)).sub hq) hU (fun g hg hgc hgU => ?_) x hx)
+    have hg2 : ContDiff ℝ 2 g := hg.of_le (by simp)
+    have i1 : Integrable fun x => g x * (D * bilap w x) :=
+      (hg2.continuous.mul (continuous_const.mul (continuous_bilap hw)))
+        |>.integrable_of_hasCompactSupport hgc.mul_right
+    have i2 : Integrable fun x => g x * q x :=
+      (hg2.continuous.mul hq).integrable_of_hasCompactSupport hgc.mul_right
+    simp only [mul_sub]
+    rw [integral_sub i1 i2, ← sub_eq_zero.mpr (h g hg hgc hgU), bending_eq hw hg2 hgc,
+      ← integral_const_mul]
+    congr 1
+    · exact integral_congr_ae (Filter.Eventually.of_forall fun x => by simp only; ring)
+    · exact integral_congr_ae (Filter.Eventually.of_forall fun x => mul_comm _ _)
   · intro h v hv hvc hvU
     have hv2 : ContDiff ℝ 2 v := hv.of_le (by simp)
     rw [bending_eq hw hv2 hvc, ← integral_const_mul]
-    refine integral_congr_ae (Filter.Eventually.of_forall fun x => ?_)
-    by_cases hx : x ∈ U
-    · simp only [← h x hx]; ring
-    · have : v x = 0 := image_eq_zero_of_notMem_tsupport fun h' => hx (hvU h')
-      simp [this]
+    simp_rw [← mul_assoc]
+    exact integral_mul_congr_on hvU h
 
 /-- **Minimum potential energy**: a compactly supported (clamped) solution of `D Δ²w = q` with
 `D ≥ 0` minimises `Π` among compactly supported `C⁴` deflections, for every Poisson ratio. -/

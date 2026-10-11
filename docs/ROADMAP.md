@@ -93,13 +93,13 @@ Status: ✅ done; 🟡 partly done (what is open is stated); ⬜ planned.
 | `KirchhoffLove.lean` | plate equation, moments, simply supported edges | ✅ |
 | `Energy.lean` | Kirchhoff–Love bending energy; null Lagrangian `∫∇²w:∇²v = ∫ΔwΔv`; strong ⇔ stationary on open sets; minimum potential energy for clamped plates | ✅ |
 | `Navier.lean` | single-mode Navier solutions | ✅ |
-| `MindlinReissner.lean` | equations, Navier solution, Kirchhoff limit | 🟡 energy open |
+| `MindlinReissner.lean` | equations, Navier solution, Kirchhoff limit | ✅ |
+| `MindlinEnergy.lean` | Mindlin–Reissner energy form, integration by parts, strong ⇔ stationary, nonnegativity | ✅ |
 
 ### Planned
 
 | Item | Content | Status |
 |---|---|---|
-| Mindlin–Reissner energy | energy, strong ⇔ stationary | ⬜ |
 | `H¹₀(Ω; ℝⁿ)` | Sobolev space on open sets; Korn's inequality by density | ⬜ |
 | Saint-Venant on simply connected domains | needs Mathlib's Poincaré lemma beyond convex sets | ⬜ |
 
