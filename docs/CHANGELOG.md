@@ -31,6 +31,11 @@
   `C²` fields in `ℝⁿ`, via `∫|∇u|² + ∫(div u)² = 2∫|ε(u)|²` (integration by parts twice and
   symmetry of second derivatives).
 
+### Constitutive
+- `Constitutive/Ellipticity`: isotropic acoustic tensor `μ|n|²I + (λ+μ)n⊗n`; **strong ellipticity
+  iff `μ > 0 ∧ λ + 2μ > 0`** (dimension ≥ 2); plane waves are longitudinal with `ρc² = λ + 2μ` or
+  transverse with `ρc² = μ`.
+
 ### Kinematics
 - `Kinematics/SaintVenant`: **Saint-Venant sufficiency** on open convex domains: a symmetric `C²`
   strain satisfying the compatibility conditions is `sym ∇u`, by two applications of Mathlib's

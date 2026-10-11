@@ -64,6 +64,7 @@ Status: ✅ done; 🟡 partly done (what is open is stated); ⬜ planned.
 | `Hyperelastic.lean` | hyperelasticity, frame indifference | ✅ |
 | `Hyperelastic/SVK.lean`, `NeoHookean.lean`, `MooneyRivlin.lean` | classical hyperelastic materials | ✅ |
 | `LinearIsotropic.lean` | Lamé/Young/bulk conversions, positivity | ✅ |
+| `Ellipticity.lean` | acoustic tensor, strong ellipticity `μ > 0 ∧ λ + 2μ > 0`, longitudinal and transverse plane waves | ✅ |
 | `RivlinEricksen.lean` | representation of isotropic tensor functions | ✅ |
 
 ### Linear elastostatics (`Elastostatics/`)
