@@ -108,6 +108,7 @@ ClassicalMechanics/
   Jacobi.lean                             -- The Jacobi identity for Poisson brackets
   Kepler.lean                             -- The Kepler problem
   Lagrangian.lean                         -- Lagrangian mechanics with one degree of freedom
+  LinearHamiltonian.lean                  -- Linear Hamiltonian systems: symplectic flows, Liouville
   NormalModes.lean                        -- Complete sets of normal modes
   Noether.lean                            -- Lagrangians on ℝⁿ and Noether's theorem
   Oscillator.lean                         -- Harmonic and damped oscillators

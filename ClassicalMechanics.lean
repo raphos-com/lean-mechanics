@@ -8,6 +8,7 @@ import ClassicalMechanics.Lagrangian
 import ClassicalMechanics.Noether
 import ClassicalMechanics.Hamiltonian
 import ClassicalMechanics.Jacobi
+import ClassicalMechanics.LinearHamiltonian
 import ClassicalMechanics.SmallOscillations
 import ClassicalMechanics.NormalModes
 

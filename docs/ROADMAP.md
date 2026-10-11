@@ -133,7 +133,8 @@ Status: ✅ done; 🟡 partly done (what is open is stated); ⬜ planned.
 | `Rotation.lean` | rigid-body kinematics: `Ω = ṘRᵀ`, `W = RᵀṘ` skew, `Ω = RWRᵀ`, axial vector, Poisson's formula, rigid velocity field, isometry | ✅ |
 | `Hamiltonian.lean` | Hamilton's equations, Poisson brackets, evolution `Ḟ = {F, H}`, energy conservation, Liouville (divergence-free Hamiltonian field), natural systems, Legendre transform (Euler–Lagrange solutions are Hamiltonian flows) | ✅ |
 | `Jacobi.lean` | Poisson bracket of `C²` functions: antisymmetry, **Jacobi identity** | ✅ |
-| Liouville, integral form | volume preservation by the Hamiltonian flow (needs flows of ODEs and the change-of-variables formula) | ⬜ |
+| `LinearHamiltonian.lean` | linear Hamiltonian systems `ż = -J S z`: Hamiltonian matrices, the flow is symplectic and `det Φ(t) = 1` (Liouville) | ✅ |
+| Liouville, nonlinear integral form | volume preservation by nonlinear Hamiltonian flows (needs ODE flows and change of variables) | ⬜ |
 | `Noether.lean` | Lagrangians on `ℝⁿ`: energy conservation, Noether's theorem, translation and linear (rotation) symmetries | ✅ |
 | `SmallOscillations.lean` | `M q̈ + K q = 0`: energy, normal modes, superposition, Rayleigh quotient, stability, modal orthogonality | ✅ |
 | `NormalModes.lean` | complete set of `M`-orthonormal normal modes for positive definite `M` and positive semidefinite `K` (simultaneous diagonalization) | ✅ |

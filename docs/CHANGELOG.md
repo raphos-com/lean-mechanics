@@ -29,6 +29,9 @@
   transform: under the Legendre relations, Euler–Lagrange solutions are Hamiltonian flows.
 - `Jacobi`: Poisson brackets of `C²` functions on phase space are antisymmetric and satisfy the
   **Jacobi identity** (differentiation of the bracket and symmetry of second derivatives).
+- `LinearHamiltonian`: quadratic Hamiltonians `½ zᵀ S z`: the matrix `A = -J S` is Hamiltonian,
+  the fundamental matrix of `ż = A z` is **symplectic** for all times and has **determinant 1**
+  (Liouville's theorem for linear systems).
 - `Rotation`: rigid motions `x = c + R X`: spatial and body angular velocities are skew,
   `Ω = R W Rᵀ`, skew matrices act as cross products with their axial vector, **Poisson's formula**
   `ė = ω × e`, rigid velocity field `ẋ = ċ + ω × (x - c)`, distances preserved.
