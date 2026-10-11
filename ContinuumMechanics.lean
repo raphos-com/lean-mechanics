@@ -50,6 +50,7 @@ import ContinuumMechanics.Sobolev1D.Primitive
 import ContinuumMechanics.Sobolev1D.BarWeak
 import ContinuumMechanics.Sobolev1D.BeamWeak
 import ContinuumMechanics.Plates.KirchhoffLove
+import ContinuumMechanics.Plates.Energy
 import ContinuumMechanics.Plates.Navier
 import ContinuumMechanics.Plates.MindlinReissner
 

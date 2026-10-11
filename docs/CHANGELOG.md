@@ -27,6 +27,12 @@
   `C²` fields in `ℝⁿ`, via `∫|∇u|² + ∫(div u)² = 2∫|ε(u)|²` (integration by parts twice and
   symmetry of second derivatives).
 
+### Plates
+- `Plates/Energy`: Kirchhoff–Love bending form `a(w,v) = D∫ν ΔwΔv + (1−ν)∇²w:∇²v` in `ℝⁿ`, the
+  classical 2D density, **null Lagrangian** `∫∇²w:∇²v = ∫ΔwΔv`, `a(w,v) = D∫Δ²w v`,
+  **strong ⇔ stationary** (`DΔ²w = q` in an open `U` iff `a(w,v) = ∫qv` for all test functions
+  in `U`), and **minimum potential energy** for compactly supported solutions.
+
 ### Papers (`papers/`, see each README)
 - `Nexorade`, `Miura`, `KaneLubensky`, `Gridshells`, `BendingGradient`.
 - `Gridshells/Sphere`: a Chebyshev net on the unit sphere satisfies the sine-Gordon equation

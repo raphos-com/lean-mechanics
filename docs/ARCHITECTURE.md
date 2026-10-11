@@ -64,6 +64,7 @@ ContinuumMechanics/
     Rigid.lean                            -- Infinitesimal rigid displacements
     Strain.lean                           -- Finite strain measures
   Plates/
+    Energy.lean                           -- Kirchhoff–Love plate energy: strong ⇔ stationary
     KirchhoffLove.lean                    -- Kirchhoff–Love plates on a rectangle
     MindlinReissner.lean                  -- Mindlin–Reissner plates and the Kirchhoff limit
     Navier.lean                           -- Navier solutions for simply supported rectangular plates

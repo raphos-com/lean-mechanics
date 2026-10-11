@@ -90,7 +90,8 @@ Status: ✅ done; 🟡 partly done (what is open is stated); ⬜ planned.
 
 | File | Content | Status |
 |---|---|---|
-| `KirchhoffLove.lean` | plate equation, moments, simply supported edges | 🟡 energy and strong ⇔ stationary open |
+| `KirchhoffLove.lean` | plate equation, moments, simply supported edges | ✅ |
+| `Energy.lean` | Kirchhoff–Love bending energy; null Lagrangian `∫∇²w:∇²v = ∫ΔwΔv`; strong ⇔ stationary on open sets; minimum potential energy for clamped plates | ✅ |
 | `Navier.lean` | single-mode Navier solutions | ✅ |
 | `MindlinReissner.lean` | equations, Navier solution, Kirchhoff limit | 🟡 energy open |
 
@@ -98,7 +99,7 @@ Status: ✅ done; 🟡 partly done (what is open is stated); ⬜ planned.
 
 | Item | Content | Status |
 |---|---|---|
-| Plate energies | Kirchhoff–Love and Mindlin–Reissner energies; strong ⇔ stationary | ⬜ |
+| Mindlin–Reissner energy | energy, strong ⇔ stationary | ⬜ |
 | `H¹₀(Ω; ℝⁿ)` | Sobolev space on open sets; Korn's inequality by density | ⬜ |
 | Saint-Venant sufficiency | compatible strains are symmetric gradients on simply connected domains | ⬜ |
 
