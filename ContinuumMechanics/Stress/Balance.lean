@@ -12,7 +12,8 @@ The **divergence** of a vector field is `div v = tr ∇v`; the divergence of a t
 the vector field with `div σ · a = div (σᵀ a)` for every constant `a` ([Gurtin1981], §4).
 
 Mathlib proves the divergence theorem only on boxes, so it enters here as a hypothesis on the
-regions under consideration (`DivergenceRegion`; see `GAPS.md`). From it we derive the classical
+regions under consideration (`DivergenceRegion`; see `docs/GAPS.md`). From it we derive the
+classical
 **localisation**: if the forces on every small part of a body balance,
 `∫_∂P σ n dA + ∫_P b dV = 0`, then the local equilibrium equation `div σ + b = 0` holds
 pointwise ([Gurtin1981], §14; [Ciarlet1988], §2.2). (Dynamics only replaces `b` by `b - ρ a`.)
@@ -131,7 +132,7 @@ variable [MeasurableSpace E] [BorelSpace E]
 with compact closure, a finite surface measure and an outer normal such that
 `∫_P div v dV = ∫_∂P v · n dA` for every `C¹` vector field, and fluxes of continuous tensor
 fields are surface-integrable. Mathlib only provides the divergence theorem for boxes;
-see `GAPS.md`. [Gurtin1981], §4. -/
+see `docs/GAPS.md`. [Gurtin1981], §4. -/
 structure DivergenceRegion (E : Type*) [NormedAddCommGroup E] [InnerProductSpace ℝ E]
     [FiniteDimensional ℝ E] [MeasurableSpace E] [BorelSpace E] where
   /-- The region `P`. -/

@@ -2,55 +2,30 @@
 
 ## Unreleased
 
-### Phase 9 — frames and lattices (`Frames/`)
-- `Frames/LongWave`: `(Σⱼ(2cos⟪k,tⱼ⟫ − 2) + Σⱼ⟪k,tⱼ⟫²)/‖k‖² → 0` for any lattice vectors, the
+### Restructuring
+- `Frames/` moved to the new library **`DiscreteMechanics`** (namespace `DiscreteMechanics`).
+- `papers/` is a separate Lake project depending on both libraries; the root package and
+  `CITATION.cff` describe the libraries only.
+- Design and tracking documents moved to `docs/`.
+
+### DiscreteMechanics
+- `LongWave`: `(Σⱼ(2cos⟪k,tⱼ⟫ − 2) + Σⱼ⟪k,tⱼ⟫²)/‖k‖² → 0` for any lattice vectors, the
   isotropic limit `−c`, and the long-wave limit `s z → δ₀⁻¹ N₀ y₀` of Bloch solutions computed
   through an adjugate (`N M = δ I`).
+- `Truss`: pin-jointed frames; compatibility matrix `C`, equilibrium matrix `Cᵀ`, virtual work;
+  **Maxwell–Calladine** `N₀ − N_ss = d|N| − |B|` (index of a matrix by rank–nullity); rigid
+  motions are zero modes; the triangle is rigid (`N₀ = 3`, `N_ss = 0`).
+- `Periodic`: periodic frames; Bloch compatibility matrix `C(θ)`, Bloch reduction of the infinite
+  frame, Maxwell–Calladine at every wave vector (complex index with `C(θ)ᴴ`), Maxwell lattices
+  have as many zero modes as self-stresses at every `θ` and at least `d` self-stresses at `θ = 0`.
+
+### Elastostatics
 - `Elastostatics/Korn`: **Korn's first inequality** `∫|∇u|² ≤ 2∫|ε(u)|²` for compactly supported
   `C²` fields in `ℝⁿ`, via `∫|∇u|² + ∫(div u)² = 2∫|ε(u)|²` (integration by parts twice and
   symmetry of second derivatives).
-- `papers/BendingGradient`: Lebée–Sab 2011 — `Q = i ∴ R`, self-equilibrated `R₁₁₂`, `R₂₂₁`,
-  `(i·)ᵀ(i·) = (3/2)I`, homogeneous plates reduce to Reissner–Mindlin (`5/6`), and
-  `f_RM = (2/3) i ∴ f ∴ (2/3) i` is the orthogonal projection on Reissner–Mindlin compliances.
-- `papers/Gridshells`: Chebyshev nets; Hazzidakis formula from `ω_uv = −K sin ω`; on the unit
-  sphere a net quadrilateral has area `2π − Σ angles < 2π`.
-- `papers/KaneLubensky`: 1D Maxwell chain (unique zero mode `(−c₁/c₂)ⁿ`, no self-stress, winding
-  number of `c₁ + c₂e^{iq}` by Cauchy's theorem, bulk–edge correspondence); square lattice (no
-  zero modes off the lines `kᵢ = 0`, floppy lines); kagome lattice (Maxwell, ≥ 2 self-stresses at
-  `k = 0`); `PeriodicTruss.le_finrank_selfStresses_zero`.
-- `papers/Miura`: Miura-ori rigid folding (`facet_isometry`), in-plane Poisson's ratio
-  `ν_SL = −cos²θ tan²α` (Schenk–Guest), finite patterns: positive iff
-  `b cos α > 2na(1 − sin²θ sin²α)` (Lv et al.), and convergence to `ν_SL`.
-- `Frames/Truss`: pin-jointed frames; compatibility matrix `C`, equilibrium matrix `Cᵀ`, virtual
-  work; **Maxwell–Calladine** `N₀ − N_ss = d|N| − |B|` (index of a matrix by rank–nullity); rigid
-  motions are zero modes; the triangle is rigid (`N₀ = 3`, `N_ss = 0`).
-- `Frames/Periodic`: periodic frames; Bloch compatibility matrix `C(θ)`, Bloch reduction of the
-  infinite frame, Maxwell–Calladine at every wave vector (complex index with `C(θ)ᴴ`), Maxwell
-  lattices have as many zero modes as self-stresses at every `θ`; translations at `θ = 0`.
 
-### Phase 8 — homogenization of the square nexorade (separate library `papers/Nexorade/`)
-- `Nexorade/Optimum`: formulas in `a/l` (31)–(33); Euler–Bernoulli stiffness optimal
-  at `a/l = 1/2`; soft-member optimum at the root `≈ 0.3966` of `2x³ − 2x² + 3x − 1`; trade-off
-  factors `5√2 − 6` (deflection) and `(√2 + 1)/2` (stresses).
-- `Nexorade/Frame`: **convergence of the frame to the plate** for the infinite square nexorade
-  under loads `p₀ e^{ik·x}`: Bloch reduction to the cell, explicit adjugates with
-  `det = −4a(a+b) ω₁ω₂ (2cos θ₁ + 2cos θ₂ − 4)` (discrete Laplacian), existence and uniqueness of
-  the Bloch solution, and as `k → 0`: joint deflection / plate deflection `→ 1`, `|k|²` × member
-  forces → four-point bending with `s = −p₀A/(a(a+b))`.
-- `Nexorade/Optimum`: stiffness (29) in terms of the paper's `η = GSₛa²/EI` (30)
-  (`Cell.stiffness_eq_eta`).
-- `Nexorade/OutOfPlane`: unit-cell statics of the square nexorade; admissible out-of-plane fields
-  are four-point bending (1 dof); **degeneracy `M₁₁ = M₂₂`**; localization; Hill–Mandel energy
-  gives the compliance `d = 2A(2a+3b)/(3EI(a+b)²) + 4A/(GSₛ a(a+b)²)` (Greco–Lebée–Douthe 2013, (28)).
-- `Nexorade/Parametric`: `(L, φ)` parametrization; stiffness (29) with `η = 4EI/(GSₛL²)`; shear
-  `2M/sin 2φ`; moment `LM/cos φ`; normalized moment optimal at `φ = π/8`; `D → 0` as `φ → 0⁺`.
-- `Nexorade/InPlane`: membrane cell problem; `N₁₂ ≡ 0`; optimal field and **minimum complementary
-  energy**; compliance diagonal with `A₁₁₁₁ = A₂₂₂₂`, `A₂₂₁₁ = 0`; the bending term of `A₁₁₁₁` is
-  `a²b²(2a+b)/(12EI)`.
-- `Nexorade/Plate`: Legendre transform `½D(tr χ)²`; degenerate plate `M = −DΔw`, `ΔM + p = 0`;
-  Navier solution (34)–(36); end-to-end nexor moment at the plate centre.
-- `Nexorade/Homogenized`: the homogenized energies as minima of the cell complementary energy
-  (`IsLeast`), out of plane `½dM²` and in plane `½A₁₁₁₁(N₁₁² + N₂₂²)`.
+### Papers (`papers/`, see each README)
+- `Nexorade`, `Miura`, `KaneLubensky`, `Gridshells`, `BendingGradient`.
 
 ### Phase 7 — plates (in progress)
 - `Plates/KirchhoffLove`: rectangular plate, partial derivatives, biharmonic operator, plate

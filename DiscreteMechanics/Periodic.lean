@@ -1,4 +1,4 @@
-import ContinuumMechanics.Frames.Truss
+import DiscreteMechanics.Truss
 import Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic
 import Mathlib.Analysis.Complex.Order
 
@@ -33,7 +33,7 @@ At `θ = 0` uniform translations are zero modes (`translation_mem_zeroModes`).
 open Matrix
 open scoped ComplexOrder
 
-namespace ContinuumMechanics
+namespace DiscreteMechanics
 
 section Index
 
@@ -185,4 +185,4 @@ theorem le_finrank_selfStresses_zero [Fintype N] [Fintype B] [Nonempty N]
 
 end PeriodicTruss
 
-end ContinuumMechanics
+end DiscreteMechanics

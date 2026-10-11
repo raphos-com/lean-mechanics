@@ -18,7 +18,7 @@ The proof integrates by parts twice (Mathlib's
 
 This is the inequality behind the `KornSetting` hypothesis of `Elastostatics.Weak` for fields
 vanishing on the whole boundary (`H¹₀`), obtained there by density; the density argument and the
-Sobolev space `H¹₀(Ω; ℝⁿ)` are not available in Mathlib yet (see `GAPS.md`).
+Sobolev space `H¹₀(Ω; ℝⁿ)` are not available in Mathlib yet (see `docs/GAPS.md`).
 
 ## References
 

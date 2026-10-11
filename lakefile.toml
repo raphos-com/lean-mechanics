@@ -1,6 +1,6 @@
 name = "ContinuumMechanics"
 version = "0.1.0"
-defaultTargets = ["ContinuumMechanics", "Nexorade", "Miura", "KaneLubensky", "Gridshells", "BendingGradient"]
+defaultTargets = ["ContinuumMechanics", "DiscreteMechanics"]
 
 [leanOptions]
 pp.unicode.fun = true
@@ -19,21 +19,4 @@ rev = "v4.34.1"
 name = "ContinuumMechanics"
 
 [[lean_lib]]
-name = "Nexorade"
-srcDir = "papers"
-
-[[lean_lib]]
-name = "Miura"
-srcDir = "papers"
-
-[[lean_lib]]
-name = "KaneLubensky"
-srcDir = "papers"
-
-[[lean_lib]]
-name = "Gridshells"
-srcDir = "papers"
-
-[[lean_lib]]
-name = "BendingGradient"
-srcDir = "papers"
+name = "DiscreteMechanics"

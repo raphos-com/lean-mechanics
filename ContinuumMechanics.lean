@@ -52,12 +52,9 @@ import ContinuumMechanics.Sobolev1D.BeamWeak
 import ContinuumMechanics.Plates.KirchhoffLove
 import ContinuumMechanics.Plates.Navier
 import ContinuumMechanics.Plates.MindlinReissner
-import ContinuumMechanics.Frames.Truss
-import ContinuumMechanics.Frames.Periodic
-import ContinuumMechanics.Frames.LongWave
 
 /-!
 # ContinuumMechanics
 
-Root module: imports every file of the library. See `ARCHITECTURE.md` and `ROADMAP.md`.
+Root module: imports every file of the library. See `docs/ARCHITECTURE.md` and `docs/ROADMAP.md`.
 -/

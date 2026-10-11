@@ -21,7 +21,8 @@ potential energy** `J(v) = ½ a(v, v) - ℓ(v)` ([Ciarlet1988], §6.3; [Brezis20
 
 Korn's inequality, the trace theorem (continuity of `ℓ`), and the identification of `V` with a
 subspace of `H¹` need Sobolev spaces on 3D domains, which Mathlib does not have; they are packaged
-in the hypothesis structure `KornSetting` (see `GAPS.md`). The 1D bar of `Sobolev1D/BarWeak` is an
+in the hypothesis structure `KornSetting` (see `docs/GAPS.md`). The 1D bar of `Sobolev1D/BarWeak`
+is an
 instance (`ε = id`, Korn with `K = 1`).
 
 ## Main results
@@ -42,7 +43,7 @@ namespace ContinuumMechanics
 
 /-- **Hypothesis structure** for the weak formulation of linear elastostatics: a strain operator
 `ε : V → H`, a symmetric uniformly positive elasticity operator `ℂ`, and **Korn's inequality**
-`‖v‖ ≤ K ‖ε v‖`. [Ciarlet1988], §6.3. See `GAPS.md`. -/
+`‖v‖ ≤ K ‖ε v‖`. [Ciarlet1988], §6.3. See `docs/GAPS.md`. -/
 structure KornSetting (V H : Type*) [NormedAddCommGroup V] [InnerProductSpace ℝ V]
     [NormedAddCommGroup H] [InnerProductSpace ℝ H] where
   /-- The strain operator `ε`. -/

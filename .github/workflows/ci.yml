@@ -20,6 +20,10 @@ jobs:
           use-mathlib-cache: true
           build-args: "--wfail"
 
+      - name: Build papers
+        working-directory: papers
+        run: lake build --wfail
+
       - name: Check for sorry / axiom
         run: scripts/check_no_sorry_axiom.sh
 
@@ -77,6 +81,10 @@ jobs:
             .lake/packages/UnicodeBasic
             .lake/packages/leansqlite
           key: ${{ steps.doc-cache.outputs.cache-primary-key }}
+
+      - name: Build papers
+        working-directory: papers
+        run: lake build
 
       # Documents this repository's modules only; links to Mathlib go to the official docs.
       - name: Build documentation

@@ -1,7 +1,8 @@
-# ContinuumMechanics — Architecture
+# Architecture
 
-This document fixes the module layout, the core type choices, naming
-conventions, and the "hypotheses as structures" discipline. It also records
+This document fixes the module layout of the `ContinuumMechanics` and `DiscreteMechanics`
+libraries, the core type choices, naming conventions, and the "hypotheses as structures"
+discipline. It also records
 the Mathlib survey this design rests on (§7), so that every choice below can be
 traced to what Mathlib does or does not provide.
 
@@ -13,7 +14,7 @@ traced to what Mathlib does or does not provide.
 |---|---|
 | Lean | `leanprover/lean4:v4.34.1` (latest stable release; Mathlib `master` is on `v4.35.0-rc4`) |
 | Mathlib | tag `v4.34.1`, commit `d13f23b723b8a846827a245b89c10fc7d3f11612` |
-| doc-gen4 | the tag matching the Lean toolchain |
+| doc-gen4 | the tag matching the Lean toolchain (built in `docbuild/`) |
 
 `lean-toolchain` and `lake-manifest.json` are committed. Bumps happen only in a
 dedicated `chore: bump toolchain` commit that fixes every breakage; never mixed
@@ -21,69 +22,86 @@ with feature work.
 
 ## 2. Module layout
 
+Generated from the sources (module titles are the first heading of each module docstring).
+
 ```
-ContinuumMechanics.lean                -- root: imports every module below
+ContinuumMechanics.lean                   -- root: imports every module of ContinuumMechanics
 ContinuumMechanics/
   Basic/
-    Notation.lean                       -- scoped notation (ᵀ, :, ⊗, 𝕀, …)
-    Hypotheses.lean                     -- re-exports all hypothesis structures (see §5)
-  Tensor/                               -- Phase 1
-    Second.lean                         -- Lin E, transpose, identity, basic API
-    SymSkew.lean                        -- Sym/Skw, sym/skw parts, decomposition
-    Spherical.lean                      -- spherical/deviatoric decomposition
-    Contraction.lean                    -- A : B, Frobenius norm, `Frob E` synonym
-    Invariants.lean                     -- I₁ I₂ I₃, Cayley–Hamilton (via Mathlib)
-    Spectral.lean                       -- spectral decomposition of Sym
-    Orthogonal.lean                     -- Orth = unitary (Lin E), Orth⁺ (rotations)
-    Positive.lean                       -- Psym, real CFC instance, square root
-    Polar.lean                          -- F = R U = V R, existence and uniqueness
-    Fourth.lean                         -- Lin4 E, minor/major symmetries, 𝕀, 𝕀ˢʸᵐ, I⊗I
-    Isotropic4.lean                     -- isotropic 4th-order tensors, λ I⊗I + 2μ 𝕀ˢʸᵐ (dim 3)
-    Matrix.lean                         -- Fin 3 matrix bridge for examples/computation
-  Kinematics/                           -- Phase 2
-    Body.lean                           -- reference body, deformation, F, J
-    Strain.lean                         -- C, B, Green–Lagrange, Almansi
-    Infinitesimal.lean                  -- ε = sym ∇u, linearisation estimate
-    Rigid.lean                          -- skew gradient ⇒ infinitesimal rigid displacement
-    Observer.lean                       -- change of observer, objectivity
-    Compatibility.lean                  -- Saint-Venant (hypothesis-based)
-  Stress/                               -- Phase 3
-    Cauchy.lean                         -- traction, Cauchy stress, Cauchy's theorem
-    Balance.lean                        -- local balance laws, symmetry of σ
-    Piola.lean                          -- P, S and conversions
-    Criteria.lean                       -- principal stresses, von Mises, Tresca
-  Constitutive/                         -- Phase 4
-    Elastic.lean                        -- response functions, hyperelasticity
-    FrameIndifference.lean              -- W(F) = Ŵ(C), symmetry groups, isotropy
-    LinearIsotropic.lean                -- λ μ E ν K G conversions, positivity
-    Hyperelastic/SVK.lean
-    Hyperelastic/NeoHookean.lean
-    Hyperelastic/MooneyRivlin.lean
-    RivlinEricksen.lean                 -- stretch
-  Elastostatics/                        -- Phase 5
-    Energy.lean                         -- strain energy, Clapeyron
-    Reciprocity.lean                    -- Betti
-    Uniqueness.lean                     -- Kirchhoff uniqueness
-    MinimumEnergy.lean                  -- minimum potential energy
-    Weak.lean                           -- weak form, Lax–Milgram + Korn hypothesis
-  Sobolev1D/                            -- Phase 6 infrastructure (upstream candidate)
-    H1.lean                             -- H¹(0,L) as ℝ × L²
-    H2.lean                             -- H²(0,L)
-    Inequalities.lean                   -- Poincaré / Wirtinger on an interval
-  Beams/                                -- Phase 6
-    Interval.lean                       -- shared 1D calculus helpers
-    Bar.lean
-    EulerBernoulli/{Strong,Energy,Solutions,Uniqueness,Weak}.lean
-    Timoshenko/{Strong,Energy,Solutions,Limit,Weak}.lean
-    Buckling.lean
-  Plates/                               -- Phase 7 (stretch)
-  Examples/                             -- cross-module worked examples (steel bar, …)
-scripts/
-  check_no_sorry_axiom.sh               -- CI guard (see §8)
-```
+    Notation.lean                         -- Notation for continuum mechanics
+  Beams/
+    Bar.lean                              -- The axial bar
+    Buckling.lean                         -- Euler buckling of a pinned–pinned column
+    EulerBernoulli/
+      Basic.lean                          -- Euler–Bernoulli beams: equation, boundary conditions, uniqueness
+      Energy.lean                         -- Euler–Bernoulli beams: energy and the variational principle
+      Solutions.lean                      -- Euler–Bernoulli beams: closed-form solutions
+    Interval.lean                         -- One-dimensional calculus on an interval
+    Poly.lean                             -- Polynomial deflections
+    Rayleigh.lean                         -- The Rayleigh quotient of a pinned column
+    Timoshenko/
+      Basic.lean                          -- Timoshenko beams: equations, boundary conditions, uniqueness
+      Limit.lean                          -- The Euler–Bernoulli limit of the Timoshenko beam
+    Wirtinger.lean                        -- Wirtinger's inequality on an interval
+  Constitutive/
+    Hyperelastic/
+      MooneyRivlin.lean                   -- The compressible Mooney–Rivlin material
+      NeoHookean.lean                     -- The compressible neo-Hookean material
+      SVK.lean                            -- The Saint Venant–Kirchhoff material
+    Hyperelastic.lean                     -- Hyperelastic materials and frame indifference
+    LinearIsotropic.lean                  -- Linear isotropic elasticity
+    RivlinEricksen.lean                   -- The Rivlin–Ericksen representation theorem
+  Elastostatics/
+    Basic.lean                            -- Linear elastostatics: work, Clapeyron, Betti, Kirchhoff
+    Korn.lean                             -- Korn's first inequality for compactly supported fields
+    MinimumEnergy.lean                    -- The principle of minimum potential energy
+    Weak.lean                             -- Abstract weak formulation of linear elastostatics
+  Kinematics/
+    Body.lean                             -- Bodies and deformations
+    Compatibility.lean                    -- Saint-Venant compatibility (necessity)
+    Infinitesimal.lean                    -- Infinitesimal strain
+    Observer.lean                         -- Change of observer and objectivity
+    Rigid.lean                            -- Infinitesimal rigid displacements
+    Strain.lean                           -- Finite strain measures
+  Plates/
+    KirchhoffLove.lean                    -- Kirchhoff–Love plates on a rectangle
+    MindlinReissner.lean                  -- Mindlin–Reissner plates and the Kirchhoff limit
+    Navier.lean                           -- Navier solutions for simply supported rectangular plates
+  Sobolev1D/
+    BarWeak.lean                          -- Weak formulation of the axial bar
+    BeamWeak.lean                         -- Weak formulation of the Euler–Bernoulli cantilever
+    Primitive.lean                        -- Primitives of `L²` functions on an interval
+  Stress/
+    Balance.lean                          -- Divergence, the divergence theorem as a hypothesis, and local equilibrium
+    BoxRegion.lean                        -- Boxes satisfy the divergence theorem
+    Cauchy.lean                           -- Cauchy's theorem via the tetrahedron argument
+    Criteria.lean                         -- Stress invariants and yield criteria
+    Piola.lean                            -- Piola–Kirchhoff stresses
+    Regions.lean                          -- Rescaled regions and small boxes
+    Triangle.lean                         -- Integrals over flat triangles
+  Tensor/
+    Contraction.lean                      -- Double contraction and the Frobenius inner product
+    DetDeriv.lean                         -- Derivative of the determinant (Jacobi's formula)
+    Fourth.lean                           -- Fourth-order tensors
+    Invariants.lean                       -- Principal invariants and the Cayley–Hamilton theorem
+    Isotropic4.lean                       -- Isotropic fourth-order tensors
+    Matrix.lean                           -- Matrix bridge
+    Orthogonal.lean                       -- Orthogonal tensors and rotations
+    Polar.lean                            -- The polar decomposition
+    Positive.lean                         -- Positive tensors and square roots
+    Second.lean                           -- Second-order tensors
+    Spectral.lean                         -- Spectral decomposition of symmetric tensors
+    Spherical.lean                        -- Spherical and deviatoric parts
+    SymSkew.lean                          -- Symmetric and skew tensors
 
-Every file targets ≤ ~500 lines; a file that grows past that is split along
-the `-- section` boundaries it already has.
+DiscreteMechanics.lean                    -- root: imports every module of DiscreteMechanics
+DiscreteMechanics/
+  LongWave.lean                           -- Long-wave limits of Bloch problems
+  Periodic.lean                           -- Periodic pin-jointed frames and their Bloch matrices
+  Truss.lean                              -- Pin-jointed frames: compatibility, equilibrium and Maxwell–Calladine counting
+
+papers/                                   -- separate Lake project: paper formalizations
+```
 
 ## 3. Core type choices
 
@@ -261,12 +279,18 @@ roots.
 missing fact becomes a `structure` (a `Prop`-valued one whenever possible)
 that theorems take as an **explicit** argument.
 
+Example (`Stress/Balance.lean`, abridged):
+
 ```lean
-/-- The divergence theorem holds on `Ω` with outward normal `n` and surface
-measure `σ` for all `C¹(Ω̄)` vector fields.  [Gurtin, §5]  See GAPS.md#divergence. -/
-structure HasDivergenceTheorem (Ω : Set E) (μS : Measure E) (n : E → E) : Prop where
-  integral_div : ∀ v : E → E, ContDiffOn ℝ 1 v (closure Ω) →
-    ∫ x in Ω, div v x = ∫ x, ⟪v x, n x⟫_ℝ ∂μS
+/-- A region in which the divergence theorem holds, with a surface measure and an outer normal.
+See `GAPS.md`. -/
+structure DivergenceRegion (E : Type*) … where
+  carrier : Set E
+  surface : Measure E
+  normal : E → E
+  divergence : ∀ v : E → E, ContDiff ℝ 1 v →
+    ∫ x in carrier, vdiv v x = ∫ x, ⟪v x, normal x⟫_ℝ ∂surface
+  …
 ```
 
 Conventions:
@@ -278,8 +302,8 @@ Conventions:
 2. **Weakest useful statement.** State exactly what the downstream proof
    consumes, not the textbook's strongest form.
 3. **Non-vacuity witnesses.** For each hypothesis structure we try to prove
-   at least one nontrivial instance. Example: `HasDivergenceTheorem` for
-   rectangular boxes in `Fin 3 → ℝ` follows from Mathlib's
+   at least one nontrivial instance. Example: `DivergenceRegion` for
+   boxes (`Stress/BoxRegion.lean`) follows from Mathlib's
    `MeasureTheory.integral_divergence_of_hasFDerivAt_off_countable`. Where no
    witness is available yet, `GAPS.md` says so explicitly. This guards against
    hypotheses that are accidentally inconsistent (which would make every
@@ -288,13 +312,9 @@ Conventions:
    it is used, the textbook source, and what Mathlib would need to discharge
    it (e.g. "divergence theorem for bounded Lipschitz domains; needs surface
    measure on rectifiable boundaries").
-5. All hypothesis structures are re-exported from `Basic/Hypotheses.lean` so
-   the full list of assumptions is greppable in one place.
-
-Planned hypothesis structures (initial list, see `ROADMAP.md`):
-`HasDivergenceTheorem`, `KornInequality`, `SaintVenantCompatible`
-(sufficiency on simply connected domains), `HasTraceOperator` (Phase 5 weak
-form on 3D domains).
+5. The full list of hypothesis structures, in use and planned, is
+   [`GAPS.md`](GAPS.md): currently `DivergenceRegion` and `KornSetting`; planned
+   `SaintVenantCompatible` (sufficiency on simply connected domains).
 
 ## 6. Proof-engineering policy
 
@@ -338,7 +358,7 @@ form on 3D domains).
 | Divergence theorem | only on boxes: `MeasureTheory.integral_divergence_of_hasFDerivAt_off_countable` |
 | Parseval on the circle | `tsum_sq_fourierCoeff` (for Wirtinger's inequality → Euler buckling) |
 
-### Gaps found (each becomes a GAPS.md entry, an in-library lemma, or both)
+### Gaps found (each becomes a `GAPS.md` entry, an in-library lemma, or both)
 
 | Gap | Plan |
 |---|---|
@@ -347,20 +367,21 @@ form on 3D domains).
 | No polar decomposition | Prove from CFC (Phase 1). Upstream candidate. |
 | No derivative of `det` (Jacobi's formula) | Prove `HasFDerivAt det (A ↦ tr(adj F · A))` for invertible `F` as `det F · tr(F⁻¹ A)` (needed for `∂J/∂F`, neo-Hookean). Upstream candidate. |
 | No `det Aᵀ = det A` for the Hilbert adjoint (did not find it under expected names) | Prove via `toMatrixOrthonormal`. |
-| Divergence theorem only for boxes | `HasDivergenceTheorem` hypothesis, witnessed on boxes. |
-| No Sobolev spaces on bounded domains / intervals | 1D: build `H¹`, `H²` on an interval (§3.7). 3D: hypothesis structures (`KornInequality`, `HasTraceOperator`). |
-| No Korn, Poincaré, Wirtinger inequalities | Korn: hypothesis. Poincaré on interval: prove (Cauchy–Schwarz). Wirtinger (for buckling): prove via odd extension + Parseval. |
+| Divergence theorem only for boxes | `DivergenceRegion` hypothesis, witnessed on boxes. |
+| No Sobolev spaces on bounded domains / intervals | 1D: build `H¹`, `H²` on an interval (§3.7). 3D: hypothesis structure `KornSetting` (Korn's first inequality proved for compactly supported fields). |
+| No Korn, Poincaré, Wirtinger inequalities | Korn: `KornSetting` hypothesis (first inequality proved for compactly supported fields, `Elastostatics/Korn.lean`). Poincaré on an interval and Wirtinger (for buckling): proved (`Sobolev1D/`, `Beams/Wirtinger.lean`). |
 | No simply-connectedness tools for open subsets of `E` usable for Saint-Venant | `SaintVenantCompatible` hypothesis (stretch). |
 
 ## 8. CI
 
-GitHub Actions on every push / PR:
+GitHub Actions (`.github/workflows/ci.yml`) on every push and pull request:
 
-1. `lake exe cache get && lake build` with `-DwarningAsError=true`.
-2. `scripts/check_no_sorry_axiom.sh`: fails if any `.lean` file under
-   `ContinuumMechanics/` contains `sorry` or an `axiom` declaration
-   (grep on the source **and** a `#print axioms`-based check on the root
-   module's main theorems, which must report only `propext`,
-   `Classical.choice`, `Quot.sound`). Runs as a required check on `main`;
-   feature branches run it as informational.
-3. doc-gen4 build, published to GitHub Pages from `main`.
+1. **Build**: `lake build --wfail` of both libraries (Mathlib from its cache), then
+   `(cd papers && lake build --wfail)`.
+2. **Guard**: `scripts/check_no_sorry_axiom.sh` fails if any `.lean` file contains `sorry`,
+   `admit` or an `axiom` declaration, and checks that every declaration under
+   `ContinuumMechanics` and `DiscreteMechanics` (paper formalizations included) depends only on
+   `propext`, `Classical.choice` and `Quot.sound`.
+3. **Documentation** (pushes to `main`): `scripts/build_docs.sh` runs the doc-gen4 executable on
+   this repository's modules only (links to Mathlib point to the official Mathlib documentation)
+   and publishes the result to GitHub Pages.

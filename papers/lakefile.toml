@@ -1,0 +1,31 @@
+# Formalizations of papers, built on the ContinuumMechanics and DiscreteMechanics libraries.
+name = "papers"
+version = "0.1.0"
+packagesDir = "../.lake/packages"
+defaultTargets = ["BendingGradient", "Gridshells", "KaneLubensky", "Miura", "Nexorade"]
+
+[leanOptions]
+pp.unicode.fun = true
+autoImplicit = false
+relaxedAutoImplicit = false
+weak.linter.mathlibStandardSet = true
+weak.linter.style.header = false
+
+[[require]]
+name = "ContinuumMechanics"
+path = ".."
+
+[[lean_lib]]
+name = "BendingGradient"
+
+[[lean_lib]]
+name = "Gridshells"
+
+[[lean_lib]]
+name = "KaneLubensky"
+
+[[lean_lib]]
+name = "Miura"
+
+[[lean_lib]]
+name = "Nexorade"

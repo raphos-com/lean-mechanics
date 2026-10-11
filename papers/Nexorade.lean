@@ -26,5 +26,5 @@ nexorade as a (degenerate) Kirchhoff–Love plate. Built on the `ContinuumMechan
 Uses from `ContinuumMechanics`: the Kirchhoff–Love plate (`Plates.KirchhoffLove`; the
 equivalent plate is the case `ν = 1`) and its Navier solutions (`Plates.Navier`). The
 frame-to-plate convergence is proved for the nexorade under single-mode loads (`Frame`); the
-general statement is a modelling assumption (`GAPS.md`).
+general statement is a modelling assumption (see the README).
 -/

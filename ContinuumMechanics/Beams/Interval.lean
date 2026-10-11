@@ -8,7 +8,8 @@ import Mathlib.Data.Nat.Factorial.Basic
 # One-dimensional calculus on an interval
 
 Helpers shared by the bar and beam theories. Displacement fields are functions `ℝ → ℝ` defined on
-the whole line (only their values on `[0, L]` matter; see `ROADMAP.md`, review decision 2), so the
+the whole line (only their values on `[0, L]` matter; see `docs/ROADMAP.md`, review decision 2), so
+the
 ordinary derivative `deriv` is used throughout, and `deriv^[k]` is the `k`-th derivative.
 
 ## Main results

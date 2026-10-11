@@ -2,7 +2,8 @@
 
 Every hypothesis structure used by the library is listed here with its
 statement, users, source, non-vacuity witness (if any), and what Mathlib would
-need in order to discharge it. See ARCHITECTURE.md §5.
+need in order to discharge it. See [`ARCHITECTURE.md`](ARCHITECTURE.md) §5. Assumptions
+made by individual paper formalizations are listed in their READMEs under `papers/`.
 
 ## In use
 
@@ -54,26 +55,8 @@ compact support in `ℝⁿ`; the case `H¹₀(Ω)` follows by density once `H¹�
 *Non-vacuity witness.* `KornSetting.ofIdentity` (`ε = id`, `ℂ = k I`, `K = 1`), the abstract form
 of the 1D bar of `Sobolev1D/BarWeak`, whose `H¹` model is constructed without hypotheses.
 
-### Modelling assumption: homogenization of periodic frames as plates (Phase 8)
-
-*Statement.* For a periodic beam frame of cell size `ε → 0` under slowly varying loads, the frame
-response converges to that of the Kirchhoff–Love plate whose compliance is given by the static
-(Hill–Mandel) cell problem.
-
-*Used by.* Nothing in Lean: Phase 8 *defines* the equivalent plate by the cell problem and proves
-the cell results; the convergence statement is the modelling hypothesis that gives them physical
-meaning, as in [GrecoLebeeDouthe2013], which recalls it from [Caillerie1984] and [LebeeSab2013].
-
-*Proved special case.* `papers/Nexorade/Frame.lean` proves it for the square nexorade under
-single-mode loads `p₀ e^{ik·x}`: the infinite frame has a unique Bloch solution, and as `k → 0` its
-joint deflections divided by the plate deflection `p₀ d e^{ik·x}/|k|⁴` tend to `1`
-(`Cell.tendsto_frame`). General frames, general loads and bounded domains remain assumed.
-
-*Mathlib would need.* Two-scale convergence / Γ-convergence for discrete lattices, Korn-type
-inequalities for frames.
-
 ## Planned
 
 | Structure | Needed for | Mathlib would need | Witness plan |
 |---|---|---|---|
-| `SaintVenantCompatible` | Phase 2 stretch | Poincaré lemma on simply connected open sets | — |
+| `SaintVenantCompatible` | Saint-Venant sufficiency (`Kinematics/Compatibility.lean`) | Poincaré lemma on simply connected open sets | — |

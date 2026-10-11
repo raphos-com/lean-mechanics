@@ -25,7 +25,7 @@ open scoped InnerProductSpace
 
 noncomputable section
 
-namespace ContinuumMechanics
+namespace DiscreteMechanics
 
 /-! ### The discrete Laplacian -/
 
@@ -128,4 +128,4 @@ theorem tendsto_smul_solution {M N : X → Matrix ι ι ℂ} {δ s : X → ℂ} 
 
 end Solutions
 
-end ContinuumMechanics
+end DiscreteMechanics

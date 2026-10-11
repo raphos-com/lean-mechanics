@@ -5,7 +5,7 @@ Machine-checked formalization (Lean 4 + Mathlib, no axioms, no `sorry`) of parts
 > C. L. Kane, T. C. Lubensky, **Topological boundary modes in isostatic lattices**,
 > Nature Physics 10, 39–45 (2014). [arXiv:1308.0554](https://arxiv.org/abs/1308.0554)
 
-built on the frame theory of [`ContinuumMechanics/Frames`](../../ContinuumMechanics/Frames).
+built on the frame theory of [`DiscreteMechanics`](../../DiscreteMechanics).
 
 ✅ proved as stated.
 
@@ -24,6 +24,6 @@ built on the frame theory of [`ContinuumMechanics/Frames`](../../ContinuumMechan
 ## Building
 
 ```sh
-lake build KaneLubensky
+(cd papers && lake build KaneLubensky)
 scripts/check_no_sorry_axiom.sh
 ```

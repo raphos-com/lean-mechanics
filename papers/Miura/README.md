@@ -24,6 +24,6 @@ kinematics of the Miura-ori and of its in-plane Poisson's ratio:
 ## Building
 
 ```sh
-lake build Miura
+(cd papers && lake build Miura)
 scripts/check_no_sorry_axiom.sh
 ```

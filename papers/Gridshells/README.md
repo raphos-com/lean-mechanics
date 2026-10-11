@@ -22,6 +22,6 @@ is formalized here.
 ## Building
 
 ```sh
-lake build Gridshells
+(cd papers && lake build Gridshells)
 scripts/check_no_sorry_axiom.sh
 ```

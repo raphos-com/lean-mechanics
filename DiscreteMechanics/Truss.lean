@@ -35,7 +35,7 @@ Rigid motions `u(n) = a + W x(n)` with `W` skew are zero modes (`rigid_mem_zeroM
 
 open Matrix
 
-namespace ContinuumMechanics
+namespace DiscreteMechanics
 
 /-! ### The index theorem for matrices -/
 
@@ -172,4 +172,4 @@ theorem triangle_finrank_zeroModes : Module.finrank ℝ triangle.zeroModes = 3 :
 
 end Truss
 
-end ContinuumMechanics
+end DiscreteMechanics

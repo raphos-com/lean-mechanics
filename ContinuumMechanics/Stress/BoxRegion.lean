@@ -4,7 +4,8 @@ import ContinuumMechanics.Stress.Balance
 /-!
 # Boxes satisfy the divergence theorem
 
-`DivergenceRegion` packages the divergence theorem as a hypothesis (see `GAPS.md`). This file shows
+`DivergenceRegion` packages the divergence theorem as a hypothesis (see `docs/GAPS.md`). This file
+shows
 that it is not vacuous: every **coordinate box** `{x | 0 < x · eᵢ < 1}` of an orthonormal basis
 `e` is a `DivergenceRegion`. The surface measure is the sum of the Lebesgue measures of the
 (open) faces, the outer normal is `±eᵢ` on the faces, and the divergence theorem is transferred

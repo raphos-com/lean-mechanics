@@ -22,6 +22,6 @@ map `Q ↦ i · Q` is the matrix `embed`, and `i ∴ R` is `embedᵀ R`.
 ## Building
 
 ```sh
-lake build BendingGradient
+(cd papers && lake build BendingGradient)
 scripts/check_no_sorry_axiom.sh
 ```

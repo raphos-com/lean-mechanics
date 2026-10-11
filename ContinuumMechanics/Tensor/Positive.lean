@@ -22,7 +22,7 @@ and `A v · v ≥ 0` for all `v`. **Positive definite** tensors (Gurtin's `Psym`
 ## Main definitions
 
 * `Lin.matrixStarAlgEquiv`: `Matrix (Fin d) (Fin d) ℝ ≃⋆ₐ[ℝ] Lin E` from an orthonormal basis.
-* instance `ContinuousFunctionalCalculus ℝ (Lin E) IsSelfAdjoint` (global, see `ROADMAP.md`).
+* instance `ContinuousFunctionalCalculus ℝ (Lin E) IsSelfAdjoint` (global, see `docs/ROADMAP.md`).
 * instance `StarOrderedRing (Lin E)`.
 
 ## Main results

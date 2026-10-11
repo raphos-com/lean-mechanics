@@ -1,28 +1,16 @@
 cff-version: 1.2.0
-message: "If you use this software, please cite it as below, and cite the paper formalized in Nexorade/."
-title: "lean-mechanics: continuum mechanics and the homogenization of reciprocal systems in Lean 4"
+message: "If you use this software, please cite it as below."
+title: "lean-mechanics: continuum and discrete mechanics in Lean 4"
 type: software
 repository-code: "https://github.com/raphos-com/lean-mechanics"
+url: "https://raphos-com.github.io/lean-mechanics/"
 keywords:
   - Lean 4
   - Mathlib
   - formal verification
   - continuum mechanics
-  - homogenization
-  - nexorade
-  - reciprocal frames
-references:
-  - type: conference-paper
-    title: "Investigation of the elastic behavior of reciprocal systems using homogenization techniques"
-    authors:
-      - family-names: Greco
-        given-names: Lorenzo
-      - family-names: Lebée
-        given-names: Arthur
-      - family-names: Douthe
-        given-names: Cyril
-    year: 2013
-    url: "https://www.researchgate.net/publication/270451899_Investigation_of_the_elastic_behavior_of_reciprocal_systems_using_homogenization_techniques"
+  - structural mechanics
+  - frames
 authors:
   - family-names: Greco
     given-names: Lorenzo

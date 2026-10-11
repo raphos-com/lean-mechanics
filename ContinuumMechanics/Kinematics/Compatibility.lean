@@ -18,7 +18,7 @@ The proof only uses the full symmetry of `D³u`, obtained from the symmetry of s
 (`ContDiffAt.isSymmSndFDerivAt`) applied to `u` and to `∇u`.
 
 Sufficiency (on simply connected bodies) needs a Poincaré lemma that Mathlib does not yet have; it
-is recorded in `GAPS.md`.
+is recorded in `docs/GAPS.md`.
 
 ## Main results
 

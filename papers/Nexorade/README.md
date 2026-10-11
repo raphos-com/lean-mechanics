@@ -51,14 +51,28 @@ the corrected one.
 | §4.2 Trade-off: +7% deflection (`5√2 − 6`) vs +20% stresses (`(√2 + 1)/2`) | `deflection_ratio`, `moment_ratio` | ✅ |
 | §5.1 Navier solution (34)–(36) | `DegeneratePlate.navier`, `navier_kirchhoffLove` | ✅ |
 | §5.2 Finite element comparison (ABAQUS) | — | out of scope (numerical) |
-| Scale separation: convergence of the frame to the plate | `Frame.lean`: `existsUnique_bloch`, `tendsto_frame` | ✅ for the infinite nexorade under a load `p₀ e^{ik·x}`: as `k → 0` the joint deflections over the plate deflection `p₀ d e^{ik·x}/\|k\|⁴` tend to 1, and `\|k\|²` × the member forces tend to the four-point bending of (22); general frames and loads assumed (see [`GAPS.md`](../../GAPS.md)) |
+| Scale separation: convergence of the frame to the plate | `Frame.lean`: `existsUnique_bloch`, `tendsto_frame` | ✅ for the infinite nexorade under a load `p₀ e^{ik·x}`: as `k → 0` the joint deflections over the plate deflection `p₀ d e^{ik·x}/\|k\|⁴` tend to 1, and `\|k\|²` × the member forces tend to the four-point bending of (22); general frames and loads assumed (see *Assumptions* below) |
 | Membrane behaviour (left to future work in the paper): `N₁₂ ≡ 0`, `A₂₂₁₁ = 0`, `A₁₁₁₁ = (1/A)(ab(2a+b)/(2GSₛ) + (4a³+6a²b+5ab²+2b³)/(2ES) + a²b²(2a+b)/(12EI))` | `InPlane.lean`, `Cell.isLeast_inPlane` | ✅ (extension) |
+
+## Assumptions
+
+**Homogenization of periodic frames as plates.** For a periodic beam frame of cell size `ε → 0`
+under slowly varying loads, the frame response converges to that of the Kirchhoff–Love plate whose
+compliance is given by the static (Hill–Mandel) cell problem ([Caillerie1984], [LebeeSab2013]). The
+paper uses this as its modelling hypothesis. `Frame.lean` proves it for the square nexorade under
+single-mode loads `p₀ e^{ik·x}` (`Cell.tendsto_frame`); general frames, general loads and bounded
+domains remain assumed. Proving them would need two-scale or Γ-convergence for discrete lattices
+and Korn-type inequalities for frames.
+
+* [Caillerie1984] D. Caillerie, *Thin elastic and periodic plates*, Math. Methods Appl. Sci. (1984).
+* [LebeeSab2013] A. Lebée, K. Sab, *Homogenization of a space frame as a thick plate*, Computers
+  and Structures (2013).
 
 ## Building
 
-From the repository root:
+From the repository root, after `lake build`:
 
 ```sh
-lake build Nexorade
+(cd papers && lake build Nexorade)
 scripts/check_no_sorry_axiom.sh
 ```

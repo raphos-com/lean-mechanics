@@ -11,7 +11,7 @@ has deflection `w` satisfying `EI w'''' = q` on `[0, L]` ([TimoshenkoGere1997], 
 [Reddy2007], §3.3). The bending moment is `M = -EI w''` and the shear force `V = -EI w'''`.
 
 Derivatives are Mathlib's `iteratedDeriv k w` (`= deriv^[k] w`) of a function defined on all of
-`ℝ` (see `ROADMAP.md`, review decision 2).
+`ℝ` (see `docs/ROADMAP.md`, review decision 2).
 
 ## Boundary conditions
 

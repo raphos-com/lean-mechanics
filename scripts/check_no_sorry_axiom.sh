@@ -2,18 +2,19 @@
 # Fails if the library contains `sorry`, `admit`, or an `axiom` declaration,
 # or if any declaration of the library depends on an axiom other than
 # Lean's three standard ones (propext, Classical.choice, Quot.sound).
-# Usage: scripts/check_no_sorry_axiom.sh   (run from the repository root, after `lake build`)
+# Usage: scripts/check_no_sorry_axiom.sh   (run from the repository root, after `lake build` and
+#        `(cd papers && lake build)`)
 set -euo pipefail
 
 status=0
 
 # 1. Source scan (comments are not stripped: a `sorry` in a comment is also rejected,
 #    which keeps the check simple; write "s0rry" in prose if ever needed).
-if grep -rnwE 'sorry|admit' --include='*.lean' ContinuumMechanics ContinuumMechanics.lean papers; then
+if grep -rnwE 'sorry|admit' --include='*.lean' ContinuumMechanics ContinuumMechanics.lean DiscreteMechanics DiscreteMechanics.lean papers; then
   echo "error: found sorry/admit (listed above)" >&2
   status=1
 fi
-if grep -rnE '^\s*(private\s+|protected\s+)?axiom\s' --include='*.lean' ContinuumMechanics ContinuumMechanics.lean papers; then
+if grep -rnE '^\s*(private\s+|protected\s+)?axiom\s' --include='*.lean' ContinuumMechanics ContinuumMechanics.lean DiscreteMechanics DiscreteMechanics.lean papers; then
   echo "error: found axiom declarations (listed above)" >&2
   status=1
 fi
@@ -21,20 +22,18 @@ fi
 # 2. Semantic check: every declaration in the library uses only the standard axioms.
 tmp=$(mktemp --suffix=.lean)
 trap 'rm -f "$tmp"' EXIT
-cat > "$tmp" <<'LEAN'
-import ContinuumMechanics
-import Nexorade
-import Miura
-import KaneLubensky
-import Gridshells
-import BendingGradient
+{
+  echo "import ContinuumMechanics"
+  echo "import DiscreteMechanics"
+  for f in papers/*.lean; do echo "import $(basename "$f" .lean)"; done
+  cat <<'LEAN'
 open Lean in
 #eval show CoreM Unit from do
   let env ← getEnv
   let allowed := [``propext, ``Classical.choice, ``Quot.sound]
   let mut bad : Array (Name × Name) := #[]
   for (n, _) in env.constants.toList do
-    if (`ContinuumMechanics).isPrefixOf n then
+    if (`ContinuumMechanics).isPrefixOf n || (`DiscreteMechanics).isPrefixOf n then
       for ax in (← Lean.collectAxioms n) do
         unless allowed.contains ax do bad := bad.push (n, ax)
   if bad.isEmpty then
@@ -43,7 +42,9 @@ open Lean in
     for (n, ax) in bad do IO.eprintln s!"{n} depends on {ax}"
     throwError "non-standard axioms found"
 LEAN
-if ! lake env lean "$tmp"; then
+} > "$tmp"
+# The papers project depends on both libraries, so its environment sees every module.
+if ! (cd papers && lake env lean "$tmp"); then
   status=1
 fi
 

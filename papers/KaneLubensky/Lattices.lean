@@ -1,10 +1,10 @@
-import ContinuumMechanics.Frames.Periodic
+import DiscreteMechanics.Periodic
 
 /-!
 # Square and kagome lattices
 
 Two of the Maxwell lattices of [KaneLubensky2014], as periodic pin-jointed frames
-(`ContinuumMechanics.PeriodicTruss`).
+(`DiscreteMechanics.PeriodicTruss`).
 
 * **Square lattice** (one node, two bars per cell): `d|N| = 2 = |B|`. Its Bloch compatibility
   matrix is diagonal, `C(θ) = diag(e^{iθ₁} - 1, e^{iθ₂} - 1)`. Away from the lines
@@ -31,7 +31,7 @@ noncomputable section
 
 namespace ContinuumMechanics.KaneLubensky
 
-open PeriodicTruss
+open DiscreteMechanics DiscreteMechanics.PeriodicTruss
 
 /-- The square lattice of unit bars. -/
 def square : PeriodicTruss 2 (Fin 1) (Fin 2) where
