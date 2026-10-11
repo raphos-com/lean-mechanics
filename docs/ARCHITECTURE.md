@@ -316,8 +316,7 @@ Conventions:
    it (e.g. "divergence theorem for bounded Lipschitz domains; needs surface
    measure on rectifiable boundaries").
 5. The full list of hypothesis structures, in use and planned, is
-   [`GAPS.md`](GAPS.md): currently `DivergenceRegion` and `KornSetting`; planned
-   `SaintVenantCompatible` (sufficiency on simply connected domains).
+   [`GAPS.md`](GAPS.md): currently `DivergenceRegion` and `KornSetting`.
 
 ## 6. Proof-engineering policy
 
@@ -373,7 +372,7 @@ Conventions:
 | Divergence theorem only for boxes | `DivergenceRegion` hypothesis, witnessed on boxes. |
 | No Sobolev spaces on bounded domains / intervals | 1D: build `H¹`, `H²` on an interval (§3.7). 3D: hypothesis structure `KornSetting` (Korn's first inequality proved for compactly supported fields). |
 | No Korn, Poincaré, Wirtinger inequalities | Korn: `KornSetting` hypothesis (first inequality proved for compactly supported fields, `Elastostatics/Korn.lean`). Poincaré on an interval and Wirtinger (for buckling): proved (`Sobolev1D/`, `Beams/Wirtinger.lean`). |
-| No simply-connectedness tools for open subsets of `E` usable for Saint-Venant | `SaintVenantCompatible` hypothesis (stretch). |
+| Poincaré lemma only on convex sets | Saint-Venant sufficiency proved on open convex domains (`Kinematics/SaintVenant.lean`); simply connected domains open. |
 
 ## 8. CI
 
