@@ -2,7 +2,7 @@
 name = "papers"
 version = "0.1.0"
 packagesDir = "../.lake/packages"
-defaultTargets = ["BendingGradient", "Gridshells", "KaneLubensky", "Miura", "Nexorade"]
+defaultTargets = ["BendingGradient", "ChevronCore", "Gridshells", "KaneLubensky", "Miura", "Nexorade"]
 
 [leanOptions]
 pp.unicode.fun = true
@@ -17,6 +17,9 @@ path = ".."
 
 [[lean_lib]]
 name = "BendingGradient"
+
+[[lean_lib]]
+name = "ChevronCore"
 
 [[lean_lib]]
 name = "Gridshells"

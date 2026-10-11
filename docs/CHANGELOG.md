@@ -58,6 +58,8 @@
 
 ### Papers (`papers/`, see each README)
 - `Nexorade`, `Miura`, `KaneLubensky`, `Gridshells`, `BendingGradient`.
+- `ChevronCore` (Lebée–Sab 2010): analytical bounds on the transverse shear moduli of chevron
+  folded cores, their ordering, the exact case, and the comparison with honeycombs.
 - `Gridshells/Sphere`: a Chebyshev net on the unit sphere satisfies the sine-Gordon equation
   `ω_uv = −sin ω`; its quadrilaterals have area `< 2π`.
 
