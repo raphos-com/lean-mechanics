@@ -28,11 +28,11 @@ jobs:
     needs: build
     if: github.ref == 'refs/heads/main' && github.event_name == 'push'
     runs-on: ubuntu-latest
-    # doc-gen4 also documents imported Mathlib modules, which is slow; only the newest push matters.
+    # Only the newest push matters.
     concurrency:
       group: docs-${{ github.ref }}
       cancel-in-progress: true
-    timeout-minutes: 240
+    timeout-minutes: 60
     permissions:
       contents: read
       pages: write
@@ -47,41 +47,40 @@ jobs:
         with:
           use-mathlib-cache: true
 
-      # doc-gen4 also documents every imported Lean/Lake/Mathlib module. Keep its build directory
-      # between runs so that only the modules whose `.olean` changed are documented again.
-      - name: Restore documentation cache
+      # Cache the doc-gen4 executable and its dependencies between runs.
+      - name: Restore doc-gen4 cache
         id: doc-cache
         uses: actions/cache/restore@v5
         with:
           path: |
-            docbuild/.lake
             .lake/packages/doc-gen4
             .lake/packages/MD4Lean
             .lake/packages/BibtexQuery
             .lake/packages/UnicodeBasic
             .lake/packages/leansqlite
-          key: docs-${{ hashFiles('lean-toolchain', 'lake-manifest.json', 'docbuild/lakefile.toml', 'docbuild/lake-manifest.json') }}-${{ github.sha }}
-          restore-keys: |
-            docs-${{ hashFiles('lean-toolchain', 'lake-manifest.json', 'docbuild/lakefile.toml', 'docbuild/lake-manifest.json') }}-
+          key: docgen-${{ hashFiles('lean-toolchain', 'docbuild/lakefile.toml', 'docbuild/lake-manifest.json') }}
 
-      - name: Build documentation
+      - name: Build doc-gen4
         working-directory: docbuild
         run: |
           lake update ContinuumMechanics
-          lake exe cache get
-          lake build ContinuumMechanics:docs Nexorade:docs Miura:docs KaneLubensky:docs Gridshells:docs BendingGradient:docs
+          lake build doc-gen4
 
-      - name: Save documentation cache
+      - name: Save doc-gen4 cache
+        if: steps.doc-cache.outputs.cache-hit != 'true'
         uses: actions/cache/save@v5
         with:
           path: |
-            docbuild/.lake
             .lake/packages/doc-gen4
             .lake/packages/MD4Lean
             .lake/packages/BibtexQuery
             .lake/packages/UnicodeBasic
             .lake/packages/leansqlite
           key: ${{ steps.doc-cache.outputs.cache-primary-key }}
+
+      # Documents this repository's modules only; links to Mathlib go to the official docs.
+      - name: Build documentation
+        run: scripts/build_docs.sh
 
       # One artifact per attempt, so that re-running the job does not find two `github-pages`.
       - uses: actions/upload-pages-artifact@v5
