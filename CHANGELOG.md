@@ -3,6 +3,9 @@
 ## Unreleased
 
 ### Phase 9 — frames and lattices (`Frames/`)
+- `Elastostatics/Korn`: **Korn's first inequality** `∫|∇u|² ≤ 2∫|ε(u)|²` for compactly supported
+  `C²` fields in `ℝⁿ`, via `∫|∇u|² + ∫(div u)² = 2∫|ε(u)|²` (integration by parts twice and
+  symmetry of second derivatives).
 - `papers/BendingGradient`: Lebée–Sab 2011 — `Q = i ∴ R`, self-equilibrated `R₁₁₂`, `R₂₂₁`,
   `(i·)ᵀ(i·) = (3/2)I`, homogeneous plates reduce to Reissner–Mindlin (`5/6`), and
   `f_RM = (2/3) i ∴ f ∴ (2/3) i` is the orthogonal projection on Reissner–Mindlin compliances.

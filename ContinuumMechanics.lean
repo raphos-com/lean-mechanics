@@ -33,6 +33,7 @@ import ContinuumMechanics.Constitutive.RivlinEricksen
 import ContinuumMechanics.Elastostatics.Basic
 import ContinuumMechanics.Elastostatics.MinimumEnergy
 import ContinuumMechanics.Elastostatics.Weak
+import ContinuumMechanics.Elastostatics.Korn
 import ContinuumMechanics.Kinematics.Compatibility
 import ContinuumMechanics.Beams.Interval
 import ContinuumMechanics.Beams.Bar

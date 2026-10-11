@@ -47,6 +47,10 @@ elastostatics), `energy_eq_add`, `isMinOn_energy`, `eq_of_energy_eq` (minimum po
 *Mathlib would need.* `H¹(Ω; ℝ³)` on Lipschitz domains, Korn's inequality (via Nečas / Lions
 lemma), the trace theorem `H¹(Ω) → L²(∂Ω)` (continuity of the surface-load functional).
 
+*Proved special case.* `Elastostatics/Korn.lean`: Korn's first inequality
+`∫|∇u|² ≤ 2∫|ε(u)|²` (and the identity `∫|∇u|² + ∫(div u)² = 2∫|ε(u)|²`) for `C²` fields with
+compact support in `ℝⁿ`; the case `H¹₀(Ω)` follows by density once `H¹₀` is available.
+
 *Non-vacuity witness.* `KornSetting.ofIdentity` (`ε = id`, `ℂ = k I`, `K = 1`), the abstract form
 of the 1D bar of `Sobolev1D/BarWeak`, whose `H¹` model is constructed without hypotheses.
 
