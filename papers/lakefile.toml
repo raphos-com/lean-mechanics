@@ -1,6 +1,7 @@
 # Formalizations of papers, built on the ContinuumMechanics and DiscreteMechanics libraries.
 name = "papers"
 version = "0.1.0"
+license = "Apache-2.0"
 packagesDir = "../.lake/packages"
 defaultTargets = ["BendingGradient", "ChevronCore", "Gridshells", "KaneLubensky", "Miura", "Nexorade"]
 

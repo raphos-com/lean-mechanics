@@ -1,5 +1,6 @@
 name = "ContinuumMechanics"
 version = "0.1.0"
+license = "Apache-2.0"
 defaultTargets = ["ClassicalMechanics", "ContinuumMechanics", "DiscreteMechanics"]
 
 [leanOptions]
@@ -7,7 +8,7 @@ pp.unicode.fun = true
 autoImplicit = false
 relaxedAutoImplicit = false
 weak.linter.mathlibStandardSet = true
-# Mathlib's copyright-header convention does not apply (no license chosen yet).
+# Files carry no per-file copyright header (Apache-2.0, see LICENSE at the repository root).
 weak.linter.style.header = false
 
 [[require]]

@@ -2,6 +2,8 @@ cff-version: 1.2.0
 message: "If you use this software, please cite it as below."
 title: "lean-mechanics: classical, continuum and discrete mechanics in Lean 4"
 type: software
+license: Apache-2.0
+version: 0.1.0
 repository-code: "https://github.com/raphos-com/lean-mechanics"
 url: "https://raphos-com.github.io/lean-mechanics/"
 keywords:

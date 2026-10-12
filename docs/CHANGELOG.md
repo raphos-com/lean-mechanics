@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Project
+- Licensed under Apache-2.0 (`LICENSE`, Lake and `CITATION.cff` metadata); README with
+  highlights linked to the API documentation, dependency instructions and a note on AI assistance.
+
 ### ClassicalMechanics (new library)
 - `Particles`: systems of particles with action and reaction: momentum theorem and conservation,
   centre of mass theorem, angular momentum theorem for central internal forces, kinetic energy
