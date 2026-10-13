@@ -4,7 +4,14 @@ title: "lean-mechanics: classical, continuum and discrete mechanics in Lean 4"
 type: software
 license: Apache-2.0
 version: 0.1.0
-doi: 10.5281/zenodo.23352091
+doi: 10.5281/zenodo.23352090
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.23352090
+    description: All versions (concept DOI)
+  - type: doi
+    value: 10.5281/zenodo.23352091
+    description: Version 0.1.0
 date-released: 2026-10-13
 repository-code: "https://github.com/raphos-com/lean-mechanics"
 url: "https://raphos-com.github.io/lean-mechanics/"

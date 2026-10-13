@@ -2,7 +2,7 @@
 
 [![CI](https://github.com/raphos-com/lean-mechanics/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/raphos-com/lean-mechanics/actions/workflows/ci.yml)
 [![License](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](LICENSE)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23352091.svg)](https://doi.org/10.5281/zenodo.23352091)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23352090.svg)](https://doi.org/10.5281/zenodo.23352090)
 
 Classical, continuum and discrete mechanics formalized in [Lean 4](https://lean-lang.org) on top
 of [Mathlib](https://github.com/leanprover-community/mathlib4). Every theorem is checked by Lean:
@@ -122,7 +122,7 @@ welcome.
 
 ## Citing
 
-Archived on Zenodo: [doi:10.5281/zenodo.23352091](https://doi.org/10.5281/zenodo.23352091). See
+Archived on Zenodo: [doi:10.5281/zenodo.23352090](https://doi.org/10.5281/zenodo.23352090). See
 [`CITATION.cff`](CITATION.cff) (GitHub shows a "Cite this repository" button).
 
 ## License
