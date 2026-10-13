@@ -62,6 +62,7 @@ ContinuumMechanics/
     H10.lean                              -- H¹₀(Ω; ℝⁿ) and Korn's inequality by density
     Korn.lean                             -- Korn's first inequality for compactly supported fields
     MinimumEnergy.lean                    -- The principle of minimum potential energy
+    LameCylinder.lean                     -- Lamé's thick-walled cylinder and sphere
     NavierLame.lean                       -- Navier–Lamé equations ⇔ stationary strain energy
     PlaneWave.lean                        -- Plane waves solve the Navier–Lamé equations of motion
     Torsion.lean                          -- Saint-Venant torsion of prismatic bars

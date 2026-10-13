@@ -116,6 +116,7 @@ Status: ✅ done; 🟡 partly done (what is open is stated); ⬜ planned.
 | Item | Content | Status |
 |---|---|---|
 | `Airy.lean` | plane elasticity: Airy stresses satisfy equilibrium, compatibility ⇔ biharmonic (plane stress and strain), uniaxial tension, pure bending, end-loaded cantilever, simply supported beam under uniform load | ✅ |
+| `LameCylinder.lean` | **Lamé's problem**: radial equilibrium ⇔ Euler ODE, general solution `Ar + B/r` (with uniqueness), pressurized thick cylinder (stresses, BCs, constant axial stress), maximum hoop stress at the bore, thin-wall (Barlow) limit, thick spherical shell | ✅ |
 | `Castigliano.lean` | Castigliano's first and second theorems, Clapeyron, Maxwell–Betti, unit-load method; determinate trusses `δ = Σ N n L/(EA)`; cantilever `U* = P²L³/(6EI)`, tip deflection `PL³/(3EI)` | ✅ |
 | `Existence.lean` | **Poincaré inequality** on bounded domains (via integration by parts), coercivity of the Lamé energy on `H¹₀`, **existence and uniqueness of weak solutions** of clamped isotropic elastostatics (Lax–Milgram), minimum potential energy | ✅ |
 | `Torsion.lean` | Saint-Venant torsion: warping displacement, strains, Navier–Lamé ⇔ harmonic warping, Prandtl stress function `ΔΦ = -2μα`; circular shaft `T = μJα`, elliptic bar `T = μαπa³b³/(a² + b²)` | ✅ |

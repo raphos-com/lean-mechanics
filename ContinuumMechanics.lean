@@ -44,6 +44,7 @@ import ContinuumMechanics.Elastostatics.H10
 import ContinuumMechanics.Elastostatics.Existence
 import ContinuumMechanics.Elastostatics.Castigliano
 import ContinuumMechanics.Elastostatics.Airy
+import ContinuumMechanics.Elastostatics.LameCylinder
 import ContinuumMechanics.Elastostatics.Torsion
 import ContinuumMechanics.Kinematics.Compatibility
 import ContinuumMechanics.Kinematics.SaintVenant

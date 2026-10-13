@@ -106,6 +106,8 @@
   additive under products.
 
 ### Elastostatics
+- `LameCylinder`: thick-walled cylinders and spheres under pressure (Lamé): general radial
+  solution and uniqueness, stresses, maximum hoop stress, thin-wall limit.
 - `Existence`: Poincaré inequality `‖u‖² ≤ 4R²‖∇u‖²` on slabs and bounded sets, coercivity of the
   Lamé energy on `H¹₀`, existence and uniqueness of weak solutions of clamped isotropic
   elastostatics by Lax–Milgram, and the principle of minimum potential energy.
