@@ -151,6 +151,7 @@ Status: ✅ done; 🟡 partly done (what is open is stated); ⬜ planned.
 | `KeplerPeriod.lean` | eccentric anomaly and **Kepler's equation**; the motion is periodic with least period `2π/n`, `n = √(k/(m a³))`; **Kepler's third law** `T² = 4π² m a³ / k` for the actual period (no swept-area hypothesis) | ✅ |
 | `EffectivePotential.lean` | general central potentials: energy and angular momentum, `E = ½mṙ² + U_eff(r)`, allowed region `U_eff(r) ≤ E`, turning points | ✅ |
 | `Rutherford.lean` | hyperbolic orbits (`e > 1` iff `E > 0`), the orbit stays in a cone about the LRL vector, deflection angle `tan(Θ/2) = |k|/(2Eb)`, **Rutherford cross section** `(k/4E)²/sin⁴(Θ/2)` | ✅ |
+| `IsotropicOscillator.lean` | `m ẍ = -k x` in space: explicit solution and uniqueness, all orbits periodic (isochronous), conserved energy, angular momentum and **Fradkin tensor**, elliptical orbits centred at the origin, `⟨T⟩ = ⟨U⟩` over a period | ✅ |
 | `Constraints.lean` | d'Alembert's principle ⇔ Lagrange multiplier, ideal constraints do no work, energy conservation; spherical pendulum (vertical angular momentum, energy, tension), simple pendulum | ✅ |
 | `RigidBody.lean` | inertia tensor (symmetric, positive semidefinite), Steiner, König, Euler's equations and their invariants | ✅ |
 | `Oscillator.lean` | harmonic oscillator (solution, uniqueness, periodicity), damped oscillator (dissipation, underdamped solution) | ✅ |

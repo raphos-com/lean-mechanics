@@ -129,6 +129,7 @@ ClassicalMechanics/
   Hamiltonian.lean                        -- Hamiltonian mechanics: Poisson brackets, Liouville
   HamiltonJacobi.lean                     -- Hamilton–Jacobi theory, action–angle variables
   HeavyTop.lean                           -- Lagrange's heavy symmetric top
+  IsotropicOscillator.lean                -- The isotropic oscillator: Fradkin tensor, ellipses
   Jacobi.lean                             -- The Jacobi identity for Poisson brackets
   Kepler.lean                             -- The Kepler problem
   KeplerPeriod.lean                       -- Kepler's equation and the period of bound orbits

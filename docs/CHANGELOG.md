@@ -42,6 +42,8 @@
   resonance, power balance, beats.
 - `Variational`: Beltrami identity, straight-line geodesics, the catenary, the brachistochrone
   (cycloid) and the tautochrone property.
+- `IsotropicOscillator`: solution, periodicity and isochronism, the Fradkin tensor, elliptical
+  orbits, virial theorem over a period.
 - `Rocket`: the rocket equation, Tsiolkovsky's formula, rockets in uniform gravity, constant
   burn rate.
 - `Collisions`: restitution, kinetic energy loss, elastic collisions (relative speed, right-angle
