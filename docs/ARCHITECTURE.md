@@ -118,6 +118,7 @@ ContinuumMechanics/
 ClassicalMechanics.lean                   -- root: imports every module of ClassicalMechanics
 ClassicalMechanics/
   Canonical.lean                          -- Linear canonical (symplectic) transformations
+  Collisions.lean                         -- Collisions: restitution, energy loss, elastic scattering
   Constraints.lean                        -- Constrained motion: d'Alembert, spherical pendulum
   EffectivePotential.lean                 -- Central forces: effective potential, turning points
   EulerStability.lean                     -- Stability of rotations of a free rigid body
@@ -137,6 +138,7 @@ ClassicalMechanics/
   Oscillator.lean                         -- Harmonic and damped oscillators
   Particles.lean                          -- Systems of particles: the general theorems of dynamics
   RigidBody.lean                          -- Rigid bodies: inertia tensor, Euler's equations
+  Rocket.lean                             -- Variable mass: the rocket equation
   RotatingFrame.lean                      -- Rotating frames: Coriolis and centrifugal forces
   Rotation.lean                           -- Kinematics of rigid bodies: rotations, Poisson's formula
   Routh.lean                              -- Cyclic coordinates and Routh reduction

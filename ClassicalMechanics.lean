@@ -3,6 +3,8 @@ import ClassicalMechanics.Particles
 import ClassicalMechanics.Galilean
 import ClassicalMechanics.Virial
 import ClassicalMechanics.TwoBody
+import ClassicalMechanics.Rocket
+import ClassicalMechanics.Collisions
 import ClassicalMechanics.Kepler
 import ClassicalMechanics.KeplerThird
 import ClassicalMechanics.KeplerPeriod

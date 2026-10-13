@@ -142,6 +142,8 @@ Status: ✅ done; 🟡 partly done (what is open is stated); ⬜ planned.
 | `Galilean.lean` | Galilean boosts, rotations and time shifts of particle systems; transformation of `P` and `T`; conserved boost charge `M x_G - t P`, uniform motion of the centre of mass | ✅ |
 | `Virial.lean` | virial `G = Σ mᵢ xᵢ·vᵢ`, `Ġ = 2T + Σ xᵢ·Fᵢ`; **virial theorem** for bounded motions, homogeneous potentials `⟨2T⟩ = k⟨U⟩` | ✅ |
 | `TwoBody.lean` | reduction of the two-body problem: `μ r̈ = F` with the reduced mass, `T = ½M|v_G|² + ½μ|ṙ|²` | ✅ |
+| `Rocket.lean` | variable mass: the rocket equation, **Tsiolkovsky** `Δv = u log(m₀/m)`, with gravity, constant burn rate | ✅ |
+| `Collisions.lean` | 1D collisions with restitution (explicit final velocities, kinetic energy loss `½μ(1 - e²)(u₁ - u₂)²`), elastic collisions: relative speed preserved, equal masses scatter at right angles | ✅ |
 | `Kepler.lean` | Kepler problem: conservation of `L`, `E` and the Laplace–Runge–Lenz vector, Kepler's first and second laws, eccentricity–energy relation | ✅ |
 | `KeplerThird.lean` | semi-axes from `E` and `L`, `a = -k/(2E)`, `b² = a p`, peri/apoapsis bounds; **Kepler's third law** `T² = 4π² m a³ / k` (given that one period sweeps the area `π a b`) | ✅ |
 | `KeplerPeriod.lean` | eccentric anomaly and **Kepler's equation**; the motion is periodic with least period `2π/n`, `n = √(k/(m a³))`; **Kepler's third law** `T² = 4π² m a³ / k` for the actual period (no swept-area hypothesis) | ✅ |

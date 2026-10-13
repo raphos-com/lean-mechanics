@@ -38,6 +38,10 @@
   (Liouville's theorem for linear systems).
 - `KeplerThird`: semi-major axis `a = -k/(2E)`, `b² = a p`, periapsis and apoapsis bounds on `r`,
   **Kepler's third law** `T² = 4π² m a³ / k` from the swept-area hypothesis.
+- `Rocket`: the rocket equation, Tsiolkovsky's formula, rockets in uniform gravity, constant
+  burn rate.
+- `Collisions`: restitution, kinetic energy loss, elastic collisions (relative speed, right-angle
+  scattering of equal masses).
 - `KeplerPeriod`: eccentric anomaly, Kepler's equation `E - e sin E = n t + const`, the bound
   orbit is periodic with least period `2π/n`, so **Kepler's third law** holds unconditionally.
 - `EffectivePotential`: general central forces: conservation laws, radial energy
