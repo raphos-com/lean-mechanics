@@ -73,6 +73,7 @@ import ContinuumMechanics.Plates.Navier
 import ContinuumMechanics.Plates.MindlinReissner
 import ContinuumMechanics.Plates.MindlinEnergy
 import ContinuumMechanics.Fluids.Ideal
+import ContinuumMechanics.Fluids.Viscous
 
 /-!
 # ContinuumMechanics

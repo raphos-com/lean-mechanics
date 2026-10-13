@@ -70,6 +70,7 @@ ContinuumMechanics/
     Weak.lean                             -- Abstract weak formulation of linear elastostatics
   Fluids/
     Ideal.lean                            -- Ideal fluids: Euler, Bernoulli, potential flow, Kelvin
+    Viscous.lean                          -- Navier–Stokes: Couette, Poiseuille, Hagen–Poiseuille
   Kinematics/
     Body.lean                             -- Bodies and deformations
     Compatibility.lean                    -- Saint-Venant compatibility (necessity)

@@ -145,6 +145,8 @@
   transverse with `ρc² = μ`.
 
 ### Fluids
+- `Fluids/Viscous`: incompressible Navier–Stokes, viscous stress, Couette, plane Poiseuille and
+  Hagen–Poiseuille flows with their flow rates, viscous energy dissipation.
 - `Fluids/Ideal`: material derivative, incompressible Euler equations, Lamb identity, Bernoulli's
   theorem, potential flow, Kelvin's circulation theorem.
 
