@@ -17,6 +17,7 @@ import ClassicalMechanics.HeavyTop
 import ClassicalMechanics.Rotation
 import ClassicalMechanics.RotatingFrame
 import ClassicalMechanics.Oscillator
+import ClassicalMechanics.ForcedOscillator
 import ClassicalMechanics.Lagrangian
 import ClassicalMechanics.Noether
 import ClassicalMechanics.Routh
