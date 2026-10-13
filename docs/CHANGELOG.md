@@ -161,6 +161,8 @@
   Poincaré lemma (rotation field `W` with `∂ₖWᵢⱼ = ∂ⱼεᵢₖ − ∂ᵢεⱼₖ`, then `∇u = ε + W`).
 
 ### Beams (weak forms)
+- `Beams/String`: the 1D wave equation: d'Alembert's formula, normal modes, orthogonality, energy
+  conservation and uniqueness for a string with fixed ends, Mersenne's laws.
 - `Sobolev1D/BeamWeakBC`: Lax–Milgram on closed subspaces; weak **clamped–clamped** and
   **propped-cantilever** Euler–Bernoulli beams: existence, uniqueness, classical ⇒ weak.
 - `Sobolev1D/TimoshenkoWeak`: weak Timoshenko cantilever in (bending strain, shear strain):
