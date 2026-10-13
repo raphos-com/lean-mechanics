@@ -159,6 +159,7 @@ DiscreteMechanics.lean                    -- root: imports every module of Discr
 DiscreteMechanics/
   LongWave.lean                           -- Long-wave limits of Bloch problems
   Periodic.lean                           -- Periodic pin-jointed frames and their Bloch matrices
+  Chain.lean                              -- Lattice dynamics: dispersion, Brillouin zone, band gap
   Stiffness.lean                          -- The direct stiffness method for trusses
   Truss.lean                              -- Pin-jointed frames: compatibility, equilibrium and Maxwell–Calladine counting
   Winding.lean                            -- Winding numbers, argument principle for polynomials

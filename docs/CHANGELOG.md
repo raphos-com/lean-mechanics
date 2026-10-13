@@ -95,6 +95,8 @@
 - Design and tracking documents moved to `docs/`.
 
 ### DiscreteMechanics
+- `Chain`: monatomic and diatomic spring chains: dispersion relations, Brillouin zone, long-wave
+  sound speed, fixed-end normal modes, acoustic/optical branches and the band gap.
 - `Stiffness`: direct stiffness method for trusses: symmetry, positive semidefiniteness and kernel
   of `K = Cᵀ diag(k) C`, assembly, supported structures have positive definite reduced stiffness
   and unique displacements, minimum potential energy, Maxwell–Betti, a worked two-bar truss.

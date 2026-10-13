@@ -2,6 +2,7 @@ import DiscreteMechanics.Truss
 import DiscreteMechanics.Stiffness
 import DiscreteMechanics.Periodic
 import DiscreteMechanics.LongWave
+import DiscreteMechanics.Chain
 import DiscreteMechanics.Winding
 
 /-!

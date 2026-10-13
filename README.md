@@ -37,6 +37,11 @@ Each link goes to the statement in the API documentation.
   a strict minimum of the potential is a stable equilibrium.
 * [The tennis-racket theorem](https://raphos-com.github.io/lean-mechanics/ClassicalMechanics/EulerStability.html#ClassicalMechanics.rate_pos_iff):
   rotation about the intermediate principal axis is unstable.
+* [Resonance](https://raphos-com.github.io/lean-mechanics/ClassicalMechanics/ForcedOscillator.html#ClassicalMechanics.Driven.amplitude_le_resonance)
+  of the driven damped oscillator, and the
+  [brachistochrone](https://raphos-com.github.io/lean-mechanics/ClassicalMechanics/Variational.html#ClassicalMechanics.cycloid_beltrami)
+  and [tautochrone](https://raphos-com.github.io/lean-mechanics/ClassicalMechanics/Variational.html#ClassicalMechanics.tautochrone)
+  properties of the cycloid.
 * [The virial theorem](https://raphos-com.github.io/lean-mechanics/ClassicalMechanics/Virial.html#ClassicalMechanics.ParticleSystem.virial).
 
 **Continuum mechanics**
@@ -49,9 +54,14 @@ Each link goes to the statement in the API documentation.
   on star-shaped domains.
 * [Torsion of an elliptic bar](https://raphos-com.github.io/lean-mechanics/ContinuumMechanics/Elastostatics/Torsion.html#ContinuumMechanics.Torsion.torque_ellip)
   `T = μαπ a³b³ / (a² + b²)`.
+* [Lamé's thick-walled cylinder](https://raphos-com.github.io/lean-mechanics/ContinuumMechanics/Elastostatics/LameCylinder.html#ContinuumMechanics.LameCylinder.lame_equilibrium)
+  and [d'Alembert's solution](https://raphos-com.github.io/lean-mechanics/ContinuumMechanics/Beams/String.html#ContinuumMechanics.Strings.dAlembert_solves)
+  of the vibrating string.
 * [Castigliano's second theorem](https://raphos-com.github.io/lean-mechanics/ContinuumMechanics/Elastostatics/Castigliano.html#ContinuumMechanics.Castigliano.castigliano_second).
 * [Kelvin's circulation theorem](https://raphos-com.github.io/lean-mechanics/ContinuumMechanics/Fluids/Ideal.html#ContinuumMechanics.Fluids.circulation_const)
-  for ideal fluids.
+  for ideal fluids and
+  [Hagen–Poiseuille flow](https://raphos-com.github.io/lean-mechanics/ContinuumMechanics/Fluids/Viscous.html#ContinuumMechanics.Fluids.hagen_flowRate)
+  `Q = πGR⁴/(8μ)`.
 
 **Discrete mechanics**
 
@@ -59,6 +69,7 @@ Each link goes to the statement in the API documentation.
   for pin-jointed frames.
 * [The stiffness method](https://raphos-com.github.io/lean-mechanics/DiscreteMechanics/Stiffness.html#DiscreteMechanics.existsUnique_displacement):
   a supported truss without mechanisms has unique displacements under any load.
+* [The band gap of a diatomic chain](https://raphos-com.github.io/lean-mechanics/DiscreteMechanics/Chain.html#DiscreteMechanics.Chain.band_gap).
 * [Winding numbers of Bloch polynomials](https://raphos-com.github.io/lean-mechanics/DiscreteMechanics/Winding.html#DiscreteMechanics.winding_eq_card_roots)
   count roots in the unit disk (topological polarization of Maxwell lattices).
 
