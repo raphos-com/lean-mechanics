@@ -165,6 +165,7 @@ Status: ✅ done; 🟡 partly done (what is open is stated); ⬜ planned.
 | `HamiltonJacobi.lean` | **Jacobi's theorem** (1 DOF, time-dependent, mixed partials as hypotheses); harmonic oscillator in action–angle variables: `H = ωI`, Jacobian `1`, flow, action = phase-space area / 2π | ✅ |
 | `Canonical.lean` | linear canonical transformations: Poisson brackets and Hamiltonian flows are preserved by symplectic matrices, symplectic group, linear Hamiltonian flows are canonical | ✅ |
 | `LiouvilleFlow.lean` | for a `C²` flow of a vector field: variational equation, **Liouville formula** `∂ₜ det DΦ = (div X) det DΦ`, `det DΦ = 1` and **volume preservation** for divergence-free fields, applied to Hamiltonian flows (flow taken as data: Mathlib has no smooth dependence on initial conditions) | ✅ |
+| `Variational.lean` | Beltrami identity; plane geodesics are straight lines; **catenary** `a cosh((x-b)/a)` is an extremal; **brachistochrone**: the cycloid satisfies Beltrami and Euler–Lagrange; **tautochrone**: period on the cycloid independent of amplitude | ✅ |
 | `Noether.lean` | Lagrangians on `ℝⁿ`: energy conservation, Noether's theorem, translation and linear (rotation) symmetries | ✅ |
 | `Routh.lean` | cyclic coordinates: conserved momenta; **Routh reduction** (two coordinates, local inversion), the Routhian obeys Euler–Lagrange; planar central motion reduces to `m r̈ = -V_eff'(r)` | ✅ |
 | `SmallOscillations.lean` | `M q̈ + K q = 0`: energy, normal modes, superposition, Rayleigh quotient, stability, modal orthogonality | ✅ |

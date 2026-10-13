@@ -148,6 +148,7 @@ ClassicalMechanics/
   SmallOscillations.lean                  -- Small oscillations and normal modes
   Stability.lean                          -- Lagrange–Dirichlet stability and linearization
   TwoBody.lean                            -- The two-body problem: reduced mass
+  Variational.lean                        -- Catenary, brachistochrone, tautochrone, geodesics
   Vector.lean                             -- Vectors in ℝ³ and their time derivatives
   Virial.lean                             -- The virial theorem
 

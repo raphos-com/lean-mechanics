@@ -40,6 +40,8 @@
   **Kepler's third law** `T² = 4π² m a³ / k` from the swept-area hypothesis.
 - `ForcedOscillator`: steady-state response, resonance frequency and peak amplitude, undamped
   resonance, power balance, beats.
+- `Variational`: Beltrami identity, straight-line geodesics, the catenary, the brachistochrone
+  (cycloid) and the tautochrone property.
 - `Rocket`: the rocket equation, Tsiolkovsky's formula, rockets in uniform gravity, constant
   burn rate.
 - `Collisions`: restitution, kinetic energy loss, elastic collisions (relative speed, right-angle
