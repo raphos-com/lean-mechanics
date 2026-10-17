@@ -164,6 +164,8 @@
   transverse with `ρc² = μ`.
 
 ### Fracture and contact
+- `Fatigue/Basic`: Basquin's law, mean-stress corrections, Palmgren–Miner damage, Paris-law
+  crack-growth life.
 - `Fracture/Basic`: Griffith energy balance, energy release rate, stress intensity, Irwin's
   relation, compliance method, double cantilever beam stability.
 - `Contact/Hertz`: Hertz contact of spheres and cylinders: force balance, load–approach law,

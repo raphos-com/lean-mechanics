@@ -75,6 +75,8 @@ ContinuumMechanics/
     Hertz.lean                            -- Hertzian contact of spheres and cylinders
   Fracture/
     Basic.lean                            -- Griffith, Irwin, compliance method, DCB specimen
+  Fatigue/
+    Basic.lean                            -- Basquin, mean-stress corrections, Miner's rule, Paris law
   Fluids/
     Ideal.lean                            -- Ideal fluids: Euler, Bernoulli, potential flow, Kelvin
     Viscous.lean                          -- Navier–Stokes: Couette, Poiseuille, Hagen–Poiseuille
