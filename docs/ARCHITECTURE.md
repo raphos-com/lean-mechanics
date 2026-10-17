@@ -161,6 +161,7 @@ ClassicalMechanics/
   Canonical.lean                          -- Linear canonical (symplectic) transformations
   Collisions.lean                         -- Collisions: restitution, energy loss, elastic scattering
   Constraints.lean                        -- Constrained motion: d'Alembert, spherical pendulum
+  DimensionalAnalysis.lean                -- Dimensional analysis and the Buckingham π theorem
   DoublePendulum.lean                     -- The double pendulum: equations, stability, normal modes
   Duhamel.lean                            -- Duhamel's integral and response spectra
   EffectivePotential.lean                 -- Central forces: effective potential, turning points

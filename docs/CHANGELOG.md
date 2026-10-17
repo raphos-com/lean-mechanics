@@ -45,6 +45,8 @@
   amplification, response spectrum bounds.
 - `ModalDamping`: damped multi-degree-of-freedom structures, modal decoupling, Rayleigh damping,
   Caughey criterion, modal superposition.
+- `DimensionalAnalysis`: unit invariance ⇔ dimensionless, **Buckingham π theorem** (counting by
+  rank–nullity and functional form), pendulum period and sphere drag laws.
 - `DoublePendulum`: equations of motion, energy, mass matrix, Lyapunov stability of the hanging
   position, normal modes for equal masses and lengths.
 - `Relativistic`: Lorentz boosts, velocity addition, rapidity, time dilation and length

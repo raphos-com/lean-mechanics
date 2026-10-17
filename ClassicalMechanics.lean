@@ -41,6 +41,7 @@ import ClassicalMechanics.ModalDamping
 import ClassicalMechanics.Rotordynamics
 import ClassicalMechanics.Stability
 import ClassicalMechanics.DoublePendulum
+import ClassicalMechanics.DimensionalAnalysis
 
 /-!
 # ClassicalMechanics
