@@ -186,6 +186,7 @@ Status: ✅ done; 🟡 partly done (what is open is stated); ⬜ planned.
 | `Stiffness.lean` | direct stiffness method: `K = Cᵀ diag(k) C` symmetric, positive semidefinite, `ker K = ker C`, assembly from element matrices, supports ⇒ positive definite reduced stiffness, unique displacements, minimum potential energy, Maxwell–Betti, two-bar example | ✅ |
 | `Periodic.lean` | periodic frames, Bloch compatibility matrix, Bloch reduction, Maxwell–Calladine per wave vector, Maxwell lattices | ✅ |
 | `LongWave.lean` | long-wave expansion of the discrete Laplacian; long-wave limit of Bloch solutions through an adjugate | ✅ |
+| `VonMisesTruss.lean` | **von Mises truss**: exact two-bar energy, equilibria and second variation (flat state unstable, `±h` stable); shallow model: equilibrium path `P = (k/a²)w(h²-w²)`, **snap-through load** `P_cr = 2kh³/(3√3a²)` (limit point `h/√3`, jump to `-2h/√3`), stability ⇔ `|w| > h/√3` (strict local min/max), three equilibria below `P_cr`, a unique one above | ✅ |
 | `Winding.lean` | winding numbers of polynomial Bloch determinants; argument principle (roots in the unit disk), additivity | ✅ |
 | periodic beam frames | beam frames with rigid or pinned joints, their Bloch problem, convergence to an equivalent plate | ⬜ |
 

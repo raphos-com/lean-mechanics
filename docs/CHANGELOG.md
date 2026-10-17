@@ -127,6 +127,8 @@
 - `Periodic`: periodic frames; Bloch compatibility matrix `C(θ)`, Bloch reduction of the infinite
   frame, Maxwell–Calladine at every wave vector (complex index with `C(θ)ᴴ`), Maxwell lattices
   have as many zero modes as self-stresses at every `θ` and at least `d` self-stresses at `θ = 0`.
+- `VonMisesTruss`: two-bar shallow truss: equilibria, stability, snap-through load and jump,
+  number of equilibria below and above the limit load.
 - `Winding`: winding number `(2πi)⁻¹∮ p'/p` of a polynomial around the unit circle; **argument
   principle**: it equals the number of roots in the open unit disk (with multiplicity), and is
   additive under products.

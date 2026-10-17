@@ -4,6 +4,7 @@ import DiscreteMechanics.Periodic
 import DiscreteMechanics.LongWave
 import DiscreteMechanics.Chain
 import DiscreteMechanics.Winding
+import DiscreteMechanics.VonMisesTruss
 
 /-!
 # DiscreteMechanics

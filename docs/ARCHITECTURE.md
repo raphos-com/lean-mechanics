@@ -210,6 +210,7 @@ DiscreteMechanics/
   Chain.lean                              -- Lattice dynamics: dispersion, Brillouin zone, band gap
   Stiffness.lean                          -- The direct stiffness method for trusses
   Truss.lean                              -- Pin-jointed frames: compatibility, equilibrium and Maxwell–Calladine counting
+  VonMisesTruss.lean                      -- The von Mises truss and snap-through
   Winding.lean                            -- Winding numbers, argument principle for polynomials
 
 papers/                                   -- separate Lake project: paper formalizations
