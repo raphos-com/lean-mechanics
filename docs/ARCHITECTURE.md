@@ -144,6 +144,7 @@ ClassicalMechanics/
   Lagrangian.lean                         -- Lagrangian mechanics with one degree of freedom
   LinearHamiltonian.lean                  -- Linear Hamiltonian systems: symplectic flows, Liouville
   LiouvilleFlow.lean                      -- Liouville's theorem: volume preservation by flows
+  ModalDamping.lean                       -- Damped MDOF structures: modal and Rayleigh damping
   Noether.lean                            -- Lagrangians on ℝⁿ and Noether's theorem
   NormalModes.lean                        -- Complete sets of normal modes
   Orbits.lean                             -- Orbital mechanics: vis-viva, escape, Hohmann transfers

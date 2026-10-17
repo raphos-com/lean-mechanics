@@ -35,6 +35,7 @@ import ClassicalMechanics.Recurrence
 import ClassicalMechanics.HamiltonJacobi
 import ClassicalMechanics.SmallOscillations
 import ClassicalMechanics.NormalModes
+import ClassicalMechanics.ModalDamping
 import ClassicalMechanics.Stability
 import ClassicalMechanics.DoublePendulum
 
