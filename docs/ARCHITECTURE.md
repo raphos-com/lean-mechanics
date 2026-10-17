@@ -93,6 +93,7 @@ ContinuumMechanics/
     Waves.lean                            -- Linear acoustics and linear water waves
   Structures/
     Cables.lean                           -- Cables, catenaries and funicular arches
+    InfluenceLines.lean                   -- Influence lines, moving loads, Müller-Breslau
   Thermal/
     Heat.lean                             -- The 1D heat equation: energy decay, uniqueness, steady state
     Thermoelastic.lean                    -- Thermal stresses: Duhamel–Neumann, bimetallic strip

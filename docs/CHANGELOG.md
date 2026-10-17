@@ -174,6 +174,8 @@
 
 ### Structures
 - `Structures/Cables`: parabolic cables, catenaries, funicular and three-hinged arches.
+- `Structures/InfluenceLines`: influence lines of a simply supported beam, worst positions of one
+  and two moving loads, Müller-Breslau principle.
 
 ### Fracture and contact
 - `Fatigue/Basic`: Basquin's law, mean-stress corrections, Palmgren–Miner damage, Paris-law

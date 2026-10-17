@@ -110,6 +110,7 @@ Status: ✅ done; 🟡 partly done (what is open is stated); ⬜ planned.
 | File | Content | Status |
 |---|---|---|
 | `Cables.lean` | **parabolic cable** under uniform load (`H = qL²/(8f)`, support tension is the maximum, length bounds), **catenary** (tension `= wy`, arc length `a sinh(x/a)`, lies above the osculating parabola), **funicular and three-hinged arches** (parabolic arch has zero bending moment, thrust `M₀(L/2)/f`) | ✅ |
+| `InfluenceLines.lean` | simply supported beam: reaction, shear and **moment influence lines** (statics form, Maxwell symmetry, peak `x(L-x)/L`), superposition (uniform load and point loads), worst position of a single moving load (`PL/4` at midspan, iff) and of **two equal loads** (`P(2L-s)²/(8L)`, beats one load iff `s ≤ (2-√2)L`), **Müller-Breslau principle** | ✅ |
 
 ### Fracture, fatigue and contact (`Fracture/`, `Fatigue/`, `Contact/`)
 
