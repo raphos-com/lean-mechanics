@@ -97,6 +97,12 @@ Status: ✅ done; 🟡 partly done (what is open is stated); ⬜ planned.
 |---|---|---|
 | `Heat.lean` | 1D heat equation with Fourier's law: separated solutions and their decay, **energy decay**, **uniqueness**, exponential decay rate `E(t) ≤ E(0)e^{-2κ(π/L)²t}` (Wirtinger), steady conduction and convergence to the steady state | ✅ |
 
+### Geotechnics (`Geotechnics/`)
+
+| File | Content | Status |
+|---|---|---|
+| `Strength.lean` | **Mohr–Coulomb** failure (circle tangent to the failure line, failure plane at `π/4 + φ/2`, principal-stress form), **Rankine** active/passive/at-rest coefficients and thrust, tension crack, **infinite slope** factor of safety (dry, cohesive, with seepage), bearing capacity factors (`N_c → π + 2`) | ✅ |
+
 ### Beams and 1D Sobolev spaces (`Beams/`, `Sobolev1D/`)
 
 | File | Content | Status |

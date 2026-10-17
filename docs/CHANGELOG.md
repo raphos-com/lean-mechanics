@@ -159,6 +159,10 @@
   iff `μ > 0 ∧ λ + 2μ > 0`** (dimension ≥ 2); plane waves are longitudinal with `ρc² = λ + 2μ` or
   transverse with `ρc² = μ`.
 
+### Geotechnics
+- `Geotechnics/Strength`: Mohr–Coulomb failure via Mohr's circle, Rankine earth pressures and
+  thrust, infinite-slope factors of safety, bearing capacity factors.
+
 ### Thermal
 - `Thermal/Heat`: the 1D heat equation: modes, energy decay, uniqueness, exponential decay rate,
   steady conduction and convergence to it.

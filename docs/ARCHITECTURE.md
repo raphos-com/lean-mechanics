@@ -75,6 +75,8 @@ ContinuumMechanics/
     Viscous.lean                          -- Navier–Stokes: Couette, Poiseuille, Hagen–Poiseuille
   Thermal/
     Heat.lean                             -- The 1D heat equation: energy decay, uniqueness, steady state
+  Geotechnics/
+    Strength.lean                         -- Mohr–Coulomb, Rankine earth pressures, slopes, bearing capacity
   Kinematics/
     Body.lean                             -- Bodies and deformations
     Compatibility.lean                    -- Saint-Venant compatibility (necessity)

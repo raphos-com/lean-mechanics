@@ -78,6 +78,7 @@ import ContinuumMechanics.Plates.MindlinEnergy
 import ContinuumMechanics.Fluids.Ideal
 import ContinuumMechanics.Fluids.Viscous
 import ContinuumMechanics.Thermal.Heat
+import ContinuumMechanics.Geotechnics.Strength
 
 /-!
 # ContinuumMechanics
