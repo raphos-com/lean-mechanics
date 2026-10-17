@@ -115,11 +115,11 @@ ContinuumMechanics/
     Dynamics.lean                         -- Vibration and buckling of rectangular plates
     Grillage.lean                         -- Orthotropic plates and beam grillages
     KirchhoffLove.lean                    -- Kirchhoff–Love plates on a rectangle
+    Membrane.lean                         -- Vibrating and static membranes
     MindlinEnergy.lean                    -- Mindlin–Reissner plate energy: strong ⇔ stationary
     MindlinReissner.lean                  -- Mindlin–Reissner plates and the Kirchhoff limit
-    Membrane.lean                         -- Vibrating and static membranes
-    Shells.lean                           -- Membrane shells, pressure vessels, bending boundary layer
     Navier.lean                           -- Navier solutions for simply supported rectangular plates
+    Shells.lean                           -- Membrane shells, pressure vessels, bending boundary layer
   Sobolev1D/
     BarWeak.lean                          -- Weak formulation of the axial bar
     BeamWeak.lean                         -- Weak formulation of the Euler–Bernoulli cantilever
