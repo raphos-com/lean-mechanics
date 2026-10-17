@@ -22,16 +22,18 @@ no axioms beyond Lean's three standard ones, and `main` is `sorry`-free (both en
 | Area | Modules |
 |---|---|
 | **Structural dynamics** | `SmallOscillations`, `NormalModes`, `ModalDamping` (classical and Rayleigh damping, modal superposition), `ForcedOscillator` (resonance), `Duhamel` (impulse response, response spectra), `Beams/String`, `Beams/Vibration`, `Plates/Dynamics`, `Plates/Membrane`, `DoublePendulum`, `Rotordynamics` (Jeffcott rotor, gyroscopic stabilization), `DiscreteMechanics/Chain` |
-| **Structures** | `Structures/Cables` (cables, catenary, arches), `Beams/ThinWalled` (shear centre, Bredt–Batho), `Beams/Winkler`, `Plates/Shells`, `Constitutive/Composites` (laminates), `DiscreteMechanics/Stiffness` |
-| **Buckling and stability** | `Beams/Buckling`, `Beams/BucklingBC` (all end conditions, imperfections, lateral–torsional), `Beams/Rayleigh`, `Plates/Dynamics` (plate buckling), `Stability` (Lagrange–Dirichlet), `EulerStability` |
-| **Solids** | `Tensor/`, `Kinematics/` (Saint-Venant compatibility), `Stress/` (Cauchy, Mohr's circle, yield criteria), `Constitutive/` (linear, hyperelastic, viscoelastic, plasticity), `Elastostatics/` (Navier–Lamé, Korn, existence in `H¹₀`, Castigliano, Airy, Lamé cylinder, torsion, Saint-Venant's principle, Rayleigh waves) |
+| **Structures** | `Structures/Cables` (cables, catenary, arches), `Structures/InfluenceLines` (moving loads, Müller-Breslau), `Beams/ThinWalled` (shear centre, Bredt–Batho), `Beams/Winkler`, `Plates/Shells`, `Constitutive/Composites` (laminates), `DiscreteMechanics/Stiffness`, `DiscreteMechanics/BeamElement` (Hermite beam element) |
+| **Buckling and stability** | `Beams/Buckling`, `Beams/BucklingBC` (all end conditions, imperfections, lateral–torsional), `Beams/Rayleigh`, `Plates/Dynamics` (plate buckling), `Stability` (Lagrange–Dirichlet), `EulerStability`, `DiscreteMechanics/VonMisesTruss` (snap-through) |
+| **Solids** | `Tensor/`, `Kinematics/` (Saint-Venant compatibility), `Stress/` (Cauchy, Mohr's circle, yield criteria), `Constitutive/` (linear, hyperelastic, viscoelastic, plasticity), `Elastostatics/` (Navier–Lamé, Korn, existence in `H¹₀`, Castigliano, Airy, Lamé cylinder, torsion, Saint-Venant's principle, Rayleigh waves, Galerkin method and Céa's lemma) |
 | **Beams and plates** | `Beams/` (Euler–Bernoulli, Timoshenko, weak forms), `Plates/` (Kirchhoff–Love, Mindlin–Reissner, grillages, circular plates) |
 | **Fatigue and fracture** | `Fatigue/Basic` (Basquin, Goodman/Gerber/Soderberg, Miner, Paris), `Fracture/Basic` (Griffith, Irwin, compliance method, DCB) |
 | **Contact** | `Contact/Hertz` |
 | **Geotechnics** | `Geotechnics/Consolidation` (Terzaghi), `Geotechnics/Strength` (Mohr–Coulomb, Rankine, slopes, bearing capacity), `Geotechnics/Seepage` (Darcy, quick condition, Dupuit) |
-| **Fluid dynamics** | `Fluids/Ideal` (Euler, Bernoulli, Kelvin), `Fluids/Viscous` (Navier–Stokes, Couette, Poiseuille), `Fluids/Unsteady` (Stokes' problems), `Fluids/Waves` (acoustics, water waves), `Fluids/Hydrostatics` (Archimedes, floating stability), `Fluids/OpenChannel` (critical depth, hydraulic jump) |
+| **Fluid dynamics** | `Fluids/Ideal` (Euler, Bernoulli, Kelvin), `Fluids/Viscous` (Navier–Stokes, Couette, Poiseuille), `Fluids/Unsteady` (Stokes' problems), `Fluids/Waves` (acoustics, water waves), `Fluids/Hydrostatics` (Archimedes, floating stability), `Fluids/OpenChannel` (critical depth, hydraulic jump), `Fluids/Pipes` (Darcy–Weisbach), `Fluids/BoundaryLayer` (momentum integral), `Fluids/Lubrication` (Reynolds equation, slider bearing), `Fluids/Compressible` (nozzles, normal shocks) |
 | **Friction** | `Friction` (incline, capstan equation, dry-friction oscillator, rolling) |
 | **Heat** | `Thermal/Heat`, `Thermal/Thermoelastic` |
+| **Dimensional analysis** | `DimensionalAnalysis` (Buckingham π theorem) |
+| **Optimization** | [`papers/TopologyOptimization`](papers/TopologyOptimization) (SIMP compliance, optimality criteria, filters) |
 
 Modules without a prefix are in `ClassicalMechanics/`; the others are in `ContinuumMechanics/`
 unless marked.
@@ -70,6 +72,9 @@ Each link goes to the statement in the API documentation.
 * [Poincaré recurrence](https://raphos-com.github.io/lean-mechanics/ClassicalMechanics/Recurrence.html#ClassicalMechanics.hamiltonian_recurrence)
   for Hamiltonian flows.
 * [The virial theorem](https://raphos-com.github.io/lean-mechanics/ClassicalMechanics/Virial.html#ClassicalMechanics.ParticleSystem.virial).
+* [The Buckingham π theorem](https://raphos-com.github.io/lean-mechanics/ClassicalMechanics/DimensionalAnalysis.html#ClassicalMechanics.DimensionalAnalysis.buckingham_pi):
+  a unit-invariant law depends only on the dimensionless groups; e.g. the
+  [pendulum period](https://raphos-com.github.io/lean-mechanics/ClassicalMechanics/DimensionalAnalysis.html#ClassicalMechanics.DimensionalAnalysis.pendulum_period) `T = C√(L/g)`.
 
 **Continuum mechanics**
 
@@ -93,6 +98,10 @@ Each link goes to the statement in the API documentation.
   for ideal fluids and
   [Hagen–Poiseuille flow](https://raphos-com.github.io/lean-mechanics/ContinuumMechanics/Fluids/Viscous.html#ContinuumMechanics.Fluids.hagen_flowRate)
   `Q = πGR⁴/(8μ)`.
+* [Céa's lemma](https://raphos-com.github.io/lean-mechanics/ContinuumMechanics/Elastostatics/Galerkin.html#ContinuumMechanics.Galerkin.cea) for Galerkin approximations, and
+  [nodal exactness](https://raphos-com.github.io/lean-mechanics/ContinuumMechanics/Elastostatics/Galerkin.html#ContinuumMechanics.Beams.Bar.nodal_exact) of linear bar elements.
+* [Entropy increases across a normal shock](https://raphos-com.github.io/lean-mechanics/ContinuumMechanics/Fluids/Compressible.html#ContinuumMechanics.Fluids.Compressible.shockEntropyJump_pos),
+  and the [area–velocity relation](https://raphos-com.github.io/lean-mechanics/ContinuumMechanics/Fluids/Compressible.html#ContinuumMechanics.Fluids.Compressible.area_velocity) of nozzle flow.
 
 **Engineering**
 
@@ -116,6 +125,10 @@ Each link goes to the statement in the API documentation.
 * [The water-wave dispersion relation](https://raphos-com.github.io/lean-mechanics/ContinuumMechanics/Fluids/Waves.html#ContinuumMechanics.Fluids.Waves.freeSurfaceBC_travellingPotential_iff)
   `ω² = gk tanh(kh)` and
   [Stokes' first problem](https://raphos-com.github.io/lean-mechanics/ContinuumMechanics/Fluids/Unsteady.html#ContinuumMechanics.Fluids.stokesI_diffusion).
+* [Load capacity of a slider bearing](https://raphos-com.github.io/lean-mechanics/ContinuumMechanics/Fluids/Lubrication.html#ContinuumMechanics.Fluids.Lubrication.sliderLoad_eq)
+  and the [laminar friction factor](https://raphos-com.github.io/lean-mechanics/ContinuumMechanics/Fluids/Pipes.html#ContinuumMechanics.Fluids.Pipes.hagen_darcyFactor) `f = 64/Re`.
+* [Two moving loads](https://raphos-com.github.io/lean-mechanics/ContinuumMechanics/Structures/InfluenceLines.html#ContinuumMechanics.Structures.twoLoad_ge_single_iff)
+  are worse than one iff their spacing is at most `(2-√2)L`.
 
 **Discrete mechanics**
 
@@ -126,6 +139,10 @@ Each link goes to the statement in the API documentation.
 * [The band gap of a diatomic chain](https://raphos-com.github.io/lean-mechanics/DiscreteMechanics/Chain.html#DiscreteMechanics.Chain.band_gap).
 * [Winding numbers of Bloch polynomials](https://raphos-com.github.io/lean-mechanics/DiscreteMechanics/Winding.html#DiscreteMechanics.winding_eq_card_roots)
   count roots in the unit disk (topological polarization of Maxwell lattices).
+* [Snap-through of the von Mises truss](https://raphos-com.github.io/lean-mechanics/DiscreteMechanics/VonMisesTruss.html#DiscreteMechanics.VonMisesTruss.shallowLoad_le_critLoad)
+  at `P_cr = 2kh³/(3√3a²)`.
+* [The beam element stiffness matrix](https://raphos-com.github.io/lean-mechanics/DiscreteMechanics/BeamElement.html#DiscreteMechanics.BeamElement.beamStiffness_eq_integral)
+  is `∫ EI Nᵢ'' Nⱼ''`; [one element](https://raphos-com.github.io/lean-mechanics/DiscreteMechanics/BeamElement.html#DiscreteMechanics.BeamElement.cantilever_oneElement_exact) gives the exact cantilever.
 
 ## Papers
 
