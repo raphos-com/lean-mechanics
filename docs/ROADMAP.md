@@ -90,6 +90,7 @@ Status: ✅ done; 🟡 partly done (what is open is stated); ⬜ planned.
 | File | Content | Status |
 |---|---|---|
 | `Ideal.lean` | material derivative and chain rule, incompressible Euler equations, Lamb identity, **Bernoulli's theorem** (streamlines; everywhere for irrotational flow), potential flow with the unsteady Bernoulli pressure, **Kelvin's circulation theorem** | ✅ |
+| `Unsteady.lean` | unidirectional shear flows: Navier–Stokes ⇔ diffusion equation; **Stokes' second problem** (oscillating plate: penetration depth `√(2ν/ω)`, phase lag, wall shear); **Stokes' first problem** (impulsively started plate, `erfc` solution, wall shear `-μU/√(πνt)`), self-similarity | ✅ |
 | `Viscous.lean` | incompressible **Navier–Stokes**, divergence of the viscous stress; exact solutions: plane **Couette**, plane **Poiseuille** (`Q = Gh³/(12μ)`), **Hagen–Poiseuille** pipe flow (`Q = πGR⁴/(8μ)`); energy dissipation `∫ v·Δv = -∫|∇v|²` | ✅ |
 
 ### Heat conduction (`Thermal/`)

@@ -188,6 +188,8 @@
   steady conduction and convergence to it.
 
 ### Fluids
+- `Fluids/Unsteady`: Stokes' first and second problems (impulsively started and oscillating
+  plates), reduction of Navier–Stokes to diffusion.
 - `Fluids/Viscous`: incompressible Navier–Stokes, viscous stress, Couette, plane Poiseuille and
   Hagen–Poiseuille flows with their flow rates, viscous energy dissipation.
 - `Fluids/Ideal`: material derivative, incompressible Euler equations, Lamb identity, Bernoulli's
