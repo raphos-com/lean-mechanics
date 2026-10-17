@@ -152,6 +152,7 @@ Status: ✅ done; 🟡 partly done (what is open is stated); ⬜ planned.
 | `Kepler.lean` | Kepler problem: conservation of `L`, `E` and the Laplace–Runge–Lenz vector, Kepler's first and second laws, eccentricity–energy relation | ✅ |
 | `KeplerThird.lean` | semi-axes from `E` and `L`, `a = -k/(2E)`, `b² = a p`, peri/apoapsis bounds; **Kepler's third law** `T² = 4π² m a³ / k` (given that one period sweeps the area `π a b`) | ✅ |
 | `KeplerPeriod.lean` | eccentric anomaly and **Kepler's equation**; the motion is periodic with least period `2π/n`, `n = √(k/(m a³))`; **Kepler's third law** `T² = 4π² m a³ / k` for the actual period (no swept-area hypothesis) | ✅ |
+| `Orbits.lean` | orbital mechanics: **vis-viva** (elliptic, parabolic, hyperbolic), circular orbits and escape speed `√2 v_circ`, apsides (`v_p r_p = v_a r_a`, apsidal speeds), **Hohmann transfer** Δv's, transfer time, escape limit | ✅ |
 | `EffectivePotential.lean` | general central potentials: energy and angular momentum, `E = ½mṙ² + U_eff(r)`, allowed region `U_eff(r) ≤ E`, turning points | ✅ |
 | `Rutherford.lean` | hyperbolic orbits (`e > 1` iff `E > 0`), the orbit stays in a cone about the LRL vector, deflection angle `tan(Θ/2) = |k|/(2Eb)`, **Rutherford cross section** `(k/4E)²/sin⁴(Θ/2)` | ✅ |
 | `IsotropicOscillator.lean` | `m ẍ = -k x` in space: explicit solution and uniqueness, all orbits periodic (isochronous), conserved energy, angular momentum and **Fradkin tensor**, elliptical orbits centred at the origin, `⟨T⟩ = ⟨U⟩` over a period | ✅ |

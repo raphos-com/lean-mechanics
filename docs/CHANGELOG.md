@@ -38,6 +38,7 @@
   (Liouville's theorem for linear systems).
 - `KeplerThird`: semi-major axis `a = -k/(2E)`, `b² = a p`, periapsis and apoapsis bounds on `r`,
   **Kepler's third law** `T² = 4π² m a³ / k` from the swept-area hypothesis.
+- `Orbits`: vis-viva equation, circular orbits, escape speed, apsidal speeds, Hohmann transfers.
 - `Foucault`: the Foucault pendulum: precession of the plane of oscillation at `Ω sin φ`, period,
   conserved quantities.
 - `Recurrence`: Poincaré recurrence for divergence-free and Hamiltonian flows on bounded invariant

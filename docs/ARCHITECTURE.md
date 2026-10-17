@@ -142,6 +142,7 @@ ClassicalMechanics/
   LiouvilleFlow.lean                      -- Liouville's theorem: volume preservation by flows
   Noether.lean                            -- Lagrangians on ℝⁿ and Noether's theorem
   NormalModes.lean                        -- Complete sets of normal modes
+  Orbits.lean                             -- Orbital mechanics: vis-viva, escape, Hohmann transfers
   Oscillator.lean                         -- Harmonic and damped oscillators
   Particles.lean                          -- Systems of particles: the general theorems of dynamics
   Recurrence.lean                         -- Poincaré recurrence for Hamiltonian flows

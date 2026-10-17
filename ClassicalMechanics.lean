@@ -8,6 +8,7 @@ import ClassicalMechanics.Collisions
 import ClassicalMechanics.Kepler
 import ClassicalMechanics.KeplerThird
 import ClassicalMechanics.KeplerPeriod
+import ClassicalMechanics.Orbits
 import ClassicalMechanics.EffectivePotential
 import ClassicalMechanics.IsotropicOscillator
 import ClassicalMechanics.Rutherford
