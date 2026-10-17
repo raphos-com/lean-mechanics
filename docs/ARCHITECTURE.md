@@ -87,6 +87,7 @@ ContinuumMechanics/
     Hydrostatics.lean                     -- Hydrostatics, Archimedes, floating stability
     Ideal.lean                            -- Ideal fluids: Euler, Bernoulli, potential flow, Kelvin
     OpenChannel.lean                      -- Specific energy, hydraulic jump, uniform flow, weirs
+    Pipes.lean                            -- Darcy–Weisbach, Blasius, Borda–Carnot
     Unsteady.lean                         -- Stokes' first and second problems
     Viscous.lean                          -- Navier–Stokes: Couette, Poiseuille, Hagen–Poiseuille
     Waves.lean                            -- Linear acoustics and linear water waves
