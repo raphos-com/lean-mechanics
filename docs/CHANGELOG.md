@@ -182,6 +182,8 @@
   thrust, infinite-slope factors of safety, bearing capacity factors.
 
 ### Thermal
+- `Thermal/Thermoelastic`: Duhamel–Neumann law, restrained bars, bimetallic strip curvature,
+  thermal bending, thick cylinder with radial temperature.
 - `Thermal/Heat`: the 1D heat equation: modes, energy decay, uniqueness, exponential decay rate,
   steady conduction and convergence to it.
 

@@ -96,6 +96,7 @@ Status: ✅ done; 🟡 partly done (what is open is stated); ⬜ planned.
 
 | File | Content | Status |
 |---|---|---|
+| `Thermoelastic.lean` | **Duhamel–Neumann** law and its inverse, free expansion is stress-free, restrained bar `σ = -EαΔT` (and spring-restrained), **bimetallic strip** (Timoshenko's curvature, existence and uniqueness), thermal bending and the clamped-beam moment, thick cylinder under logarithmic temperature | ✅ |
 | `Heat.lean` | 1D heat equation with Fourier's law: separated solutions and their decay, **energy decay**, **uniqueness**, exponential decay rate `E(t) ≤ E(0)e^{-2κ(π/L)²t}` (Wirtinger), steady conduction and convergence to the steady state | ✅ |
 
 ### Fracture, fatigue and contact (`Fracture/`, `Fatigue/`, `Contact/`)

@@ -83,6 +83,7 @@ ContinuumMechanics/
     Viscous.lean                          -- Navier–Stokes: Couette, Poiseuille, Hagen–Poiseuille
   Thermal/
     Heat.lean                             -- The 1D heat equation: energy decay, uniqueness, steady state
+    Thermoelastic.lean                    -- Thermal stresses: Duhamel–Neumann, bimetallic strip
   Geotechnics/
     Consolidation.lean                    -- Effective stress and Terzaghi's 1D consolidation
     Seepage.lean                          -- Darcy flow, layered soils, quick condition, Dupuit
