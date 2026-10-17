@@ -14,6 +14,7 @@ import ClassicalMechanics.EffectivePotential
 import ClassicalMechanics.IsotropicOscillator
 import ClassicalMechanics.Rutherford
 import ClassicalMechanics.Constraints
+import ClassicalMechanics.Friction
 import ClassicalMechanics.RigidBody
 import ClassicalMechanics.EulerStability
 import ClassicalMechanics.HeavyTop
