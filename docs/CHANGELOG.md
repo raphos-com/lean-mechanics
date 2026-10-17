@@ -154,6 +154,8 @@
   symmetry of second derivatives).
 
 ### Constitutive
+- `Composites`: rule of mixtures and Voigt–Reuss bounds, transformed ply stiffness, classical
+  lamination theory (`ABD`, symmetric laminates).
 - `Plasticity`: return mapping with hardening, von Mises associated flow, maximum dissipation,
   plastic moment and collapse loads of beams.
 - `Hyperelastic/Linearization`: frame indifference and isotropy of the SVK, neo-Hookean and

@@ -52,6 +52,7 @@ ContinuumMechanics/
       MooneyRivlin.lean                   -- The compressible Mooney–Rivlin material
       NeoHookean.lean                     -- The compressible neo-Hookean material
       SVK.lean                            -- The Saint Venant–Kirchhoff material
+    Composites.lean                       -- Rule of mixtures, ply stiffness, lamination theory
     Ellipticity.lean                      -- Strong ellipticity and plane waves (isotropic)
     Hyperelastic.lean                     -- Hyperelastic materials and frame indifference
     LinearIsotropic.lean                  -- Linear isotropic elasticity

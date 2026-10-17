@@ -29,6 +29,7 @@ import ContinuumMechanics.Constitutive.Ellipticity
 import ContinuumMechanics.Constitutive.LinearIsotropic
 import ContinuumMechanics.Constitutive.Viscoelastic
 import ContinuumMechanics.Constitutive.Plasticity
+import ContinuumMechanics.Constitutive.Composites
 import ContinuumMechanics.Constitutive.Hyperelastic
 import ContinuumMechanics.Constitutive.Hyperelastic.SVK
 import ContinuumMechanics.Constitutive.Hyperelastic.NeoHookean
