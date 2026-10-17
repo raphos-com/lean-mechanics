@@ -100,6 +100,7 @@ ContinuumMechanics/
     BoxRegion.lean                        -- Boxes satisfy the divergence theorem
     Cauchy.lean                           -- Cauchy's theorem via the tetrahedron argument
     Criteria.lean                         -- Stress invariants and yield criteria
+    Mohr.lean                             -- Plane stress transformation and Mohr's circle
     Piola.lean                            -- Piola–Kirchhoff stresses
     Regions.lean                          -- Rescaled regions and small boxes
     Triangle.lean                         -- Integrals over flat triangles

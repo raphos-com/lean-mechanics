@@ -56,6 +56,7 @@ Status: ✅ done; 🟡 partly done (what is open is stated); ⬜ planned.
 |---|---|---|
 | `Cauchy.lean`, `Triangle.lean` | Cauchy's theorem by the tetrahedron argument | ✅ |
 | `Balance.lean`, `BoxRegion.lean`, `Regions.lean` | local balance laws, symmetry of `σ`; divergence theorem as a hypothesis, witnessed on boxes | ✅ |
+| `Mohr.lean` | plane stress transformation `σ' = RᵀσR`, invariants, **Mohr's circle**, principal stresses and angles, maximum in-plane shear, 2D von Mises identity | ✅ |
 | `Piola.lean` | Piola–Kirchhoff stresses | ✅ |
 | `Criteria.lean` | invariants, von Mises, Tresca | ✅ |
 

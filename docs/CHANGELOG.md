@@ -156,6 +156,10 @@
 - `Fluids/Ideal`: material derivative, incompressible Euler equations, Lamb identity, Bernoulli's
   theorem, potential flow, Kelvin's circulation theorem.
 
+### Stress
+- `Stress/Mohr`: plane stress transformation, invariants, Mohr's circle, principal stresses and
+  maximum shear (attained), 2D von Mises identity.
+
 ### Kinematics
 - `PoincareStar`: Poincaré lemma for closed 1-forms on open **star-shaped** sets (segment
   integrals from the centre, via convex cones over balls); `SaintVenantStar`: Saint-Venant
