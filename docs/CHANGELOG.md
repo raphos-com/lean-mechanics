@@ -139,6 +139,8 @@
 - `Existence`: Poincaré inequality `‖u‖² ≤ 4R²‖∇u‖²` on slabs and bounded sets, coercivity of the
   Lamé energy on `H¹₀`, existence and uniqueness of weak solutions of clamped isotropic
   elastostatics by Lax–Milgram, and the principle of minimum potential energy.
+- `Galerkin`: Galerkin orthogonality, Céa's lemma, energy best approximation, existence on
+  finite-dimensional subspaces; nodal exactness of linear bar elements.
 - `Torsion`: Saint-Venant torsion: equilibrium ⇔ harmonic warping, Prandtl stress function,
   torsional rigidity of circular (`T = μJα`) and elliptic sections.
 - `Airy`: Airy stress function: equilibrium, compatibility ⇔ `Δ²φ = 0` for plane stress and
@@ -202,6 +204,8 @@
 ### Fluids
 - `Fluids/OpenChannel`: specific energy and critical depth, hydraulic jump (Bélanger, energy loss),
   Manning/Chézy, best hydraulic section, weir discharge.
+- `Fluids/Compressible`: isentropic flow, area–velocity and area–Mach relations, normal shocks
+  (Rankine–Hugoniot, entropy increase).
 - `Fluids/BoundaryLayer`: von Kármán momentum integral (existence and uniqueness of `δ(x)`),
   Pohlhausen and sine profiles, skin friction and drag coefficients.
 - `Fluids/Lubrication`: Reynolds equation, plane slider bearing (pressure, maximum, load

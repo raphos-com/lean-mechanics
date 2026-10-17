@@ -46,6 +46,7 @@ import ContinuumMechanics.Elastostatics.PlaneWave
 import ContinuumMechanics.Elastostatics.RayleighWaves
 import ContinuumMechanics.Elastostatics.H10
 import ContinuumMechanics.Elastostatics.Existence
+import ContinuumMechanics.Elastostatics.Galerkin
 import ContinuumMechanics.Elastostatics.Castigliano
 import ContinuumMechanics.Elastostatics.Airy
 import ContinuumMechanics.Elastostatics.LameCylinder
@@ -95,6 +96,7 @@ import ContinuumMechanics.Fluids.OpenChannel
 import ContinuumMechanics.Fluids.Pipes
 import ContinuumMechanics.Fluids.BoundaryLayer
 import ContinuumMechanics.Fluids.Lubrication
+import ContinuumMechanics.Fluids.Compressible
 import ContinuumMechanics.Thermal.Heat
 import ContinuumMechanics.Thermal.Thermoelastic
 import ContinuumMechanics.Geotechnics.Strength
