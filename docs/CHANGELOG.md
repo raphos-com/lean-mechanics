@@ -113,6 +113,8 @@
 - Design and tracking documents moved to `docs/`.
 
 ### DiscreteMechanics
+- `BeamElement`: Hermite beam element, stiffness matrix (energy integral, kernel = rigid modes),
+  consistent loads and fixed-end moments, exact one-element cantilever.
 - `Chain`: monatomic and diatomic spring chains: dispersion relations, Brillouin zone, long-wave
   sound speed, fixed-end normal modes, acoustic/optical branches and the band gap.
 - `Stiffness`: direct stiffness method for trusses: symmetry, positive semidefiniteness and kernel

@@ -181,6 +181,7 @@ Status: ✅ done; 🟡 partly done (what is open is stated); ⬜ planned.
 
 | File | Content | Status |
 |---|---|---|
+| `BeamElement.lean` | **Euler–Bernoulli beam element**: Hermite cubic shape functions (Kronecker property, reproduce cubics), the `4×4` stiffness matrix as `∫ EI Nᵢ'' Nⱼ''`, symmetric positive semidefinite with kernel exactly the rigid-body modes; exact end forces for cubics, consistent load and **fixed-end moments** `qL²/12` (match the exact clamped solution); one-element cantilever gives the exact `PL³/(3EI)` | ✅ |
 | `Truss.lean` | pin-jointed frames, compatibility/equilibrium matrices, virtual work, Maxwell–Calladine index theorem, rigid motions | ✅ |
 | `Chain.lean` | lattice dynamics of spring chains: monatomic **dispersion relation** `ω² = (4k/m) sin²(qa/2)` (iff), Brillouin zone, sound speed `a√(k/m)`, fixed-end normal modes, diatomic chain: acoustic and optical branches and the **band gap** | ✅ |
 | `Stiffness.lean` | direct stiffness method: `K = Cᵀ diag(k) C` symmetric, positive semidefinite, `ker K = ker C`, assembly from element matrices, supports ⇒ positive definite reduced stiffness, unique displacements, minimum potential energy, Maxwell–Betti, two-bar example | ✅ |
