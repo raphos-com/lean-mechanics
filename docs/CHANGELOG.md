@@ -162,6 +162,8 @@
   transverse with `ρc² = μ`.
 
 ### Geotechnics
+- `Geotechnics/Seepage`: Darcy flow, anisotropic and layered soils, quick condition, Dupuit flow,
+  Dirichlet principle.
 - `Geotechnics/Consolidation`: effective stress, Terzaghi consolidation (series solution, degree
   of consolidation, settlement), reusing the heat equation.
 - `Geotechnics/Strength`: Mohr–Coulomb failure via Mohr's circle, Rankine earth pressures and
