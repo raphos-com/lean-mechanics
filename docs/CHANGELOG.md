@@ -180,6 +180,8 @@
   Poincaré lemma (rotation field `W` with `∂ₖWᵢⱼ = ∂ⱼεᵢₖ − ∂ᵢεⱼₖ`, then `∇u = ε + W`).
 
 ### Beams (weak forms)
+- `Beams/Vibration`: beam vibration modes, orthogonality, energy conservation and uniqueness for
+  pinned/clamped/free ends, the cantilever frequency equation, Rayleigh's quotient.
 - `Beams/String`: the 1D wave equation: d'Alembert's formula, normal modes, orthogonality, energy
   conservation and uniqueness for a string with fixed ends, Mersenne's laws.
 - `Sobolev1D/BeamWeakBC`: Lax–Milgram on closed subspaces; weak **clamped–clamped** and

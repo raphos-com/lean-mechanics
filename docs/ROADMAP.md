@@ -106,6 +106,7 @@ Status: ✅ done; 🟡 partly done (what is open is stated); ⬜ planned.
 | `EulerBernoulli/` | equation, boundary conditions, uniqueness, energy, closed-form solutions | ✅ |
 | `Timoshenko/` | equations, uniqueness, Euler–Bernoulli limit | ✅ |
 | `Buckling.lean`, `Wirtinger.lean`, `Rayleigh.lean` | Euler buckling, Wirtinger's inequality, Rayleigh quotient | ✅ |
+| `Vibration.lean` | free vibrations of Euler–Bernoulli beams: simply supported modes `ωₙ = (nπ/L)²√(EI/ρA)`, orthogonality, **energy conservation and uniqueness** for pinned, clamped and free ends, cantilever mode shapes and the frequency equation `cos βL cosh βL = -1` (root in `(π/2, π)`), Rayleigh quotient | ✅ |
 | `String.lean` | vibrating string: **d'Alembert's formula** for the Cauchy problem, normal modes and their orthogonality, energy conservation and **uniqueness** with fixed ends, Mersenne's laws | ✅ |
 | `Sobolev1D/` | `L²` primitives, weak bar, weak Euler–Bernoulli beams (cantilever, clamped–clamped, propped cantilever), weak Timoshenko cantilever: well-posedness and classical ⇒ weak | ✅ |
 

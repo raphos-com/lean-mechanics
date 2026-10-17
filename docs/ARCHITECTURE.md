@@ -40,6 +40,7 @@ ContinuumMechanics/
     Poly.lean                             -- Polynomial deflections
     Rayleigh.lean                         -- The Rayleigh quotient of a pinned column
     String.lean                           -- The vibrating string and the 1D wave equation
+    Vibration.lean                        -- Free vibrations of Euler–Bernoulli beams
     Timoshenko/
       Basic.lean                          -- Timoshenko beams: equations, boundary conditions, uniqueness
       Limit.lean                          -- The Euler–Bernoulli limit of the Timoshenko beam

@@ -42,6 +42,12 @@ Each link goes to the statement in the API documentation.
   [brachistochrone](https://raphos-com.github.io/lean-mechanics/ClassicalMechanics/Variational.html#ClassicalMechanics.cycloid_beltrami)
   and [tautochrone](https://raphos-com.github.io/lean-mechanics/ClassicalMechanics/Variational.html#ClassicalMechanics.tautochrone)
   properties of the cycloid.
+* [The Foucault pendulum](https://raphos-com.github.io/lean-mechanics/ClassicalMechanics/Foucault.html#ClassicalMechanics.Foucault.solves_of_pendulum)
+  precesses at `Ω sin φ`.
+* [Relativistic energy and momentum](https://raphos-com.github.io/lean-mechanics/ClassicalMechanics/Relativistic.html#ClassicalMechanics.Relativity.energy_momentum)
+  `E² = (pc)² + (mc²)²` and [velocity addition](https://raphos-com.github.io/lean-mechanics/ClassicalMechanics/Relativistic.html#ClassicalMechanics.Relativity.abs_velAdd_lt).
+* [Poincaré recurrence](https://raphos-com.github.io/lean-mechanics/ClassicalMechanics/Recurrence.html#ClassicalMechanics.hamiltonian_recurrence)
+  for Hamiltonian flows.
 * [The virial theorem](https://raphos-com.github.io/lean-mechanics/ClassicalMechanics/Virial.html#ClassicalMechanics.ParticleSystem.virial).
 
 **Continuum mechanics**
@@ -57,6 +63,10 @@ Each link goes to the statement in the API documentation.
 * [Lamé's thick-walled cylinder](https://raphos-com.github.io/lean-mechanics/ContinuumMechanics/Elastostatics/LameCylinder.html#ContinuumMechanics.LameCylinder.lame_equilibrium)
   and [d'Alembert's solution](https://raphos-com.github.io/lean-mechanics/ContinuumMechanics/Beams/String.html#ContinuumMechanics.Strings.dAlembert_solves)
   of the vibrating string.
+* [Mohr's circle](https://raphos-com.github.io/lean-mechanics/ContinuumMechanics/Stress/Mohr.html#ContinuumMechanics.PlaneStress.mohr_circle)
+  and principal stresses.
+* [Uniqueness for the heat equation](https://raphos-com.github.io/lean-mechanics/ContinuumMechanics/Thermal/Heat.html#ContinuumMechanics.Heat.unique)
+  and [beam vibrations](https://raphos-com.github.io/lean-mechanics/ContinuumMechanics/Beams/Vibration.html#ContinuumMechanics.Beams.Vibration.unique).
 * [Castigliano's second theorem](https://raphos-com.github.io/lean-mechanics/ContinuumMechanics/Elastostatics/Castigliano.html#ContinuumMechanics.Castigliano.castigliano_second).
 * [Kelvin's circulation theorem](https://raphos-com.github.io/lean-mechanics/ContinuumMechanics/Fluids/Ideal.html#ContinuumMechanics.Fluids.circulation_const)
   for ideal fluids and
