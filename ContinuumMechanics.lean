@@ -74,6 +74,8 @@ import ContinuumMechanics.Plates.Energy
 import ContinuumMechanics.Plates.Grillage
 import ContinuumMechanics.Plates.Navier
 import ContinuumMechanics.Plates.Dynamics
+import ContinuumMechanics.Plates.Circular
+import ContinuumMechanics.Plates.Membrane
 import ContinuumMechanics.Plates.MindlinReissner
 import ContinuumMechanics.Plates.MindlinEnergy
 import ContinuumMechanics.Fluids.Ideal

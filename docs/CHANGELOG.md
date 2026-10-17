@@ -202,6 +202,8 @@
   existence, uniqueness, classical ⇒ weak.
 
 ### Plates
+- `Plates/Circular`: clamped and simply supported circular plates under uniform load, moments.
+- `Plates/Membrane`: rectangular membrane modes and orthogonality, static circular membrane.
 - `Plates/Dynamics`: vibration modes and frequencies of simply supported rectangular plates, plate
   buckling coefficient `k ≥ 4`, biaxial buckling.
 - `Plates/Grillage`: orthotropic Kirchhoff–Love plates and their Navier solution; the square beam

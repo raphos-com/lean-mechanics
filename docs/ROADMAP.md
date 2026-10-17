@@ -125,6 +125,8 @@ Status: ✅ done; 🟡 partly done (what is open is stated); ⬜ planned.
 | `KirchhoffLove.lean` | plate equation, moments, simply supported edges | ✅ |
 | `Energy.lean` | Kirchhoff–Love bending energy; null Lagrangian `∫∇²w:∇²v = ∫ΔwΔv`; strong ⇔ stationary on open sets; minimum potential energy for clamped plates | ✅ |
 | `Navier.lean` | single-mode Navier solutions | ✅ |
+| `Circular.lean` | axisymmetric circular plates: general solution of `Δ_r²w = q/D`, **clamped** (`qa⁴/(64D)` at the centre) and **simply supported** plates, deflection ratio `(5+ν)/(1+ν)`, radial and tangential moments | ✅ |
+| `Membrane.lean` | vibrating membranes: rectangular modes `ω_mn = cπ√((m/a)² + (n/b)²)` and their orthogonality, square-membrane degeneracy, static membrane under pressure | ✅ |
 | `Dynamics.lean` | simply supported rectangular plates: **free vibration** modes `ω_mn = π²((m/a)² + (n/b)²)√(D/ρh)`, square-plate degeneracy; **plate buckling** under uniaxial compression, buckling coefficient `k ≥ 4` with equality iff `a/b = m`, `N_cr = 4π²D/b²`; biaxial buckling | ✅ |
 | `Grillage.lean` | orthotropic plates, Navier solution; square beam grillage as an orthotropic plate, isotropic iff `GJ = EI` | ✅ |
 | `MindlinReissner.lean` | equations, Navier solution, Kirchhoff limit | ✅ |

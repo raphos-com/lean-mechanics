@@ -91,11 +91,13 @@ ContinuumMechanics/
     Strain.lean                           -- Finite strain measures
   Plates/
     Energy.lean                           -- Kirchhoff–Love plate energy: strong ⇔ stationary
+    Circular.lean                         -- Axisymmetric bending of circular plates
     Dynamics.lean                         -- Vibration and buckling of rectangular plates
     Grillage.lean                         -- Orthotropic plates and beam grillages
     KirchhoffLove.lean                    -- Kirchhoff–Love plates on a rectangle
     MindlinEnergy.lean                    -- Mindlin–Reissner plate energy: strong ⇔ stationary
     MindlinReissner.lean                  -- Mindlin–Reissner plates and the Kirchhoff limit
+    Membrane.lean                         -- Vibrating and static membranes
     Navier.lean                           -- Navier solutions for simply supported rectangular plates
   Sobolev1D/
     BarWeak.lean                          -- Weak formulation of the axial bar
