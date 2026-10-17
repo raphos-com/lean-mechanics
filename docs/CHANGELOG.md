@@ -224,6 +224,8 @@
   Poincaré lemma (rotation field `W` with `∂ₖWᵢⱼ = ∂ⱼεᵢₖ − ∂ᵢεⱼₖ`, then `∇u = ε + W`).
 
 ### Beams (weak forms)
+- `Beams/Winkler`: beams on elastic foundations, Hetényi's point-load solution.
+- `Plates/Shells`: pressure vessels, Laplace's equation for shells, cylindrical-shell bending layer.
 - `Beams/ThinWalled`: shear flow and shear centre of a channel, Bredt–Batho torsion of closed
   sections, open vs closed thin tubes.
 - `Beams/BucklingBC`: column buckling for clamped–free, clamped–clamped and clamped–pinned ends,

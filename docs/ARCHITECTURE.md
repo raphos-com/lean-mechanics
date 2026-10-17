@@ -42,6 +42,7 @@ ContinuumMechanics/
     Rayleigh.lean                         -- The Rayleigh quotient of a pinned column
     String.lean                           -- The vibrating string and the 1D wave equation
     Vibration.lean                        -- Free vibrations of Euler–Bernoulli beams
+    Winkler.lean                          -- Beams on an elastic (Winkler) foundation
     ThinWalled.lean                       -- Thin-walled sections: shear centre, Bredt–Batho torsion
     Timoshenko/
       Basic.lean                          -- Timoshenko beams: equations, boundary conditions, uniqueness
@@ -117,6 +118,7 @@ ContinuumMechanics/
     MindlinEnergy.lean                    -- Mindlin–Reissner plate energy: strong ⇔ stationary
     MindlinReissner.lean                  -- Mindlin–Reissner plates and the Kirchhoff limit
     Membrane.lean                         -- Vibrating and static membranes
+    Shells.lean                           -- Membrane shells, pressure vessels, bending boundary layer
     Navier.lean                           -- Navier solutions for simply supported rectangular plates
   Sobolev1D/
     BarWeak.lean                          -- Weak formulation of the axial bar

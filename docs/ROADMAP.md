@@ -138,6 +138,7 @@ Status: ✅ done; 🟡 partly done (what is open is stated); ⬜ planned.
 | `Vibration.lean` | free vibrations of Euler–Bernoulli beams: simply supported modes `ωₙ = (nπ/L)²√(EI/ρA)`, orthogonality, **energy conservation and uniqueness** for pinned, clamped and free ends, cantilever mode shapes and the frequency equation `cos βL cosh βL = -1` (root in `(π/2, π)`), Rayleigh quotient | ✅ |
 | `BucklingBC.lean` | column buckling for all classical end conditions: general solution (with converse), **clamped–free** `π²EI/(4L²)`, **clamped–clamped** `4π²EI/L²`, **clamped–pinned** `kL ≈ 4.493` with proved bounds `20.16 < P_crL²/EI < 20.25` and effective-length factor in `(0.69, 0.70)`; imperfect columns and the amplification factor; **lateral–torsional buckling** `M_cr = (π/L)√(EI_y GJ)` | ✅ |
 | `ThinWalled.lean` | thin-walled sections: second moments and the parallel-axis theorem, shear flow, **shear centre of a channel** `e = 3b²/(h + 6b)`, **Bredt–Batho** torsion (`T = 2Aq`, `J = 4A²/∮ds/t`, box and tube), open vs closed tube `J_closed/J_open = 3R²/t²` | ✅ |
+| `Winkler.lean` | **beam on an elastic foundation**: homogeneous solutions `e^{±βx}(cos, sin)βx`, Hetényi's point-load solution (max deflection `Pβ/(2k)`, max moment `P/(4β)`, first zero at `3π/(4β)`), uniform load | ✅ |
 | `String.lean` | vibrating string: **d'Alembert's formula** for the Cauchy problem, normal modes and their orthogonality, energy conservation and **uniqueness** with fixed ends, Mersenne's laws | ✅ |
 | `Sobolev1D/` | `L²` primitives, weak bar, weak Euler–Bernoulli beams (cantilever, clamped–clamped, propped cantilever), weak Timoshenko cantilever: well-posedness and classical ⇒ weak | ✅ |
 
@@ -150,6 +151,7 @@ Status: ✅ done; 🟡 partly done (what is open is stated); ⬜ planned.
 | `Navier.lean` | single-mode Navier solutions | ✅ |
 | `Circular.lean` | axisymmetric circular plates: general solution of `Δ_r²w = q/D`, **clamped** (`qa⁴/(64D)` at the centre) and **simply supported** plates, deflection ratio `(5+ν)/(1+ν)`, radial and tangential moments | ✅ |
 | `Membrane.lean` | vibrating membranes: rectangular modes `ω_mn = cπ√((m/a)² + (n/b)²)` and their orthogonality, square-membrane degeneracy, static membrane under pressure | ✅ |
+| `Shells.lean` | thin shells: pressure vessels from cut equilibrium (`pR/t`, `pR/(2t)`), **Laplace equation** for shells of revolution, thin-wall limit of Lamé, radial expansion, **cylindrical shell bending** as a Winkler beam with decay length `∝ √(Rt)` | ✅ |
 | `Dynamics.lean` | simply supported rectangular plates: **free vibration** modes `ω_mn = π²((m/a)² + (n/b)²)√(D/ρh)`, square-plate degeneracy; **plate buckling** under uniaxial compression, buckling coefficient `k ≥ 4` with equality iff `a/b = m`, `N_cr = 4π²D/b²`; biaxial buckling | ✅ |
 | `Grillage.lean` | orthotropic plates, Navier solution; square beam grillage as an orthotropic plate, isotropic iff `GJ = EI` | ✅ |
 | `MindlinReissner.lean` | equations, Navier solution, Kirchhoff limit | ✅ |

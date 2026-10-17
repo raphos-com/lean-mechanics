@@ -68,6 +68,7 @@ import ContinuumMechanics.Beams.Wirtinger
 import ContinuumMechanics.Beams.Rayleigh
 import ContinuumMechanics.Beams.BucklingBC
 import ContinuumMechanics.Beams.ThinWalled
+import ContinuumMechanics.Beams.Winkler
 import ContinuumMechanics.Beams.String
 import ContinuumMechanics.Beams.Vibration
 import ContinuumMechanics.Sobolev1D.Primitive
@@ -82,6 +83,7 @@ import ContinuumMechanics.Plates.Navier
 import ContinuumMechanics.Plates.Dynamics
 import ContinuumMechanics.Plates.Circular
 import ContinuumMechanics.Plates.Membrane
+import ContinuumMechanics.Plates.Shells
 import ContinuumMechanics.Plates.MindlinReissner
 import ContinuumMechanics.Plates.MindlinEnergy
 import ContinuumMechanics.Fluids.Ideal

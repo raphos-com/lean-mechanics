@@ -21,14 +21,16 @@ no axioms beyond Lean's three standard ones, and `main` is `sorry`-free (both en
 
 | Area | Modules |
 |---|---|
-| **Structural dynamics** | `SmallOscillations`, `NormalModes`, `ModalDamping` (classical and Rayleigh damping, modal superposition), `ForcedOscillator` (resonance), `Duhamel` (impulse response, response spectra), `Beams/String`, `Beams/Vibration`, `Plates/Dynamics`, `Plates/Membrane`, `DoublePendulum`, `DiscreteMechanics/Chain` |
+| **Structural dynamics** | `SmallOscillations`, `NormalModes`, `ModalDamping` (classical and Rayleigh damping, modal superposition), `ForcedOscillator` (resonance), `Duhamel` (impulse response, response spectra), `Beams/String`, `Beams/Vibration`, `Plates/Dynamics`, `Plates/Membrane`, `DoublePendulum`, `Rotordynamics` (Jeffcott rotor, gyroscopic stabilization), `DiscreteMechanics/Chain` |
+| **Structures** | `Structures/Cables` (cables, catenary, arches), `Beams/ThinWalled` (shear centre, Bredt–Batho), `Beams/Winkler`, `Plates/Shells`, `Constitutive/Composites` (laminates), `DiscreteMechanics/Stiffness` |
 | **Buckling and stability** | `Beams/Buckling`, `Beams/BucklingBC` (all end conditions, imperfections, lateral–torsional), `Beams/Rayleigh`, `Plates/Dynamics` (plate buckling), `Stability` (Lagrange–Dirichlet), `EulerStability` |
-| **Solids** | `Tensor/`, `Kinematics/` (Saint-Venant compatibility), `Stress/` (Cauchy, Mohr's circle, yield criteria), `Constitutive/` (linear, hyperelastic, viscoelastic, plasticity), `Elastostatics/` (Navier–Lamé, Korn, existence in `H¹₀`, Castigliano, Airy, Lamé cylinder, torsion, Saint-Venant's principle) |
+| **Solids** | `Tensor/`, `Kinematics/` (Saint-Venant compatibility), `Stress/` (Cauchy, Mohr's circle, yield criteria), `Constitutive/` (linear, hyperelastic, viscoelastic, plasticity), `Elastostatics/` (Navier–Lamé, Korn, existence in `H¹₀`, Castigliano, Airy, Lamé cylinder, torsion, Saint-Venant's principle, Rayleigh waves) |
 | **Beams and plates** | `Beams/` (Euler–Bernoulli, Timoshenko, weak forms), `Plates/` (Kirchhoff–Love, Mindlin–Reissner, grillages, circular plates) |
 | **Fatigue and fracture** | `Fatigue/Basic` (Basquin, Goodman/Gerber/Soderberg, Miner, Paris), `Fracture/Basic` (Griffith, Irwin, compliance method, DCB) |
 | **Contact** | `Contact/Hertz` |
 | **Geotechnics** | `Geotechnics/Consolidation` (Terzaghi), `Geotechnics/Strength` (Mohr–Coulomb, Rankine, slopes, bearing capacity), `Geotechnics/Seepage` (Darcy, quick condition, Dupuit) |
-| **Fluid dynamics** | `Fluids/Ideal` (Euler, Bernoulli, Kelvin), `Fluids/Viscous` (Navier–Stokes, Couette, Poiseuille), `Fluids/Unsteady` (Stokes' problems), `Fluids/Waves` (acoustics, water waves) |
+| **Fluid dynamics** | `Fluids/Ideal` (Euler, Bernoulli, Kelvin), `Fluids/Viscous` (Navier–Stokes, Couette, Poiseuille), `Fluids/Unsteady` (Stokes' problems), `Fluids/Waves` (acoustics, water waves), `Fluids/Hydrostatics` (Archimedes, floating stability), `Fluids/OpenChannel` (critical depth, hydraulic jump) |
+| **Friction** | `Friction` (incline, capstan equation, dry-friction oscillator, rolling) |
 | **Heat** | `Thermal/Heat`, `Thermal/Thermoelastic` |
 
 Modules without a prefix are in `ClassicalMechanics/`; the others are in `ContinuumMechanics/`
