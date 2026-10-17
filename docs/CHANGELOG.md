@@ -202,6 +202,10 @@
 ### Fluids
 - `Fluids/OpenChannel`: specific energy and critical depth, hydraulic jump (Bélanger, energy loss),
   Manning/Chézy, best hydraulic section, weir discharge.
+- `Fluids/BoundaryLayer`: von Kármán momentum integral (existence and uniqueness of `δ(x)`),
+  Pohlhausen and sine profiles, skin friction and drag coefficients.
+- `Fluids/Lubrication`: Reynolds equation, plane slider bearing (pressure, maximum, load
+  capacity), diverging wedge.
 - `Fluids/Pipes`: Darcy factor `64/Re` for Hagen–Poiseuille flow, Darcy–Weisbach head loss, pipes
   in series and parallel, Blasius scaling, Borda–Carnot sudden-expansion loss.
 - `Fluids/Hydrostatics`: hydrostatic pressure, forces on gates, Archimedes' principle, metacentric

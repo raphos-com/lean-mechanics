@@ -93,6 +93,8 @@ import ContinuumMechanics.Fluids.Waves
 import ContinuumMechanics.Fluids.Hydrostatics
 import ContinuumMechanics.Fluids.OpenChannel
 import ContinuumMechanics.Fluids.Pipes
+import ContinuumMechanics.Fluids.BoundaryLayer
+import ContinuumMechanics.Fluids.Lubrication
 import ContinuumMechanics.Thermal.Heat
 import ContinuumMechanics.Thermal.Thermoelastic
 import ContinuumMechanics.Geotechnics.Strength

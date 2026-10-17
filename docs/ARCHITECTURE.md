@@ -84,8 +84,10 @@ ContinuumMechanics/
   Fatigue/
     Basic.lean                            -- Basquin, mean-stress corrections, Miner's rule, Paris law
   Fluids/
+    BoundaryLayer.lean                    -- Momentum integral, Pohlhausen, skin friction
     Hydrostatics.lean                     -- Hydrostatics, Archimedes, floating stability
     Ideal.lean                            -- Ideal fluids: Euler, Bernoulli, potential flow, Kelvin
+    Lubrication.lean                      -- Reynolds equation, plane slider bearing
     OpenChannel.lean                      -- Specific energy, hydraulic jump, uniform flow, weirs
     Pipes.lean                            -- Darcy–Weisbach, Blasius, Borda–Carnot
     Unsteady.lean                         -- Stokes' first and second problems
