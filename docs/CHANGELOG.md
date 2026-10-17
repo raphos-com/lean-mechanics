@@ -165,6 +165,9 @@
   iff `μ > 0 ∧ λ + 2μ > 0`** (dimension ≥ 2); plane waves are longitudinal with `ρc² = λ + 2μ` or
   transverse with `ρc² = μ`.
 
+### Structures
+- `Structures/Cables`: parabolic cables, catenaries, funicular and three-hinged arches.
+
 ### Fracture and contact
 - `Fatigue/Basic`: Basquin's law, mean-stress corrections, Palmgren–Miner damage, Paris-law
   crack-growth life.

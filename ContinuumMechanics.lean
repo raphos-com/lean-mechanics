@@ -93,6 +93,7 @@ import ContinuumMechanics.Geotechnics.Seepage
 import ContinuumMechanics.Fracture.Basic
 import ContinuumMechanics.Fatigue.Basic
 import ContinuumMechanics.Contact.Hertz
+import ContinuumMechanics.Structures.Cables
 
 /-!
 # ContinuumMechanics

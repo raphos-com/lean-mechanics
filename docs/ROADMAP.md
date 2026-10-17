@@ -101,6 +101,12 @@ Status: ✅ done; 🟡 partly done (what is open is stated); ⬜ planned.
 | `Thermoelastic.lean` | **Duhamel–Neumann** law and its inverse, free expansion is stress-free, restrained bar `σ = -EαΔT` (and spring-restrained), **bimetallic strip** (Timoshenko's curvature, existence and uniqueness), thermal bending and the clamped-beam moment, thick cylinder under logarithmic temperature | ✅ |
 | `Heat.lean` | 1D heat equation with Fourier's law: separated solutions and their decay, **energy decay**, **uniqueness**, exponential decay rate `E(t) ≤ E(0)e^{-2κ(π/L)²t}` (Wirtinger), steady conduction and convergence to the steady state | ✅ |
 
+### Structures (`Structures/`)
+
+| File | Content | Status |
+|---|---|---|
+| `Cables.lean` | **parabolic cable** under uniform load (`H = qL²/(8f)`, support tension is the maximum, length bounds), **catenary** (tension `= wy`, arc length `a sinh(x/a)`, lies above the osculating parabola), **funicular and three-hinged arches** (parabolic arch has zero bending moment, thrust `M₀(L/2)/f`) | ✅ |
+
 ### Fracture, fatigue and contact (`Fracture/`, `Fatigue/`, `Contact/`)
 
 | File | Content | Status |
