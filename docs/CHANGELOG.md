@@ -202,6 +202,8 @@
   existence, uniqueness, classical ⇒ weak.
 
 ### Plates
+- `Plates/Dynamics`: vibration modes and frequencies of simply supported rectangular plates, plate
+  buckling coefficient `k ≥ 4`, biaxial buckling.
 - `Plates/Grillage`: orthotropic Kirchhoff–Love plates and their Navier solution; the square beam
   grillage homogenizes to `D₁₁ = D₂₂ = EI/ℓ`, `D₁₂ = 0`, `D₆₆ = GJ/2ℓ` (Timoshenko–Woinowsky §86),
   is isotropic iff `GJ = EI`, central deflection `q₀ℓa⁴/(2π⁴(EI + GJ))`.

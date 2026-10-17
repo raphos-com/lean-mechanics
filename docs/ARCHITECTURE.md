@@ -91,6 +91,7 @@ ContinuumMechanics/
     Strain.lean                           -- Finite strain measures
   Plates/
     Energy.lean                           -- Kirchhoff–Love plate energy: strong ⇔ stationary
+    Dynamics.lean                         -- Vibration and buckling of rectangular plates
     Grillage.lean                         -- Orthotropic plates and beam grillages
     KirchhoffLove.lean                    -- Kirchhoff–Love plates on a rectangle
     MindlinEnergy.lean                    -- Mindlin–Reissner plate energy: strong ⇔ stationary
