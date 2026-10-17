@@ -153,6 +153,10 @@
   iff `μ > 0 ∧ λ + 2μ > 0`** (dimension ≥ 2); plane waves are longitudinal with `ρc² = λ + 2μ` or
   transverse with `ρc² = μ`.
 
+### Thermal
+- `Thermal/Heat`: the 1D heat equation: modes, energy decay, uniqueness, exponential decay rate,
+  steady conduction and convergence to it.
+
 ### Fluids
 - `Fluids/Viscous`: incompressible Navier–Stokes, viscous stress, Couette, plane Poiseuille and
   Hagen–Poiseuille flows with their flow rates, viscous energy dissipation.

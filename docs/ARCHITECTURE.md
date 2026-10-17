@@ -72,6 +72,8 @@ ContinuumMechanics/
   Fluids/
     Ideal.lean                            -- Ideal fluids: Euler, Bernoulli, potential flow, Kelvin
     Viscous.lean                          -- Navier–Stokes: Couette, Poiseuille, Hagen–Poiseuille
+  Thermal/
+    Heat.lean                             -- The 1D heat equation: energy decay, uniqueness, steady state
   Kinematics/
     Body.lean                             -- Bodies and deformations
     Compatibility.lean                    -- Saint-Venant compatibility (necessity)

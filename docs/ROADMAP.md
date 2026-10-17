@@ -91,6 +91,12 @@ Status: ✅ done; 🟡 partly done (what is open is stated); ⬜ planned.
 | `Ideal.lean` | material derivative and chain rule, incompressible Euler equations, Lamb identity, **Bernoulli's theorem** (streamlines; everywhere for irrotational flow), potential flow with the unsteady Bernoulli pressure, **Kelvin's circulation theorem** | ✅ |
 | `Viscous.lean` | incompressible **Navier–Stokes**, divergence of the viscous stress; exact solutions: plane **Couette**, plane **Poiseuille** (`Q = Gh³/(12μ)`), **Hagen–Poiseuille** pipe flow (`Q = πGR⁴/(8μ)`); energy dissipation `∫ v·Δv = -∫|∇v|²` | ✅ |
 
+### Heat conduction (`Thermal/`)
+
+| File | Content | Status |
+|---|---|---|
+| `Heat.lean` | 1D heat equation with Fourier's law: separated solutions and their decay, **energy decay**, **uniqueness**, exponential decay rate `E(t) ≤ E(0)e^{-2κ(π/L)²t}` (Wirtinger), steady conduction and convergence to the steady state | ✅ |
+
 ### Beams and 1D Sobolev spaces (`Beams/`, `Sobolev1D/`)
 
 | File | Content | Status |
