@@ -148,6 +148,7 @@ ClassicalMechanics/
   Oscillator.lean                         -- Harmonic and damped oscillators
   Particles.lean                          -- Systems of particles: the general theorems of dynamics
   Recurrence.lean                         -- Poincaré recurrence for Hamiltonian flows
+  Relativistic.lean                       -- Special-relativistic particle mechanics
   RigidBody.lean                          -- Rigid bodies: inertia tensor, Euler's equations
   Rocket.lean                             -- Variable mass: the rocket equation
   RotatingFrame.lean                      -- Rotating frames: Coriolis and centrifugal forces
