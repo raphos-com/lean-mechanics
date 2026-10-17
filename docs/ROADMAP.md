@@ -164,6 +164,7 @@ Status: ✅ done; 🟡 partly done (what is open is stated); ⬜ planned.
 | `HeavyTop.lean` | Lagrange's heavy symmetric top (Euler–Poisson equations): energy, vertical angular momentum, spin; reduction to `I₁²u̇² = I₁(2E' - 2Mgℓu)(1 - u²) - (b - au)²`; sleeping top under `(I₃ω₃)² > 4I₁Mgℓ` | ✅ |
 | `Rotation.lean` | rigid-body kinematics: `Ω = ṘRᵀ`, `W = RᵀṘ` skew, `Ω = RWRᵀ`, axial vector, Poisson's formula, rigid velocity field, isometry | ✅ |
 | `RotatingFrame.lean` | motion relative to a rotating frame: `ẍ = R(a + 2w×v + w×(w×y) + ẇ×y)`; Coriolis, centrifugal and Euler forces | ✅ |
+| `Foucault.lean` | **Foucault pendulum**: horizontal Coriolis force, complex form, the solution is a pendulum rotated at `-Ω sin φ` (precession of the plane of oscillation), precession period, equator and poles, conserved energy and angular momentum | ✅ |
 | `Hamiltonian.lean` | Hamilton's equations, Poisson brackets, evolution `Ḟ = {F, H}`, energy conservation, Liouville (divergence-free Hamiltonian field), natural systems, Legendre transform (Euler–Lagrange solutions are Hamiltonian flows) | ✅ |
 | `Jacobi.lean` | Poisson bracket of `C²` functions: antisymmetry, **Jacobi identity** | ✅ |
 | `LinearHamiltonian.lean` | linear Hamiltonian systems `ż = -J S z`: Hamiltonian matrices, the flow is symplectic and `det Φ(t) = 1` (Liouville) | ✅ |

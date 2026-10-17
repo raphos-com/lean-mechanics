@@ -17,6 +17,7 @@ import ClassicalMechanics.EulerStability
 import ClassicalMechanics.HeavyTop
 import ClassicalMechanics.Rotation
 import ClassicalMechanics.RotatingFrame
+import ClassicalMechanics.Foucault
 import ClassicalMechanics.Oscillator
 import ClassicalMechanics.ForcedOscillator
 import ClassicalMechanics.Lagrangian

@@ -127,6 +127,7 @@ ClassicalMechanics/
   EffectivePotential.lean                 -- Central forces: effective potential, turning points
   EulerStability.lean                     -- Stability of rotations of a free rigid body
   ForcedOscillator.lean                   -- Driven damped oscillator: resonance, beats
+  Foucault.lean                           -- The Foucault pendulum
   Galilean.lean                           -- Galilean invariance and the boost charge
   Hamiltonian.lean                        -- Hamiltonian mechanics: Poisson brackets, Liouville
   HamiltonJacobi.lean                     -- Hamilton–Jacobi theory, action–angle variables
