@@ -161,6 +161,12 @@
   iff `μ > 0 ∧ λ + 2μ > 0`** (dimension ≥ 2); plane waves are longitudinal with `ρc² = λ + 2μ` or
   transverse with `ρc² = μ`.
 
+### Fracture and contact
+- `Fracture/Basic`: Griffith energy balance, energy release rate, stress intensity, Irwin's
+  relation, compliance method, double cantilever beam stability.
+- `Contact/Hertz`: Hertz contact of spheres and cylinders: force balance, load–approach law,
+  contact stiffness, scaling.
+
 ### Geotechnics
 - `Geotechnics/Seepage`: Darcy flow, anisotropic and layered soils, quick condition, Dupuit flow,
   Dirichlet principle.

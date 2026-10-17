@@ -84,6 +84,8 @@ import ContinuumMechanics.Thermal.Heat
 import ContinuumMechanics.Geotechnics.Strength
 import ContinuumMechanics.Geotechnics.Consolidation
 import ContinuumMechanics.Geotechnics.Seepage
+import ContinuumMechanics.Fracture.Basic
+import ContinuumMechanics.Contact.Hertz
 
 /-!
 # ContinuumMechanics

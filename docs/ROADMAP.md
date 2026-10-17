@@ -97,6 +97,13 @@ Status: ✅ done; 🟡 partly done (what is open is stated); ⬜ planned.
 |---|---|---|
 | `Heat.lean` | 1D heat equation with Fourier's law: separated solutions and their decay, **energy decay**, **uniqueness**, exponential decay rate `E(t) ≤ E(0)e^{-2κ(π/L)²t}` (Wirtinger), steady conduction and convergence to the steady state | ✅ |
 
+### Fracture and contact (`Fracture/`, `Contact/`)
+
+| File | Content | Status |
+|---|---|---|
+| `Fracture/Basic.lean` | **Griffith** energy balance (critical length, unstable maximum, fracture stress), energy release rate, `K_I = σ√(πa)`, **Irwin** `G = K²/E'`, compliance method (fixed load = fixed grip), **double cantilever beam** (unstable at fixed load, stable at fixed grip), near-tip scaling | ✅ |
+| `Contact/Hertz.lean` | **Hertz contact** of spheres (effective radius and modulus, contact radius, approach, pressure distribution with **force balance**, `P = (4/3)E*√R δ^{3/2}`, contact stiffness `2E*a`, scaling laws) and cylinders | ✅ |
+
 ### Geotechnics (`Geotechnics/`)
 
 | File | Content | Status |

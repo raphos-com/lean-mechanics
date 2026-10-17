@@ -70,6 +70,10 @@ ContinuumMechanics/
     Torsion.lean                          -- Saint-Venant torsion of prismatic bars
     Variational.lean                      -- Integration by parts, fundamental lemma
     Weak.lean                             -- Abstract weak formulation of linear elastostatics
+  Contact/
+    Hertz.lean                            -- Hertzian contact of spheres and cylinders
+  Fracture/
+    Basic.lean                            -- Griffith, Irwin, compliance method, DCB specimen
   Fluids/
     Ideal.lean                            -- Ideal fluids: Euler, Bernoulli, potential flow, Kelvin
     Viscous.lean                          -- Navier–Stokes: Couette, Poiseuille, Hagen–Poiseuille
