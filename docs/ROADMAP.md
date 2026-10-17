@@ -166,6 +166,7 @@ Status: ✅ done; 🟡 partly done (what is open is stated); ⬜ planned.
 | `Hamiltonian.lean` | Hamilton's equations, Poisson brackets, evolution `Ḟ = {F, H}`, energy conservation, Liouville (divergence-free Hamiltonian field), natural systems, Legendre transform (Euler–Lagrange solutions are Hamiltonian flows) | ✅ |
 | `Jacobi.lean` | Poisson bracket of `C²` functions: antisymmetry, **Jacobi identity** | ✅ |
 | `LinearHamiltonian.lean` | linear Hamiltonian systems `ż = -J S z`: Hamiltonian matrices, the flow is symplectic and `det Φ(t) = 1` (Liouville) | ✅ |
+| `Recurrence.lean` | **Poincaré recurrence**: volume-preserving maps of a finite-volume invariant region are conservative; for Hamiltonian (and divergence-free) flows a.e. point of any measurable subset of a bounded invariant region returns infinitely often | ✅ |
 | `HamiltonJacobi.lean` | **Jacobi's theorem** (1 DOF, time-dependent, mixed partials as hypotheses); harmonic oscillator in action–angle variables: `H = ωI`, Jacobian `1`, flow, action = phase-space area / 2π | ✅ |
 | `Canonical.lean` | linear canonical transformations: Poisson brackets and Hamiltonian flows are preserved by symplectic matrices, symplectic group, linear Hamiltonian flows are canonical | ✅ |
 | `LiouvilleFlow.lean` | for a `C²` flow of a vector field: variational equation, **Liouville formula** `∂ₜ det DΦ = (div X) det DΦ`, `det DΦ = 1` and **volume preservation** for divergence-free fields, applied to Hamiltonian flows (flow taken as data: Mathlib has no smooth dependence on initial conditions) | ✅ |

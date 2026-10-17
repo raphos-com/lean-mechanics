@@ -28,6 +28,7 @@ import ClassicalMechanics.Jacobi
 import ClassicalMechanics.LinearHamiltonian
 import ClassicalMechanics.Canonical
 import ClassicalMechanics.LiouvilleFlow
+import ClassicalMechanics.Recurrence
 import ClassicalMechanics.HamiltonJacobi
 import ClassicalMechanics.SmallOscillations
 import ClassicalMechanics.NormalModes

@@ -38,6 +38,8 @@
   (Liouville's theorem for linear systems).
 - `KeplerThird`: semi-major axis `a = -k/(2E)`, `b² = a p`, periapsis and apoapsis bounds on `r`,
   **Kepler's third law** `T² = 4π² m a³ / k` from the swept-area hypothesis.
+- `Recurrence`: Poincaré recurrence for divergence-free and Hamiltonian flows on bounded invariant
+  regions, from Liouville's theorem and Mathlib's recurrence theorem.
 - `ForcedOscillator`: steady-state response, resonance frequency and peak amplitude, undamped
   resonance, power balance, beats.
 - `Variational`: Beltrami identity, straight-line geodesics, the catenary, the brachistochrone
