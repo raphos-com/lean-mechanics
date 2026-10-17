@@ -210,6 +210,8 @@
   Poincaré lemma (rotation field `W` with `∂ₖWᵢⱼ = ∂ⱼεᵢₖ − ∂ᵢεⱼₖ`, then `∇u = ε + W`).
 
 ### Beams (weak forms)
+- `Beams/BucklingBC`: column buckling for clamped–free, clamped–clamped and clamped–pinned ends,
+  imperfect columns, lateral–torsional buckling.
 - `Beams/Vibration`: beam vibration modes, orthogonality, energy conservation and uniqueness for
   pinned/clamped/free ends, the cantilever frequency equation, Rayleigh's quotient.
 - `Beams/String`: the 1D wave equation: d'Alembert's formula, normal modes, orthogonality, energy

@@ -31,6 +31,7 @@ ContinuumMechanics/
     Notation.lean                         -- Notation for continuum mechanics
   Beams/
     Bar.lean                              -- The axial bar
+    BucklingBC.lean                       -- Buckling for other end conditions, imperfections, LTB
     Buckling.lean                         -- Euler buckling of a pinned–pinned column
     EulerBernoulli/
       Basic.lean                          -- Euler–Bernoulli beams: equation, boundary conditions, uniqueness

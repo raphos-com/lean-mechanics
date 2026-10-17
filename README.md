@@ -8,12 +8,31 @@ Classical, continuum and discrete mechanics formalized in [Lean 4](https://lean-
 of [Mathlib](https://github.com/leanprover-community/mathlib4). Every theorem is checked by Lean:
 no axioms beyond Lean's three standard ones, and `main` is `sorry`-free (both enforced in CI).
 
-* **`ClassicalMechanics`**: systems of particles, the Kepler problem and scattering, rigid bodies
-  and tops, rotating frames, oscillators, Lagrangian and Hamiltonian mechanics, stability.
-* **`ContinuumMechanics`**: tensor algebra, kinematics, stress, constitutive theory
-  (hyperelastic, viscoelastic), linear elastostatics, beams, plates, torsion, ideal fluids.
+* **`ClassicalMechanics`**: particles and conservation laws, Kepler orbits, orbital mechanics and
+  scattering, rigid bodies and tops, rotating frames, oscillators and structural dynamics,
+  Lagrangian and Hamiltonian mechanics, stability, special relativity.
+* **`ContinuumMechanics`**: tensor algebra, kinematics, stress, constitutive theory (elastic,
+  hyperelastic, viscoelastic, plastic), elastostatics, beams, plates, fatigue and fracture,
+  contact, geotechnics, heat conduction and thermoelasticity, fluid mechanics.
 * **`DiscreteMechanics`**: pin-jointed and periodic frames, the stiffness method,
-  Maxwell–Calladine counting, Bloch analysis and long-wave limits.
+  Maxwell–Calladine counting, Bloch analysis, lattice dynamics.
+
+## Coverage by area
+
+| Area | Modules |
+|---|---|
+| **Structural dynamics** | `SmallOscillations`, `NormalModes`, `ModalDamping` (classical and Rayleigh damping, modal superposition), `ForcedOscillator` (resonance), `Duhamel` (impulse response, response spectra), `Beams/String`, `Beams/Vibration`, `Plates/Dynamics`, `Plates/Membrane`, `DoublePendulum`, `DiscreteMechanics/Chain` |
+| **Buckling and stability** | `Beams/Buckling`, `Beams/BucklingBC` (all end conditions, imperfections, lateral–torsional), `Beams/Rayleigh`, `Plates/Dynamics` (plate buckling), `Stability` (Lagrange–Dirichlet), `EulerStability` |
+| **Solids** | `Tensor/`, `Kinematics/` (Saint-Venant compatibility), `Stress/` (Cauchy, Mohr's circle, yield criteria), `Constitutive/` (linear, hyperelastic, viscoelastic, plasticity), `Elastostatics/` (Navier–Lamé, Korn, existence in `H¹₀`, Castigliano, Airy, Lamé cylinder, torsion, Saint-Venant's principle) |
+| **Beams and plates** | `Beams/` (Euler–Bernoulli, Timoshenko, weak forms), `Plates/` (Kirchhoff–Love, Mindlin–Reissner, grillages, circular plates) |
+| **Fatigue and fracture** | `Fatigue/Basic` (Basquin, Goodman/Gerber/Soderberg, Miner, Paris), `Fracture/Basic` (Griffith, Irwin, compliance method, DCB) |
+| **Contact** | `Contact/Hertz` |
+| **Geotechnics** | `Geotechnics/Consolidation` (Terzaghi), `Geotechnics/Strength` (Mohr–Coulomb, Rankine, slopes, bearing capacity), `Geotechnics/Seepage` (Darcy, quick condition, Dupuit) |
+| **Fluid dynamics** | `Fluids/Ideal` (Euler, Bernoulli, Kelvin), `Fluids/Viscous` (Navier–Stokes, Couette, Poiseuille), `Fluids/Unsteady` (Stokes' problems), `Fluids/Waves` (acoustics, water waves) |
+| **Heat** | `Thermal/Heat`, `Thermal/Thermoelastic` |
+
+Modules without a prefix are in `ClassicalMechanics/`; the others are in `ContinuumMechanics/`
+unless marked.
 
 ## Highlights
 
@@ -72,6 +91,29 @@ Each link goes to the statement in the API documentation.
   for ideal fluids and
   [Hagen–Poiseuille flow](https://raphos-com.github.io/lean-mechanics/ContinuumMechanics/Fluids/Viscous.html#ContinuumMechanics.Fluids.hagen_flowRate)
   `Q = πGR⁴/(8μ)`.
+
+**Engineering**
+
+* [Saint-Venant's principle](https://raphos-com.github.io/lean-mechanics/ContinuumMechanics/Elastostatics/SaintVenantPrinciple.html#ContinuumMechanics.SaintVenant.energy_le_exp):
+  the energy of a self-equilibrated end load decays like `e^(-2πx/b)` along a strip.
+* [Clamped–pinned column buckling](https://raphos-com.github.io/lean-mechanics/ContinuumMechanics/Beams/BucklingBC.html#ContinuumMechanics.Beams.EBBeam.clampedPinned_critical_load_bounds)
+  with proved bounds `20.16 EI/L² < P_cr < 20.25 EI/L²`, and
+  [lateral–torsional buckling](https://raphos-com.github.io/lean-mechanics/ContinuumMechanics/Beams/BucklingBC.html#ContinuumMechanics.Beams.LTBeam.critical_moment).
+* [Plate buckling](https://raphos-com.github.io/lean-mechanics/ContinuumMechanics/Plates/Dynamics.html#ContinuumMechanics.Plates.Plate.critical_load)
+  `N_cr = 4π²D/b²` and
+  [Rayleigh damping](https://raphos-com.github.io/lean-mechanics/ClassicalMechanics/ModalDamping.html#ClassicalMechanics.DampedStructure.rayleigh_modal).
+* [Duhamel's integral](https://raphos-com.github.io/lean-mechanics/ClassicalMechanics/Duhamel.html#ClassicalMechanics.SDOF.duhamel_solves)
+  and response-spectrum bounds.
+* [Paris-law crack-growth life](https://raphos-com.github.io/lean-mechanics/ContinuumMechanics/Fatigue/Basic.html#ContinuumMechanics.Fatigue.paris_cycles_eq)
+  and [Griffith's criterion](https://raphos-com.github.io/lean-mechanics/ContinuumMechanics/Fracture/Basic.html#ContinuumMechanics.Fracture.griffith_criterion).
+* [Hertz contact](https://raphos-com.github.io/lean-mechanics/ContinuumMechanics/Contact/Hertz.html#ContinuumMechanics.Contact.force_balance).
+* [Terzaghi consolidation](https://raphos-com.github.io/lean-mechanics/ContinuumMechanics/Geotechnics/Consolidation.html#ContinuumMechanics.Geotechnics.tendsto_degreeFull),
+  [Mohr–Coulomb failure](https://raphos-com.github.io/lean-mechanics/ContinuumMechanics/Geotechnics/Strength.html#ContinuumMechanics.PlaneStress.exists_failure_plane_iff)
+  and [Rankine earth pressure](https://raphos-com.github.io/lean-mechanics/ContinuumMechanics/Geotechnics/Strength.html#ContinuumMechanics.Geotechnics.activeThrust_cohesionless).
+* [Collapse loads of beams](https://raphos-com.github.io/lean-mechanics/ContinuumMechanics/Constitutive/Plasticity.html#Plasticity.ss_collapse) by limit analysis.
+* [The water-wave dispersion relation](https://raphos-com.github.io/lean-mechanics/ContinuumMechanics/Fluids/Waves.html#ContinuumMechanics.Fluids.Waves.freeSurfaceBC_travellingPotential_iff)
+  `ω² = gk tanh(kh)` and
+  [Stokes' first problem](https://raphos-com.github.io/lean-mechanics/ContinuumMechanics/Fluids/Unsteady.html#ContinuumMechanics.Fluids.stokesI_diffusion).
 
 **Discrete mechanics**
 

@@ -64,6 +64,7 @@ import ContinuumMechanics.Beams.Timoshenko.Limit
 import ContinuumMechanics.Beams.Buckling
 import ContinuumMechanics.Beams.Wirtinger
 import ContinuumMechanics.Beams.Rayleigh
+import ContinuumMechanics.Beams.BucklingBC
 import ContinuumMechanics.Beams.String
 import ContinuumMechanics.Beams.Vibration
 import ContinuumMechanics.Sobolev1D.Primitive
