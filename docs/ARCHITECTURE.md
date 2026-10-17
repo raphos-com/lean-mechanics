@@ -54,6 +54,7 @@ ContinuumMechanics/
     Ellipticity.lean                      -- Strong ellipticity and plane waves (isotropic)
     Hyperelastic.lean                     -- Hyperelastic materials and frame indifference
     LinearIsotropic.lean                  -- Linear isotropic elasticity
+    Plasticity.lean                       -- Return mapping, von Mises flow, limit analysis of beams
     RivlinEricksen.lean                   -- The Rivlin–Ericksen representation theorem
     Viscoelastic.lean                     -- Kelvin–Voigt, Maxwell and Zener viscoelastic models
   Elastostatics/

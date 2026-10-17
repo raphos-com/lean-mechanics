@@ -65,6 +65,7 @@ Status: ✅ done; 🟡 partly done (what is open is stated); ⬜ planned.
 | File | Content | Status |
 |---|---|---|
 | `Hyperelastic/Linearization.lean` | frame indifference and isotropy of SVK, neo-Hookean and Mooney–Rivlin; Fréchet derivative of the stress at `I` is the isotropic elasticity tensor; second-order energy expansion; uniaxial tension `σ = μ(λ² - 1/λ)` | ✅ |
+| `Plasticity.lean` | 1D elastoplasticity with hardening: **return mapping** (consistency, tangent `EH/(E+H)`), monotonic curve; von Mises **associated flow** and plastic incompressibility; **maximum plastic dissipation**; limit analysis: plastic moment and shape factor `3/2`, collapse loads `4M_p/L` (simply supported) and `16M_p/L²` (fixed–fixed) by matching upper and lower bounds | ✅ |
 | `Viscoelastic.lean` | 1D viscoelasticity: Kelvin–Voigt creep, Maxwell relaxation and creep, Zener solid (existence, uniqueness, limits), energy dissipation, complex modulus and loss per cycle `π η ω ε₀²` | ✅ |
 | `Hyperelastic.lean` | hyperelasticity, frame indifference | ✅ |
 | `Hyperelastic/SVK.lean`, `NeoHookean.lean`, `MooneyRivlin.lean` | classical hyperelastic materials | ✅ |

@@ -154,6 +154,8 @@
   symmetry of second derivatives).
 
 ### Constitutive
+- `Plasticity`: return mapping with hardening, von Mises associated flow, maximum dissipation,
+  plastic moment and collapse loads of beams.
 - `Hyperelastic/Linearization`: frame indifference and isotropy of the SVK, neo-Hookean and
   Mooney–Rivlin energies; `DP(I)` is the isotropic elasticity tensor (Lamé moduli identified);
   second-order energy expansions; neo-Hookean uniaxial tension.
