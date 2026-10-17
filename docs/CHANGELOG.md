@@ -193,6 +193,8 @@
   steady conduction and convergence to it.
 
 ### Fluids
+- `Fluids/Hydrostatics`: hydrostatic pressure, forces on gates, Archimedes' principle, metacentric
+  stability of a box barge.
 - `Fluids/Waves`: linear acoustics (wave equation, impedance, energy) and linear water waves
   (dispersion relation, deep/shallow limits, group velocity).
 - `Fluids/Unsteady`: Stokes' first and second problems (impulsively started and oscillating

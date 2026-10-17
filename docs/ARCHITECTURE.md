@@ -81,6 +81,7 @@ ContinuumMechanics/
   Fatigue/
     Basic.lean                            -- Basquin, mean-stress corrections, Miner's rule, Paris law
   Fluids/
+    Hydrostatics.lean                     -- Hydrostatics, Archimedes, floating stability
     Ideal.lean                            -- Ideal fluids: Euler, Bernoulli, potential flow, Kelvin
     Unsteady.lean                         -- Stokes' first and second problems
     Viscous.lean                          -- Navier–Stokes: Couette, Poiseuille, Hagen–Poiseuille

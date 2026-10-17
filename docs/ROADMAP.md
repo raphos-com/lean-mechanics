@@ -90,6 +90,7 @@ Status: ✅ done; 🟡 partly done (what is open is stated); ⬜ planned.
 
 | File | Content | Status |
 |---|---|---|
+| `Hydrostatics.lean` | hydrostatic pressure (existence and uniqueness), force and **centre of pressure** on a vertical gate, **Archimedes' principle** for a box (plus the vertical divergence identity), **box barge stability**: metacentric height, `GM > 0 ⇔ B/H > √(6s(1-s))`, wall-sided righting arm | ✅ |
 | `Ideal.lean` | material derivative and chain rule, incompressible Euler equations, Lamb identity, **Bernoulli's theorem** (streamlines; everywhere for irrotational flow), potential flow with the unsteady Bernoulli pressure, **Kelvin's circulation theorem** | ✅ |
 | `Unsteady.lean` | unidirectional shear flows: Navier–Stokes ⇔ diffusion equation; **Stokes' second problem** (oscillating plate: penetration depth `√(2ν/ω)`, phase lag, wall shear); **Stokes' first problem** (impulsively started plate, `erfc` solution, wall shear `-μU/√(πνt)`), self-similarity | ✅ |
 | `Waves.lean` | **linear acoustics** (wave equation for the pressure, plane waves and impedance `ρ₀c`, acoustic energy conservation, `c² = γp/ρ`); **linear water waves**: dispersion relation `ω² = gk tanh(kh)` (iff), deep and shallow water limits, longer waves are faster, group velocity `c/2 < c_g < c` | ✅ |
