@@ -101,6 +101,7 @@ Status: ✅ done; 🟡 partly done (what is open is stated); ⬜ planned.
 
 | File | Content | Status |
 |---|---|---|
+| `Consolidation.lean` | Terzaghi effective stress (layered soils, water table), **1D consolidation** as the heat equation (energy decay, uniqueness, decay rate), series solution, **degree of consolidation** (`Σ 2/M² = 1` from `ζ(2)`, `U → 1`), settlement | ✅ |
 | `Strength.lean` | **Mohr–Coulomb** failure (circle tangent to the failure line, failure plane at `π/4 + φ/2`, principal-stress form), **Rankine** active/passive/at-rest coefficients and thrust, tension crack, **infinite slope** factor of safety (dry, cohesive, with seepage), bearing capacity factors (`N_c → π + 2`) | ✅ |
 
 ### Beams and 1D Sobolev spaces (`Beams/`, `Sobolev1D/`)

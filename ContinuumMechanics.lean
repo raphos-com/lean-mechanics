@@ -79,6 +79,7 @@ import ContinuumMechanics.Fluids.Ideal
 import ContinuumMechanics.Fluids.Viscous
 import ContinuumMechanics.Thermal.Heat
 import ContinuumMechanics.Geotechnics.Strength
+import ContinuumMechanics.Geotechnics.Consolidation
 
 /-!
 # ContinuumMechanics

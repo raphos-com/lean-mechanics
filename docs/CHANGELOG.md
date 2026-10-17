@@ -160,6 +160,8 @@
   transverse with `ρc² = μ`.
 
 ### Geotechnics
+- `Geotechnics/Consolidation`: effective stress, Terzaghi consolidation (series solution, degree
+  of consolidation, settlement), reusing the heat equation.
 - `Geotechnics/Strength`: Mohr–Coulomb failure via Mohr's circle, Rankine earth pressures and
   thrust, infinite-slope factors of safety, bearing capacity factors.
 

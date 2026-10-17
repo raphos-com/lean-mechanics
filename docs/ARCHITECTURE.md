@@ -76,6 +76,7 @@ ContinuumMechanics/
   Thermal/
     Heat.lean                             -- The 1D heat equation: energy decay, uniqueness, steady state
   Geotechnics/
+    Consolidation.lean                    -- Effective stress and Terzaghi's 1D consolidation
     Strength.lean                         -- Mohr–Coulomb, Rankine earth pressures, slopes, bearing capacity
   Kinematics/
     Body.lean                             -- Bodies and deformations
