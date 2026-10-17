@@ -188,6 +188,8 @@
   steady conduction and convergence to it.
 
 ### Fluids
+- `Fluids/Waves`: linear acoustics (wave equation, impedance, energy) and linear water waves
+  (dispersion relation, deep/shallow limits, group velocity).
 - `Fluids/Unsteady`: Stokes' first and second problems (impulsively started and oscillating
   plates), reduction of Navier–Stokes to diffusion.
 - `Fluids/Viscous`: incompressible Navier–Stokes, viscous stress, Couette, plane Poiseuille and

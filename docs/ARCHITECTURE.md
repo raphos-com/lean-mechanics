@@ -82,6 +82,7 @@ ContinuumMechanics/
     Ideal.lean                            -- Ideal fluids: Euler, Bernoulli, potential flow, Kelvin
     Unsteady.lean                         -- Stokes' first and second problems
     Viscous.lean                          -- Navier–Stokes: Couette, Poiseuille, Hagen–Poiseuille
+    Waves.lean                            -- Linear acoustics and linear water waves
   Thermal/
     Heat.lean                             -- The 1D heat equation: energy decay, uniqueness, steady state
     Thermoelastic.lean                    -- Thermal stresses: Duhamel–Neumann, bimetallic strip

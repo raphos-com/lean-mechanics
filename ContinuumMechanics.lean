@@ -83,6 +83,7 @@ import ContinuumMechanics.Plates.MindlinEnergy
 import ContinuumMechanics.Fluids.Ideal
 import ContinuumMechanics.Fluids.Viscous
 import ContinuumMechanics.Fluids.Unsteady
+import ContinuumMechanics.Fluids.Waves
 import ContinuumMechanics.Thermal.Heat
 import ContinuumMechanics.Thermal.Thermoelastic
 import ContinuumMechanics.Geotechnics.Strength
