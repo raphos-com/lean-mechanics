@@ -67,6 +67,7 @@ ContinuumMechanics/
     LameCylinder.lean                     -- Lamé's thick-walled cylinder and sphere
     NavierLame.lean                       -- Navier–Lamé equations ⇔ stationary strain energy
     PlaneWave.lean                        -- Plane waves solve the Navier–Lamé equations of motion
+    SaintVenantPrinciple.lean             -- Saint-Venant's principle: energy decay in a strip
     Torsion.lean                          -- Saint-Venant torsion of prismatic bars
     Variational.lean                      -- Integration by parts, fundamental lemma
     Weak.lean                             -- Abstract weak formulation of linear elastostatics

@@ -47,6 +47,7 @@ import ContinuumMechanics.Elastostatics.Castigliano
 import ContinuumMechanics.Elastostatics.Airy
 import ContinuumMechanics.Elastostatics.LameCylinder
 import ContinuumMechanics.Elastostatics.Torsion
+import ContinuumMechanics.Elastostatics.SaintVenantPrinciple
 import ContinuumMechanics.Kinematics.Compatibility
 import ContinuumMechanics.Kinematics.SaintVenant
 import ContinuumMechanics.Kinematics.PoincareStar

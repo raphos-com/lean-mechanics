@@ -127,6 +127,8 @@
   additive under products.
 
 ### Elastostatics
+- `SaintVenantPrinciple`: exponential energy decay of self-equilibrated end loads for antiplane
+  shear in a strip, with the zero-mean Wirtinger inequality.
 - `LameCylinder`: thick-walled cylinders and spheres under pressure (Lamé): general radial
   solution and uniqueness, stresses, maximum hoop stress, thin-wall limit.
 - `Existence`: Poincaré inequality `‖u‖² ≤ 4R²‖∇u‖²` on slabs and bounded sets, coercivity of the
