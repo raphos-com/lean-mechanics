@@ -126,6 +126,7 @@ ClassicalMechanics/
   Canonical.lean                          -- Linear canonical (symplectic) transformations
   Collisions.lean                         -- Collisions: restitution, energy loss, elastic scattering
   Constraints.lean                        -- Constrained motion: d'Alembert, spherical pendulum
+  DoublePendulum.lean                     -- The double pendulum: equations, stability, normal modes
   EffectivePotential.lean                 -- Central forces: effective potential, turning points
   EulerStability.lean                     -- Stability of rotations of a free rigid body
   ForcedOscillator.lean                   -- Driven damped oscillator: resonance, beats

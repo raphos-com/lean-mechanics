@@ -38,6 +38,8 @@
   (Liouville's theorem for linear systems).
 - `KeplerThird`: semi-major axis `a = -k/(2E)`, `b² = a p`, periapsis and apoapsis bounds on `r`,
   **Kepler's third law** `T² = 4π² m a³ / k` from the swept-area hypothesis.
+- `DoublePendulum`: equations of motion, energy, mass matrix, Lyapunov stability of the hanging
+  position, normal modes for equal masses and lengths.
 - `Relativistic`: Lorentz boosts, velocity addition, rapidity, time dilation and length
   contraction, energy–momentum relation, Newtonian limit, hyperbolic motion, four-momentum.
 - `Orbits`: vis-viva equation, circular orbits, escape speed, apsidal speeds, Hohmann transfers.

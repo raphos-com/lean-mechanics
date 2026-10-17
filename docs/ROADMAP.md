@@ -185,6 +185,7 @@ Status: ✅ done; 🟡 partly done (what is open is stated); ⬜ planned.
 | `Routh.lean` | cyclic coordinates: conserved momenta; **Routh reduction** (two coordinates, local inversion), the Routhian obeys Euler–Lagrange; planar central motion reduces to `m r̈ = -V_eff'(r)` | ✅ |
 | `SmallOscillations.lean` | `M q̈ + K q = 0`: energy, normal modes, superposition, Rayleigh quotient, stability, modal orthogonality | ✅ |
 | `Stability.lean` | natural systems `M q̈ = -∇U`: equilibria, energy, **Lagrange–Dirichlet theorem** (strict minimum ⇒ Lyapunov stable in phase space), linearization, positive definite Hessian ⇒ strict minimum ⇒ stable | ✅ |
+| `DoublePendulum.lean` | planar double pendulum: kinetic energy from positions, Lagrangian and Euler–Lagrange equations, energy conservation, positive definite mass matrix, **nonlinear stability** of the hanging position, normal-mode frequencies `(g/ℓ)(2 ± √2)`, inverted equilibria fail the second-derivative test | ✅ |
 | `NormalModes.lean` | complete set of `M`-orthonormal normal modes for positive definite `M` and positive semidefinite `K` (simultaneous diagonalization) | ✅ |
 
 ## Review decisions
