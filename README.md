@@ -142,6 +142,8 @@ Each link goes to the statement in the API documentation.
 * [`Miura`](papers/Miura): Schenk–Guest and Wei et al. on the Miura-ori.
 * [`Nexorade`](papers/Nexorade): Greco–Lebée–Douthe, *Investigation of the elastic behavior of
   reciprocal systems using homogenization techniques*.
+* [`TopologyOptimization`](papers/TopologyOptimization): Sigmund, Bendsøe–Kikuchi and the
+  99-line code on SIMP compliance minimization.
 
 ## Documentation
 

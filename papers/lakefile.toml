@@ -3,7 +3,7 @@ name = "papers"
 version = "0.1.0"
 license = "Apache-2.0"
 packagesDir = "../.lake/packages"
-defaultTargets = ["BendingGradient", "ChevronCore", "Gridshells", "KaneLubensky", "Miura", "Nexorade"]
+defaultTargets = ["BendingGradient", "ChevronCore", "Gridshells", "KaneLubensky", "Miura", "Nexorade", "TopologyOptimization"]
 
 [leanOptions]
 pp.unicode.fun = true
@@ -33,3 +33,6 @@ name = "Miura"
 
 [[lean_lib]]
 name = "Nexorade"
+
+[[lean_lib]]
+name = "TopologyOptimization"

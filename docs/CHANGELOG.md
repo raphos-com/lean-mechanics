@@ -270,6 +270,9 @@
 
 ### Papers (`papers/`, see each README)
 - `Nexorade`, `Miura`, `KaneLubensky`, `Gridshells`, `BendingGradient`.
+- `TopologyOptimization` (Sigmund 2000, Bendsøe–Kikuchi 1988, Sigmund 2001): SIMP compliance
+  (complementary energy, monotonicity, convexity, sensitivities), the optimality-criteria update
+  (box and move limits, bisection, fixed points are KKT points), density and sensitivity filters.
 - `ChevronCore` (Lebée–Sab 2010): analytical bounds on the transverse shear moduli of chevron
   folded cores, their ordering, the exact case, and the comparison with honeycombs.
 - `Gridshells/Sphere`: a Chebyshev net on the unit sphere satisfies the sine-Gordon equation
