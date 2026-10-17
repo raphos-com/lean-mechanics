@@ -110,7 +110,7 @@ Each link goes to the statement in the API documentation.
 * [Terzaghi consolidation](https://raphos-com.github.io/lean-mechanics/ContinuumMechanics/Geotechnics/Consolidation.html#ContinuumMechanics.Geotechnics.tendsto_degreeFull),
   [Mohr–Coulomb failure](https://raphos-com.github.io/lean-mechanics/ContinuumMechanics/Geotechnics/Strength.html#ContinuumMechanics.PlaneStress.exists_failure_plane_iff)
   and [Rankine earth pressure](https://raphos-com.github.io/lean-mechanics/ContinuumMechanics/Geotechnics/Strength.html#ContinuumMechanics.Geotechnics.activeThrust_cohesionless).
-* [Collapse loads of beams](https://raphos-com.github.io/lean-mechanics/ContinuumMechanics/Constitutive/Plasticity.html#Plasticity.ss_collapse) by limit analysis.
+* [Collapse loads of beams](https://raphos-com.github.io/lean-mechanics/ContinuumMechanics/Constitutive/Plasticity.html#ContinuumMechanics.Plasticity.ss_collapse) by limit analysis.
 * [The water-wave dispersion relation](https://raphos-com.github.io/lean-mechanics/ContinuumMechanics/Fluids/Waves.html#ContinuumMechanics.Fluids.Waves.freeSurfaceBC_travellingPotential_iff)
   `ω² = gk tanh(kh)` and
   [Stokes' first problem](https://raphos-com.github.io/lean-mechanics/ContinuumMechanics/Fluids/Unsteady.html#ContinuumMechanics.Fluids.stokesI_diffusion).

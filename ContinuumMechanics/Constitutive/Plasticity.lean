@@ -61,7 +61,7 @@ open scoped Topology InnerProductSpace ContinuumMechanics
 
 noncomputable section
 
-namespace Plasticity
+namespace ContinuumMechanics.Plasticity
 
 /-! ### One-dimensional elastoplastic bar with linear isotropic hardening -/
 
@@ -304,7 +304,7 @@ theorem stress_returnMap_virgin {ε : ℝ} (hε : 0 ≤ ε) :
 
 end Bar
 
-end Plasticity
+end ContinuumMechanics.Plasticity
 
 /-! ### Associated von Mises flow and plastic incompressibility -/
 
@@ -379,7 +379,7 @@ end ContinuumMechanics.Lin
 
 /-! ### Maximum plastic dissipation -/
 
-namespace Plasticity
+namespace ContinuumMechanics.Plasticity
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℝ F] [CompleteSpace F]
 
@@ -670,4 +670,4 @@ theorem ff_collapse {Mp L : ℝ} (hMp : 0 ≤ Mp) (hL : 0 < L) :
   · intro θ hθ
     exact (ff_mechanism hL.ne' hθ).mpr rfl
 
-end Plasticity
+end ContinuumMechanics.Plasticity
