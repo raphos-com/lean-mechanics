@@ -38,6 +38,8 @@
   (Liouville's theorem for linear systems).
 - `KeplerThird`: semi-major axis `a = -k/(2E)`, `b² = a p`, periapsis and apoapsis bounds on `r`,
   **Kepler's third law** `T² = 4π² m a³ / k` from the swept-area hypothesis.
+- `Rotordynamics`: Jeffcott rotor whirl and critical speed, gyroscopic systems, gyroscopic
+  stabilization.
 - `Friction`: friction on an incline, capstan equation, dry-friction oscillator, rolling.
 - `Duhamel`: impulse response, Duhamel's integral and uniqueness from rest, step-load dynamic
   amplification, response spectrum bounds.
@@ -128,6 +130,8 @@
   additive under products.
 
 ### Elastostatics
+- `RayleighWaves`: existence and uniqueness of Rayleigh waves, the Poisson-solid speed with
+  numerical bounds.
 - `SaintVenantPrinciple`: exponential energy decay of self-equilibrated end loads for antiplane
   shear in a strip, with the zero-mean Wirtinger inequality.
 - `LameCylinder`: thick-walled cylinders and spheres under pressure (Lamé): general radial
@@ -194,6 +198,8 @@
   steady conduction and convergence to it.
 
 ### Fluids
+- `Fluids/OpenChannel`: specific energy and critical depth, hydraulic jump (Bélanger, energy loss),
+  Manning/Chézy, best hydraulic section, weir discharge.
 - `Fluids/Hydrostatics`: hydrostatic pressure, forces on gates, Archimedes' principle, metacentric
   stability of a box barge.
 - `Fluids/Waves`: linear acoustics (wave equation, impedance, energy) and linear water waves
@@ -218,6 +224,8 @@
   Poincaré lemma (rotation field `W` with `∂ₖWᵢⱼ = ∂ⱼεᵢₖ − ∂ᵢεⱼₖ`, then `∇u = ε + W`).
 
 ### Beams (weak forms)
+- `Beams/ThinWalled`: shear flow and shear centre of a channel, Bredt–Batho torsion of closed
+  sections, open vs closed thin tubes.
 - `Beams/BucklingBC`: column buckling for clamped–free, clamped–clamped and clamped–pinned ends,
   imperfect columns, lateral–torsional buckling.
 - `Beams/Vibration`: beam vibration modes, orthogonality, energy conservation and uniqueness for

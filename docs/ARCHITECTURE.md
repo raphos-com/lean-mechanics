@@ -42,6 +42,7 @@ ContinuumMechanics/
     Rayleigh.lean                         -- The Rayleigh quotient of a pinned column
     String.lean                           -- The vibrating string and the 1D wave equation
     Vibration.lean                        -- Free vibrations of Euler–Bernoulli beams
+    ThinWalled.lean                       -- Thin-walled sections: shear centre, Bredt–Batho torsion
     Timoshenko/
       Basic.lean                          -- Timoshenko beams: equations, boundary conditions, uniqueness
       Limit.lean                          -- The Euler–Bernoulli limit of the Timoshenko beam
@@ -70,6 +71,7 @@ ContinuumMechanics/
     LameCylinder.lean                     -- Lamé's thick-walled cylinder and sphere
     NavierLame.lean                       -- Navier–Lamé equations ⇔ stationary strain energy
     PlaneWave.lean                        -- Plane waves solve the Navier–Lamé equations of motion
+    RayleighWaves.lean                    -- Rayleigh surface waves: existence, uniqueness, speed
     SaintVenantPrinciple.lean             -- Saint-Venant's principle: energy decay in a strip
     Torsion.lean                          -- Saint-Venant torsion of prismatic bars
     Variational.lean                      -- Integration by parts, fundamental lemma
@@ -83,6 +85,7 @@ ContinuumMechanics/
   Fluids/
     Hydrostatics.lean                     -- Hydrostatics, Archimedes, floating stability
     Ideal.lean                            -- Ideal fluids: Euler, Bernoulli, potential flow, Kelvin
+    OpenChannel.lean                      -- Specific energy, hydraulic jump, uniform flow, weirs
     Unsteady.lean                         -- Stokes' first and second problems
     Viscous.lean                          -- Navier–Stokes: Couette, Poiseuille, Hagen–Poiseuille
     Waves.lean                            -- Linear acoustics and linear water waves
@@ -181,6 +184,7 @@ ClassicalMechanics/
   Rocket.lean                             -- Variable mass: the rocket equation
   RotatingFrame.lean                      -- Rotating frames: Coriolis and centrifugal forces
   Rotation.lean                           -- Kinematics of rigid bodies: rotations, Poisson's formula
+  Rotordynamics.lean                      -- Jeffcott rotor, gyroscopic stabilization
   Routh.lean                              -- Cyclic coordinates and Routh reduction
   Rutherford.lean                         -- Rutherford scattering: deflection angle, cross section
   SmallOscillations.lean                  -- Small oscillations and normal modes

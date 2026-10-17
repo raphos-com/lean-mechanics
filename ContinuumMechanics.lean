@@ -43,6 +43,7 @@ import ContinuumMechanics.Elastostatics.Korn
 import ContinuumMechanics.Elastostatics.Variational
 import ContinuumMechanics.Elastostatics.NavierLame
 import ContinuumMechanics.Elastostatics.PlaneWave
+import ContinuumMechanics.Elastostatics.RayleighWaves
 import ContinuumMechanics.Elastostatics.H10
 import ContinuumMechanics.Elastostatics.Existence
 import ContinuumMechanics.Elastostatics.Castigliano
@@ -66,6 +67,7 @@ import ContinuumMechanics.Beams.Buckling
 import ContinuumMechanics.Beams.Wirtinger
 import ContinuumMechanics.Beams.Rayleigh
 import ContinuumMechanics.Beams.BucklingBC
+import ContinuumMechanics.Beams.ThinWalled
 import ContinuumMechanics.Beams.String
 import ContinuumMechanics.Beams.Vibration
 import ContinuumMechanics.Sobolev1D.Primitive
@@ -87,6 +89,7 @@ import ContinuumMechanics.Fluids.Viscous
 import ContinuumMechanics.Fluids.Unsteady
 import ContinuumMechanics.Fluids.Waves
 import ContinuumMechanics.Fluids.Hydrostatics
+import ContinuumMechanics.Fluids.OpenChannel
 import ContinuumMechanics.Thermal.Heat
 import ContinuumMechanics.Thermal.Thermoelastic
 import ContinuumMechanics.Geotechnics.Strength

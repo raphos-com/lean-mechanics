@@ -38,6 +38,7 @@ import ClassicalMechanics.HamiltonJacobi
 import ClassicalMechanics.SmallOscillations
 import ClassicalMechanics.NormalModes
 import ClassicalMechanics.ModalDamping
+import ClassicalMechanics.Rotordynamics
 import ClassicalMechanics.Stability
 import ClassicalMechanics.DoublePendulum
 
