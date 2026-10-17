@@ -175,6 +175,7 @@ Status: ✅ done; 🟡 partly done (what is open is stated); ⬜ planned.
 | `RigidBody.lean` | inertia tensor (symmetric, positive semidefinite), Steiner, König, Euler's equations and their invariants | ✅ |
 | `Oscillator.lean` | harmonic oscillator (solution, uniqueness, periodicity), damped oscillator (dissipation, underdamped solution) | ✅ |
 | `ForcedOscillator.lean` | driven damped oscillator: steady state, amplitude–phase form, transients, **resonance** (maximum amplitude at `√(ω₀² - 2γ²)`), undamped secular growth, power balance over a period, beats | ✅ |
+| `Duhamel.lean` | SDOF response to arbitrary loads: unit impulse response, **Duhamel's integral** solves the forced equation (and is the unique solution from rest), step load with dynamic amplification 2, **response spectrum** bounds `S_d ≤ (1/ω_d)∫|a_g|`, `S_a = ω²S_d` | ✅ |
 | `Lagrangian.lean` | Lagrangian mechanics with one degree of freedom: Beltrami energy, cyclic coordinates, Hamilton's principle ⇔ Euler–Lagrange, natural systems | ✅ |
 | `EulerStability.lean` | stability of steady rotations: linearized Euler equations, `λ < 0` iff largest/smallest axis, explicit exponentially growing solution about the intermediate axis; nonlinear stability bounds from the conserved `|L|² - 2I₁T` | ✅ |
 | `HeavyTop.lean` | Lagrange's heavy symmetric top (Euler–Poisson equations): energy, vertical angular momentum, spin; reduction to `I₁²u̇² = I₁(2E' - 2Mgℓu)(1 - u²) - (b - au)²`; sleeping top under `(I₃ω₃)² > 4I₁Mgℓ` | ✅ |

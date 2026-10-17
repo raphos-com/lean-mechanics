@@ -22,6 +22,7 @@ import ClassicalMechanics.RotatingFrame
 import ClassicalMechanics.Foucault
 import ClassicalMechanics.Oscillator
 import ClassicalMechanics.ForcedOscillator
+import ClassicalMechanics.Duhamel
 import ClassicalMechanics.Lagrangian
 import ClassicalMechanics.Variational
 import ClassicalMechanics.Noether

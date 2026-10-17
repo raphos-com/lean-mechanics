@@ -38,6 +38,8 @@
   (Liouville's theorem for linear systems).
 - `KeplerThird`: semi-major axis `a = -k/(2E)`, `b² = a p`, periapsis and apoapsis bounds on `r`,
   **Kepler's third law** `T² = 4π² m a³ / k` from the swept-area hypothesis.
+- `Duhamel`: impulse response, Duhamel's integral and uniqueness from rest, step-load dynamic
+  amplification, response spectrum bounds.
 - `ModalDamping`: damped multi-degree-of-freedom structures, modal decoupling, Rayleigh damping,
   Caughey criterion, modal superposition.
 - `DoublePendulum`: equations of motion, energy, mass matrix, Lyapunov stability of the hanging
